@@ -64,7 +64,7 @@ async function talkTo(page,id,name,maxHours=30){
     const who=await page.locator('#dialog .speaker strong').first().textContent({timeout:500}).catch(()=>null);
     if(who===name){
       const bg=await page.locator('#dialog .portrait').first().evaluate(e=>getComputedStyle(e).backgroundImage);
-      assert.match(bg,/portraits\.svg/,'portrait asset on '+name);
+      assert.match(bg,/portraits\.png/,'portrait asset on '+name);
       return;
     }
     await page.locator('#wait').click();await blur(page);
@@ -77,7 +77,7 @@ async function core(page){
   // Uncle's study: tape + safe keypad (wrong code first, then 0317).
   for(const k of ['a','a','w','e'])await page.keyboard.press(k);
   assert.equal((await st(page)).room,'radio');
-  assert.match(await page.locator('#roomart').evaluate(e=>getComputedStyle(e).backgroundImage),/study\.svg/);
+  assert.match(await page.locator('#roomart').evaluate(e=>getComputedStyle(e).backgroundImage),/interiors\/study\.png/);
   await page.getByRole('button',{name:'Fita cassete',exact:true}).click();
   await page.getByRole('button',{name:'Cofre de aço',exact:true}).click();
   for(const n of ['1','2','3','4','Abrir'])await page.locator('#puzzle').getByRole('button',{name:n,exact:true}).click();
@@ -88,7 +88,7 @@ async function core(page){
   // Station: rails, clock, manifest, signal cabinet dial puzzle.
   for(const k of ['a','s','s','e'])await page.keyboard.press(k);
   assert.equal((await st(page)).room,'rail');
-  assert.match(await page.locator('#roomart').evaluate(e=>getComputedStyle(e).backgroundImage),/station\.svg/);
+  assert.match(await page.locator('#roomart').evaluate(e=>getComputedStyle(e).backgroundImage),/interiors\/station\.png/);
   for(const n of ['Trilhos','Relógio parado','Manifesto rasgado'])await page.getByRole('button',{name:n,exact:true}).click();
   await page.getByRole('button',{name:'Armário de sinalização',exact:true}).click();
   const d=page.locator('.dialrow button');await d.nth(0).click();await d.nth(0).click();await d.nth(1).click();
@@ -168,7 +168,7 @@ async function finale(page,tag){
   await page.screenshot({path:`${OUT}/A-consequences.png`});
   await J(page,false);
   await finale(page,'A');
-  for(const f of ['ground.webp','atlas-0.png','ch-hero.png','ch-lia.png','ch-raul.png','ch-nora.png','portraits.svg','study.svg','station.svg','night-train.svg']){assert.equal(assets[f]?.status,200,f);assert.match(assets[f].type,/^image\//,f)}
+  for(const f of ['ground.webp','atlas-0.png','ch-hero.png','ch-lia.png','ch-raul.png','ch-nora.png','portraits.png','icons.png','logo.png','study.png','station.png','night-train.svg']){assert.equal(assets[f]?.status,200,f);assert.match(assets[f].type,/^image\//,f)}
   assert.equal(problems.length,0,problems.join('\n'));
   log('A PASS fates',JSON.stringify(A.fates),'| events:',evA.slice(0,160));
   await ctx.close();
