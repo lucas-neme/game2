@@ -28,3 +28,14 @@ d.advance(1020-d.s.t);d.render();assert(get('weather').textContent.includes('Chu
 get('cinemaNext').onclick();assert.equal(d.s.endingScene,1);
 const e=run(doc,storage,()=>{},()=>true);assert.equal(e.s.endingScene,1);get('cinemaNext').onclick();get('cinemaNext').onclick();get('cinemaNext').onclick();assert(e.s.cinemaDismissed);assert.equal(get('cinema').hidden,true);
 console.log('PASS: mechanical route, weather, anomalies and finale, 17 additional assertions');
+
+get('reset').onclick();
+const q=run(doc,storage,()=>{},()=>true);
+assert.equal(get('signalLab').hidden,true);
+q.move(-1,0);q.move(-1,0);q.move(0,-1);q.interact();click('roomart','Fita cassete');q.leaveRoom();
+get('freq').value='103.7';get('tune').onclick();assert.equal(get('signalLab').hidden,false);
+get('signalAnswer').value='12';get('signalCheck').onclick();assert(!q.s.clues.includes('primepattern'));
+get('signalHint').onclick();assert.equal(q.s.signalHints,1);
+get('signalAnswer').value='13';get('signalCheck').onclick();assert(q.s.clues.includes('primepattern'));assert.equal(q.s.signalAttempts,2);assert(get('signalCheck').disabled);
+get('save').onclick();const z=run(doc,storage,()=>{},()=>true);assert(z.s.clues.includes('primepattern'));assert.equal(z.s.signalHints,1);
+console.log('PASS: scientific signal puzzle and persistence, 9 additional assertions');
