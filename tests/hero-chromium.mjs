@@ -15,7 +15,7 @@ await page.evaluate(()=>{window.__place=(x,y)=>{s.x=Math.round(x);s.y=Math.round
 const spot=await page.evaluate(()=>{for(let x=0;x<14;x++)for(let y=0;y<14;y++){let ok=true;for(let a=0;a<12&&ok;a++)if(solidAt(x+Math.cos(a/12*6.283)*.7,y+Math.sin(a/12*6.283)*.7,.22))ok=false;if(ok)return [x,y]}return [5,5]});
 // 1. the view follows the on-screen direction; lateral movement uses the side views
 const cases=[[['d'],'east'],[['a'],'west'],[['w'],'north'],[['s'],'south'],[['w','d'],'east'],[['w','a'],'west'],[['s','d'],'east'],[['s','a'],'west']];
-for(const [keys,want] of cases){await page.evaluate(([x,y])=>__place(x,y),spot);for(const k of keys)await page.keyboard.down(k);await page.waitForTimeout(260);
+for(const [keys,want] of cases){await page.evaluate(([x,y])=>__place(x,y),spot);for(const k of keys)await page.keyboard.down(k);await page.waitForTimeout(360);
  const r=await page.evaluate(()=>({dir4:heroVis.dir4,anim:heroVis.anim,ph:heroVis.ph,pos:__heroShot()}));
  await page.screenshot({path:`${OUT}/walk-${keys.join('')}.png`,clip:{x:Math.max(0,r.pos[0]-70),y:Math.max(0,r.pos[1]-90),width:140,height:150}});
  for(const k of keys)await page.keyboard.up(k);await page.waitForTimeout(150);assert.equal(r.dir4,want,keys.join('+')+' view');assert.equal(r.anim,'walk')}
