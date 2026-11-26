@@ -72,3 +72,14 @@ assert.equal(relocated.s.fates.exchange,'relocated');assert.equal(relocated.s.fa
 get('reset').onclick();const autonomous=run(doc,storage,()=>{},()=>true);autonomous.advance(2580-autonomous.s.t);autonomous.render();
 assert.equal(autonomous.s.fates.exchange,'delivered');assert.equal(autonomous.s.fates.lia,'alone');assert.equal(autonomous.s.consequences.filter(x=>x.id==='fate:exchange').length,1);
 console.log('PASS: autonomous fates, divergent encounters and deadline persistence, 13 additional assertions');
+
+const socialPublic=branchNora('Apoiar a transmissão pública');const broadcastAt=socialPublic.s.decisions.future.at;
+socialPublic.advance(broadcastAt+60-socialPublic.s.t);assert(socialPublic.s.rumors.future.broadcast);assert(!socialPublic.s.rumors.clinic?.broadcast);
+socialPublic.advance(60);assert.equal(socialPublic.s.rumors.clinic.broadcast.via,'rádio');assert(!socialPublic.s.rumors.guard?.broadcast);
+socialPublic.advance(60);assert(socialPublic.s.rumors.guard.official);assert.equal(socialPublic.s.social['future:guard'],-1);
+socialPublic.advance(60);assert.equal(socialPublic.s.rumors.clinic.official.via,'pacientes');
+socialPublic.advance(2580-socialPublic.s.t);assert.equal(socialPublic.s.social['future:guard'],-3);assert(socialPublic.s.rumors.future.missing);
+socialPublic.advance(120);assert(socialPublic.s.rumors.clinic.missing);socialPublic.render();assert.equal(socialPublic.s.social['future:guard'],-3);
+get('save').onclick();const socialReload=run(doc,storage,()=>{},()=>true);assert.equal(socialReload.s.social['future:guard'],-3);assert.equal(socialReload.s.rumors.clinic.missing.via,'Nora');
+const socialPrivate=branchNora('Preservar a gravação em sigilo');socialPrivate.advance(2700-socialPrivate.s.t);assert.equal(socialPrivate.s.social['future:guard'],2);assert(socialPrivate.s.rumors.future.alliance);assert(!socialPrivate.s.rumors.clinic?.official);
+console.log('PASS: rumor timing, divergent social bonds, provenance and persistence, 16 additional assertions');
