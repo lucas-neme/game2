@@ -1,0 +1,19 @@
+# Wampa Auto Deploy - canary (branch wampa-deploy/canario only): proves failure handling and rollback on the real VPS
+# without touching the public game. No published port, no public route.
+services:
+  canario:
+    build: {context: ., dockerfile: deploy/Dockerfile}
+    image: wampa-canario:local
+    container_name: wampa-canario
+    restart: unless-stopped
+    mem_limit: 64m
+    security_opt: ["no-new-privileges:true"]
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 2
+    networks: [proxynet]
+networks:
+  proxynet:
+    external: true
