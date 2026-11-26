@@ -128,3 +128,7 @@ const fight=setupArena();approachArena(fight);fight.arenaAction('pulse');for(let
 const loss=setupArena();for(let i=0;i<5;i++)loss.arenaAction('observe');assert.equal(loss.s.arenaOutcome,'injured');assert(!loss.s.end);assert(loss.s.clues.includes('coreRetreat'));
 const escape=setupArena();escape.arenaAction('leave');assert.equal(escape.s.arenaOutcome,'retreat');assert(!escape.s.worldFlags.coreAlarm);assert(!escape.s.end);
 console.log('PASS: spatial combat, telegraph, defense, contact, retreat and persistence');
+
+const locked=setupArena();const lockTime=locked.s.t;get('signalAnswer').value='13';get('signalCheck').onclick();assert(!locked.s.clues.includes('primepattern'));assert.equal(locked.s.t,lockTime);locked.arenaAction('leave');get('signalCheck').onclick();assert(locked.s.clues.includes('primepattern'));
+locked.record('stationclock');locked.render();click('compare','Registro do pátio');click('compare','Relógio parado');get('combine').onclick();assert(locked.s.clues.includes('clockManipulation'));locked.record('coreContact');locked.record('echoMessage');locked.render();click('compare','Resposta do núcleo');click('compare','Advertência do eco');get('combine').onclick();assert(locked.s.clues.includes('corroboratedWarning'));
+console.log('PASS: encounter isolation and linked deductions');
