@@ -1383,6 +1383,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1413,6 +1414,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1443,6 +1445,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1473,6 +1476,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1503,6 +1507,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1533,6 +1538,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1563,6 +1569,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1593,6 +1600,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1623,6 +1631,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1653,6 +1662,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1683,6 +1693,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1713,6 +1724,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -1743,6 +1755,7 @@
     "back (NE, mirrored NW)"
    ],
    "animations": {
+    "sit": 3,
     "idle": 4,
     "walk": 8,
     "run": 8,
@@ -2430,6 +2443,28 @@
    ]
   ],
   "rules": "buildings: ground footprint; trees/rocks: trunk circle; props: base circle; canopies and roofs never collide"
+ },
+ "hero_walk_v2": {
+  "walk": "assets/production/characters/ch-hero-walk.png",
+  "sit": "assets/production/characters/ch-hero-sit.png",
+  "fw": 64,
+  "fh": 96,
+  "ax": 32,
+  "ay": 90,
+  "rows": {
+   "south": 0,
+   "west": 1,
+   "east": 2,
+   "north": 3
+  },
+  "frames": 8,
+  "sitFrames": 4,
+  "source": "frequencia-zero-protagonista-walk-v2.zip sha256 7d6279f27c27",
+  "state": "PRODUCTION",
+  "note": "walk: 4 drawn views x 8 frames (walk-v2); run/sneak reuse the walk cycle at other speeds; sit: derived from walk-v2 south frame by thigh foreshortening (rows 61-72), 4 frames"
+ },
+ "rejected_packs": {
+  "frequencia-zero-npcs-coletivo-review.zip": "legs missing or detached from the body in most frames (dark trousers keyed out as background); not promoted"
  },
  "interiors": {
   "study": {

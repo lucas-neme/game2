@@ -316,6 +316,24 @@ def export():
     for k, (im, pins, src, st) in rooms.items():
         fn = f'assets/production/interiors/{k}.png'; im.save(ROOT / fn, optimize=True); room_meta[k] = {'file': fn, 'w': im.width, 'h': im.height, 'source': src, 'state': st, 'hotspots': pins}
     EX.fog_texture().save(fx / 'fog.png', optimize=True)
+    # protagonist walk V2 (4 real views, 8 frames, 64x96, pivot 32,90) + seated strip derived from its south frame
+    WV2 = Path(r'D:/Projetos/game2-insumos/frequencia-zero-protagonista-walk-v2')
+    wm = json.loads((WV2 / 'manifest.json').read_text(encoding='utf-8'))
+    walk = Image.open(WV2 / 'game' / 'walk_atlas.png').convert('RGBA')
+    rows = {}
+    for fr in wm['frames']: rows[fr['direction']] = fr['atlas_rect'][1] // 96
+    walk.save(chd / 'ch-hero-walk.png', optimize=True)
+    south0 = np.array(walk.crop((0, rows['south'] * 96, 64, rows['south'] * 96 + 96)))
+    HIP = 61; sit_frames = []
+    for cut in (0, 4, 8, 11):
+        f = np.zeros_like(south0)
+        f[HIP + cut:] = south0[HIP + cut:]                       # shins and feet stay on the ground
+        f[cut:HIP + cut] = np.where(south0[:HIP, ..., 3:4] > 0, south0[:HIP], f[cut:HIP + cut])  # upper body lowered
+        sit_frames.append(f)
+    sit = Image.fromarray(np.concatenate(sit_frames, 1).astype(np.uint8), 'RGBA'); sit.save(chd / 'ch-hero-sit.png', optimize=True)
+    hero4 = {'walk': 'assets/production/characters/ch-hero-walk.png', 'sit': 'assets/production/characters/ch-hero-sit.png',
+             'fw': 64, 'fh': 96, 'ax': wm['variants']['game']['pivot'][0], 'ay': wm['variants']['game']['pivot'][1], 'rows': rows,
+             'frames': wm['frames_per_direction'], 'sitFrames': 4, 'source': 'frequencia-zero-protagonista-walk-v2.zip sha256 ' + wm['source_sha256'][:12]}
     crd = PROD / 'creatures'; crd.mkdir(parents=True, exist_ok=True)
     REG['cr-small-0']['im'].save(crd / 'echo.png'); REG['orb']['im'].save(crd / 'pulse.png')
     for key, fn in (('hero', 'hero.png'), ('m-guarda', 'guard.png')):
@@ -350,7 +368,7 @@ def export():
             'sprites': [[table[n]['atlas'], *table[n]['rect'], *REG[n]['anchor']] for n in names],
             'place': place, 'night': night, 'blocked': blocked, 'lights': lights,
             'lake': [[round(a), round(b)] for a, b in (iso(10.5, 8.5), iso(18.5, 8.5), iso(18.5, 18.5), iso(10.5, 18.5))],
-            'chars': chmeta, 'portraits': {'file': 'assets/production/ui/portraits.png', 'w': PW, 'h': PH, 'keys': [k for k, _ in ports]},
+            'chars': chmeta, 'hero4': hero4, 'portraits': {'file': 'assets/production/ui/portraits.png', 'w': PW, 'h': PH, 'keys': [k for k, _ in ports]},
             'icons': {'file': 'assets/production/ui/icons.png', 'size': IW, 'keys': icon_names}, 'logo': 'assets/production/ui/logo.png',
             'rooms': {k: {kk: vv for kk, vv in v.items() if kk != 'hotspots'} for k, v in room_meta.items()},
             'creatures': {k: idx[k] for k in names if k.startswith('cr-')}}
@@ -364,6 +382,8 @@ def export():
                                    'animations': {a: n for a, n in CC.ANIMS}, 'state': 'PRODUCTION'} for k, v in chmeta.items()},
                 'collision': {'units': 'grid cells (3 m); feet plane', 'hero_radius': .22, 'npc_radius': .22, 'shapes': cols,
                               'rules': 'buildings: ground footprint; trees/rocks: trunk circle; props: base circle; canopies and roofs never collide'},
+                'hero_walk_v2': {**hero4, 'state': 'PRODUCTION', 'note': 'walk: 4 drawn views x 8 frames (walk-v2); run/sneak reuse the walk cycle at other speeds; sit: derived from walk-v2 south frame by thigh foreshortening (rows 61-72), 4 frames'},
+                'rejected_packs': {'frequencia-zero-npcs-coletivo-review.zip': 'legs missing or detached from the body in most frames (dark trousers keyed out as background); not promoted'},
                 'interiors': room_meta, 'atlases': files, 'layout': {'placements': len(place), 'blocked': blocked}}
     (man / 'production.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding='utf-8')
     html = (ROOT / 'index.html').read_text(encoding='utf-8')

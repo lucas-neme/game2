@@ -290,11 +290,13 @@ def poses(anim, n):
             out.append(dict(feet=[(-1, 0), (1, 0)], arms=[C(), (0, 0, 'fwd') if i >= 2 else C(1, -1)], glow=i in (2, 3), lean=1 if i in (2, 3) else 0))
         elif anim == 'hurt':
             out.append(dict(shift=[-1, -2, -1][i], feet=[(0, 0), (0, 0)], arms=[C(0, -1), C(0, -1)], flash=i == 1, head_dy=1 if i == 1 else 0))
+        elif anim == 'sit':  # stand -> half -> seated (body lowers onto the seat, shins stay)
+            out.append(dict(crouch=[0, 2, 4][i], feet=[(0, 0), (0, 0)], arms=[C(0, 0), C(0, 0)]))
         elif anim == 'react':
             out.append(dict(bob=[-1, -2, -2, 0][i], feet=[(0, [1, 2, 2, 0][i]), (0, [1, 2, 2, 0][i])], arms=[(0, 0, 'up'), (0, 0, 'up')] if i in (1, 2) else [C(), C()], mark=i in (1, 2, 3)))
     return out
 
-ANIMS = [('idle', 4), ('walk', 8), ('run', 8), ('sneak', 8), ('interact', 4), ('talk', 4), ('defend', 2), ('dodge', 6),
+ANIMS = [('sit', 3), ('idle', 4), ('walk', 8), ('run', 8), ('sneak', 8), ('interact', 4), ('talk', 4), ('defend', 2), ('dodge', 6),
          ('attack', 6), ('hurt', 3), ('use', 4), ('react', 4)]
 
 def sheet(key):
