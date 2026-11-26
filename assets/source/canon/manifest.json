@@ -1,0 +1,2560 @@
+{
+  "canonical_reference": "referencia-canonica.png",
+  "source_dimensions": [
+    1536,
+    1024
+  ],
+  "limitations": "Recortes da imagem original, não spritesheets homologadas. Fundo aproximado; frames pequenos podem ter artefatos, direções e animações não verificadas.",
+  "assets": [
+    {
+      "path": "personagens/protagonista/retrato.png",
+      "source_box": [
+        18,
+        44,
+        149,
+        153
+      ],
+      "size": [
+        131,
+        109
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/folha_original.png",
+      "source_box": [
+        20,
+        185,
+        147,
+        298
+      ],
+      "size": [
+        127,
+        113
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r1_c1.png",
+      "source_box": [
+        20,
+        186,
+        45,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r1_c2.png",
+      "source_box": [
+        45,
+        186,
+        71,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r1_c3.png",
+      "source_box": [
+        71,
+        186,
+        96,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r1_c4.png",
+      "source_box": [
+        96,
+        186,
+        122,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r1_c5.png",
+      "source_box": [
+        122,
+        186,
+        147,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r2_c1.png",
+      "source_box": [
+        20,
+        224,
+        45,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r2_c2.png",
+      "source_box": [
+        45,
+        224,
+        71,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r2_c3.png",
+      "source_box": [
+        71,
+        224,
+        96,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r2_c4.png",
+      "source_box": [
+        96,
+        224,
+        122,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r2_c5.png",
+      "source_box": [
+        122,
+        224,
+        147,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r3_c1.png",
+      "source_box": [
+        20,
+        261,
+        45,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r3_c2.png",
+      "source_box": [
+        45,
+        261,
+        71,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r3_c3.png",
+      "source_box": [
+        71,
+        261,
+        96,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r3_c4.png",
+      "source_box": [
+        96,
+        261,
+        122,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/protagonista/recortes/r3_c5.png",
+      "source_box": [
+        122,
+        261,
+        147,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/retrato.png",
+      "source_box": [
+        168,
+        44,
+        301,
+        153
+      ],
+      "size": [
+        133,
+        109
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/folha_original.png",
+      "source_box": [
+        170,
+        185,
+        299,
+        298
+      ],
+      "size": [
+        129,
+        113
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r1_c1.png",
+      "source_box": [
+        170,
+        186,
+        196,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r1_c2.png",
+      "source_box": [
+        196,
+        186,
+        222,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r1_c3.png",
+      "source_box": [
+        222,
+        186,
+        247,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r1_c4.png",
+      "source_box": [
+        247,
+        186,
+        273,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r1_c5.png",
+      "source_box": [
+        273,
+        186,
+        299,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r2_c1.png",
+      "source_box": [
+        170,
+        224,
+        196,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r2_c2.png",
+      "source_box": [
+        196,
+        224,
+        222,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r2_c3.png",
+      "source_box": [
+        222,
+        224,
+        247,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r2_c4.png",
+      "source_box": [
+        247,
+        224,
+        273,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r2_c5.png",
+      "source_box": [
+        273,
+        224,
+        299,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r3_c1.png",
+      "source_box": [
+        170,
+        261,
+        196,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r3_c2.png",
+      "source_box": [
+        196,
+        261,
+        222,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r3_c3.png",
+      "source_box": [
+        222,
+        261,
+        247,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r3_c4.png",
+      "source_box": [
+        247,
+        261,
+        273,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/lia/recortes/r3_c5.png",
+      "source_box": [
+        273,
+        261,
+        299,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/retrato.png",
+      "source_box": [
+        320,
+        44,
+        452,
+        153
+      ],
+      "size": [
+        132,
+        109
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/folha_original.png",
+      "source_box": [
+        322,
+        185,
+        450,
+        298
+      ],
+      "size": [
+        128,
+        113
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r1_c1.png",
+      "source_box": [
+        322,
+        186,
+        348,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r1_c2.png",
+      "source_box": [
+        348,
+        186,
+        373,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r1_c3.png",
+      "source_box": [
+        373,
+        186,
+        399,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r1_c4.png",
+      "source_box": [
+        399,
+        186,
+        424,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r1_c5.png",
+      "source_box": [
+        424,
+        186,
+        450,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r2_c1.png",
+      "source_box": [
+        322,
+        224,
+        348,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r2_c2.png",
+      "source_box": [
+        348,
+        224,
+        373,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r2_c3.png",
+      "source_box": [
+        373,
+        224,
+        399,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r2_c4.png",
+      "source_box": [
+        399,
+        224,
+        424,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r2_c5.png",
+      "source_box": [
+        424,
+        224,
+        450,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r3_c1.png",
+      "source_box": [
+        322,
+        261,
+        348,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r3_c2.png",
+      "source_box": [
+        348,
+        261,
+        373,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r3_c3.png",
+      "source_box": [
+        373,
+        261,
+        399,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r3_c4.png",
+      "source_box": [
+        399,
+        261,
+        424,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/raul/recortes/r3_c5.png",
+      "source_box": [
+        424,
+        261,
+        450,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/retrato.png",
+      "source_box": [
+        470,
+        44,
+        601,
+        153
+      ],
+      "size": [
+        131,
+        109
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/folha_original.png",
+      "source_box": [
+        472,
+        185,
+        599,
+        298
+      ],
+      "size": [
+        127,
+        113
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r1_c1.png",
+      "source_box": [
+        472,
+        186,
+        497,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r1_c2.png",
+      "source_box": [
+        497,
+        186,
+        523,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r1_c3.png",
+      "source_box": [
+        523,
+        186,
+        548,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r1_c4.png",
+      "source_box": [
+        548,
+        186,
+        574,
+        223
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r1_c5.png",
+      "source_box": [
+        574,
+        186,
+        599,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r2_c1.png",
+      "source_box": [
+        472,
+        224,
+        497,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r2_c2.png",
+      "source_box": [
+        497,
+        224,
+        523,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r2_c3.png",
+      "source_box": [
+        523,
+        224,
+        548,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r2_c4.png",
+      "source_box": [
+        548,
+        224,
+        574,
+        260
+      ],
+      "size": [
+        26,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r2_c5.png",
+      "source_box": [
+        574,
+        224,
+        599,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r3_c1.png",
+      "source_box": [
+        472,
+        261,
+        497,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r3_c2.png",
+      "source_box": [
+        497,
+        261,
+        523,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r3_c3.png",
+      "source_box": [
+        523,
+        261,
+        548,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r3_c4.png",
+      "source_box": [
+        548,
+        261,
+        574,
+        298
+      ],
+      "size": [
+        26,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/nora/recortes/r3_c5.png",
+      "source_box": [
+        574,
+        261,
+        599,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/retrato.png",
+      "source_box": [
+        620,
+        44,
+        741,
+        153
+      ],
+      "size": [
+        121,
+        109
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/folha_original.png",
+      "source_box": [
+        622,
+        185,
+        739,
+        298
+      ],
+      "size": [
+        117,
+        113
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r1_c1.png",
+      "source_box": [
+        622,
+        186,
+        645,
+        223
+      ],
+      "size": [
+        23,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r1_c2.png",
+      "source_box": [
+        645,
+        186,
+        669,
+        223
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r1_c3.png",
+      "source_box": [
+        669,
+        186,
+        692,
+        223
+      ],
+      "size": [
+        23,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r1_c4.png",
+      "source_box": [
+        692,
+        186,
+        716,
+        223
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r1_c5.png",
+      "source_box": [
+        716,
+        186,
+        739,
+        223
+      ],
+      "size": [
+        23,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r2_c1.png",
+      "source_box": [
+        622,
+        224,
+        645,
+        260
+      ],
+      "size": [
+        23,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r2_c2.png",
+      "source_box": [
+        645,
+        224,
+        669,
+        260
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r2_c3.png",
+      "source_box": [
+        669,
+        224,
+        692,
+        260
+      ],
+      "size": [
+        23,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r2_c4.png",
+      "source_box": [
+        692,
+        224,
+        716,
+        260
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r2_c5.png",
+      "source_box": [
+        716,
+        224,
+        739,
+        260
+      ],
+      "size": [
+        23,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r3_c1.png",
+      "source_box": [
+        622,
+        261,
+        645,
+        298
+      ],
+      "size": [
+        23,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r3_c2.png",
+      "source_box": [
+        645,
+        261,
+        669,
+        298
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r3_c3.png",
+      "source_box": [
+        669,
+        261,
+        692,
+        298
+      ],
+      "size": [
+        23,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r3_c4.png",
+      "source_box": [
+        692,
+        261,
+        716,
+        298
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/helena/recortes/r3_c5.png",
+      "source_box": [
+        716,
+        261,
+        739,
+        298
+      ],
+      "size": [
+        23,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/retrato.png",
+      "source_box": [
+        758,
+        44,
+        884,
+        153
+      ],
+      "size": [
+        126,
+        109
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/folha_original.png",
+      "source_box": [
+        760,
+        185,
+        882,
+        298
+      ],
+      "size": [
+        122,
+        113
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r1_c1.png",
+      "source_box": [
+        760,
+        186,
+        784,
+        223
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r1_c2.png",
+      "source_box": [
+        784,
+        186,
+        809,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r1_c3.png",
+      "source_box": [
+        809,
+        186,
+        833,
+        223
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r1_c4.png",
+      "source_box": [
+        833,
+        186,
+        858,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r1_c5.png",
+      "source_box": [
+        858,
+        186,
+        882,
+        223
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r2_c1.png",
+      "source_box": [
+        760,
+        224,
+        784,
+        260
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r2_c2.png",
+      "source_box": [
+        784,
+        224,
+        809,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r2_c3.png",
+      "source_box": [
+        809,
+        224,
+        833,
+        260
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r2_c4.png",
+      "source_box": [
+        833,
+        224,
+        858,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r2_c5.png",
+      "source_box": [
+        858,
+        224,
+        882,
+        260
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r3_c1.png",
+      "source_box": [
+        760,
+        261,
+        784,
+        298
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r3_c2.png",
+      "source_box": [
+        784,
+        261,
+        809,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r3_c3.png",
+      "source_box": [
+        809,
+        261,
+        833,
+        298
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r3_c4.png",
+      "source_box": [
+        833,
+        261,
+        858,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/bento/recortes/r3_c5.png",
+      "source_box": [
+        858,
+        261,
+        882,
+        298
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/retrato.png",
+      "source_box": [
+        902,
+        44,
+        1030,
+        153
+      ],
+      "size": [
+        128,
+        109
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/folha_original.png",
+      "source_box": [
+        904,
+        185,
+        1028,
+        298
+      ],
+      "size": [
+        124,
+        113
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r1_c1.png",
+      "source_box": [
+        904,
+        186,
+        929,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r1_c2.png",
+      "source_box": [
+        929,
+        186,
+        954,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r1_c3.png",
+      "source_box": [
+        954,
+        186,
+        978,
+        223
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r1_c4.png",
+      "source_box": [
+        978,
+        186,
+        1003,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r1_c5.png",
+      "source_box": [
+        1003,
+        186,
+        1028,
+        223
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r2_c1.png",
+      "source_box": [
+        904,
+        224,
+        929,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r2_c2.png",
+      "source_box": [
+        929,
+        224,
+        954,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r2_c3.png",
+      "source_box": [
+        954,
+        224,
+        978,
+        260
+      ],
+      "size": [
+        24,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r2_c4.png",
+      "source_box": [
+        978,
+        224,
+        1003,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r2_c5.png",
+      "source_box": [
+        1003,
+        224,
+        1028,
+        260
+      ],
+      "size": [
+        25,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r3_c1.png",
+      "source_box": [
+        904,
+        261,
+        929,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r3_c2.png",
+      "source_box": [
+        929,
+        261,
+        954,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r3_c3.png",
+      "source_box": [
+        954,
+        261,
+        978,
+        298
+      ],
+      "size": [
+        24,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r3_c4.png",
+      "source_box": [
+        978,
+        261,
+        1003,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "personagens/celina/recortes/r3_c5.png",
+      "source_box": [
+        1003,
+        261,
+        1028,
+        298
+      ],
+      "size": [
+        25,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/medico/retrato.png",
+      "source_box": [
+        1066,
+        63,
+        1133,
+        127
+      ],
+      "size": [
+        67,
+        64
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/medico/folha_original.png",
+      "source_box": [
+        1066,
+        140,
+        1133,
+        292
+      ],
+      "size": [
+        67,
+        152
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/guarda/retrato.png",
+      "source_box": [
+        1148,
+        63,
+        1208,
+        127
+      ],
+      "size": [
+        60,
+        64
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/guarda/folha_original.png",
+      "source_box": [
+        1148,
+        140,
+        1208,
+        292
+      ],
+      "size": [
+        60,
+        152
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/comerciante/retrato.png",
+      "source_box": [
+        1222,
+        63,
+        1292,
+        127
+      ],
+      "size": [
+        70,
+        64
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/comerciante/folha_original.png",
+      "source_box": [
+        1222,
+        140,
+        1292,
+        292
+      ],
+      "size": [
+        70,
+        152
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/ferroviario/retrato.png",
+      "source_box": [
+        1305,
+        63,
+        1370,
+        127
+      ],
+      "size": [
+        65,
+        64
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/ferroviario/folha_original.png",
+      "source_box": [
+        1305,
+        140,
+        1370,
+        292
+      ],
+      "size": [
+        65,
+        152
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/professor/retrato.png",
+      "source_box": [
+        1384,
+        63,
+        1448,
+        127
+      ],
+      "size": [
+        64,
+        64
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/professor/folha_original.png",
+      "source_box": [
+        1384,
+        140,
+        1448,
+        292
+      ],
+      "size": [
+        64,
+        152
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/crianca/retrato.png",
+      "source_box": [
+        1463,
+        63,
+        1525,
+        127
+      ],
+      "size": [
+        62,
+        64
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "moradores/crianca/folha_original.png",
+      "source_box": [
+        1463,
+        140,
+        1525,
+        292
+      ],
+      "size": [
+        62,
+        152
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "construcoes/casa_tio.png",
+      "source_box": [
+        14,
+        338,
+        275,
+        497
+      ],
+      "size": [
+        261,
+        159
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "construcoes/radio.png",
+      "source_box": [
+        279,
+        340,
+        532,
+        497
+      ],
+      "size": [
+        253,
+        157
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "construcoes/clinica.png",
+      "source_box": [
+        540,
+        337,
+        747,
+        497
+      ],
+      "size": [
+        207,
+        160
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "construcoes/posto.png",
+      "source_box": [
+        758,
+        328,
+        975,
+        497
+      ],
+      "size": [
+        217,
+        169
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "construcoes/estacao.png",
+      "source_box": [
+        977,
+        329,
+        1278,
+        500
+      ],
+      "size": [
+        301,
+        171
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "construcoes/arquivo.png",
+      "source_box": [
+        1280,
+        338,
+        1524,
+        497
+      ],
+      "size": [
+        244,
+        159
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "interiores/escritorio.png",
+      "source_box": [
+        13,
+        756,
+        233,
+        865
+      ],
+      "size": [
+        220,
+        109
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "interiores/clinica.png",
+      "source_box": [
+        246,
+        756,
+        465,
+        865
+      ],
+      "size": [
+        219,
+        109
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "interiores/radio.png",
+      "source_box": [
+        478,
+        756,
+        692,
+        865
+      ],
+      "size": [
+        214,
+        109
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "interiores/quarto.png",
+      "source_box": [
+        705,
+        756,
+        896,
+        865
+      ],
+      "size": [
+        191,
+        109
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/terrenos.png",
+      "source_box": [
+        12,
+        568,
+        306,
+        710
+      ],
+      "size": [
+        294,
+        142
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/vegetacao.png",
+      "source_box": [
+        321,
+        566,
+        598,
+        711
+      ],
+      "size": [
+        277,
+        145
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/mobiliario.png",
+      "source_box": [
+        610,
+        565,
+        952,
+        710
+      ],
+      "size": [
+        342,
+        145
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/sinalizacao.png",
+      "source_box": [
+        969,
+        566,
+        1166,
+        710
+      ],
+      "size": [
+        197,
+        144
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/efeitos_ambiente.png",
+      "source_box": [
+        1183,
+        566,
+        1524,
+        710
+      ],
+      "size": [
+        341,
+        144
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/criaturas.png",
+      "source_box": [
+        915,
+        752,
+        1524,
+        865
+      ],
+      "size": [
+        609,
+        113
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/inventario.png",
+      "source_box": [
+        13,
+        918,
+        738,
+        980
+      ],
+      "size": [
+        725,
+        62
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/hud.png",
+      "source_box": [
+        755,
+        918,
+        970,
+        980
+      ],
+      "size": [
+        215,
+        62
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "folhas/clima.png",
+      "source_box": [
+        990,
+        918,
+        1287,
+        980
+      ],
+      "size": [
+        297,
+        62
+      ],
+      "alpha_method": "original",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/arvore_verde.png",
+      "source_box": [
+        322,
+        565,
+        395,
+        664
+      ],
+      "size": [
+        73,
+        99
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/arvore_outono.png",
+      "source_box": [
+        397,
+        565,
+        468,
+        664
+      ],
+      "size": [
+        71,
+        99
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/arvore_rosa.png",
+      "source_box": [
+        473,
+        566,
+        538,
+        665
+      ],
+      "size": [
+        65,
+        99
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/pinheiro.png",
+      "source_box": [
+        540,
+        567,
+        592,
+        665
+      ],
+      "size": [
+        52,
+        98
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/arbusto.png",
+      "source_box": [
+        322,
+        666,
+        371,
+        710
+      ],
+      "size": [
+        49,
+        44
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/flores.png",
+      "source_box": [
+        373,
+        666,
+        417,
+        710
+      ],
+      "size": [
+        44,
+        44
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/rocha.png",
+      "source_box": [
+        420,
+        666,
+        460,
+        710
+      ],
+      "size": [
+        40,
+        44
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/galhos.png",
+      "source_box": [
+        465,
+        666,
+        503,
+        710
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/tronco.png",
+      "source_box": [
+        545,
+        666,
+        598,
+        710
+      ],
+      "size": [
+        53,
+        44
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/poste_luz.png",
+      "source_box": [
+        614,
+        566,
+        651,
+        630
+      ],
+      "size": [
+        37,
+        64
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/poste_duplo.png",
+      "source_box": [
+        654,
+        565,
+        682,
+        630
+      ],
+      "size": [
+        28,
+        65
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/banco.png",
+      "source_box": [
+        721,
+        571,
+        784,
+        626
+      ],
+      "size": [
+        63,
+        55
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/lixeira.png",
+      "source_box": [
+        790,
+        570,
+        828,
+        623
+      ],
+      "size": [
+        38,
+        53
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/barril.png",
+      "source_box": [
+        831,
+        568,
+        865,
+        624
+      ],
+      "size": [
+        34,
+        56
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/bicicleta.png",
+      "source_box": [
+        730,
+        657,
+        791,
+        708
+      ],
+      "size": [
+        61,
+        51
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/hidrante.png",
+      "source_box": [
+        808,
+        658,
+        849,
+        708
+      ],
+      "size": [
+        41,
+        50
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/placa_estacao.png",
+      "source_box": [
+        972,
+        567,
+        1074,
+        603
+      ],
+      "size": [
+        102,
+        36
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/placa_clinica.png",
+      "source_box": [
+        972,
+        603,
+        1074,
+        638
+      ],
+      "size": [
+        102,
+        35
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/placa_radio.png",
+      "source_box": [
+        972,
+        638,
+        1074,
+        673
+      ],
+      "size": [
+        102,
+        35
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    },
+    {
+      "path": "objetos/placa_centro.png",
+      "source_box": [
+        972,
+        673,
+        1074,
+        710
+      ],
+      "size": [
+        102,
+        37
+      ],
+      "alpha_method": "edge-connected approximate",
+      "status": "reference crop; review before production"
+    }
+  ]
+}

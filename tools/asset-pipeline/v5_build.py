@@ -68,7 +68,7 @@ def build_npc(n):
     return sheet, {'fw': FW, 'fh': FH, 'ax': AX, 'ay': AY, 'ref_h': float(ref), 'face': FACES[n], 'anims': meta}, dropped
 
 def hero_height():
-    WV2 = Path(r'D:/Projetos/game2-insumos/frequencia-zero-protagonista-walk-v2/game/south/walk_01.png')
+    WV2 = ROOT / 'assets' / 'source' / 'protagonista-walk-v2' / 'game' / 'south' / 'walk_01.png'
     m = np.array(Image.open(WV2))[..., 3] > 0; ys = np.nonzero(m.any(1))[0]; return int(ys.max() - ys.min() + 1)
 
 def main():

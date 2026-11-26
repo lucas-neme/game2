@@ -317,7 +317,7 @@ def export():
         fn = f'assets/production/interiors/{k}.png'; im.save(ROOT / fn, optimize=True); room_meta[k] = {'file': fn, 'w': im.width, 'h': im.height, 'source': src, 'state': st, 'hotspots': pins}
     EX.fog_texture().save(fx / 'fog.png', optimize=True)
     # protagonist walk V2 (4 real views, 8 frames, 64x96, pivot 32,90) + seated strip derived from its south frame
-    WV2 = Path(r'D:/Projetos/game2-insumos/frequencia-zero-protagonista-walk-v2')
+    WV2 = ROOT / 'assets' / 'source' / 'protagonista-walk-v2'
     wm = json.loads((WV2 / 'manifest.json').read_text(encoding='utf-8'))
     walk = Image.open(WV2 / 'game' / 'walk_atlas.png').convert('RGBA')
     rows = {}

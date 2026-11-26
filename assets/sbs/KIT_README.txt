@@ -1,1 +1,0 @@
-Frequência Zero — 272 complementos procedurais + 8 construções derivadas do SBS. PNG RGBA, atlas por categoria, manifesto de âncoras e dimensões. Rascunho artístico, não homologado no motor. Copie assets/sbs para o repositório.

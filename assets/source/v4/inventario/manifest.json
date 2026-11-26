@@ -1,0 +1,807 @@
+{
+  "source": "a_highly_detailed_pixel_art_game_asset_sheet_for.png",
+  "source_sha256": "b14f5d94af0b88c0da48dccf2d08a0d88e6465532317736730128bda0ef592ae",
+  "status": "REVIEW",
+  "note": "Recortes da prancha aprovada. Células de animação aproximadas, podem conter vizinhos, fundos ou efeitos. Alpha é candidato automático, não homologado. Painéis de enigmas são arte estática, não mecanismos funcionais.",
+  "assets": [
+    {
+      "id": "revolver",
+      "file": "revolver.png",
+      "source_box": [
+        12,
+        575,
+        69,
+        638
+      ],
+      "size": [
+        57,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/revolver.png"
+    },
+    {
+      "id": "pistola",
+      "file": "pistola.png",
+      "source_box": [
+        69,
+        575,
+        123,
+        638
+      ],
+      "size": [
+        54,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/pistola.png"
+    },
+    {
+      "id": "espingarda",
+      "file": "espingarda.png",
+      "source_box": [
+        123,
+        575,
+        174,
+        638
+      ],
+      "size": [
+        51,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/espingarda.png"
+    },
+    {
+      "id": "rifle",
+      "file": "rifle.png",
+      "source_box": [
+        174,
+        575,
+        229,
+        638
+      ],
+      "size": [
+        55,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/rifle.png"
+    },
+    {
+      "id": "arco_recurvo",
+      "file": "arco_recurvo.png",
+      "source_box": [
+        229,
+        575,
+        289,
+        638
+      ],
+      "size": [
+        60,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/arco_recurvo.png"
+    },
+    {
+      "id": "besta",
+      "file": "besta.png",
+      "source_box": [
+        289,
+        575,
+        350,
+        638
+      ],
+      "size": [
+        61,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/besta.png"
+    },
+    {
+      "id": "faca",
+      "file": "faca.png",
+      "source_box": [
+        350,
+        575,
+        400,
+        638
+      ],
+      "size": [
+        50,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/faca.png"
+    },
+    {
+      "id": "bastao",
+      "file": "bastao.png",
+      "source_box": [
+        400,
+        575,
+        453,
+        638
+      ],
+      "size": [
+        53,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/bastao.png"
+    },
+    {
+      "id": "pe_de_cabra",
+      "file": "pe_de_cabra.png",
+      "source_box": [
+        453,
+        575,
+        501,
+        638
+      ],
+      "size": [
+        48,
+        63
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/pe_de_cabra.png"
+    },
+    {
+      "id": "lanterna",
+      "file": "lanterna.png",
+      "source_box": [
+        12,
+        679,
+        72,
+        738
+      ],
+      "size": [
+        60,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/lanterna.png"
+    },
+    {
+      "id": "radio",
+      "file": "radio.png",
+      "source_box": [
+        72,
+        679,
+        132,
+        738
+      ],
+      "size": [
+        60,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/radio.png"
+    },
+    {
+      "id": "detector_emf",
+      "file": "detector_emf.png",
+      "source_box": [
+        132,
+        679,
+        193,
+        738
+      ],
+      "size": [
+        61,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/detector_emf.png"
+    },
+    {
+      "id": "camera",
+      "file": "camera.png",
+      "source_box": [
+        193,
+        679,
+        255,
+        738
+      ],
+      "size": [
+        62,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/camera.png"
+    },
+    {
+      "id": "gravador",
+      "file": "gravador.png",
+      "source_box": [
+        255,
+        679,
+        316,
+        738
+      ],
+      "size": [
+        61,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/gravador.png"
+    },
+    {
+      "id": "binoculo",
+      "file": "binoculo.png",
+      "source_box": [
+        316,
+        679,
+        377,
+        738
+      ],
+      "size": [
+        61,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/binoculo.png"
+    },
+    {
+      "id": "kit_medico",
+      "file": "kit_medico.png",
+      "source_box": [
+        377,
+        679,
+        440,
+        738
+      ],
+      "size": [
+        63,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/kit_medico.png"
+    },
+    {
+      "id": "mascara_filtro",
+      "file": "mascara_filtro.png",
+      "source_box": [
+        440,
+        679,
+        501,
+        738
+      ],
+      "size": [
+        61,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/mascara_filtro.png"
+    },
+    {
+      "id": "vida",
+      "file": "vida.png",
+      "source_box": [
+        524,
+        580,
+        588,
+        638
+      ],
+      "size": [
+        64,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/vida.png"
+    },
+    {
+      "id": "estamina",
+      "file": "estamina.png",
+      "source_box": [
+        588,
+        580,
+        649,
+        638
+      ],
+      "size": [
+        61,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/estamina.png"
+    },
+    {
+      "id": "antidoto",
+      "file": "antidoto.png",
+      "source_box": [
+        649,
+        580,
+        710,
+        638
+      ],
+      "size": [
+        61,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/antidoto.png"
+    },
+    {
+      "id": "soro",
+      "file": "soro.png",
+      "source_box": [
+        710,
+        580,
+        771,
+        638
+      ],
+      "size": [
+        61,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/soro.png"
+    },
+    {
+      "id": "pilhas",
+      "file": "pilhas.png",
+      "source_box": [
+        771,
+        580,
+        819,
+        638
+      ],
+      "size": [
+        48,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/pilhas.png"
+    },
+    {
+      "id": "fita_cassete",
+      "file": "fita_cassete.png",
+      "source_box": [
+        819,
+        580,
+        881,
+        638
+      ],
+      "size": [
+        62,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/fita_cassete.png"
+    },
+    {
+      "id": "foto",
+      "file": "foto.png",
+      "source_box": [
+        881,
+        580,
+        938,
+        638
+      ],
+      "size": [
+        57,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/foto.png"
+    },
+    {
+      "id": "documento",
+      "file": "documento.png",
+      "source_box": [
+        524,
+        680,
+        588,
+        739
+      ],
+      "size": [
+        64,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/documento.png"
+    },
+    {
+      "id": "diario",
+      "file": "diario.png",
+      "source_box": [
+        588,
+        680,
+        649,
+        739
+      ],
+      "size": [
+        61,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/diario.png"
+    },
+    {
+      "id": "mapa",
+      "file": "mapa.png",
+      "source_box": [
+        649,
+        680,
+        710,
+        739
+      ],
+      "size": [
+        61,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/mapa.png"
+    },
+    {
+      "id": "chave_colecao",
+      "file": "chave_colecao.png",
+      "source_box": [
+        710,
+        680,
+        771,
+        739
+      ],
+      "size": [
+        61,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/chave_colecao.png"
+    },
+    {
+      "id": "peca",
+      "file": "peca.png",
+      "source_box": [
+        771,
+        680,
+        829,
+        739
+      ],
+      "size": [
+        58,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/peca.png"
+    },
+    {
+      "id": "engrenagem",
+      "file": "engrenagem.png",
+      "source_box": [
+        829,
+        680,
+        882,
+        739
+      ],
+      "size": [
+        53,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/engrenagem.png"
+    },
+    {
+      "id": "cristal_anomalo",
+      "file": "cristal_anomalo.png",
+      "source_box": [
+        882,
+        680,
+        938,
+        739
+      ],
+      "size": [
+        56,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/cristal_anomalo.png"
+    },
+    {
+      "id": "chave_simples",
+      "file": "chave_simples.png",
+      "source_box": [
+        958,
+        580,
+        1025,
+        638
+      ],
+      "size": [
+        67,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/chave_simples.png"
+    },
+    {
+      "id": "chave_enferrujada",
+      "file": "chave_enferrujada.png",
+      "source_box": [
+        1025,
+        580,
+        1092,
+        638
+      ],
+      "size": [
+        67,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/chave_enferrujada.png"
+    },
+    {
+      "id": "chave_mestra",
+      "file": "chave_mestra.png",
+      "source_box": [
+        1092,
+        580,
+        1161,
+        638
+      ],
+      "size": [
+        69,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/chave_mestra.png"
+    },
+    {
+      "id": "chave_eletronica",
+      "file": "chave_eletronica.png",
+      "source_box": [
+        1161,
+        580,
+        1226,
+        638
+      ],
+      "size": [
+        65,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/chave_eletronica.png"
+    },
+    {
+      "id": "cartao_acesso",
+      "file": "cartao_acesso.png",
+      "source_box": [
+        958,
+        680,
+        1025,
+        739
+      ],
+      "size": [
+        67,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/cartao_acesso.png"
+    },
+    {
+      "id": "fusivel",
+      "file": "fusivel.png",
+      "source_box": [
+        1025,
+        680,
+        1092,
+        739
+      ],
+      "size": [
+        67,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/fusivel.png"
+    },
+    {
+      "id": "valvula",
+      "file": "valvula.png",
+      "source_box": [
+        1092,
+        680,
+        1161,
+        739
+      ],
+      "size": [
+        69,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/valvula.png"
+    },
+    {
+      "id": "disco_dados",
+      "file": "disco_dados.png",
+      "source_box": [
+        1161,
+        680,
+        1226,
+        739
+      ],
+      "size": [
+        65,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/disco_dados.png"
+    },
+    {
+      "id": "placa_simbolica",
+      "file": "placa_simbolica.png",
+      "source_box": [
+        1242,
+        580,
+        1315,
+        638
+      ],
+      "size": [
+        73,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/placa_simbolica.png"
+    },
+    {
+      "id": "fragmento_mapa",
+      "file": "fragmento_mapa.png",
+      "source_box": [
+        1315,
+        580,
+        1386,
+        638
+      ],
+      "size": [
+        71,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/fragmento_mapa.png"
+    },
+    {
+      "id": "peca_engrenagem",
+      "file": "peca_engrenagem.png",
+      "source_box": [
+        1386,
+        580,
+        1457,
+        638
+      ],
+      "size": [
+        71,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/peca_engrenagem.png"
+    },
+    {
+      "id": "runa",
+      "file": "runa.png",
+      "source_box": [
+        1457,
+        580,
+        1526,
+        638
+      ],
+      "size": [
+        69,
+        58
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/runa.png"
+    },
+    {
+      "id": "disco_alinhamento",
+      "file": "disco_alinhamento.png",
+      "source_box": [
+        1242,
+        680,
+        1315,
+        739
+      ],
+      "size": [
+        73,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/disco_alinhamento.png"
+    },
+    {
+      "id": "lente_optica",
+      "file": "lente_optica.png",
+      "source_box": [
+        1315,
+        680,
+        1386,
+        739
+      ],
+      "size": [
+        71,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/lente_optica.png"
+    },
+    {
+      "id": "cristal_prismatico",
+      "file": "cristal_prismatico.png",
+      "source_box": [
+        1386,
+        680,
+        1457,
+        739
+      ],
+      "size": [
+        71,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/cristal_prismatico.png"
+    },
+    {
+      "id": "matriz_logica",
+      "file": "matriz_logica.png",
+      "source_box": [
+        1457,
+        680,
+        1526,
+        739
+      ],
+      "size": [
+        69,
+        59
+      ],
+      "kind": "icone",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/matriz_logica.png"
+    }
+  ]
+}

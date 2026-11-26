@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 import canon_catalog as K
 
-V4 = Path(r'D:/Projetos/game2-insumos/v4')
+V4 = Path(__file__).resolve().parents[2] / 'assets' / 'source' / 'v4'
 
 def board_alpha(a):
     rgb = a[..., :3].astype(int); mx = rgb.max(-1); mn = rgb.min(-1)

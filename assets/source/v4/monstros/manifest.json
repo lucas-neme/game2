@@ -1,0 +1,4191 @@
+{
+  "source": "a_highly_detailed_pixel_art_game_asset_sheet_for.png",
+  "source_sha256": "b14f5d94af0b88c0da48dccf2d08a0d88e6465532317736730128bda0ef592ae",
+  "status": "REVIEW",
+  "note": "Recortes da prancha aprovada. Células de animação aproximadas, podem conter vizinhos, fundos ou efeitos. Alpha é candidato automático, não homologado. Painéis de enigmas são arte estática, não mecanismos funcionais.",
+  "assets": [
+    {
+      "id": "eco_humanoide_retrato",
+      "file": "eco_humanoide_retrato.png",
+      "source_box": [
+        10,
+        94,
+        83,
+        150
+      ],
+      "size": [
+        73,
+        56
+      ],
+      "kind": "retrato",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/eco_humanoide_retrato.png"
+    },
+    {
+      "id": "eco_humanoide_idle_faixa",
+      "file": "eco_humanoide_idle_faixa.png",
+      "source_box": [
+        207,
+        106,
+        414,
+        150
+      ],
+      "size": [
+        207,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "idle",
+      "alpha_candidate": "alpha-review/eco_humanoide_idle_faixa.png"
+    },
+    {
+      "id": "eco_humanoide_idle_01",
+      "file": "eco_humanoide_idle_01.png",
+      "source_box": [
+        207,
+        106,
+        242,
+        150
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "idle",
+      "index": 1,
+      "alpha_candidate": "alpha-review/eco_humanoide_idle_01.png"
+    },
+    {
+      "id": "eco_humanoide_idle_02",
+      "file": "eco_humanoide_idle_02.png",
+      "source_box": [
+        242,
+        106,
+        276,
+        150
+      ],
+      "size": [
+        34,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "idle",
+      "index": 2,
+      "alpha_candidate": "alpha-review/eco_humanoide_idle_02.png"
+    },
+    {
+      "id": "eco_humanoide_idle_03",
+      "file": "eco_humanoide_idle_03.png",
+      "source_box": [
+        276,
+        106,
+        310,
+        150
+      ],
+      "size": [
+        34,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "idle",
+      "index": 3,
+      "alpha_candidate": "alpha-review/eco_humanoide_idle_03.png"
+    },
+    {
+      "id": "eco_humanoide_idle_04",
+      "file": "eco_humanoide_idle_04.png",
+      "source_box": [
+        310,
+        106,
+        345,
+        150
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "idle",
+      "index": 4,
+      "alpha_candidate": "alpha-review/eco_humanoide_idle_04.png"
+    },
+    {
+      "id": "eco_humanoide_idle_05",
+      "file": "eco_humanoide_idle_05.png",
+      "source_box": [
+        345,
+        106,
+        380,
+        150
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "idle",
+      "index": 5,
+      "alpha_candidate": "alpha-review/eco_humanoide_idle_05.png"
+    },
+    {
+      "id": "eco_humanoide_idle_06",
+      "file": "eco_humanoide_idle_06.png",
+      "source_box": [
+        380,
+        106,
+        414,
+        150
+      ],
+      "size": [
+        34,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "idle",
+      "index": 6,
+      "alpha_candidate": "alpha-review/eco_humanoide_idle_06.png"
+    },
+    {
+      "id": "eco_humanoide_movimento_faixa",
+      "file": "eco_humanoide_movimento_faixa.png",
+      "source_box": [
+        425,
+        106,
+        638,
+        150
+      ],
+      "size": [
+        213,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "movimento",
+      "alpha_candidate": "alpha-review/eco_humanoide_movimento_faixa.png"
+    },
+    {
+      "id": "eco_humanoide_movimento_01",
+      "file": "eco_humanoide_movimento_01.png",
+      "source_box": [
+        425,
+        106,
+        460,
+        150
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "movimento",
+      "index": 1,
+      "alpha_candidate": "alpha-review/eco_humanoide_movimento_01.png"
+    },
+    {
+      "id": "eco_humanoide_movimento_02",
+      "file": "eco_humanoide_movimento_02.png",
+      "source_box": [
+        460,
+        106,
+        496,
+        150
+      ],
+      "size": [
+        36,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "movimento",
+      "index": 2,
+      "alpha_candidate": "alpha-review/eco_humanoide_movimento_02.png"
+    },
+    {
+      "id": "eco_humanoide_movimento_03",
+      "file": "eco_humanoide_movimento_03.png",
+      "source_box": [
+        496,
+        106,
+        532,
+        150
+      ],
+      "size": [
+        36,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "movimento",
+      "index": 3,
+      "alpha_candidate": "alpha-review/eco_humanoide_movimento_03.png"
+    },
+    {
+      "id": "eco_humanoide_movimento_04",
+      "file": "eco_humanoide_movimento_04.png",
+      "source_box": [
+        532,
+        106,
+        567,
+        150
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "movimento",
+      "index": 4,
+      "alpha_candidate": "alpha-review/eco_humanoide_movimento_04.png"
+    },
+    {
+      "id": "eco_humanoide_movimento_05",
+      "file": "eco_humanoide_movimento_05.png",
+      "source_box": [
+        567,
+        106,
+        602,
+        150
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "movimento",
+      "index": 5,
+      "alpha_candidate": "alpha-review/eco_humanoide_movimento_05.png"
+    },
+    {
+      "id": "eco_humanoide_movimento_06",
+      "file": "eco_humanoide_movimento_06.png",
+      "source_box": [
+        602,
+        106,
+        638,
+        150
+      ],
+      "size": [
+        36,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "movimento",
+      "index": 6,
+      "alpha_candidate": "alpha-review/eco_humanoide_movimento_06.png"
+    },
+    {
+      "id": "eco_humanoide_ataque_faixa",
+      "file": "eco_humanoide_ataque_faixa.png",
+      "source_box": [
+        649,
+        106,
+        877,
+        150
+      ],
+      "size": [
+        228,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "ataque",
+      "alpha_candidate": "alpha-review/eco_humanoide_ataque_faixa.png"
+    },
+    {
+      "id": "eco_humanoide_ataque_01",
+      "file": "eco_humanoide_ataque_01.png",
+      "source_box": [
+        649,
+        106,
+        687,
+        150
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "ataque",
+      "index": 1,
+      "alpha_candidate": "alpha-review/eco_humanoide_ataque_01.png"
+    },
+    {
+      "id": "eco_humanoide_ataque_02",
+      "file": "eco_humanoide_ataque_02.png",
+      "source_box": [
+        687,
+        106,
+        725,
+        150
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "ataque",
+      "index": 2,
+      "alpha_candidate": "alpha-review/eco_humanoide_ataque_02.png"
+    },
+    {
+      "id": "eco_humanoide_ataque_03",
+      "file": "eco_humanoide_ataque_03.png",
+      "source_box": [
+        725,
+        106,
+        763,
+        150
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "ataque",
+      "index": 3,
+      "alpha_candidate": "alpha-review/eco_humanoide_ataque_03.png"
+    },
+    {
+      "id": "eco_humanoide_ataque_04",
+      "file": "eco_humanoide_ataque_04.png",
+      "source_box": [
+        763,
+        106,
+        801,
+        150
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "ataque",
+      "index": 4,
+      "alpha_candidate": "alpha-review/eco_humanoide_ataque_04.png"
+    },
+    {
+      "id": "eco_humanoide_ataque_05",
+      "file": "eco_humanoide_ataque_05.png",
+      "source_box": [
+        801,
+        106,
+        839,
+        150
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "ataque",
+      "index": 5,
+      "alpha_candidate": "alpha-review/eco_humanoide_ataque_05.png"
+    },
+    {
+      "id": "eco_humanoide_ataque_06",
+      "file": "eco_humanoide_ataque_06.png",
+      "source_box": [
+        839,
+        106,
+        877,
+        150
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "ataque",
+      "index": 6,
+      "alpha_candidate": "alpha-review/eco_humanoide_ataque_06.png"
+    },
+    {
+      "id": "eco_humanoide_dano_faixa",
+      "file": "eco_humanoide_dano_faixa.png",
+      "source_box": [
+        889,
+        106,
+        1020,
+        150
+      ],
+      "size": [
+        131,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dano",
+      "alpha_candidate": "alpha-review/eco_humanoide_dano_faixa.png"
+    },
+    {
+      "id": "eco_humanoide_dano_01",
+      "file": "eco_humanoide_dano_01.png",
+      "source_box": [
+        889,
+        106,
+        922,
+        150
+      ],
+      "size": [
+        33,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dano",
+      "index": 1,
+      "alpha_candidate": "alpha-review/eco_humanoide_dano_01.png"
+    },
+    {
+      "id": "eco_humanoide_dano_02",
+      "file": "eco_humanoide_dano_02.png",
+      "source_box": [
+        922,
+        106,
+        954,
+        150
+      ],
+      "size": [
+        32,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dano",
+      "index": 2,
+      "alpha_candidate": "alpha-review/eco_humanoide_dano_02.png"
+    },
+    {
+      "id": "eco_humanoide_dano_03",
+      "file": "eco_humanoide_dano_03.png",
+      "source_box": [
+        954,
+        106,
+        987,
+        150
+      ],
+      "size": [
+        33,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dano",
+      "index": 3,
+      "alpha_candidate": "alpha-review/eco_humanoide_dano_03.png"
+    },
+    {
+      "id": "eco_humanoide_dano_04",
+      "file": "eco_humanoide_dano_04.png",
+      "source_box": [
+        987,
+        106,
+        1020,
+        150
+      ],
+      "size": [
+        33,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dano",
+      "index": 4,
+      "alpha_candidate": "alpha-review/eco_humanoide_dano_04.png"
+    },
+    {
+      "id": "eco_humanoide_dissipacao_faixa",
+      "file": "eco_humanoide_dissipacao_faixa.png",
+      "source_box": [
+        1032,
+        106,
+        1183,
+        150
+      ],
+      "size": [
+        151,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dissipacao",
+      "alpha_candidate": "alpha-review/eco_humanoide_dissipacao_faixa.png"
+    },
+    {
+      "id": "eco_humanoide_dissipacao_01",
+      "file": "eco_humanoide_dissipacao_01.png",
+      "source_box": [
+        1032,
+        106,
+        1062,
+        150
+      ],
+      "size": [
+        30,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dissipacao",
+      "index": 1,
+      "alpha_candidate": "alpha-review/eco_humanoide_dissipacao_01.png"
+    },
+    {
+      "id": "eco_humanoide_dissipacao_02",
+      "file": "eco_humanoide_dissipacao_02.png",
+      "source_box": [
+        1062,
+        106,
+        1092,
+        150
+      ],
+      "size": [
+        30,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dissipacao",
+      "index": 2,
+      "alpha_candidate": "alpha-review/eco_humanoide_dissipacao_02.png"
+    },
+    {
+      "id": "eco_humanoide_dissipacao_03",
+      "file": "eco_humanoide_dissipacao_03.png",
+      "source_box": [
+        1092,
+        106,
+        1123,
+        150
+      ],
+      "size": [
+        31,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dissipacao",
+      "index": 3,
+      "alpha_candidate": "alpha-review/eco_humanoide_dissipacao_03.png"
+    },
+    {
+      "id": "eco_humanoide_dissipacao_04",
+      "file": "eco_humanoide_dissipacao_04.png",
+      "source_box": [
+        1123,
+        106,
+        1153,
+        150
+      ],
+      "size": [
+        30,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dissipacao",
+      "index": 4,
+      "alpha_candidate": "alpha-review/eco_humanoide_dissipacao_04.png"
+    },
+    {
+      "id": "eco_humanoide_dissipacao_05",
+      "file": "eco_humanoide_dissipacao_05.png",
+      "source_box": [
+        1153,
+        106,
+        1183,
+        150
+      ],
+      "size": [
+        30,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "eco_humanoide",
+      "action": "dissipacao",
+      "index": 5,
+      "alpha_candidate": "alpha-review/eco_humanoide_dissipacao_05.png"
+    },
+    {
+      "id": "sombra_ressonante_retrato",
+      "file": "sombra_ressonante_retrato.png",
+      "source_box": [
+        10,
+        162,
+        83,
+        221
+      ],
+      "size": [
+        73,
+        59
+      ],
+      "kind": "retrato",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/sombra_ressonante_retrato.png"
+    },
+    {
+      "id": "sombra_ressonante_idle_faixa",
+      "file": "sombra_ressonante_idle_faixa.png",
+      "source_box": [
+        207,
+        174,
+        414,
+        221
+      ],
+      "size": [
+        207,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "idle",
+      "alpha_candidate": "alpha-review/sombra_ressonante_idle_faixa.png"
+    },
+    {
+      "id": "sombra_ressonante_idle_01",
+      "file": "sombra_ressonante_idle_01.png",
+      "source_box": [
+        207,
+        174,
+        242,
+        221
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "idle",
+      "index": 1,
+      "alpha_candidate": "alpha-review/sombra_ressonante_idle_01.png"
+    },
+    {
+      "id": "sombra_ressonante_idle_02",
+      "file": "sombra_ressonante_idle_02.png",
+      "source_box": [
+        242,
+        174,
+        276,
+        221
+      ],
+      "size": [
+        34,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "idle",
+      "index": 2,
+      "alpha_candidate": "alpha-review/sombra_ressonante_idle_02.png"
+    },
+    {
+      "id": "sombra_ressonante_idle_03",
+      "file": "sombra_ressonante_idle_03.png",
+      "source_box": [
+        276,
+        174,
+        310,
+        221
+      ],
+      "size": [
+        34,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "idle",
+      "index": 3,
+      "alpha_candidate": "alpha-review/sombra_ressonante_idle_03.png"
+    },
+    {
+      "id": "sombra_ressonante_idle_04",
+      "file": "sombra_ressonante_idle_04.png",
+      "source_box": [
+        310,
+        174,
+        345,
+        221
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "idle",
+      "index": 4,
+      "alpha_candidate": "alpha-review/sombra_ressonante_idle_04.png"
+    },
+    {
+      "id": "sombra_ressonante_idle_05",
+      "file": "sombra_ressonante_idle_05.png",
+      "source_box": [
+        345,
+        174,
+        380,
+        221
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "idle",
+      "index": 5,
+      "alpha_candidate": "alpha-review/sombra_ressonante_idle_05.png"
+    },
+    {
+      "id": "sombra_ressonante_idle_06",
+      "file": "sombra_ressonante_idle_06.png",
+      "source_box": [
+        380,
+        174,
+        414,
+        221
+      ],
+      "size": [
+        34,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "idle",
+      "index": 6,
+      "alpha_candidate": "alpha-review/sombra_ressonante_idle_06.png"
+    },
+    {
+      "id": "sombra_ressonante_movimento_faixa",
+      "file": "sombra_ressonante_movimento_faixa.png",
+      "source_box": [
+        425,
+        174,
+        638,
+        221
+      ],
+      "size": [
+        213,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "movimento",
+      "alpha_candidate": "alpha-review/sombra_ressonante_movimento_faixa.png"
+    },
+    {
+      "id": "sombra_ressonante_movimento_01",
+      "file": "sombra_ressonante_movimento_01.png",
+      "source_box": [
+        425,
+        174,
+        460,
+        221
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "movimento",
+      "index": 1,
+      "alpha_candidate": "alpha-review/sombra_ressonante_movimento_01.png"
+    },
+    {
+      "id": "sombra_ressonante_movimento_02",
+      "file": "sombra_ressonante_movimento_02.png",
+      "source_box": [
+        460,
+        174,
+        496,
+        221
+      ],
+      "size": [
+        36,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "movimento",
+      "index": 2,
+      "alpha_candidate": "alpha-review/sombra_ressonante_movimento_02.png"
+    },
+    {
+      "id": "sombra_ressonante_movimento_03",
+      "file": "sombra_ressonante_movimento_03.png",
+      "source_box": [
+        496,
+        174,
+        532,
+        221
+      ],
+      "size": [
+        36,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "movimento",
+      "index": 3,
+      "alpha_candidate": "alpha-review/sombra_ressonante_movimento_03.png"
+    },
+    {
+      "id": "sombra_ressonante_movimento_04",
+      "file": "sombra_ressonante_movimento_04.png",
+      "source_box": [
+        532,
+        174,
+        567,
+        221
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "movimento",
+      "index": 4,
+      "alpha_candidate": "alpha-review/sombra_ressonante_movimento_04.png"
+    },
+    {
+      "id": "sombra_ressonante_movimento_05",
+      "file": "sombra_ressonante_movimento_05.png",
+      "source_box": [
+        567,
+        174,
+        602,
+        221
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "movimento",
+      "index": 5,
+      "alpha_candidate": "alpha-review/sombra_ressonante_movimento_05.png"
+    },
+    {
+      "id": "sombra_ressonante_movimento_06",
+      "file": "sombra_ressonante_movimento_06.png",
+      "source_box": [
+        602,
+        174,
+        638,
+        221
+      ],
+      "size": [
+        36,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "movimento",
+      "index": 6,
+      "alpha_candidate": "alpha-review/sombra_ressonante_movimento_06.png"
+    },
+    {
+      "id": "sombra_ressonante_ataque_faixa",
+      "file": "sombra_ressonante_ataque_faixa.png",
+      "source_box": [
+        649,
+        174,
+        877,
+        221
+      ],
+      "size": [
+        228,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "ataque",
+      "alpha_candidate": "alpha-review/sombra_ressonante_ataque_faixa.png"
+    },
+    {
+      "id": "sombra_ressonante_ataque_01",
+      "file": "sombra_ressonante_ataque_01.png",
+      "source_box": [
+        649,
+        174,
+        687,
+        221
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "ataque",
+      "index": 1,
+      "alpha_candidate": "alpha-review/sombra_ressonante_ataque_01.png"
+    },
+    {
+      "id": "sombra_ressonante_ataque_02",
+      "file": "sombra_ressonante_ataque_02.png",
+      "source_box": [
+        687,
+        174,
+        725,
+        221
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "ataque",
+      "index": 2,
+      "alpha_candidate": "alpha-review/sombra_ressonante_ataque_02.png"
+    },
+    {
+      "id": "sombra_ressonante_ataque_03",
+      "file": "sombra_ressonante_ataque_03.png",
+      "source_box": [
+        725,
+        174,
+        763,
+        221
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "ataque",
+      "index": 3,
+      "alpha_candidate": "alpha-review/sombra_ressonante_ataque_03.png"
+    },
+    {
+      "id": "sombra_ressonante_ataque_04",
+      "file": "sombra_ressonante_ataque_04.png",
+      "source_box": [
+        763,
+        174,
+        801,
+        221
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "ataque",
+      "index": 4,
+      "alpha_candidate": "alpha-review/sombra_ressonante_ataque_04.png"
+    },
+    {
+      "id": "sombra_ressonante_ataque_05",
+      "file": "sombra_ressonante_ataque_05.png",
+      "source_box": [
+        801,
+        174,
+        839,
+        221
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "ataque",
+      "index": 5,
+      "alpha_candidate": "alpha-review/sombra_ressonante_ataque_05.png"
+    },
+    {
+      "id": "sombra_ressonante_ataque_06",
+      "file": "sombra_ressonante_ataque_06.png",
+      "source_box": [
+        839,
+        174,
+        877,
+        221
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "ataque",
+      "index": 6,
+      "alpha_candidate": "alpha-review/sombra_ressonante_ataque_06.png"
+    },
+    {
+      "id": "sombra_ressonante_dano_faixa",
+      "file": "sombra_ressonante_dano_faixa.png",
+      "source_box": [
+        889,
+        174,
+        1020,
+        221
+      ],
+      "size": [
+        131,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dano",
+      "alpha_candidate": "alpha-review/sombra_ressonante_dano_faixa.png"
+    },
+    {
+      "id": "sombra_ressonante_dano_01",
+      "file": "sombra_ressonante_dano_01.png",
+      "source_box": [
+        889,
+        174,
+        922,
+        221
+      ],
+      "size": [
+        33,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dano",
+      "index": 1,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dano_01.png"
+    },
+    {
+      "id": "sombra_ressonante_dano_02",
+      "file": "sombra_ressonante_dano_02.png",
+      "source_box": [
+        922,
+        174,
+        954,
+        221
+      ],
+      "size": [
+        32,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dano",
+      "index": 2,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dano_02.png"
+    },
+    {
+      "id": "sombra_ressonante_dano_03",
+      "file": "sombra_ressonante_dano_03.png",
+      "source_box": [
+        954,
+        174,
+        987,
+        221
+      ],
+      "size": [
+        33,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dano",
+      "index": 3,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dano_03.png"
+    },
+    {
+      "id": "sombra_ressonante_dano_04",
+      "file": "sombra_ressonante_dano_04.png",
+      "source_box": [
+        987,
+        174,
+        1020,
+        221
+      ],
+      "size": [
+        33,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dano",
+      "index": 4,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dano_04.png"
+    },
+    {
+      "id": "sombra_ressonante_dissipacao_faixa",
+      "file": "sombra_ressonante_dissipacao_faixa.png",
+      "source_box": [
+        1032,
+        174,
+        1183,
+        221
+      ],
+      "size": [
+        151,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dissipacao",
+      "alpha_candidate": "alpha-review/sombra_ressonante_dissipacao_faixa.png"
+    },
+    {
+      "id": "sombra_ressonante_dissipacao_01",
+      "file": "sombra_ressonante_dissipacao_01.png",
+      "source_box": [
+        1032,
+        174,
+        1062,
+        221
+      ],
+      "size": [
+        30,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dissipacao",
+      "index": 1,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dissipacao_01.png"
+    },
+    {
+      "id": "sombra_ressonante_dissipacao_02",
+      "file": "sombra_ressonante_dissipacao_02.png",
+      "source_box": [
+        1062,
+        174,
+        1092,
+        221
+      ],
+      "size": [
+        30,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dissipacao",
+      "index": 2,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dissipacao_02.png"
+    },
+    {
+      "id": "sombra_ressonante_dissipacao_03",
+      "file": "sombra_ressonante_dissipacao_03.png",
+      "source_box": [
+        1092,
+        174,
+        1123,
+        221
+      ],
+      "size": [
+        31,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dissipacao",
+      "index": 3,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dissipacao_03.png"
+    },
+    {
+      "id": "sombra_ressonante_dissipacao_04",
+      "file": "sombra_ressonante_dissipacao_04.png",
+      "source_box": [
+        1123,
+        174,
+        1153,
+        221
+      ],
+      "size": [
+        30,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dissipacao",
+      "index": 4,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dissipacao_04.png"
+    },
+    {
+      "id": "sombra_ressonante_dissipacao_05",
+      "file": "sombra_ressonante_dissipacao_05.png",
+      "source_box": [
+        1153,
+        174,
+        1183,
+        221
+      ],
+      "size": [
+        30,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "sombra_ressonante",
+      "action": "dissipacao",
+      "index": 5,
+      "alpha_candidate": "alpha-review/sombra_ressonante_dissipacao_05.png"
+    },
+    {
+      "id": "vigia_projeto_retrato",
+      "file": "vigia_projeto_retrato.png",
+      "source_box": [
+        10,
+        233,
+        83,
+        289
+      ],
+      "size": [
+        73,
+        56
+      ],
+      "kind": "retrato",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/vigia_projeto_retrato.png"
+    },
+    {
+      "id": "vigia_projeto_idle_faixa",
+      "file": "vigia_projeto_idle_faixa.png",
+      "source_box": [
+        207,
+        245,
+        414,
+        289
+      ],
+      "size": [
+        207,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "idle",
+      "alpha_candidate": "alpha-review/vigia_projeto_idle_faixa.png"
+    },
+    {
+      "id": "vigia_projeto_idle_01",
+      "file": "vigia_projeto_idle_01.png",
+      "source_box": [
+        207,
+        245,
+        242,
+        289
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "idle",
+      "index": 1,
+      "alpha_candidate": "alpha-review/vigia_projeto_idle_01.png"
+    },
+    {
+      "id": "vigia_projeto_idle_02",
+      "file": "vigia_projeto_idle_02.png",
+      "source_box": [
+        242,
+        245,
+        276,
+        289
+      ],
+      "size": [
+        34,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "idle",
+      "index": 2,
+      "alpha_candidate": "alpha-review/vigia_projeto_idle_02.png"
+    },
+    {
+      "id": "vigia_projeto_idle_03",
+      "file": "vigia_projeto_idle_03.png",
+      "source_box": [
+        276,
+        245,
+        310,
+        289
+      ],
+      "size": [
+        34,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "idle",
+      "index": 3,
+      "alpha_candidate": "alpha-review/vigia_projeto_idle_03.png"
+    },
+    {
+      "id": "vigia_projeto_idle_04",
+      "file": "vigia_projeto_idle_04.png",
+      "source_box": [
+        310,
+        245,
+        345,
+        289
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "idle",
+      "index": 4,
+      "alpha_candidate": "alpha-review/vigia_projeto_idle_04.png"
+    },
+    {
+      "id": "vigia_projeto_idle_05",
+      "file": "vigia_projeto_idle_05.png",
+      "source_box": [
+        345,
+        245,
+        380,
+        289
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "idle",
+      "index": 5,
+      "alpha_candidate": "alpha-review/vigia_projeto_idle_05.png"
+    },
+    {
+      "id": "vigia_projeto_idle_06",
+      "file": "vigia_projeto_idle_06.png",
+      "source_box": [
+        380,
+        245,
+        414,
+        289
+      ],
+      "size": [
+        34,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "idle",
+      "index": 6,
+      "alpha_candidate": "alpha-review/vigia_projeto_idle_06.png"
+    },
+    {
+      "id": "vigia_projeto_movimento_faixa",
+      "file": "vigia_projeto_movimento_faixa.png",
+      "source_box": [
+        425,
+        245,
+        638,
+        289
+      ],
+      "size": [
+        213,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "movimento",
+      "alpha_candidate": "alpha-review/vigia_projeto_movimento_faixa.png"
+    },
+    {
+      "id": "vigia_projeto_movimento_01",
+      "file": "vigia_projeto_movimento_01.png",
+      "source_box": [
+        425,
+        245,
+        460,
+        289
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "movimento",
+      "index": 1,
+      "alpha_candidate": "alpha-review/vigia_projeto_movimento_01.png"
+    },
+    {
+      "id": "vigia_projeto_movimento_02",
+      "file": "vigia_projeto_movimento_02.png",
+      "source_box": [
+        460,
+        245,
+        496,
+        289
+      ],
+      "size": [
+        36,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "movimento",
+      "index": 2,
+      "alpha_candidate": "alpha-review/vigia_projeto_movimento_02.png"
+    },
+    {
+      "id": "vigia_projeto_movimento_03",
+      "file": "vigia_projeto_movimento_03.png",
+      "source_box": [
+        496,
+        245,
+        532,
+        289
+      ],
+      "size": [
+        36,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "movimento",
+      "index": 3,
+      "alpha_candidate": "alpha-review/vigia_projeto_movimento_03.png"
+    },
+    {
+      "id": "vigia_projeto_movimento_04",
+      "file": "vigia_projeto_movimento_04.png",
+      "source_box": [
+        532,
+        245,
+        567,
+        289
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "movimento",
+      "index": 4,
+      "alpha_candidate": "alpha-review/vigia_projeto_movimento_04.png"
+    },
+    {
+      "id": "vigia_projeto_movimento_05",
+      "file": "vigia_projeto_movimento_05.png",
+      "source_box": [
+        567,
+        245,
+        602,
+        289
+      ],
+      "size": [
+        35,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "movimento",
+      "index": 5,
+      "alpha_candidate": "alpha-review/vigia_projeto_movimento_05.png"
+    },
+    {
+      "id": "vigia_projeto_movimento_06",
+      "file": "vigia_projeto_movimento_06.png",
+      "source_box": [
+        602,
+        245,
+        638,
+        289
+      ],
+      "size": [
+        36,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "movimento",
+      "index": 6,
+      "alpha_candidate": "alpha-review/vigia_projeto_movimento_06.png"
+    },
+    {
+      "id": "vigia_projeto_ataque_faixa",
+      "file": "vigia_projeto_ataque_faixa.png",
+      "source_box": [
+        649,
+        245,
+        877,
+        289
+      ],
+      "size": [
+        228,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "ataque",
+      "alpha_candidate": "alpha-review/vigia_projeto_ataque_faixa.png"
+    },
+    {
+      "id": "vigia_projeto_ataque_01",
+      "file": "vigia_projeto_ataque_01.png",
+      "source_box": [
+        649,
+        245,
+        687,
+        289
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "ataque",
+      "index": 1,
+      "alpha_candidate": "alpha-review/vigia_projeto_ataque_01.png"
+    },
+    {
+      "id": "vigia_projeto_ataque_02",
+      "file": "vigia_projeto_ataque_02.png",
+      "source_box": [
+        687,
+        245,
+        725,
+        289
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "ataque",
+      "index": 2,
+      "alpha_candidate": "alpha-review/vigia_projeto_ataque_02.png"
+    },
+    {
+      "id": "vigia_projeto_ataque_03",
+      "file": "vigia_projeto_ataque_03.png",
+      "source_box": [
+        725,
+        245,
+        763,
+        289
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "ataque",
+      "index": 3,
+      "alpha_candidate": "alpha-review/vigia_projeto_ataque_03.png"
+    },
+    {
+      "id": "vigia_projeto_ataque_04",
+      "file": "vigia_projeto_ataque_04.png",
+      "source_box": [
+        763,
+        245,
+        801,
+        289
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "ataque",
+      "index": 4,
+      "alpha_candidate": "alpha-review/vigia_projeto_ataque_04.png"
+    },
+    {
+      "id": "vigia_projeto_ataque_05",
+      "file": "vigia_projeto_ataque_05.png",
+      "source_box": [
+        801,
+        245,
+        839,
+        289
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "ataque",
+      "index": 5,
+      "alpha_candidate": "alpha-review/vigia_projeto_ataque_05.png"
+    },
+    {
+      "id": "vigia_projeto_ataque_06",
+      "file": "vigia_projeto_ataque_06.png",
+      "source_box": [
+        839,
+        245,
+        877,
+        289
+      ],
+      "size": [
+        38,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "ataque",
+      "index": 6,
+      "alpha_candidate": "alpha-review/vigia_projeto_ataque_06.png"
+    },
+    {
+      "id": "vigia_projeto_dano_faixa",
+      "file": "vigia_projeto_dano_faixa.png",
+      "source_box": [
+        889,
+        245,
+        1020,
+        289
+      ],
+      "size": [
+        131,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dano",
+      "alpha_candidate": "alpha-review/vigia_projeto_dano_faixa.png"
+    },
+    {
+      "id": "vigia_projeto_dano_01",
+      "file": "vigia_projeto_dano_01.png",
+      "source_box": [
+        889,
+        245,
+        922,
+        289
+      ],
+      "size": [
+        33,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dano",
+      "index": 1,
+      "alpha_candidate": "alpha-review/vigia_projeto_dano_01.png"
+    },
+    {
+      "id": "vigia_projeto_dano_02",
+      "file": "vigia_projeto_dano_02.png",
+      "source_box": [
+        922,
+        245,
+        954,
+        289
+      ],
+      "size": [
+        32,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dano",
+      "index": 2,
+      "alpha_candidate": "alpha-review/vigia_projeto_dano_02.png"
+    },
+    {
+      "id": "vigia_projeto_dano_03",
+      "file": "vigia_projeto_dano_03.png",
+      "source_box": [
+        954,
+        245,
+        987,
+        289
+      ],
+      "size": [
+        33,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dano",
+      "index": 3,
+      "alpha_candidate": "alpha-review/vigia_projeto_dano_03.png"
+    },
+    {
+      "id": "vigia_projeto_dano_04",
+      "file": "vigia_projeto_dano_04.png",
+      "source_box": [
+        987,
+        245,
+        1020,
+        289
+      ],
+      "size": [
+        33,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dano",
+      "index": 4,
+      "alpha_candidate": "alpha-review/vigia_projeto_dano_04.png"
+    },
+    {
+      "id": "vigia_projeto_dissipacao_faixa",
+      "file": "vigia_projeto_dissipacao_faixa.png",
+      "source_box": [
+        1032,
+        245,
+        1183,
+        289
+      ],
+      "size": [
+        151,
+        44
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dissipacao",
+      "alpha_candidate": "alpha-review/vigia_projeto_dissipacao_faixa.png"
+    },
+    {
+      "id": "vigia_projeto_dissipacao_01",
+      "file": "vigia_projeto_dissipacao_01.png",
+      "source_box": [
+        1032,
+        245,
+        1062,
+        289
+      ],
+      "size": [
+        30,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dissipacao",
+      "index": 1,
+      "alpha_candidate": "alpha-review/vigia_projeto_dissipacao_01.png"
+    },
+    {
+      "id": "vigia_projeto_dissipacao_02",
+      "file": "vigia_projeto_dissipacao_02.png",
+      "source_box": [
+        1062,
+        245,
+        1092,
+        289
+      ],
+      "size": [
+        30,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dissipacao",
+      "index": 2,
+      "alpha_candidate": "alpha-review/vigia_projeto_dissipacao_02.png"
+    },
+    {
+      "id": "vigia_projeto_dissipacao_03",
+      "file": "vigia_projeto_dissipacao_03.png",
+      "source_box": [
+        1092,
+        245,
+        1123,
+        289
+      ],
+      "size": [
+        31,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dissipacao",
+      "index": 3,
+      "alpha_candidate": "alpha-review/vigia_projeto_dissipacao_03.png"
+    },
+    {
+      "id": "vigia_projeto_dissipacao_04",
+      "file": "vigia_projeto_dissipacao_04.png",
+      "source_box": [
+        1123,
+        245,
+        1153,
+        289
+      ],
+      "size": [
+        30,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dissipacao",
+      "index": 4,
+      "alpha_candidate": "alpha-review/vigia_projeto_dissipacao_04.png"
+    },
+    {
+      "id": "vigia_projeto_dissipacao_05",
+      "file": "vigia_projeto_dissipacao_05.png",
+      "source_box": [
+        1153,
+        245,
+        1183,
+        289
+      ],
+      "size": [
+        30,
+        44
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "vigia_projeto",
+      "action": "dissipacao",
+      "index": 5,
+      "alpha_candidate": "alpha-review/vigia_projeto_dissipacao_05.png"
+    },
+    {
+      "id": "mutante_floresta_retrato",
+      "file": "mutante_floresta_retrato.png",
+      "source_box": [
+        10,
+        301,
+        83,
+        359
+      ],
+      "size": [
+        73,
+        58
+      ],
+      "kind": "retrato",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/mutante_floresta_retrato.png"
+    },
+    {
+      "id": "mutante_floresta_idle_faixa",
+      "file": "mutante_floresta_idle_faixa.png",
+      "source_box": [
+        207,
+        313,
+        414,
+        359
+      ],
+      "size": [
+        207,
+        46
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "idle",
+      "alpha_candidate": "alpha-review/mutante_floresta_idle_faixa.png"
+    },
+    {
+      "id": "mutante_floresta_idle_01",
+      "file": "mutante_floresta_idle_01.png",
+      "source_box": [
+        207,
+        313,
+        242,
+        359
+      ],
+      "size": [
+        35,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "idle",
+      "index": 1,
+      "alpha_candidate": "alpha-review/mutante_floresta_idle_01.png"
+    },
+    {
+      "id": "mutante_floresta_idle_02",
+      "file": "mutante_floresta_idle_02.png",
+      "source_box": [
+        242,
+        313,
+        276,
+        359
+      ],
+      "size": [
+        34,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "idle",
+      "index": 2,
+      "alpha_candidate": "alpha-review/mutante_floresta_idle_02.png"
+    },
+    {
+      "id": "mutante_floresta_idle_03",
+      "file": "mutante_floresta_idle_03.png",
+      "source_box": [
+        276,
+        313,
+        310,
+        359
+      ],
+      "size": [
+        34,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "idle",
+      "index": 3,
+      "alpha_candidate": "alpha-review/mutante_floresta_idle_03.png"
+    },
+    {
+      "id": "mutante_floresta_idle_04",
+      "file": "mutante_floresta_idle_04.png",
+      "source_box": [
+        310,
+        313,
+        345,
+        359
+      ],
+      "size": [
+        35,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "idle",
+      "index": 4,
+      "alpha_candidate": "alpha-review/mutante_floresta_idle_04.png"
+    },
+    {
+      "id": "mutante_floresta_idle_05",
+      "file": "mutante_floresta_idle_05.png",
+      "source_box": [
+        345,
+        313,
+        380,
+        359
+      ],
+      "size": [
+        35,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "idle",
+      "index": 5,
+      "alpha_candidate": "alpha-review/mutante_floresta_idle_05.png"
+    },
+    {
+      "id": "mutante_floresta_idle_06",
+      "file": "mutante_floresta_idle_06.png",
+      "source_box": [
+        380,
+        313,
+        414,
+        359
+      ],
+      "size": [
+        34,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "idle",
+      "index": 6,
+      "alpha_candidate": "alpha-review/mutante_floresta_idle_06.png"
+    },
+    {
+      "id": "mutante_floresta_movimento_faixa",
+      "file": "mutante_floresta_movimento_faixa.png",
+      "source_box": [
+        425,
+        313,
+        638,
+        359
+      ],
+      "size": [
+        213,
+        46
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "movimento",
+      "alpha_candidate": "alpha-review/mutante_floresta_movimento_faixa.png"
+    },
+    {
+      "id": "mutante_floresta_movimento_01",
+      "file": "mutante_floresta_movimento_01.png",
+      "source_box": [
+        425,
+        313,
+        460,
+        359
+      ],
+      "size": [
+        35,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "movimento",
+      "index": 1,
+      "alpha_candidate": "alpha-review/mutante_floresta_movimento_01.png"
+    },
+    {
+      "id": "mutante_floresta_movimento_02",
+      "file": "mutante_floresta_movimento_02.png",
+      "source_box": [
+        460,
+        313,
+        496,
+        359
+      ],
+      "size": [
+        36,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "movimento",
+      "index": 2,
+      "alpha_candidate": "alpha-review/mutante_floresta_movimento_02.png"
+    },
+    {
+      "id": "mutante_floresta_movimento_03",
+      "file": "mutante_floresta_movimento_03.png",
+      "source_box": [
+        496,
+        313,
+        532,
+        359
+      ],
+      "size": [
+        36,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "movimento",
+      "index": 3,
+      "alpha_candidate": "alpha-review/mutante_floresta_movimento_03.png"
+    },
+    {
+      "id": "mutante_floresta_movimento_04",
+      "file": "mutante_floresta_movimento_04.png",
+      "source_box": [
+        532,
+        313,
+        567,
+        359
+      ],
+      "size": [
+        35,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "movimento",
+      "index": 4,
+      "alpha_candidate": "alpha-review/mutante_floresta_movimento_04.png"
+    },
+    {
+      "id": "mutante_floresta_movimento_05",
+      "file": "mutante_floresta_movimento_05.png",
+      "source_box": [
+        567,
+        313,
+        602,
+        359
+      ],
+      "size": [
+        35,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "movimento",
+      "index": 5,
+      "alpha_candidate": "alpha-review/mutante_floresta_movimento_05.png"
+    },
+    {
+      "id": "mutante_floresta_movimento_06",
+      "file": "mutante_floresta_movimento_06.png",
+      "source_box": [
+        602,
+        313,
+        638,
+        359
+      ],
+      "size": [
+        36,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "movimento",
+      "index": 6,
+      "alpha_candidate": "alpha-review/mutante_floresta_movimento_06.png"
+    },
+    {
+      "id": "mutante_floresta_ataque_faixa",
+      "file": "mutante_floresta_ataque_faixa.png",
+      "source_box": [
+        649,
+        313,
+        877,
+        359
+      ],
+      "size": [
+        228,
+        46
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "ataque",
+      "alpha_candidate": "alpha-review/mutante_floresta_ataque_faixa.png"
+    },
+    {
+      "id": "mutante_floresta_ataque_01",
+      "file": "mutante_floresta_ataque_01.png",
+      "source_box": [
+        649,
+        313,
+        687,
+        359
+      ],
+      "size": [
+        38,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "ataque",
+      "index": 1,
+      "alpha_candidate": "alpha-review/mutante_floresta_ataque_01.png"
+    },
+    {
+      "id": "mutante_floresta_ataque_02",
+      "file": "mutante_floresta_ataque_02.png",
+      "source_box": [
+        687,
+        313,
+        725,
+        359
+      ],
+      "size": [
+        38,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "ataque",
+      "index": 2,
+      "alpha_candidate": "alpha-review/mutante_floresta_ataque_02.png"
+    },
+    {
+      "id": "mutante_floresta_ataque_03",
+      "file": "mutante_floresta_ataque_03.png",
+      "source_box": [
+        725,
+        313,
+        763,
+        359
+      ],
+      "size": [
+        38,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "ataque",
+      "index": 3,
+      "alpha_candidate": "alpha-review/mutante_floresta_ataque_03.png"
+    },
+    {
+      "id": "mutante_floresta_ataque_04",
+      "file": "mutante_floresta_ataque_04.png",
+      "source_box": [
+        763,
+        313,
+        801,
+        359
+      ],
+      "size": [
+        38,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "ataque",
+      "index": 4,
+      "alpha_candidate": "alpha-review/mutante_floresta_ataque_04.png"
+    },
+    {
+      "id": "mutante_floresta_ataque_05",
+      "file": "mutante_floresta_ataque_05.png",
+      "source_box": [
+        801,
+        313,
+        839,
+        359
+      ],
+      "size": [
+        38,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "ataque",
+      "index": 5,
+      "alpha_candidate": "alpha-review/mutante_floresta_ataque_05.png"
+    },
+    {
+      "id": "mutante_floresta_ataque_06",
+      "file": "mutante_floresta_ataque_06.png",
+      "source_box": [
+        839,
+        313,
+        877,
+        359
+      ],
+      "size": [
+        38,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "ataque",
+      "index": 6,
+      "alpha_candidate": "alpha-review/mutante_floresta_ataque_06.png"
+    },
+    {
+      "id": "mutante_floresta_dano_faixa",
+      "file": "mutante_floresta_dano_faixa.png",
+      "source_box": [
+        889,
+        313,
+        1020,
+        359
+      ],
+      "size": [
+        131,
+        46
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dano",
+      "alpha_candidate": "alpha-review/mutante_floresta_dano_faixa.png"
+    },
+    {
+      "id": "mutante_floresta_dano_01",
+      "file": "mutante_floresta_dano_01.png",
+      "source_box": [
+        889,
+        313,
+        922,
+        359
+      ],
+      "size": [
+        33,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dano",
+      "index": 1,
+      "alpha_candidate": "alpha-review/mutante_floresta_dano_01.png"
+    },
+    {
+      "id": "mutante_floresta_dano_02",
+      "file": "mutante_floresta_dano_02.png",
+      "source_box": [
+        922,
+        313,
+        954,
+        359
+      ],
+      "size": [
+        32,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dano",
+      "index": 2,
+      "alpha_candidate": "alpha-review/mutante_floresta_dano_02.png"
+    },
+    {
+      "id": "mutante_floresta_dano_03",
+      "file": "mutante_floresta_dano_03.png",
+      "source_box": [
+        954,
+        313,
+        987,
+        359
+      ],
+      "size": [
+        33,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dano",
+      "index": 3,
+      "alpha_candidate": "alpha-review/mutante_floresta_dano_03.png"
+    },
+    {
+      "id": "mutante_floresta_dano_04",
+      "file": "mutante_floresta_dano_04.png",
+      "source_box": [
+        987,
+        313,
+        1020,
+        359
+      ],
+      "size": [
+        33,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dano",
+      "index": 4,
+      "alpha_candidate": "alpha-review/mutante_floresta_dano_04.png"
+    },
+    {
+      "id": "mutante_floresta_dissipacao_faixa",
+      "file": "mutante_floresta_dissipacao_faixa.png",
+      "source_box": [
+        1032,
+        313,
+        1183,
+        359
+      ],
+      "size": [
+        151,
+        46
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dissipacao",
+      "alpha_candidate": "alpha-review/mutante_floresta_dissipacao_faixa.png"
+    },
+    {
+      "id": "mutante_floresta_dissipacao_01",
+      "file": "mutante_floresta_dissipacao_01.png",
+      "source_box": [
+        1032,
+        313,
+        1062,
+        359
+      ],
+      "size": [
+        30,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dissipacao",
+      "index": 1,
+      "alpha_candidate": "alpha-review/mutante_floresta_dissipacao_01.png"
+    },
+    {
+      "id": "mutante_floresta_dissipacao_02",
+      "file": "mutante_floresta_dissipacao_02.png",
+      "source_box": [
+        1062,
+        313,
+        1092,
+        359
+      ],
+      "size": [
+        30,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dissipacao",
+      "index": 2,
+      "alpha_candidate": "alpha-review/mutante_floresta_dissipacao_02.png"
+    },
+    {
+      "id": "mutante_floresta_dissipacao_03",
+      "file": "mutante_floresta_dissipacao_03.png",
+      "source_box": [
+        1092,
+        313,
+        1123,
+        359
+      ],
+      "size": [
+        31,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dissipacao",
+      "index": 3,
+      "alpha_candidate": "alpha-review/mutante_floresta_dissipacao_03.png"
+    },
+    {
+      "id": "mutante_floresta_dissipacao_04",
+      "file": "mutante_floresta_dissipacao_04.png",
+      "source_box": [
+        1123,
+        313,
+        1153,
+        359
+      ],
+      "size": [
+        30,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dissipacao",
+      "index": 4,
+      "alpha_candidate": "alpha-review/mutante_floresta_dissipacao_04.png"
+    },
+    {
+      "id": "mutante_floresta_dissipacao_05",
+      "file": "mutante_floresta_dissipacao_05.png",
+      "source_box": [
+        1153,
+        313,
+        1183,
+        359
+      ],
+      "size": [
+        30,
+        46
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "mutante_floresta",
+      "action": "dissipacao",
+      "index": 5,
+      "alpha_candidate": "alpha-review/mutante_floresta_dissipacao_05.png"
+    },
+    {
+      "id": "anomalia_esferica_retrato",
+      "file": "anomalia_esferica_retrato.png",
+      "source_box": [
+        10,
+        372,
+        83,
+        431
+      ],
+      "size": [
+        73,
+        59
+      ],
+      "kind": "retrato",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/anomalia_esferica_retrato.png"
+    },
+    {
+      "id": "anomalia_esferica_idle_faixa",
+      "file": "anomalia_esferica_idle_faixa.png",
+      "source_box": [
+        207,
+        384,
+        414,
+        431
+      ],
+      "size": [
+        207,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "idle",
+      "alpha_candidate": "alpha-review/anomalia_esferica_idle_faixa.png"
+    },
+    {
+      "id": "anomalia_esferica_idle_01",
+      "file": "anomalia_esferica_idle_01.png",
+      "source_box": [
+        207,
+        384,
+        242,
+        431
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "idle",
+      "index": 1,
+      "alpha_candidate": "alpha-review/anomalia_esferica_idle_01.png"
+    },
+    {
+      "id": "anomalia_esferica_idle_02",
+      "file": "anomalia_esferica_idle_02.png",
+      "source_box": [
+        242,
+        384,
+        276,
+        431
+      ],
+      "size": [
+        34,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "idle",
+      "index": 2,
+      "alpha_candidate": "alpha-review/anomalia_esferica_idle_02.png"
+    },
+    {
+      "id": "anomalia_esferica_idle_03",
+      "file": "anomalia_esferica_idle_03.png",
+      "source_box": [
+        276,
+        384,
+        310,
+        431
+      ],
+      "size": [
+        34,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "idle",
+      "index": 3,
+      "alpha_candidate": "alpha-review/anomalia_esferica_idle_03.png"
+    },
+    {
+      "id": "anomalia_esferica_idle_04",
+      "file": "anomalia_esferica_idle_04.png",
+      "source_box": [
+        310,
+        384,
+        345,
+        431
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "idle",
+      "index": 4,
+      "alpha_candidate": "alpha-review/anomalia_esferica_idle_04.png"
+    },
+    {
+      "id": "anomalia_esferica_idle_05",
+      "file": "anomalia_esferica_idle_05.png",
+      "source_box": [
+        345,
+        384,
+        380,
+        431
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "idle",
+      "index": 5,
+      "alpha_candidate": "alpha-review/anomalia_esferica_idle_05.png"
+    },
+    {
+      "id": "anomalia_esferica_idle_06",
+      "file": "anomalia_esferica_idle_06.png",
+      "source_box": [
+        380,
+        384,
+        414,
+        431
+      ],
+      "size": [
+        34,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "idle",
+      "index": 6,
+      "alpha_candidate": "alpha-review/anomalia_esferica_idle_06.png"
+    },
+    {
+      "id": "anomalia_esferica_movimento_faixa",
+      "file": "anomalia_esferica_movimento_faixa.png",
+      "source_box": [
+        425,
+        384,
+        638,
+        431
+      ],
+      "size": [
+        213,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "movimento",
+      "alpha_candidate": "alpha-review/anomalia_esferica_movimento_faixa.png"
+    },
+    {
+      "id": "anomalia_esferica_movimento_01",
+      "file": "anomalia_esferica_movimento_01.png",
+      "source_box": [
+        425,
+        384,
+        460,
+        431
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "movimento",
+      "index": 1,
+      "alpha_candidate": "alpha-review/anomalia_esferica_movimento_01.png"
+    },
+    {
+      "id": "anomalia_esferica_movimento_02",
+      "file": "anomalia_esferica_movimento_02.png",
+      "source_box": [
+        460,
+        384,
+        496,
+        431
+      ],
+      "size": [
+        36,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "movimento",
+      "index": 2,
+      "alpha_candidate": "alpha-review/anomalia_esferica_movimento_02.png"
+    },
+    {
+      "id": "anomalia_esferica_movimento_03",
+      "file": "anomalia_esferica_movimento_03.png",
+      "source_box": [
+        496,
+        384,
+        532,
+        431
+      ],
+      "size": [
+        36,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "movimento",
+      "index": 3,
+      "alpha_candidate": "alpha-review/anomalia_esferica_movimento_03.png"
+    },
+    {
+      "id": "anomalia_esferica_movimento_04",
+      "file": "anomalia_esferica_movimento_04.png",
+      "source_box": [
+        532,
+        384,
+        567,
+        431
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "movimento",
+      "index": 4,
+      "alpha_candidate": "alpha-review/anomalia_esferica_movimento_04.png"
+    },
+    {
+      "id": "anomalia_esferica_movimento_05",
+      "file": "anomalia_esferica_movimento_05.png",
+      "source_box": [
+        567,
+        384,
+        602,
+        431
+      ],
+      "size": [
+        35,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "movimento",
+      "index": 5,
+      "alpha_candidate": "alpha-review/anomalia_esferica_movimento_05.png"
+    },
+    {
+      "id": "anomalia_esferica_movimento_06",
+      "file": "anomalia_esferica_movimento_06.png",
+      "source_box": [
+        602,
+        384,
+        638,
+        431
+      ],
+      "size": [
+        36,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "movimento",
+      "index": 6,
+      "alpha_candidate": "alpha-review/anomalia_esferica_movimento_06.png"
+    },
+    {
+      "id": "anomalia_esferica_ataque_faixa",
+      "file": "anomalia_esferica_ataque_faixa.png",
+      "source_box": [
+        649,
+        384,
+        877,
+        431
+      ],
+      "size": [
+        228,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "ataque",
+      "alpha_candidate": "alpha-review/anomalia_esferica_ataque_faixa.png"
+    },
+    {
+      "id": "anomalia_esferica_ataque_01",
+      "file": "anomalia_esferica_ataque_01.png",
+      "source_box": [
+        649,
+        384,
+        687,
+        431
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "ataque",
+      "index": 1,
+      "alpha_candidate": "alpha-review/anomalia_esferica_ataque_01.png"
+    },
+    {
+      "id": "anomalia_esferica_ataque_02",
+      "file": "anomalia_esferica_ataque_02.png",
+      "source_box": [
+        687,
+        384,
+        725,
+        431
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "ataque",
+      "index": 2,
+      "alpha_candidate": "alpha-review/anomalia_esferica_ataque_02.png"
+    },
+    {
+      "id": "anomalia_esferica_ataque_03",
+      "file": "anomalia_esferica_ataque_03.png",
+      "source_box": [
+        725,
+        384,
+        763,
+        431
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "ataque",
+      "index": 3,
+      "alpha_candidate": "alpha-review/anomalia_esferica_ataque_03.png"
+    },
+    {
+      "id": "anomalia_esferica_ataque_04",
+      "file": "anomalia_esferica_ataque_04.png",
+      "source_box": [
+        763,
+        384,
+        801,
+        431
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "ataque",
+      "index": 4,
+      "alpha_candidate": "alpha-review/anomalia_esferica_ataque_04.png"
+    },
+    {
+      "id": "anomalia_esferica_ataque_05",
+      "file": "anomalia_esferica_ataque_05.png",
+      "source_box": [
+        801,
+        384,
+        839,
+        431
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "ataque",
+      "index": 5,
+      "alpha_candidate": "alpha-review/anomalia_esferica_ataque_05.png"
+    },
+    {
+      "id": "anomalia_esferica_ataque_06",
+      "file": "anomalia_esferica_ataque_06.png",
+      "source_box": [
+        839,
+        384,
+        877,
+        431
+      ],
+      "size": [
+        38,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "ataque",
+      "index": 6,
+      "alpha_candidate": "alpha-review/anomalia_esferica_ataque_06.png"
+    },
+    {
+      "id": "anomalia_esferica_dano_faixa",
+      "file": "anomalia_esferica_dano_faixa.png",
+      "source_box": [
+        889,
+        384,
+        1020,
+        431
+      ],
+      "size": [
+        131,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dano",
+      "alpha_candidate": "alpha-review/anomalia_esferica_dano_faixa.png"
+    },
+    {
+      "id": "anomalia_esferica_dano_01",
+      "file": "anomalia_esferica_dano_01.png",
+      "source_box": [
+        889,
+        384,
+        922,
+        431
+      ],
+      "size": [
+        33,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dano",
+      "index": 1,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dano_01.png"
+    },
+    {
+      "id": "anomalia_esferica_dano_02",
+      "file": "anomalia_esferica_dano_02.png",
+      "source_box": [
+        922,
+        384,
+        954,
+        431
+      ],
+      "size": [
+        32,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dano",
+      "index": 2,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dano_02.png"
+    },
+    {
+      "id": "anomalia_esferica_dano_03",
+      "file": "anomalia_esferica_dano_03.png",
+      "source_box": [
+        954,
+        384,
+        987,
+        431
+      ],
+      "size": [
+        33,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dano",
+      "index": 3,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dano_03.png"
+    },
+    {
+      "id": "anomalia_esferica_dano_04",
+      "file": "anomalia_esferica_dano_04.png",
+      "source_box": [
+        987,
+        384,
+        1020,
+        431
+      ],
+      "size": [
+        33,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dano",
+      "index": 4,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dano_04.png"
+    },
+    {
+      "id": "anomalia_esferica_dissipacao_faixa",
+      "file": "anomalia_esferica_dissipacao_faixa.png",
+      "source_box": [
+        1032,
+        384,
+        1183,
+        431
+      ],
+      "size": [
+        151,
+        47
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dissipacao",
+      "alpha_candidate": "alpha-review/anomalia_esferica_dissipacao_faixa.png"
+    },
+    {
+      "id": "anomalia_esferica_dissipacao_01",
+      "file": "anomalia_esferica_dissipacao_01.png",
+      "source_box": [
+        1032,
+        384,
+        1062,
+        431
+      ],
+      "size": [
+        30,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dissipacao",
+      "index": 1,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dissipacao_01.png"
+    },
+    {
+      "id": "anomalia_esferica_dissipacao_02",
+      "file": "anomalia_esferica_dissipacao_02.png",
+      "source_box": [
+        1062,
+        384,
+        1092,
+        431
+      ],
+      "size": [
+        30,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dissipacao",
+      "index": 2,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dissipacao_02.png"
+    },
+    {
+      "id": "anomalia_esferica_dissipacao_03",
+      "file": "anomalia_esferica_dissipacao_03.png",
+      "source_box": [
+        1092,
+        384,
+        1123,
+        431
+      ],
+      "size": [
+        31,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dissipacao",
+      "index": 3,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dissipacao_03.png"
+    },
+    {
+      "id": "anomalia_esferica_dissipacao_04",
+      "file": "anomalia_esferica_dissipacao_04.png",
+      "source_box": [
+        1123,
+        384,
+        1153,
+        431
+      ],
+      "size": [
+        30,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dissipacao",
+      "index": 4,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dissipacao_04.png"
+    },
+    {
+      "id": "anomalia_esferica_dissipacao_05",
+      "file": "anomalia_esferica_dissipacao_05.png",
+      "source_box": [
+        1153,
+        384,
+        1183,
+        431
+      ],
+      "size": [
+        30,
+        47
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "anomalia_esferica",
+      "action": "dissipacao",
+      "index": 5,
+      "alpha_candidate": "alpha-review/anomalia_esferica_dissipacao_05.png"
+    },
+    {
+      "id": "colosso_ressonancia_retrato",
+      "file": "colosso_ressonancia_retrato.png",
+      "source_box": [
+        10,
+        446,
+        83,
+        514
+      ],
+      "size": [
+        73,
+        68
+      ],
+      "kind": "retrato",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/colosso_ressonancia_retrato.png"
+    },
+    {
+      "id": "colosso_ressonancia_idle_faixa",
+      "file": "colosso_ressonancia_idle_faixa.png",
+      "source_box": [
+        207,
+        458,
+        380,
+        514
+      ],
+      "size": [
+        173,
+        56
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "idle",
+      "alpha_candidate": "alpha-review/colosso_ressonancia_idle_faixa.png"
+    },
+    {
+      "id": "colosso_ressonancia_idle_01",
+      "file": "colosso_ressonancia_idle_01.png",
+      "source_box": [
+        207,
+        458,
+        250,
+        514
+      ],
+      "size": [
+        43,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "idle",
+      "index": 1,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_idle_01.png"
+    },
+    {
+      "id": "colosso_ressonancia_idle_02",
+      "file": "colosso_ressonancia_idle_02.png",
+      "source_box": [
+        250,
+        458,
+        294,
+        514
+      ],
+      "size": [
+        44,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "idle",
+      "index": 2,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_idle_02.png"
+    },
+    {
+      "id": "colosso_ressonancia_idle_03",
+      "file": "colosso_ressonancia_idle_03.png",
+      "source_box": [
+        294,
+        458,
+        337,
+        514
+      ],
+      "size": [
+        43,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "idle",
+      "index": 3,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_idle_03.png"
+    },
+    {
+      "id": "colosso_ressonancia_idle_04",
+      "file": "colosso_ressonancia_idle_04.png",
+      "source_box": [
+        337,
+        458,
+        380,
+        514
+      ],
+      "size": [
+        43,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "idle",
+      "index": 4,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_idle_04.png"
+    },
+    {
+      "id": "colosso_ressonancia_movimento_faixa",
+      "file": "colosso_ressonancia_movimento_faixa.png",
+      "source_box": [
+        388,
+        458,
+        535,
+        514
+      ],
+      "size": [
+        147,
+        56
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "movimento",
+      "alpha_candidate": "alpha-review/colosso_ressonancia_movimento_faixa.png"
+    },
+    {
+      "id": "colosso_ressonancia_movimento_01",
+      "file": "colosso_ressonancia_movimento_01.png",
+      "source_box": [
+        388,
+        458,
+        425,
+        514
+      ],
+      "size": [
+        37,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "movimento",
+      "index": 1,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_movimento_01.png"
+    },
+    {
+      "id": "colosso_ressonancia_movimento_02",
+      "file": "colosso_ressonancia_movimento_02.png",
+      "source_box": [
+        425,
+        458,
+        462,
+        514
+      ],
+      "size": [
+        37,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "movimento",
+      "index": 2,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_movimento_02.png"
+    },
+    {
+      "id": "colosso_ressonancia_movimento_03",
+      "file": "colosso_ressonancia_movimento_03.png",
+      "source_box": [
+        462,
+        458,
+        498,
+        514
+      ],
+      "size": [
+        36,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "movimento",
+      "index": 3,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_movimento_03.png"
+    },
+    {
+      "id": "colosso_ressonancia_movimento_04",
+      "file": "colosso_ressonancia_movimento_04.png",
+      "source_box": [
+        498,
+        458,
+        535,
+        514
+      ],
+      "size": [
+        37,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "movimento",
+      "index": 4,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_movimento_04.png"
+    },
+    {
+      "id": "colosso_ressonancia_preparacao_faixa",
+      "file": "colosso_ressonancia_preparacao_faixa.png",
+      "source_box": [
+        542,
+        458,
+        671,
+        514
+      ],
+      "size": [
+        129,
+        56
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "preparacao",
+      "alpha_candidate": "alpha-review/colosso_ressonancia_preparacao_faixa.png"
+    },
+    {
+      "id": "colosso_ressonancia_preparacao_01",
+      "file": "colosso_ressonancia_preparacao_01.png",
+      "source_box": [
+        542,
+        458,
+        574,
+        514
+      ],
+      "size": [
+        32,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "preparacao",
+      "index": 1,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_preparacao_01.png"
+    },
+    {
+      "id": "colosso_ressonancia_preparacao_02",
+      "file": "colosso_ressonancia_preparacao_02.png",
+      "source_box": [
+        574,
+        458,
+        606,
+        514
+      ],
+      "size": [
+        32,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "preparacao",
+      "index": 2,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_preparacao_02.png"
+    },
+    {
+      "id": "colosso_ressonancia_preparacao_03",
+      "file": "colosso_ressonancia_preparacao_03.png",
+      "source_box": [
+        606,
+        458,
+        639,
+        514
+      ],
+      "size": [
+        33,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "preparacao",
+      "index": 3,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_preparacao_03.png"
+    },
+    {
+      "id": "colosso_ressonancia_preparacao_04",
+      "file": "colosso_ressonancia_preparacao_04.png",
+      "source_box": [
+        639,
+        458,
+        671,
+        514
+      ],
+      "size": [
+        32,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "preparacao",
+      "index": 4,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_preparacao_04.png"
+    },
+    {
+      "id": "colosso_ressonancia_ataque_faixa",
+      "file": "colosso_ressonancia_ataque_faixa.png",
+      "source_box": [
+        678,
+        458,
+        877,
+        514
+      ],
+      "size": [
+        199,
+        56
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "ataque",
+      "alpha_candidate": "alpha-review/colosso_ressonancia_ataque_faixa.png"
+    },
+    {
+      "id": "colosso_ressonancia_ataque_01",
+      "file": "colosso_ressonancia_ataque_01.png",
+      "source_box": [
+        678,
+        458,
+        718,
+        514
+      ],
+      "size": [
+        40,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "ataque",
+      "index": 1,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_ataque_01.png"
+    },
+    {
+      "id": "colosso_ressonancia_ataque_02",
+      "file": "colosso_ressonancia_ataque_02.png",
+      "source_box": [
+        718,
+        458,
+        758,
+        514
+      ],
+      "size": [
+        40,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "ataque",
+      "index": 2,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_ataque_02.png"
+    },
+    {
+      "id": "colosso_ressonancia_ataque_03",
+      "file": "colosso_ressonancia_ataque_03.png",
+      "source_box": [
+        758,
+        458,
+        797,
+        514
+      ],
+      "size": [
+        39,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "ataque",
+      "index": 3,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_ataque_03.png"
+    },
+    {
+      "id": "colosso_ressonancia_ataque_04",
+      "file": "colosso_ressonancia_ataque_04.png",
+      "source_box": [
+        797,
+        458,
+        837,
+        514
+      ],
+      "size": [
+        40,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "ataque",
+      "index": 4,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_ataque_04.png"
+    },
+    {
+      "id": "colosso_ressonancia_ataque_05",
+      "file": "colosso_ressonancia_ataque_05.png",
+      "source_box": [
+        837,
+        458,
+        877,
+        514
+      ],
+      "size": [
+        40,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "ataque",
+      "index": 5,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_ataque_05.png"
+    },
+    {
+      "id": "colosso_ressonancia_dano_faixa",
+      "file": "colosso_ressonancia_dano_faixa.png",
+      "source_box": [
+        887,
+        458,
+        1020,
+        514
+      ],
+      "size": [
+        133,
+        56
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dano",
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dano_faixa.png"
+    },
+    {
+      "id": "colosso_ressonancia_dano_01",
+      "file": "colosso_ressonancia_dano_01.png",
+      "source_box": [
+        887,
+        458,
+        920,
+        514
+      ],
+      "size": [
+        33,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dano",
+      "index": 1,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dano_01.png"
+    },
+    {
+      "id": "colosso_ressonancia_dano_02",
+      "file": "colosso_ressonancia_dano_02.png",
+      "source_box": [
+        920,
+        458,
+        954,
+        514
+      ],
+      "size": [
+        34,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dano",
+      "index": 2,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dano_02.png"
+    },
+    {
+      "id": "colosso_ressonancia_dano_03",
+      "file": "colosso_ressonancia_dano_03.png",
+      "source_box": [
+        954,
+        458,
+        987,
+        514
+      ],
+      "size": [
+        33,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dano",
+      "index": 3,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dano_03.png"
+    },
+    {
+      "id": "colosso_ressonancia_dano_04",
+      "file": "colosso_ressonancia_dano_04.png",
+      "source_box": [
+        987,
+        458,
+        1020,
+        514
+      ],
+      "size": [
+        33,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dano",
+      "index": 4,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dano_04.png"
+    },
+    {
+      "id": "colosso_ressonancia_dissipacao_faixa",
+      "file": "colosso_ressonancia_dissipacao_faixa.png",
+      "source_box": [
+        1030,
+        458,
+        1183,
+        514
+      ],
+      "size": [
+        153,
+        56
+      ],
+      "kind": "faixa",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dissipacao",
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dissipacao_faixa.png"
+    },
+    {
+      "id": "colosso_ressonancia_dissipacao_01",
+      "file": "colosso_ressonancia_dissipacao_01.png",
+      "source_box": [
+        1030,
+        458,
+        1061,
+        514
+      ],
+      "size": [
+        31,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dissipacao",
+      "index": 1,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dissipacao_01.png"
+    },
+    {
+      "id": "colosso_ressonancia_dissipacao_02",
+      "file": "colosso_ressonancia_dissipacao_02.png",
+      "source_box": [
+        1061,
+        458,
+        1091,
+        514
+      ],
+      "size": [
+        30,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dissipacao",
+      "index": 2,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dissipacao_02.png"
+    },
+    {
+      "id": "colosso_ressonancia_dissipacao_03",
+      "file": "colosso_ressonancia_dissipacao_03.png",
+      "source_box": [
+        1091,
+        458,
+        1122,
+        514
+      ],
+      "size": [
+        31,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dissipacao",
+      "index": 3,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dissipacao_03.png"
+    },
+    {
+      "id": "colosso_ressonancia_dissipacao_04",
+      "file": "colosso_ressonancia_dissipacao_04.png",
+      "source_box": [
+        1122,
+        458,
+        1152,
+        514
+      ],
+      "size": [
+        30,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dissipacao",
+      "index": 4,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dissipacao_04.png"
+    },
+    {
+      "id": "colosso_ressonancia_dissipacao_05",
+      "file": "colosso_ressonancia_dissipacao_05.png",
+      "source_box": [
+        1152,
+        458,
+        1183,
+        514
+      ],
+      "size": [
+        31,
+        56
+      ],
+      "kind": "frame",
+      "status": "REVIEW",
+      "creature": "colosso_ressonancia",
+      "action": "dissipacao",
+      "index": 5,
+      "alpha_candidate": "alpha-review/colosso_ressonancia_dissipacao_05.png"
+    },
+    {
+      "id": "cao_anomalo",
+      "file": "cao_anomalo.png",
+      "source_box": [
+        1202,
+        110,
+        1280,
+        188
+      ],
+      "size": [
+        78,
+        78
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/cao_anomalo.png"
+    },
+    {
+      "id": "inseto_fenda",
+      "file": "inseto_fenda.png",
+      "source_box": [
+        1283,
+        110,
+        1364,
+        188
+      ],
+      "size": [
+        81,
+        78
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/inseto_fenda.png"
+    },
+    {
+      "id": "planta_espinhosa",
+      "file": "planta_espinhosa.png",
+      "source_box": [
+        1366,
+        110,
+        1448,
+        188
+      ],
+      "size": [
+        82,
+        78
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/planta_espinhosa.png"
+    },
+    {
+      "id": "deformado",
+      "file": "deformado.png",
+      "source_box": [
+        1450,
+        110,
+        1527,
+        188
+      ],
+      "size": [
+        77,
+        78
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/deformado.png"
+    },
+    {
+      "id": "corvo_sombrio",
+      "file": "corvo_sombrio.png",
+      "source_box": [
+        1202,
+        212,
+        1280,
+        288
+      ],
+      "size": [
+        78,
+        76
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/corvo_sombrio.png"
+    },
+    {
+      "id": "larva_eco",
+      "file": "larva_eco.png",
+      "source_box": [
+        1283,
+        212,
+        1364,
+        288
+      ],
+      "size": [
+        81,
+        76
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/larva_eco.png"
+    },
+    {
+      "id": "sentinela_drone",
+      "file": "sentinela_drone.png",
+      "source_box": [
+        1366,
+        212,
+        1448,
+        288
+      ],
+      "size": [
+        82,
+        76
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/sentinela_drone.png"
+    },
+    {
+      "id": "sombra_rasteira",
+      "file": "sombra_rasteira.png",
+      "source_box": [
+        1450,
+        212,
+        1527,
+        288
+      ],
+      "size": [
+        77,
+        76
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/sombra_rasteira.png"
+    },
+    {
+      "id": "eco_corrompido",
+      "file": "eco_corrompido.png",
+      "source_box": [
+        1202,
+        310,
+        1280,
+        386
+      ],
+      "size": [
+        78,
+        76
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/eco_corrompido.png"
+    },
+    {
+      "id": "mutacao_aquatica",
+      "file": "mutacao_aquatica.png",
+      "source_box": [
+        1283,
+        310,
+        1364,
+        386
+      ],
+      "size": [
+        81,
+        76
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/mutacao_aquatica.png"
+    },
+    {
+      "id": "cepa_esporal",
+      "file": "cepa_esporal.png",
+      "source_box": [
+        1366,
+        310,
+        1448,
+        386
+      ],
+      "size": [
+        82,
+        76
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/cepa_esporal.png"
+    },
+    {
+      "id": "espectro_infantil",
+      "file": "espectro_infantil.png",
+      "source_box": [
+        1450,
+        310,
+        1527,
+        386
+      ],
+      "size": [
+        77,
+        76
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/espectro_infantil.png"
+    },
+    {
+      "id": "anomalia_temporal",
+      "file": "anomalia_temporal.png",
+      "source_box": [
+        1202,
+        412,
+        1280,
+        486
+      ],
+      "size": [
+        78,
+        74
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/anomalia_temporal.png"
+    },
+    {
+      "id": "guardiao_bunker",
+      "file": "guardiao_bunker.png",
+      "source_box": [
+        1283,
+        412,
+        1364,
+        486
+      ],
+      "size": [
+        81,
+        74
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/guardiao_bunker.png"
+    },
+    {
+      "id": "enxame",
+      "file": "enxame.png",
+      "source_box": [
+        1366,
+        412,
+        1448,
+        486
+      ],
+      "size": [
+        82,
+        74
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/enxame.png"
+    },
+    {
+      "id": "entidade_luz",
+      "file": "entidade_luz.png",
+      "source_box": [
+        1450,
+        412,
+        1527,
+        486
+      ],
+      "size": [
+        77,
+        74
+      ],
+      "kind": "sprite",
+      "status": "REVIEW",
+      "alpha_candidate": "alpha-review/entidade_luz.png"
+    }
+  ]
+}

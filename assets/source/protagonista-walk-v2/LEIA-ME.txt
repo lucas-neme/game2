@@ -1,0 +1,2 @@
+Frequência Zero — protagonista / caminhada V2
+REVIEW: 32 frames em 4 direções. game = 64x96, source = 128x224. Pivôs no manifesto. Arte nova, não recortes idênticos do cânone. Validar ciclo e identidade antes de promover. Não substituir assets de NPCs.

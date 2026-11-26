@@ -10,7 +10,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-CANON = Path(r'D:/Projetos/game2-insumos/fz-canon')
+CANON = Path(__file__).resolve().parents[2] / 'assets' / 'source' / 'canon'
 FW, FH = 32, 48
 FOOT_Y = 45
 

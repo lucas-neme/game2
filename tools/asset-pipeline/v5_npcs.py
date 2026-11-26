@@ -9,7 +9,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-V5 = Path(r'D:/Projetos/game2-insumos/v5/npcs')
+V5 = Path(__file__).resolve().parents[2] / 'assets' / 'source' / 'v5-npcs'
 
 def alpha_of(a):
     rgb = a[..., :3].astype(int); mx = rgb.max(-1); mn = rgb.min(-1)

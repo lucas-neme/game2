@@ -1,0 +1,4 @@
+FREQUÊNCIA ZERO — referência artística canônica
+Preservar exatamente os rostos, roupas, silhuetas, paleta e arquitetura da imagem original.
+Recortes extraídos sem redesenho. Não substituir por arte procedural.
+Os quadros pequenos são recortes por grade aproximada, não oito direções por oito frames. Validar transparência, alinhamento e animação antes de importar. Folhas agrupadas preservam os originais para recorte manual.

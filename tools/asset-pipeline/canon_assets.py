@@ -4,7 +4,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw
 
-CANON = Path(r'D:/Projetos/game2-insumos/fz-canon')
+CANON = Path(__file__).resolve().parents[2] / 'assets' / 'source' / 'canon'
 
 def is_board_bg(rgb):
     """Dark, low-saturation purple/navy of the canon board."""

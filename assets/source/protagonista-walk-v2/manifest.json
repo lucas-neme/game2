@@ -1,0 +1,616 @@
+{
+  "version": "2.0-review",
+  "character": "protagonista",
+  "status": "REVIEW",
+  "source_sha256": "7d6279f27c271ee14e5fdd1ecc7d4cc121c2f2d2be87ac1da93be40c7d5871b0",
+  "animation": "walk",
+  "directions": [
+    "south",
+    "west",
+    "east",
+    "north"
+  ],
+  "frames_per_direction": 8,
+  "frame_duration_ms": 120,
+  "variants": {
+    "game": {
+      "width": 64,
+      "height": 96,
+      "pivot": [
+        32,
+        90
+      ]
+    },
+    "source": {
+      "width": 128,
+      "height": 224,
+      "pivot": [
+        64,
+        218
+      ]
+    }
+  },
+  "frames": [
+    {
+      "direction": "south",
+      "index": 0,
+      "path": "game/south/walk_01.png",
+      "source_path": "source/south/walk_01.png",
+      "atlas_rect": [
+        0,
+        0,
+        64,
+        96
+      ],
+      "source_cell": [
+        0,
+        0,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "south",
+      "index": 1,
+      "path": "game/south/walk_02.png",
+      "source_path": "source/south/walk_02.png",
+      "atlas_rect": [
+        64,
+        0,
+        64,
+        96
+      ],
+      "source_cell": [
+        222,
+        0,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "south",
+      "index": 2,
+      "path": "game/south/walk_03.png",
+      "source_path": "source/south/walk_03.png",
+      "atlas_rect": [
+        128,
+        0,
+        64,
+        96
+      ],
+      "source_cell": [
+        444,
+        0,
+        221,
+        222
+      ]
+    },
+    {
+      "direction": "south",
+      "index": 3,
+      "path": "game/south/walk_04.png",
+      "source_path": "source/south/walk_04.png",
+      "atlas_rect": [
+        192,
+        0,
+        64,
+        96
+      ],
+      "source_cell": [
+        665,
+        0,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "south",
+      "index": 4,
+      "path": "game/south/walk_05.png",
+      "source_path": "source/south/walk_05.png",
+      "atlas_rect": [
+        256,
+        0,
+        64,
+        96
+      ],
+      "source_cell": [
+        887,
+        0,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "south",
+      "index": 5,
+      "path": "game/south/walk_06.png",
+      "source_path": "source/south/walk_06.png",
+      "atlas_rect": [
+        320,
+        0,
+        64,
+        96
+      ],
+      "source_cell": [
+        1109,
+        0,
+        221,
+        222
+      ]
+    },
+    {
+      "direction": "south",
+      "index": 6,
+      "path": "game/south/walk_07.png",
+      "source_path": "source/south/walk_07.png",
+      "atlas_rect": [
+        384,
+        0,
+        64,
+        96
+      ],
+      "source_cell": [
+        1330,
+        0,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "south",
+      "index": 7,
+      "path": "game/south/walk_08.png",
+      "source_path": "source/south/walk_08.png",
+      "atlas_rect": [
+        448,
+        0,
+        64,
+        96
+      ],
+      "source_cell": [
+        1552,
+        0,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "west",
+      "index": 0,
+      "path": "game/west/walk_01.png",
+      "source_path": "source/west/walk_01.png",
+      "atlas_rect": [
+        0,
+        96,
+        64,
+        96
+      ],
+      "source_cell": [
+        0,
+        222,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "west",
+      "index": 1,
+      "path": "game/west/walk_02.png",
+      "source_path": "source/west/walk_02.png",
+      "atlas_rect": [
+        64,
+        96,
+        64,
+        96
+      ],
+      "source_cell": [
+        222,
+        222,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "west",
+      "index": 2,
+      "path": "game/west/walk_03.png",
+      "source_path": "source/west/walk_03.png",
+      "atlas_rect": [
+        128,
+        96,
+        64,
+        96
+      ],
+      "source_cell": [
+        444,
+        222,
+        221,
+        222
+      ]
+    },
+    {
+      "direction": "west",
+      "index": 3,
+      "path": "game/west/walk_04.png",
+      "source_path": "source/west/walk_04.png",
+      "atlas_rect": [
+        192,
+        96,
+        64,
+        96
+      ],
+      "source_cell": [
+        665,
+        222,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "west",
+      "index": 4,
+      "path": "game/west/walk_05.png",
+      "source_path": "source/west/walk_05.png",
+      "atlas_rect": [
+        256,
+        96,
+        64,
+        96
+      ],
+      "source_cell": [
+        887,
+        222,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "west",
+      "index": 5,
+      "path": "game/west/walk_06.png",
+      "source_path": "source/west/walk_06.png",
+      "atlas_rect": [
+        320,
+        96,
+        64,
+        96
+      ],
+      "source_cell": [
+        1109,
+        222,
+        221,
+        222
+      ]
+    },
+    {
+      "direction": "west",
+      "index": 6,
+      "path": "game/west/walk_07.png",
+      "source_path": "source/west/walk_07.png",
+      "atlas_rect": [
+        384,
+        96,
+        64,
+        96
+      ],
+      "source_cell": [
+        1330,
+        222,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "west",
+      "index": 7,
+      "path": "game/west/walk_08.png",
+      "source_path": "source/west/walk_08.png",
+      "atlas_rect": [
+        448,
+        96,
+        64,
+        96
+      ],
+      "source_cell": [
+        1552,
+        222,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "east",
+      "index": 0,
+      "path": "game/east/walk_01.png",
+      "source_path": "source/east/walk_01.png",
+      "atlas_rect": [
+        0,
+        192,
+        64,
+        96
+      ],
+      "source_cell": [
+        0,
+        444,
+        222,
+        221
+      ]
+    },
+    {
+      "direction": "east",
+      "index": 1,
+      "path": "game/east/walk_02.png",
+      "source_path": "source/east/walk_02.png",
+      "atlas_rect": [
+        64,
+        192,
+        64,
+        96
+      ],
+      "source_cell": [
+        222,
+        444,
+        222,
+        221
+      ]
+    },
+    {
+      "direction": "east",
+      "index": 2,
+      "path": "game/east/walk_03.png",
+      "source_path": "source/east/walk_03.png",
+      "atlas_rect": [
+        128,
+        192,
+        64,
+        96
+      ],
+      "source_cell": [
+        444,
+        444,
+        221,
+        221
+      ]
+    },
+    {
+      "direction": "east",
+      "index": 3,
+      "path": "game/east/walk_04.png",
+      "source_path": "source/east/walk_04.png",
+      "atlas_rect": [
+        192,
+        192,
+        64,
+        96
+      ],
+      "source_cell": [
+        665,
+        444,
+        222,
+        221
+      ]
+    },
+    {
+      "direction": "east",
+      "index": 4,
+      "path": "game/east/walk_05.png",
+      "source_path": "source/east/walk_05.png",
+      "atlas_rect": [
+        256,
+        192,
+        64,
+        96
+      ],
+      "source_cell": [
+        887,
+        444,
+        222,
+        221
+      ]
+    },
+    {
+      "direction": "east",
+      "index": 5,
+      "path": "game/east/walk_06.png",
+      "source_path": "source/east/walk_06.png",
+      "atlas_rect": [
+        320,
+        192,
+        64,
+        96
+      ],
+      "source_cell": [
+        1109,
+        444,
+        221,
+        221
+      ]
+    },
+    {
+      "direction": "east",
+      "index": 6,
+      "path": "game/east/walk_07.png",
+      "source_path": "source/east/walk_07.png",
+      "atlas_rect": [
+        384,
+        192,
+        64,
+        96
+      ],
+      "source_cell": [
+        1330,
+        444,
+        222,
+        221
+      ]
+    },
+    {
+      "direction": "east",
+      "index": 7,
+      "path": "game/east/walk_08.png",
+      "source_path": "source/east/walk_08.png",
+      "atlas_rect": [
+        448,
+        192,
+        64,
+        96
+      ],
+      "source_cell": [
+        1552,
+        444,
+        222,
+        221
+      ]
+    },
+    {
+      "direction": "north",
+      "index": 0,
+      "path": "game/north/walk_01.png",
+      "source_path": "source/north/walk_01.png",
+      "atlas_rect": [
+        0,
+        288,
+        64,
+        96
+      ],
+      "source_cell": [
+        0,
+        665,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "north",
+      "index": 1,
+      "path": "game/north/walk_02.png",
+      "source_path": "source/north/walk_02.png",
+      "atlas_rect": [
+        64,
+        288,
+        64,
+        96
+      ],
+      "source_cell": [
+        222,
+        665,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "north",
+      "index": 2,
+      "path": "game/north/walk_03.png",
+      "source_path": "source/north/walk_03.png",
+      "atlas_rect": [
+        128,
+        288,
+        64,
+        96
+      ],
+      "source_cell": [
+        444,
+        665,
+        221,
+        222
+      ]
+    },
+    {
+      "direction": "north",
+      "index": 3,
+      "path": "game/north/walk_04.png",
+      "source_path": "source/north/walk_04.png",
+      "atlas_rect": [
+        192,
+        288,
+        64,
+        96
+      ],
+      "source_cell": [
+        665,
+        665,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "north",
+      "index": 4,
+      "path": "game/north/walk_05.png",
+      "source_path": "source/north/walk_05.png",
+      "atlas_rect": [
+        256,
+        288,
+        64,
+        96
+      ],
+      "source_cell": [
+        887,
+        665,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "north",
+      "index": 5,
+      "path": "game/north/walk_06.png",
+      "source_path": "source/north/walk_06.png",
+      "atlas_rect": [
+        320,
+        288,
+        64,
+        96
+      ],
+      "source_cell": [
+        1109,
+        665,
+        221,
+        222
+      ]
+    },
+    {
+      "direction": "north",
+      "index": 6,
+      "path": "game/north/walk_07.png",
+      "source_path": "source/north/walk_07.png",
+      "atlas_rect": [
+        384,
+        288,
+        64,
+        96
+      ],
+      "source_cell": [
+        1330,
+        665,
+        222,
+        222
+      ]
+    },
+    {
+      "direction": "north",
+      "index": 7,
+      "path": "game/north/walk_08.png",
+      "source_path": "source/north/walk_08.png",
+      "atlas_rect": [
+        448,
+        288,
+        64,
+        96
+      ],
+      "source_cell": [
+        1552,
+        665,
+        222,
+        222
+      ]
+    }
+  ],
+  "notes": [
+    "Arte gerada a partir da referência canônica; fidelidade visual ainda requer aprovação.",
+    "Ciclo de quatro direções, não oito. Alguns frames apresentam pose semelhante.",
+    "Âncora inferior alinhada; escala global uniforme. Não substituir sprites em produção sem homologação."
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "source": "a_highly_detailed_pixel_art_game_asset_sheet_for.png",
+  "source_sha256": "b14f5d94af0b88c0da48dccf2d08a0d88e6465532317736730128bda0ef592ae",
+  "status": "REVIEW",
+  "note": "Recortes da prancha aprovada. Células de animação aproximadas, podem conter vizinhos, fundos ou efeitos. Alpha é candidato automático, não homologado. Painéis de enigmas são arte estática, não mecanismos funcionais.",
+  "assets": [
+    {
+      "id": "engrenagens_integradas",
+      "file": "engrenagens_integradas.png",
+      "source_box": [
+        20,
+        830,
+        179,
+        973
+      ],
+      "size": [
+        159,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "alinhamento_lentes",
+      "file": "alinhamento_lentes.png",
+      "source_box": [
+        185,
+        830,
+        332,
+        973
+      ],
+      "size": [
+        147,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "discos_rotativos",
+      "file": "discos_rotativos.png",
+      "source_box": [
+        338,
+        830,
+        482,
+        973
+      ],
+      "size": [
+        144,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "painel_eletrico",
+      "file": "painel_eletrico.png",
+      "source_box": [
+        488,
+        830,
+        639,
+        973
+      ],
+      "size": [
+        151,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "mecanismo_alavancas",
+      "file": "mecanismo_alavancas.png",
+      "source_box": [
+        645,
+        830,
+        791,
+        973
+      ],
+      "size": [
+        146,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "relogio",
+      "file": "relogio.png",
+      "source_box": [
+        797,
+        830,
+        941,
+        973
+      ],
+      "size": [
+        144,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "mapa_fragmental",
+      "file": "mapa_fragmental.png",
+      "source_box": [
+        947,
+        830,
+        1088,
+        973
+      ],
+      "size": [
+        141,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "cofre_mecanico",
+      "file": "cofre_mecanico.png",
+      "source_box": [
+        1094,
+        830,
+        1237,
+        973
+      ],
+      "size": [
+        143,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "painel_sequencia",
+      "file": "painel_sequencia.png",
+      "source_box": [
+        1243,
+        830,
+        1383,
+        973
+      ],
+      "size": [
+        140,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    },
+    {
+      "id": "runas",
+      "file": "runas.png",
+      "source_box": [
+        1389,
+        830,
+        1521,
+        973
+      ],
+      "size": [
+        132,
+        143
+      ],
+      "kind": "painel",
+      "status": "REVIEW"
+    }
+  ]
+}

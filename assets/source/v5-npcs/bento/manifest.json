@@ -1,0 +1,1399 @@
+{
+  "id": "bento",
+  "status": "REVIEW",
+  "frames": [
+    {
+      "file": "frames/r01_01.png",
+      "rect": [
+        16,
+        73,
+        68,
+        127
+      ],
+      "row": 1,
+      "index": 1,
+      "review": true
+    },
+    {
+      "file": "frames/r01_02.png",
+      "rect": [
+        84,
+        73,
+        62,
+        127
+      ],
+      "row": 1,
+      "index": 2,
+      "review": true
+    },
+    {
+      "file": "frames/r01_03.png",
+      "rect": [
+        146,
+        73,
+        62,
+        127
+      ],
+      "row": 1,
+      "index": 3,
+      "review": true
+    },
+    {
+      "file": "frames/r01_04.png",
+      "rect": [
+        208,
+        73,
+        78,
+        127
+      ],
+      "row": 1,
+      "index": 4,
+      "review": true
+    },
+    {
+      "file": "frames/r01_05.png",
+      "rect": [
+        286,
+        73,
+        76,
+        127
+      ],
+      "row": 1,
+      "index": 5,
+      "review": true
+    },
+    {
+      "file": "frames/r01_06.png",
+      "rect": [
+        362,
+        73,
+        60,
+        127
+      ],
+      "row": 1,
+      "index": 6,
+      "review": true
+    },
+    {
+      "file": "frames/r01_07.png",
+      "rect": [
+        422,
+        73,
+        61,
+        127
+      ],
+      "row": 1,
+      "index": 7,
+      "review": true
+    },
+    {
+      "file": "frames/r01_08.png",
+      "rect": [
+        483,
+        73,
+        80,
+        127
+      ],
+      "row": 1,
+      "index": 8,
+      "review": true
+    },
+    {
+      "file": "frames/r01_09.png",
+      "rect": [
+        563,
+        73,
+        81,
+        127
+      ],
+      "row": 1,
+      "index": 9,
+      "review": true
+    },
+    {
+      "file": "frames/r01_10.png",
+      "rect": [
+        644,
+        73,
+        60,
+        127
+      ],
+      "row": 1,
+      "index": 10,
+      "review": true
+    },
+    {
+      "file": "frames/r01_11.png",
+      "rect": [
+        704,
+        73,
+        60,
+        127
+      ],
+      "row": 1,
+      "index": 11,
+      "review": true
+    },
+    {
+      "file": "frames/r01_12.png",
+      "rect": [
+        764,
+        73,
+        73,
+        127
+      ],
+      "row": 1,
+      "index": 12,
+      "review": true
+    },
+    {
+      "file": "frames/r01_13.png",
+      "rect": [
+        837,
+        73,
+        79,
+        127
+      ],
+      "row": 1,
+      "index": 13,
+      "review": true
+    },
+    {
+      "file": "frames/r01_14.png",
+      "rect": [
+        916,
+        73,
+        62,
+        127
+      ],
+      "row": 1,
+      "index": 14,
+      "review": true
+    },
+    {
+      "file": "frames/r01_15.png",
+      "rect": [
+        978,
+        73,
+        62,
+        127
+      ],
+      "row": 1,
+      "index": 15,
+      "review": true
+    },
+    {
+      "file": "frames/r01_16.png",
+      "rect": [
+        1040,
+        73,
+        66,
+        127
+      ],
+      "row": 1,
+      "index": 16,
+      "review": true
+    },
+    {
+      "file": "frames/r02_01.png",
+      "rect": [
+        11,
+        278,
+        62,
+        107
+      ],
+      "row": 2,
+      "index": 1,
+      "review": true
+    },
+    {
+      "file": "frames/r02_02.png",
+      "rect": [
+        73,
+        278,
+        62,
+        107
+      ],
+      "row": 2,
+      "index": 2,
+      "review": true
+    },
+    {
+      "file": "frames/r02_03.png",
+      "rect": [
+        135,
+        278,
+        61,
+        107
+      ],
+      "row": 2,
+      "index": 3,
+      "review": true
+    },
+    {
+      "file": "frames/r02_04.png",
+      "rect": [
+        196,
+        278,
+        73,
+        107
+      ],
+      "row": 2,
+      "index": 4,
+      "review": true
+    },
+    {
+      "file": "frames/r02_05.png",
+      "rect": [
+        269,
+        278,
+        65,
+        107
+      ],
+      "row": 2,
+      "index": 5,
+      "review": true
+    },
+    {
+      "file": "frames/r02_06.png",
+      "rect": [
+        334,
+        278,
+        46,
+        107
+      ],
+      "row": 2,
+      "index": 6,
+      "review": true
+    },
+    {
+      "file": "frames/r02_07.png",
+      "rect": [
+        380,
+        278,
+        43,
+        107
+      ],
+      "row": 2,
+      "index": 7,
+      "review": true
+    },
+    {
+      "file": "frames/r02_08.png",
+      "rect": [
+        423,
+        278,
+        42,
+        107
+      ],
+      "row": 2,
+      "index": 8,
+      "review": true
+    },
+    {
+      "file": "frames/r02_09.png",
+      "rect": [
+        465,
+        278,
+        97,
+        107
+      ],
+      "row": 2,
+      "index": 9,
+      "review": true
+    },
+    {
+      "file": "frames/r02_10.png",
+      "rect": [
+        562,
+        278,
+        57,
+        107
+      ],
+      "row": 2,
+      "index": 10,
+      "review": true
+    },
+    {
+      "file": "frames/r02_11.png",
+      "rect": [
+        619,
+        278,
+        42,
+        107
+      ],
+      "row": 2,
+      "index": 11,
+      "review": true
+    },
+    {
+      "file": "frames/r02_12.png",
+      "rect": [
+        661,
+        278,
+        40,
+        107
+      ],
+      "row": 2,
+      "index": 12,
+      "review": true
+    },
+    {
+      "file": "frames/r02_13.png",
+      "rect": [
+        701,
+        278,
+        42,
+        107
+      ],
+      "row": 2,
+      "index": 13,
+      "review": true
+    },
+    {
+      "file": "frames/r02_14.png",
+      "rect": [
+        743,
+        278,
+        43,
+        107
+      ],
+      "row": 2,
+      "index": 14,
+      "review": true
+    },
+    {
+      "file": "frames/r02_15.png",
+      "rect": [
+        786,
+        278,
+        57,
+        107
+      ],
+      "row": 2,
+      "index": 15,
+      "review": true
+    },
+    {
+      "file": "frames/r02_16.png",
+      "rect": [
+        843,
+        278,
+        60,
+        107
+      ],
+      "row": 2,
+      "index": 16,
+      "review": true
+    },
+    {
+      "file": "frames/r02_17.png",
+      "rect": [
+        903,
+        278,
+        41,
+        107
+      ],
+      "row": 2,
+      "index": 17,
+      "review": true
+    },
+    {
+      "file": "frames/r02_18.png",
+      "rect": [
+        944,
+        278,
+        40,
+        107
+      ],
+      "row": 2,
+      "index": 18,
+      "review": true
+    },
+    {
+      "file": "frames/r02_19.png",
+      "rect": [
+        984,
+        278,
+        42,
+        107
+      ],
+      "row": 2,
+      "index": 19,
+      "review": true
+    },
+    {
+      "file": "frames/r02_20.png",
+      "rect": [
+        1026,
+        278,
+        40,
+        107
+      ],
+      "row": 2,
+      "index": 20,
+      "review": true
+    },
+    {
+      "file": "frames/r02_21.png",
+      "rect": [
+        1066,
+        278,
+        50,
+        107
+      ],
+      "row": 2,
+      "index": 21,
+      "review": true
+    },
+    {
+      "file": "frames/r03_01.png",
+      "rect": [
+        10,
+        393,
+        63,
+        105
+      ],
+      "row": 3,
+      "index": 1,
+      "review": true
+    },
+    {
+      "file": "frames/r03_02.png",
+      "rect": [
+        73,
+        393,
+        62,
+        105
+      ],
+      "row": 3,
+      "index": 2,
+      "review": true
+    },
+    {
+      "file": "frames/r03_03.png",
+      "rect": [
+        135,
+        393,
+        62,
+        105
+      ],
+      "row": 3,
+      "index": 3,
+      "review": true
+    },
+    {
+      "file": "frames/r03_04.png",
+      "rect": [
+        197,
+        393,
+        72,
+        105
+      ],
+      "row": 3,
+      "index": 4,
+      "review": true
+    },
+    {
+      "file": "frames/r03_05.png",
+      "rect": [
+        269,
+        393,
+        61,
+        105
+      ],
+      "row": 3,
+      "index": 5,
+      "review": true
+    },
+    {
+      "file": "frames/r03_06.png",
+      "rect": [
+        330,
+        393,
+        43,
+        105
+      ],
+      "row": 3,
+      "index": 6,
+      "review": true
+    },
+    {
+      "file": "frames/r03_07.png",
+      "rect": [
+        373,
+        393,
+        44,
+        105
+      ],
+      "row": 3,
+      "index": 7,
+      "review": true
+    },
+    {
+      "file": "frames/r03_08.png",
+      "rect": [
+        417,
+        393,
+        44,
+        105
+      ],
+      "row": 3,
+      "index": 8,
+      "review": true
+    },
+    {
+      "file": "frames/r03_09.png",
+      "rect": [
+        461,
+        393,
+        44,
+        105
+      ],
+      "row": 3,
+      "index": 9,
+      "review": true
+    },
+    {
+      "file": "frames/r03_10.png",
+      "rect": [
+        505,
+        393,
+        56,
+        105
+      ],
+      "row": 3,
+      "index": 10,
+      "review": true
+    },
+    {
+      "file": "frames/r03_11.png",
+      "rect": [
+        561,
+        393,
+        104,
+        105
+      ],
+      "row": 3,
+      "index": 11,
+      "review": true
+    },
+    {
+      "file": "frames/r03_12.png",
+      "rect": [
+        665,
+        393,
+        40,
+        105
+      ],
+      "row": 3,
+      "index": 12,
+      "review": true
+    },
+    {
+      "file": "frames/r03_13.png",
+      "rect": [
+        705,
+        393,
+        43,
+        105
+      ],
+      "row": 3,
+      "index": 13,
+      "review": true
+    },
+    {
+      "file": "frames/r03_14.png",
+      "rect": [
+        748,
+        393,
+        43,
+        105
+      ],
+      "row": 3,
+      "index": 14,
+      "review": true
+    },
+    {
+      "file": "frames/r03_15.png",
+      "rect": [
+        791,
+        393,
+        55,
+        105
+      ],
+      "row": 3,
+      "index": 15,
+      "review": true
+    },
+    {
+      "file": "frames/r03_16.png",
+      "rect": [
+        846,
+        393,
+        58,
+        105
+      ],
+      "row": 3,
+      "index": 16,
+      "review": true
+    },
+    {
+      "file": "frames/r03_17.png",
+      "rect": [
+        904,
+        393,
+        40,
+        105
+      ],
+      "row": 3,
+      "index": 17,
+      "review": true
+    },
+    {
+      "file": "frames/r03_18.png",
+      "rect": [
+        944,
+        393,
+        41,
+        105
+      ],
+      "row": 3,
+      "index": 18,
+      "review": true
+    },
+    {
+      "file": "frames/r03_19.png",
+      "rect": [
+        985,
+        393,
+        41,
+        105
+      ],
+      "row": 3,
+      "index": 19,
+      "review": true
+    },
+    {
+      "file": "frames/r03_20.png",
+      "rect": [
+        1026,
+        393,
+        42,
+        105
+      ],
+      "row": 3,
+      "index": 20,
+      "review": true
+    },
+    {
+      "file": "frames/r03_21.png",
+      "rect": [
+        1068,
+        393,
+        50,
+        105
+      ],
+      "row": 3,
+      "index": 21,
+      "review": true
+    },
+    {
+      "file": "frames/r04_01.png",
+      "rect": [
+        13,
+        567,
+        66,
+        121
+      ],
+      "row": 4,
+      "index": 1,
+      "review": true
+    },
+    {
+      "file": "frames/r04_02.png",
+      "rect": [
+        79,
+        567,
+        63,
+        121
+      ],
+      "row": 4,
+      "index": 2,
+      "review": true
+    },
+    {
+      "file": "frames/r04_03.png",
+      "rect": [
+        142,
+        567,
+        65,
+        121
+      ],
+      "row": 4,
+      "index": 3,
+      "review": true
+    },
+    {
+      "file": "frames/r04_04.png",
+      "rect": [
+        207,
+        567,
+        78,
+        121
+      ],
+      "row": 4,
+      "index": 4,
+      "review": true
+    },
+    {
+      "file": "frames/r04_05.png",
+      "rect": [
+        285,
+        567,
+        73,
+        121
+      ],
+      "row": 4,
+      "index": 5,
+      "review": true
+    },
+    {
+      "file": "frames/r04_06.png",
+      "rect": [
+        358,
+        567,
+        65,
+        121
+      ],
+      "row": 4,
+      "index": 6,
+      "review": true
+    },
+    {
+      "file": "frames/r04_07.png",
+      "rect": [
+        423,
+        567,
+        62,
+        121
+      ],
+      "row": 4,
+      "index": 7,
+      "review": true
+    },
+    {
+      "file": "frames/r04_08.png",
+      "rect": [
+        485,
+        567,
+        80,
+        121
+      ],
+      "row": 4,
+      "index": 8,
+      "review": true
+    },
+    {
+      "file": "frames/r04_09.png",
+      "rect": [
+        565,
+        567,
+        76,
+        121
+      ],
+      "row": 4,
+      "index": 9,
+      "review": true
+    },
+    {
+      "file": "frames/r04_10.png",
+      "rect": [
+        641,
+        567,
+        61,
+        121
+      ],
+      "row": 4,
+      "index": 10,
+      "review": true
+    },
+    {
+      "file": "frames/r04_11.png",
+      "rect": [
+        702,
+        567,
+        63,
+        121
+      ],
+      "row": 4,
+      "index": 11,
+      "review": true
+    },
+    {
+      "file": "frames/r04_12.png",
+      "rect": [
+        765,
+        567,
+        71,
+        121
+      ],
+      "row": 4,
+      "index": 12,
+      "review": true
+    },
+    {
+      "file": "frames/r04_13.png",
+      "rect": [
+        836,
+        567,
+        77,
+        121
+      ],
+      "row": 4,
+      "index": 13,
+      "review": true
+    },
+    {
+      "file": "frames/r04_14.png",
+      "rect": [
+        913,
+        567,
+        66,
+        121
+      ],
+      "row": 4,
+      "index": 14,
+      "review": true
+    },
+    {
+      "file": "frames/r04_15.png",
+      "rect": [
+        979,
+        567,
+        63,
+        121
+      ],
+      "row": 4,
+      "index": 15,
+      "review": true
+    },
+    {
+      "file": "frames/r04_16.png",
+      "rect": [
+        1042,
+        567,
+        67,
+        121
+      ],
+      "row": 4,
+      "index": 16,
+      "review": true
+    },
+    {
+      "file": "frames/r05_01.png",
+      "rect": [
+        10,
+        767,
+        67,
+        122
+      ],
+      "row": 5,
+      "index": 1,
+      "review": true
+    },
+    {
+      "file": "frames/r05_02.png",
+      "rect": [
+        77,
+        767,
+        65,
+        122
+      ],
+      "row": 5,
+      "index": 2,
+      "review": true
+    },
+    {
+      "file": "frames/r05_03.png",
+      "rect": [
+        142,
+        767,
+        64,
+        122
+      ],
+      "row": 5,
+      "index": 3,
+      "review": true
+    },
+    {
+      "file": "frames/r05_04.png",
+      "rect": [
+        206,
+        767,
+        79,
+        122
+      ],
+      "row": 5,
+      "index": 4,
+      "review": true
+    },
+    {
+      "file": "frames/r05_05.png",
+      "rect": [
+        285,
+        767,
+        73,
+        122
+      ],
+      "row": 5,
+      "index": 5,
+      "review": true
+    },
+    {
+      "file": "frames/r05_06.png",
+      "rect": [
+        358,
+        767,
+        65,
+        122
+      ],
+      "row": 5,
+      "index": 6,
+      "review": true
+    },
+    {
+      "file": "frames/r05_07.png",
+      "rect": [
+        423,
+        767,
+        63,
+        122
+      ],
+      "row": 5,
+      "index": 7,
+      "review": true
+    },
+    {
+      "file": "frames/r05_08.png",
+      "rect": [
+        486,
+        767,
+        81,
+        122
+      ],
+      "row": 5,
+      "index": 8,
+      "review": true
+    },
+    {
+      "file": "frames/r05_09.png",
+      "rect": [
+        567,
+        767,
+        74,
+        122
+      ],
+      "row": 5,
+      "index": 9,
+      "review": true
+    },
+    {
+      "file": "frames/r05_10.png",
+      "rect": [
+        641,
+        767,
+        62,
+        122
+      ],
+      "row": 5,
+      "index": 10,
+      "review": true
+    },
+    {
+      "file": "frames/r05_11.png",
+      "rect": [
+        703,
+        767,
+        62,
+        122
+      ],
+      "row": 5,
+      "index": 11,
+      "review": true
+    },
+    {
+      "file": "frames/r05_12.png",
+      "rect": [
+        765,
+        767,
+        73,
+        122
+      ],
+      "row": 5,
+      "index": 12,
+      "review": true
+    },
+    {
+      "file": "frames/r05_13.png",
+      "rect": [
+        838,
+        767,
+        75,
+        122
+      ],
+      "row": 5,
+      "index": 13,
+      "review": true
+    },
+    {
+      "file": "frames/r05_14.png",
+      "rect": [
+        913,
+        767,
+        65,
+        122
+      ],
+      "row": 5,
+      "index": 14,
+      "review": true
+    },
+    {
+      "file": "frames/r05_15.png",
+      "rect": [
+        978,
+        767,
+        64,
+        122
+      ],
+      "row": 5,
+      "index": 15,
+      "review": true
+    },
+    {
+      "file": "frames/r05_16.png",
+      "rect": [
+        1042,
+        767,
+        67,
+        122
+      ],
+      "row": 5,
+      "index": 16,
+      "review": true
+    },
+    {
+      "file": "frames/r06_01.png",
+      "rect": [
+        23,
+        967,
+        74,
+        136
+      ],
+      "row": 6,
+      "index": 1,
+      "review": true
+    },
+    {
+      "file": "frames/r06_02.png",
+      "rect": [
+        97,
+        967,
+        82,
+        136
+      ],
+      "row": 6,
+      "index": 2,
+      "review": true
+    },
+    {
+      "file": "frames/r06_03.png",
+      "rect": [
+        179,
+        967,
+        81,
+        136
+      ],
+      "row": 6,
+      "index": 3,
+      "review": true
+    },
+    {
+      "file": "frames/r06_04.png",
+      "rect": [
+        260,
+        967,
+        87,
+        136
+      ],
+      "row": 6,
+      "index": 4,
+      "review": true
+    },
+    {
+      "file": "frames/r06_05.png",
+      "rect": [
+        347,
+        967,
+        90,
+        136
+      ],
+      "row": 6,
+      "index": 5,
+      "review": true
+    },
+    {
+      "file": "frames/r06_06.png",
+      "rect": [
+        437,
+        967,
+        83,
+        136
+      ],
+      "row": 6,
+      "index": 6,
+      "review": true
+    },
+    {
+      "file": "frames/r06_07.png",
+      "rect": [
+        520,
+        967,
+        84,
+        136
+      ],
+      "row": 6,
+      "index": 7,
+      "review": true
+    },
+    {
+      "file": "frames/r06_08.png",
+      "rect": [
+        604,
+        967,
+        88,
+        136
+      ],
+      "row": 6,
+      "index": 8,
+      "review": true
+    },
+    {
+      "file": "frames/r06_09.png",
+      "rect": [
+        692,
+        967,
+        85,
+        136
+      ],
+      "row": 6,
+      "index": 9,
+      "review": true
+    },
+    {
+      "file": "frames/r06_10.png",
+      "rect": [
+        777,
+        967,
+        84,
+        136
+      ],
+      "row": 6,
+      "index": 10,
+      "review": true
+    },
+    {
+      "file": "frames/r06_11.png",
+      "rect": [
+        861,
+        967,
+        80,
+        136
+      ],
+      "row": 6,
+      "index": 11,
+      "review": true
+    },
+    {
+      "file": "frames/r06_12.png",
+      "rect": [
+        941,
+        967,
+        80,
+        136
+      ],
+      "row": 6,
+      "index": 12,
+      "review": true
+    },
+    {
+      "file": "frames/r06_13.png",
+      "rect": [
+        1021,
+        967,
+        75,
+        136
+      ],
+      "row": 6,
+      "index": 13,
+      "review": true
+    },
+    {
+      "file": "frames/r07_01.png",
+      "rect": [
+        22,
+        1174,
+        76,
+        136
+      ],
+      "row": 7,
+      "index": 1,
+      "review": true
+    },
+    {
+      "file": "frames/r07_02.png",
+      "rect": [
+        98,
+        1174,
+        81,
+        136
+      ],
+      "row": 7,
+      "index": 2,
+      "review": true
+    },
+    {
+      "file": "frames/r07_03.png",
+      "rect": [
+        179,
+        1174,
+        87,
+        136
+      ],
+      "row": 7,
+      "index": 3,
+      "review": true
+    },
+    {
+      "file": "frames/r07_04.png",
+      "rect": [
+        266,
+        1174,
+        92,
+        136
+      ],
+      "row": 7,
+      "index": 4,
+      "review": true
+    },
+    {
+      "file": "frames/r07_05.png",
+      "rect": [
+        358,
+        1174,
+        86,
+        136
+      ],
+      "row": 7,
+      "index": 5,
+      "review": true
+    },
+    {
+      "file": "frames/r07_06.png",
+      "rect": [
+        444,
+        1174,
+        83,
+        136
+      ],
+      "row": 7,
+      "index": 6,
+      "review": true
+    },
+    {
+      "file": "frames/r07_07.png",
+      "rect": [
+        527,
+        1174,
+        83,
+        136
+      ],
+      "row": 7,
+      "index": 7,
+      "review": true
+    },
+    {
+      "file": "frames/r07_08.png",
+      "rect": [
+        610,
+        1174,
+        86,
+        136
+      ],
+      "row": 7,
+      "index": 8,
+      "review": true
+    },
+    {
+      "file": "frames/r07_09.png",
+      "rect": [
+        696,
+        1174,
+        85,
+        136
+      ],
+      "row": 7,
+      "index": 9,
+      "review": true
+    },
+    {
+      "file": "frames/r07_10.png",
+      "rect": [
+        781,
+        1174,
+        84,
+        136
+      ],
+      "row": 7,
+      "index": 10,
+      "review": true
+    },
+    {
+      "file": "frames/r07_11.png",
+      "rect": [
+        865,
+        1174,
+        76,
+        136
+      ],
+      "row": 7,
+      "index": 11,
+      "review": true
+    },
+    {
+      "file": "frames/r07_12.png",
+      "rect": [
+        941,
+        1174,
+        83,
+        136
+      ],
+      "row": 7,
+      "index": 12,
+      "review": true
+    },
+    {
+      "file": "frames/r07_13.png",
+      "rect": [
+        1024,
+        1174,
+        76,
+        136
+      ],
+      "row": 7,
+      "index": 13,
+      "review": true
+    }
+  ],
+  "note": "Recortes por projeção alfa; verificar sprites unidos, resíduos, direção, ação e âncora antes de usar. Não normalizados."
+}
