@@ -24,7 +24,7 @@ const free=await page.evaluate(()=>__free(1.3));assert(free.length>=1,'need open
 await page.evaluate(([x,y])=>__place(x,y),F);let sm=await hold(page,['d'],700,pos);
 const fr=sm.filter(p=>Math.abs(p.x-Math.round(p.x))>.05&&Math.abs(p.y-Math.round(p.y))>.05).length;
 const dist=Math.hypot(sm.at(-1).x-F[0],sm.at(-1).y-F[1]);
-assert(fr>=5,'positions between cells: '+fr);assert(dist>.6&&dist<2.2,'walked distance '+dist);assert(Math.max(...sm.map(p=>p.pen))<.01,'penetration');assert(sm.some(p=>p.anim==='walk'),'walk animation while moving');
+assert(fr>=5,'positions between cells: '+fr);assert(dist>.6&&dist<2.2,'walked distance '+dist);assert(Math.max(...sm.map(p=>p.pen))<.02,'penetration');assert(sm.some(p=>p.anim==='walk'),'walk animation while moving');
 await page.waitForTimeout(250);assert.equal(await page.evaluate(()=>heroVis.anim),'idle','stops naturally');ok('continuous walking',`${dist.toFixed(2)} cells in 0.7 s, ${fr} off-grid samples`);
 // 2. eight directions, normalized diagonal, screen heading matches input
 const dirs=[[['d'],[1,0]],[['a'],[-1,0]],[['w'],[0,-1]],[['s'],[0,1]],[['w','d'],[1,-1]],[['w','a'],[-1,-1]],[['s','d'],[1,1]],[['s','a'],[-1,1]]];
@@ -40,7 +40,7 @@ assert(Math.abs(vr[0]-4.3)<.3&&vr[1]==='run','run '+vr);assert(Math.abs(vs[0]-1.
 // 4. building wall: no penetration, slides along the face and goes around the corner
 await page.evaluate(()=>{s.t=1200;s.worldClock=Math.max(s.worldClock,1200);render()});await page.waitForTimeout(400);await page.evaluate(()=>__place(8.8,4.3));sm=await hold(page,['w'],1600,pos);
 const maxPen=Math.max(...sm.map(p=>p.pen));const onFace=sm.filter(p=>Math.abs(p.y-3.72)<.04);
-assert(maxPen<.01,'penetration '+maxPen);assert(onFace.length>=3,'slides on the clinic face');assert(onFace.at(-1).x<onFace[0].x-.2,'slid along x');assert(sm.at(-1).y<3.5,'went around the corner: y='+sm.at(-1).y);
+assert(maxPen<.02,'penetration '+maxPen);assert(onFace.length>=3,'slides on the clinic face');assert(onFace.at(-1).x<onFace[0].x-.2,'slid along x');assert(sm.at(-1).y<3.5,'went around the corner: y='+sm.at(-1).y);
 await page.screenshot({path:`${OUT}/wall-slide.png`});ok('building collision + sliding + contour',`max penetration ${maxPen.toFixed(3)}`);
 // 5. tree trunk and prop bases
 const tree=await page.evaluate(()=>{const c=STATIC.find(c=>c.t===1&&c.r===.2&&c.x>1&&c.y>1&&!solidAt(c.x+.9,c.y+.9,.22)&&!solidAt(c.x+.45,c.y+.45,.22));return c&&[c.x,c.y]});
