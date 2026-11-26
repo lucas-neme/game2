@@ -497,16 +497,16 @@
    "direction": null,
    "frame": null,
    "size": [
-    776,
-    1340
+    832,
+    1360
    ],
    "anchor": [
-    48,
-    131
+    52,
+    133
    ],
-   "scale": 0.3541,
-   "sha256": "de452bd0d77aec19f9487ca62e4d808bfb42304cf92fe2caed59e55e3990ae39",
-   "bytes": 543446,
+   "scale": 0.3346,
+   "sha256": "e14c2afd05a9a1c2c83f6e7bd5f0b7078b2fec59b876628cb05986931883df0c",
+   "bytes": 626214,
    "origin": [
     "production/characters"
    ],
@@ -534,8 +534,8 @@
     107
    ],
    "scale": 0.3837,
-   "sha256": "24eea3bb2e06c47c50df054781608778cc7f5ca6f431483a71760a6240989465",
-   "bytes": 575720,
+   "sha256": "dbff52a6b4dda5d48776a05f1d56d8dbc079f0f155b59211f9cb644bf8322a45",
+   "bytes": 598791,
    "origin": [
     "production/characters"
    ],
@@ -555,16 +555,16 @@
    "direction": null,
    "frame": null,
    "size": [
-    744,
-    1210
+    760,
+    1220
    ],
    "anchor": [
-    46,
-    118
+    47,
+    119
    ],
-   "scale": 0.3804,
-   "sha256": "be4dbd7377dca95cf5f7a73fcb5951d034c8143e44bee1d45ee08e3b519bfd84",
-   "bytes": 405460,
+   "scale": 0.3786,
+   "sha256": "15683f93e9eff4e5f654943ac6bd871fe400e76ac46635ccac0cb7f1eb237a65",
+   "bytes": 503744,
    "origin": [
     "production/characters"
    ],
@@ -584,16 +584,16 @@
    "direction": null,
    "frame": null,
    "size": [
-    679,
-    981
+    700,
+    1008
    ],
    "anchor": [
-    48,
-    106
+    50,
+    109
    ],
-   "scale": 0.4288,
-   "sha256": "4c4edaf12ce376dc242be4a78c824ded82153f2bf379ba12086c0b8ac62b1d48",
-   "bytes": 400469,
+   "scale": 0.42,
+   "sha256": "a030b505899256d2003ee1f47215e7a50438c4c91d83734137a9e86646be3ddb",
+   "bytes": 464140,
    "origin": [
     "production/characters"
    ],
@@ -613,16 +613,16 @@
    "direction": null,
    "frame": null,
    "size": [
-    688,
-    1070
+    696,
+    1090
    ],
    "anchor": [
     43,
-    104
+    106
    ],
-   "scale": 0.456,
-   "sha256": "ac83f188bf30d0d58ca9810f61eb9577f0ce98734557a5fece6c1d9b43a5985c",
-   "bytes": 444423,
+   "scale": 0.4534,
+   "sha256": "36972c232ddf460a785c0668082995143f6ef7590593729162c7a7e32a07dcf5",
+   "bytes": 475093,
    "origin": [
     "production/characters"
    ],
@@ -642,16 +642,16 @@
    "direction": null,
    "frame": null,
    "size": [
-    792,
-    1290
+    816,
+    1230
    ],
    "anchor": [
-    49,
-    126
+    51,
+    120
    ],
-   "scale": 0.3935,
-   "sha256": "12841ac2dadfff795f92574d5fbb89b152fb1955ba17722e3e774f02d20597fe",
-   "bytes": 512731,
+   "scale": 0.3865,
+   "sha256": "95a0e534657c39aab39ccfa2afd77839fd82c9165f7fcac6ca924c70ad057750",
+   "bytes": 598357,
    "origin": [
     "production/characters"
    ],
@@ -17865,9 +17865,9 @@
    "raw_url": "https://raw.githubusercontent.com/lucas-neme/game2/main/assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_02.png",
    "category": "characters",
    "character": "celina",
-   "animation": "sit",
+   "animation": null,
    "direction": null,
-   "frame": 0,
+   "frame": null,
    "size": [
     85,
     106
@@ -17894,7 +17894,7 @@
    "character": "celina",
    "animation": "sit",
    "direction": null,
-   "frame": 1,
+   "frame": 0,
    "size": [
     87,
     106
@@ -17921,7 +17921,7 @@
    "character": "celina",
    "animation": "sit",
    "direction": null,
-   "frame": 2,
+   "frame": 1,
    "size": [
     94,
     106
@@ -17948,7 +17948,7 @@
    "character": "celina",
    "animation": "sit",
    "direction": null,
-   "frame": 3,
+   "frame": 2,
    "size": [
     92,
     106
@@ -17975,7 +17975,7 @@
    "character": "celina",
    "animation": "sit",
    "direction": null,
-   "frame": 4,
+   "frame": 3,
    "size": [
     90,
     106
@@ -18002,7 +18002,7 @@
    "character": "celina",
    "animation": "sit",
    "direction": null,
-   "frame": 5,
+   "frame": 4,
    "size": [
     91,
     106
@@ -18029,7 +18029,7 @@
    "character": "celina",
    "animation": "sit",
    "direction": null,
-   "frame": 6,
+   "frame": 5,
    "size": [
     90,
     106
@@ -31203,9 +31203,9 @@
    "raw_url": "https://raw.githubusercontent.com/lucas-neme/game2/main/assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_12.png",
    "category": "characters",
    "character": "raul",
-   "animation": "stand",
+   "animation": null,
    "direction": null,
-   "frame": 3,
+   "frame": null,
    "size": [
     75,
     135

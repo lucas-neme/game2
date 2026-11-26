@@ -11,9 +11,23 @@ from PIL import Image
 
 V5 = Path(__file__).resolve().parents[2] / 'assets' / 'source' / 'v5-npcs'
 
+def border_connected(m):
+    """Pixels of m 4-connected to the image border."""
+    H, W = m.shape; seen = np.zeros_like(m); st = [(y, x) for y in range(H) for x in (0, W - 1) if m[y, x]]
+    st += [(y, x) for x in range(W) for y in (0, H - 1) if m[y, x]]
+    for y, x in st: seen[y, x] = True
+    while st:
+        y, x = st.pop()
+        for yy, xx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)):
+            if 0 <= yy < H and 0 <= xx < W and m[yy, xx] and not seen[yy, xx]: seen[yy, xx] = True; st.append((yy, xx))
+    return seen
+
 def alpha_of(a):
     rgb = a[..., :3].astype(int); mx = rgb.max(-1); mn = rgb.min(-1)
-    m = (a[..., 3] > 40) & ~((mx < 38) & (mx - mn < 22))
+    dark = (mx < 38) & (mx - mn < 22)
+    # Near-black pixels are only background when they belong to a dark board touching the crop border; the dark
+    # outline, hair and trousers inside the silhouette are kept (dropping them punched holes in Helena's frames).
+    m = (a[..., 3] > 40) & ~border_connected(dark & (a[..., 3] > 40))
     # dark-red halo left by the generator's matte
     halo = (rgb[..., 0] > rgb[..., 1] + 45) & (rgb[..., 0] > rgb[..., 2] + 45) & (mx < 150) & (a[..., 3] < 250)
     return m & ~halo
