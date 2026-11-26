@@ -160,7 +160,7 @@ async function finale(page,tag){
   await page.locator('#clues').scrollIntoViewIfNeeded();
   await page.screenshot({path:`${OUT}/A-consequences.png`});
   await finale(page,'A');
-  for(const f of ['town-atlas.svg','residents.svg','portraits.svg','study.svg','station.svg','night-train.svg']){assert.equal(assets[f]?.status,200,f);assert.match(assets[f].type,/image\/svg\+xml/,f)}
+  for(const f of ['ground.webp','atlas-0.png','ch-hero.png','ch-lia.png','ch-raul.png','ch-nora.png','portraits.svg','study.svg','station.svg','night-train.svg']){assert.equal(assets[f]?.status,200,f);assert.match(assets[f].type,/^image\//,f)}
   assert.equal(problems.length,0,problems.join('\n'));
   log('A PASS fates',JSON.stringify(A.fates),'| events:',evA.slice(0,160));
   await ctx.close();
