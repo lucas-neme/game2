@@ -10,5 +10,4 @@ COPY assets /usr/share/nginx/html/game2/assets
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
 COPY deploy/stamp.sh /tmp/stamp.sh
 RUN sh /tmp/stamp.sh /usr/share/nginx/html/game2 "$GIT_SHA" "$ASSET_V" "$BUILT_AT" && rm /tmp/stamp.sh && nginx -t
-RUN exit 1
 EXPOSE 80
