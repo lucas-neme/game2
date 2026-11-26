@@ -8,7 +8,8 @@ import assert from 'node:assert/strict';
 
 const BASE=process.env.BASE||'http://127.0.0.1:8092/game2/';
 const OUT=process.env.OUT||'browser-evidence/public';
-const launchArgs=process.env.CHROMIUM_ARGS?process.env.CHROMIUM_ARGS.split(' '):[];
+// Optional: HOST_MAP="wampa.com.br 104.21.x.x" pins DNS (e.g. to force IPv4 on flaky networks).
+const launchArgs=process.env.HOST_MAP?['--host-resolver-rules=MAP '+process.env.HOST_MAP]:[];
 await mkdir(OUT,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required',...launchArgs]});
 const log=(...a)=>console.log(...a);
