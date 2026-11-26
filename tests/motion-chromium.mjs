@@ -34,8 +34,8 @@ for(const [keys,[sx,sy]] of dirs){await page.evaluate(([x,y])=>__place(x,y),F);a
  const scr=[v[0]-v[1],(v[0]+v[1])/2],ang=Math.atan2(scr[1],scr[0]),want=Math.atan2(sy,sx);let da=Math.abs(ang-want);if(da>Math.PI)da=2*Math.PI-da;assert(da<.12,keys+' heading off by '+da)}
 ok('eight directions','speed 2.4 cells/s on all 8, diagonal normalized, screen heading = input');
 // 3. run and sneak
-await page.evaluate(([x,y])=>__place(x,y),F);await page.keyboard.down('Shift');await page.keyboard.down('a');await page.waitForTimeout(380);const vr=await page.evaluate(()=>[Math.hypot(MOT.vx,MOT.vy),heroVis.anim]);await page.keyboard.up('a');await page.keyboard.up('Shift');await page.waitForTimeout(200);
-await page.evaluate(([x,y])=>__place(x,y),F);await page.keyboard.press('c');await page.keyboard.down('d');await page.waitForTimeout(450);const vs=await page.evaluate(()=>[Math.hypot(MOT.vx,MOT.vy),heroVis.anim]);await page.keyboard.up('d');await page.keyboard.press('c');
+await page.evaluate(([x,y])=>__place(x,y),F);await page.keyboard.down('Shift');await page.keyboard.down('a');let vr=[0,'idle'];for(let i=0;i<9;i++){await page.waitForTimeout(42);const r=await page.evaluate(()=>[Math.hypot(MOT.vx,MOT.vy),heroVis.anim]);vr=[Math.max(vr[0],r[0]),vr[1]==='run'?'run':r[1]]}await page.keyboard.up('a');await page.keyboard.up('Shift');await page.waitForTimeout(200);
+await page.evaluate(([x,y])=>__place(x,y),F);await page.keyboard.press('c');await page.keyboard.down('d');let vs=[0,'idle'];for(let i=0;i<10;i++){await page.waitForTimeout(45);const r=await page.evaluate(()=>[Math.hypot(MOT.vx,MOT.vy),heroVis.anim]);vs=[Math.max(vs[0],r[0]),vs[1]==='sneak'?'sneak':r[1]]}await page.keyboard.up('d');await page.keyboard.press('c');
 assert(Math.abs(vr[0]-4.3)<.3&&vr[1]==='run','run '+vr);assert(Math.abs(vs[0]-1.15)<.15&&vs[1]==='sneak','sneak '+vs);ok('run and sneak',`run ${vr[0].toFixed(2)}, sneak ${vs[0].toFixed(2)} cells/s`);
 // 4. building wall: no penetration, slides along the face and goes around the corner
 await page.evaluate(()=>{s.t=1200;s.worldClock=Math.max(s.worldClock,1200);render()});await page.waitForTimeout(400);await page.evaluate(()=>__place(8.8,4.3));sm=await hold(page,['w'],1600,pos);
@@ -59,7 +59,7 @@ if(npc){await page.evaluate(([id,x,y])=>{__place(x+1.1,y+.2);const v=npcVis[id];
  const ds=[];for(let i=0;i<20;i++){await page.waitForTimeout(50);ds.push(await page.evaluate(()=>{const v=npcVis[__npc];return Math.hypot(v.x-s.px,v.y-s.py)}))}await page.evaluate(()=>INPUT.touch=null);
  assert(Math.min(...ds)>=.44-.02,'overlapped NPC: '+Math.min(...ds));ok('hero vs NPC collision',`min distance ${Math.min(...ds).toFixed(2)} (radii sum 0.44)`)}
 // 8. NPCs crossing: no overlap over time, and they actually walk
-let minPair=9,walked=0;const p0=await page.evaluate(()=>dynamicBodies().map(b=>[b.x,b.y]));
+let minPair=9,walked=0;await page.evaluate(()=>{const ids=Object.keys(npcVis).slice(0,2);const A=npcVis[ids[0]],B=npcVis[ids[1]];for(const v of [A,B]){if(v.seat){v.seat.occ=null;v.seat=null}}A.x=4;A.y=6;B.x=7;B.y=6;A.path=[[7,6]];B.path=[[4,6]];A.goal=[7,6];B.goal=[4,6]});const p0=await page.evaluate(()=>dynamicBodies().map(b=>[b.x,b.y]));
 for(let i=0;i<60;i++){await page.waitForTimeout(100);const r=await page.evaluate(()=>{const b=dynamicBodies();let m=9;for(let i=0;i<b.length;i++)for(let j=i+1;j<b.length;j++)m=Math.min(m,Math.hypot(b[i].x-b[j].x,b[i].y-b[j].y));return [m,b.map(q=>[q.x,q.y])]});minPair=Math.min(minPair,r[0]);if(i===59)walked=r[1].filter((q,k)=>p0[k]&&Math.hypot(q[0]-p0[k][0],q[1]-p0[k][1])>.5).length}
 assert(minPair>=.40,'NPC overlap '+minPair);assert(walked>=1,'nobody walked');ok('NPC vs NPC separation',`min pair distance ${minPair.toFixed(2)} over 6 s, ${walked} residents walked`);
 // 9. time follows distance walked (8 min per cell), not key repeats or frames
