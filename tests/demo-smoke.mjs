@@ -58,3 +58,17 @@ priv.advance(1440+8*60-priv.s.t);priv.render();assert.equal(priv.residents().fin
 priv.advance(2580-priv.s.t);priv.render();assert(priv.s.npcMeetings.includes('exchange:raul:nora'));assert.equal(priv.s.consequences.filter(x=>x.id==='exchange').length,1);
 priv.advance(100);priv.render();assert.equal(priv.s.consequences.filter(x=>x.id==='exchange').length,1);
 console.log('PASS: branching NPC decisions, delayed consequences and persistence, 14 additional assertions');
+
+const intercepted=branchNora('Apoiar a transmissão pública');
+intercepted.advance(2580-intercepted.s.t);intercepted.render();
+assert.equal(intercepted.s.fates.exchange,'intercepted');assert.equal(intercepted.s.fates.raul,'questioned');assert.equal(intercepted.s.fates.lia,'alone');
+assert.equal(intercepted.residents().find(x=>x.id==='guard').activity,'Reage à apreensão do relatório');
+assert.equal(intercepted.residents().find(x=>x.id==='future').x,7);
+get('save').onclick();const reloadedFate=run(doc,storage,()=>{},()=>true);assert.equal(reloadedFate.s.fates.exchange,'intercepted');
+reloadedFate.s.decisions.guard={choice:'warn',at:2581};reloadedFate.advance(120);assert.equal(reloadedFate.s.fates.exchange,'intercepted');
+const relocated=branchNora('Apoiar a transmissão pública');
+relocated.s.decisions.guard={choice:'warn',at:relocated.s.t};relocated.advance(2580-relocated.s.t);relocated.render();
+assert.equal(relocated.s.fates.exchange,'relocated');assert.equal(relocated.s.fates.raul,'free');assert.equal(relocated.residents().find(x=>x.id==='guard').x,7);
+get('reset').onclick();const autonomous=run(doc,storage,()=>{},()=>true);autonomous.advance(2580-autonomous.s.t);autonomous.render();
+assert.equal(autonomous.s.fates.exchange,'delivered');assert.equal(autonomous.s.fates.lia,'alone');assert.equal(autonomous.s.consequences.filter(x=>x.id==='fate:exchange').length,1);
+console.log('PASS: autonomous fates, divergent encounters and deadline persistence, 13 additional assertions');
