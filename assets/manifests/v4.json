@@ -1,0 +1,605 @@
+{
+ "source": "fz-monstros-itens-enigmas-v4-completo.zip",
+ "creatures": {
+  "eco_humanoide": {
+   "state": "PRODUCTION",
+   "animations": {
+    "idle": 6,
+    "movimento": 6,
+    "ataque": 6,
+    "dano": 3,
+    "dissipacao": 5
+   },
+   "note": "sliced from the V4 strips by minimum-occupancy columns"
+  },
+  "sombra_ressonante": {
+   "state": "REVIEW",
+   "animations": {
+    "idle": 6,
+    "movimento": 6,
+    "ataque": 6,
+    "dano": 4,
+    "dissipacao": 5
+   },
+   "note": "sliced from the V4 strips by minimum-occupancy columns; residues of sheet labels/cell borders, not promoted"
+  },
+  "vigia_projeto": {
+   "state": "REVIEW",
+   "animations": {
+    "idle": 6,
+    "movimento": 6,
+    "ataque": 6,
+    "dano": 4,
+    "dissipacao": 5
+   },
+   "note": "sliced from the V4 strips by minimum-occupancy columns; residues of sheet labels/cell borders, not promoted"
+  },
+  "mutante_floresta": {
+   "state": "REVIEW",
+   "animations": {
+    "idle": 6,
+    "movimento": 6,
+    "ataque": 6,
+    "dano": 4,
+    "dissipacao": 5
+   },
+   "note": "sliced from the V4 strips by minimum-occupancy columns; residues of sheet labels/cell borders, not promoted"
+  },
+  "anomalia_esferica": {
+   "state": "PRODUCTION",
+   "animations": {
+    "idle": 6,
+    "movimento": 6,
+    "ataque": 6,
+    "dano": 3,
+    "dissipacao": 5
+   },
+   "note": "sliced from the V4 strips by minimum-occupancy columns"
+  },
+  "colosso_ressonancia": {
+   "state": "REVIEW",
+   "animations": {
+    "idle": 4,
+    "movimento": 4,
+    "preparacao": 4,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 5
+   },
+   "note": "sliced from the V4 strips by minimum-occupancy columns; residues of sheet labels/cell borders, not promoted"
+  },
+  "eco_humanoide_retrato": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "sombra_ressonante_retrato": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "vigia_projeto_retrato": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "mutante_floresta_retrato": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "anomalia_esferica_retrato": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "colosso_ressonancia_retrato": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "cao_anomalo": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "inseto_fenda": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "planta_espinhosa": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "deformado": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "corvo_sombrio": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "larva_eco": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "sentinela_drone": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "sombra_rasteira": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "eco_corrompido": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "mutacao_aquatica": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "cepa_esporal": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "espectro_infantil": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "anomalia_temporal": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "guardiao_bunker": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "enxame": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  },
+  "entidade_luz": {
+   "state": "REVIEW",
+   "animations": {},
+   "note": "single model or portrait"
+  }
+ },
+ "items": {
+  "revolver": {
+   "state": "PRODUCTION",
+   "size": [
+    49,
+    52
+   ],
+   "source": "inventario/revolver.png (alpha candidate, borders and label fragments removed)"
+  },
+  "pistola": {
+   "state": "PRODUCTION",
+   "size": [
+    44,
+    51
+   ],
+   "source": "inventario/pistola.png (alpha candidate, borders and label fragments removed)"
+  },
+  "espingarda": {
+   "state": "PRODUCTION",
+   "size": [
+    45,
+    50
+   ],
+   "source": "inventario/espingarda.png (alpha candidate, borders and label fragments removed)"
+  },
+  "rifle": {
+   "state": "PRODUCTION",
+   "size": [
+    55,
+    53
+   ],
+   "source": "inventario/rifle.png (alpha candidate, borders and label fragments removed)"
+  },
+  "arco_recurvo": {
+   "state": "PRODUCTION",
+   "size": [
+    60,
+    56
+   ],
+   "source": "inventario/arco_recurvo.png (alpha candidate, borders and label fragments removed)"
+  },
+  "besta": {
+   "state": "PRODUCTION",
+   "size": [
+    57,
+    50
+   ],
+   "source": "inventario/besta.png (alpha candidate, borders and label fragments removed)"
+  },
+  "faca": {
+   "state": "PRODUCTION",
+   "size": [
+    39,
+    56
+   ],
+   "source": "inventario/faca.png (alpha candidate, borders and label fragments removed)"
+  },
+  "bastao": {
+   "state": "PRODUCTION",
+   "size": [
+    50,
+    49
+   ],
+   "source": "inventario/bastao.png (alpha candidate, borders and label fragments removed)"
+  },
+  "pe_de_cabra": {
+   "state": "PRODUCTION",
+   "size": [
+    37,
+    51
+   ],
+   "source": "inventario/pe_de_cabra.png (alpha candidate, borders and label fragments removed)"
+  },
+  "lanterna": {
+   "state": "PRODUCTION",
+   "size": [
+    55,
+    50
+   ],
+   "source": "inventario/lanterna.png (alpha candidate, borders and label fragments removed)"
+  },
+  "radio": {
+   "state": "PRODUCTION",
+   "size": [
+    48,
+    51
+   ],
+   "source": "inventario/radio.png (alpha candidate, borders and label fragments removed)"
+  },
+  "detector_emf": {
+   "state": "PRODUCTION",
+   "size": [
+    43,
+    49
+   ],
+   "source": "inventario/detector_emf.png (alpha candidate, borders and label fragments removed)"
+  },
+  "camera": {
+   "state": "PRODUCTION",
+   "size": [
+    51,
+    43
+   ],
+   "source": "inventario/camera.png (alpha candidate, borders and label fragments removed)"
+  },
+  "gravador": {
+   "state": "PRODUCTION",
+   "size": [
+    57,
+    44
+   ],
+   "source": "inventario/gravador.png (alpha candidate, borders and label fragments removed)"
+  },
+  "binoculo": {
+   "state": "PRODUCTION",
+   "size": [
+    56,
+    44
+   ],
+   "source": "inventario/binoculo.png (alpha candidate, borders and label fragments removed)"
+  },
+  "kit_medico": {
+   "state": "PRODUCTION",
+   "size": [
+    48,
+    49
+   ],
+   "source": "inventario/kit_medico.png (alpha candidate, borders and label fragments removed)"
+  },
+  "mascara_filtro": {
+   "state": "PRODUCTION",
+   "size": [
+    41,
+    48
+   ],
+   "source": "inventario/mascara_filtro.png (alpha candidate, borders and label fragments removed)"
+  },
+  "vida": {
+   "state": "PRODUCTION",
+   "size": [
+    37,
+    51
+   ],
+   "source": "inventario/vida.png (alpha candidate, borders and label fragments removed)"
+  },
+  "estamina": {
+   "state": "PRODUCTION",
+   "size": [
+    33,
+    52
+   ],
+   "source": "inventario/estamina.png (alpha candidate, borders and label fragments removed)"
+  },
+  "antidoto": {
+   "state": "PRODUCTION",
+   "size": [
+    32,
+    50
+   ],
+   "source": "inventario/antidoto.png (alpha candidate, borders and label fragments removed)"
+  },
+  "soro": {
+   "state": "PRODUCTION",
+   "size": [
+    32,
+    49
+   ],
+   "source": "inventario/soro.png (alpha candidate, borders and label fragments removed)"
+  },
+  "pilhas": {
+   "state": "PRODUCTION",
+   "size": [
+    34,
+    35
+   ],
+   "source": "inventario/pilhas.png (alpha candidate, borders and label fragments removed)"
+  },
+  "fita_cassete": {
+   "state": "PRODUCTION",
+   "size": [
+    48,
+    40
+   ],
+   "source": "inventario/fita_cassete.png (alpha candidate, borders and label fragments removed)"
+  },
+  "foto": {
+   "state": "PRODUCTION",
+   "size": [
+    53,
+    58
+   ],
+   "source": "inventario/foto.png (alpha candidate, borders and label fragments removed)"
+  },
+  "documento": {
+   "state": "PRODUCTION",
+   "size": [
+    46,
+    52
+   ],
+   "source": "inventario/documento.png (alpha candidate, borders and label fragments removed)"
+  },
+  "diario": {
+   "state": "PRODUCTION",
+   "size": [
+    49,
+    55
+   ],
+   "source": "inventario/diario.png (alpha candidate, borders and label fragments removed)"
+  },
+  "mapa": {
+   "state": "PRODUCTION",
+   "size": [
+    53,
+    42
+   ],
+   "source": "inventario/mapa.png (alpha candidate, borders and label fragments removed)"
+  },
+  "chave_colecao": {
+   "state": "PRODUCTION",
+   "size": [
+    38,
+    49
+   ],
+   "source": "inventario/chave_colecao.png (alpha candidate, borders and label fragments removed)"
+  },
+  "peca": {
+   "state": "PRODUCTION",
+   "size": [
+    37,
+    46
+   ],
+   "source": "inventario/peca.png (alpha candidate, borders and label fragments removed)"
+  },
+  "engrenagem": {
+   "state": "PRODUCTION",
+   "size": [
+    45,
+    43
+   ],
+   "source": "inventario/engrenagem.png (alpha candidate, borders and label fragments removed)"
+  },
+  "cristal_anomalo": {
+   "state": "PRODUCTION",
+   "size": [
+    46,
+    59
+   ],
+   "source": "inventario/cristal_anomalo.png (alpha candidate, borders and label fragments removed)"
+  },
+  "chave_simples": {
+   "state": "PRODUCTION",
+   "size": [
+    51,
+    47
+   ],
+   "source": "inventario/chave_simples.png (alpha candidate, borders and label fragments removed)"
+  },
+  "chave_enferrujada": {
+   "state": "PRODUCTION",
+   "size": [
+    51,
+    47
+   ],
+   "source": "inventario/chave_enferrujada.png (alpha candidate, borders and label fragments removed)"
+  },
+  "chave_mestra": {
+   "state": "PRODUCTION",
+   "size": [
+    53,
+    56
+   ],
+   "source": "inventario/chave_mestra.png (alpha candidate, borders and label fragments removed)"
+  },
+  "chave_eletronica": {
+   "state": "PRODUCTION",
+   "size": [
+    57,
+    58
+   ],
+   "source": "inventario/chave_eletronica.png (alpha candidate, borders and label fragments removed)"
+  },
+  "cartao_acesso": {
+   "state": "PRODUCTION",
+   "size": [
+    51,
+    49
+   ],
+   "source": "inventario/cartao_acesso.png (alpha candidate, borders and label fragments removed)"
+  },
+  "fusivel": {
+   "state": "PRODUCTION",
+   "size": [
+    47,
+    35
+   ],
+   "source": "inventario/fusivel.png (alpha candidate, borders and label fragments removed)"
+  },
+  "valvula": {
+   "state": "PRODUCTION",
+   "size": [
+    48,
+    49
+   ],
+   "source": "inventario/valvula.png (alpha candidate, borders and label fragments removed)"
+  },
+  "disco_dados": {
+   "state": "PRODUCTION",
+   "size": [
+    57,
+    59
+   ],
+   "source": "inventario/disco_dados.png (alpha candidate, borders and label fragments removed)"
+  },
+  "placa_simbolica": {
+   "state": "PRODUCTION",
+   "size": [
+    53,
+    52
+   ],
+   "source": "inventario/placa_simbolica.png (alpha candidate, borders and label fragments removed)"
+  },
+  "fragmento_mapa": {
+   "state": "PRODUCTION",
+   "size": [
+    55,
+    48
+   ],
+   "source": "inventario/fragmento_mapa.png (alpha candidate, borders and label fragments removed)"
+  },
+  "peca_engrenagem": {
+   "state": "PRODUCTION",
+   "size": [
+    58,
+    46
+   ],
+   "source": "inventario/peca_engrenagem.png (alpha candidate, borders and label fragments removed)"
+  },
+  "runa": {
+   "state": "PRODUCTION",
+   "size": [
+    52,
+    50
+   ],
+   "source": "inventario/runa.png (alpha candidate, borders and label fragments removed)"
+  },
+  "disco_alinhamento": {
+   "state": "PRODUCTION",
+   "size": [
+    58,
+    53
+   ],
+   "source": "inventario/disco_alinhamento.png (alpha candidate, borders and label fragments removed)"
+  },
+  "lente_optica": {
+   "state": "PRODUCTION",
+   "size": [
+    49,
+    47
+   ],
+   "source": "inventario/lente_optica.png (alpha candidate, borders and label fragments removed)"
+  },
+  "cristal_prismatico": {
+   "state": "PRODUCTION",
+   "size": [
+    44,
+    50
+   ],
+   "source": "inventario/cristal_prismatico.png (alpha candidate, borders and label fragments removed)"
+  },
+  "matriz_logica": {
+   "state": "PRODUCTION",
+   "size": [
+    47,
+    48
+   ],
+   "source": "inventario/matriz_logica.png (alpha candidate, borders and label fragments removed)"
+  }
+ },
+ "puzzles": {
+  "engrenagens_integradas": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-engrenagens_integradas.png"
+  },
+  "alinhamento_lentes": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-alinhamento_lentes.png"
+  },
+  "discos_rotativos": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-discos_rotativos.png"
+  },
+  "painel_eletrico": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-painel_eletrico.png"
+  },
+  "mecanismo_alavancas": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-mecanismo_alavancas.png"
+  },
+  "relogio": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-relogio.png"
+  },
+  "mapa_fragmental": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-mapa_fragmental.png"
+  },
+  "cofre_mecanico": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-cofre_mecanico.png"
+  },
+  "painel_sequencia": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-painel_sequencia.png"
+  },
+  "runas": {
+   "state": "PRODUCTION (static panel art; moving parts drawn by the puzzle engine)",
+   "file": "assets/production/v4/puzzle-runas.png"
+  }
+ },
+ "atlas_sha256": {
+  "assets/production/v4/atlas-0.png": "6d94d236131a13a86b6e74e615a45e816ae3edb3bc17904e409fb6e27a245675"
+ }
+}
