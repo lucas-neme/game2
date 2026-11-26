@@ -1,0 +1,9 @@
+.git
+node_modules
+browser-evidence
+.qa
+tests
+tools
+docs
+assets/sbs
+assets/source
