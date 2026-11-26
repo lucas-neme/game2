@@ -61,6 +61,11 @@ def export(sprites, base, pack, placements):
         fn = f'assets/production/characters/{s.name}.png'; s.im.save(ROOT / fn, optimize=True)
         chars[s.name[3:]] = {'file': fn, 'fw': s.meta['frame'][0], 'fh': s.meta['frame'][1], 'ax': s.anchor[0], 'ay': s.anchor[1], 'anims': s.meta['anims']}
     fog_texture().save(fx_dir / 'fog.png', optimize=True)
+    import interiors
+    int_dir = PROD / 'interiors'; int_dir.mkdir(parents=True, exist_ok=True)
+    hotspots = {}
+    for key, fn in (('study', interiors.study), ('station', interiors.station_hall)):
+        im, pins = fn(); im.convert('RGB').save(int_dir / f'{key}.webp', quality=90, method=6); hotspots.update(pins)
     names = list(table); idx = {n: i for i, n in enumerate(names)}
     place = [[idx[n], round(gx, 3), round(gy, 3), bias, kind or 0] for n, gx, gy, bias, kind in placements]
     iso = ground.iso
@@ -93,6 +98,9 @@ def export(sprites, base, pack, placements):
     js = 'const ART=' + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + ';'
     html = (ROOT / 'index.html').read_text(encoding='utf-8')
     if '/*ART:BEGIN*/' not in html: raise SystemExit('index.html has no /*ART:BEGIN*/ marker')
+    for label, (x, y) in hotspots.items():
+        html, n = re.subn(r"\['" + re.escape(label) + r"',[0-9.]+,[0-9.]+,", f"['{label}',{x},{y},", html)
+        if n != 1: raise SystemExit(f'hotspot {label!r} not found once in index.html ({n})')
     html = re.sub(r'/\*ART:BEGIN\*/.*?/\*ART:END\*/', lambda m: '/*ART:BEGIN*/' + js + '/*ART:END*/', html, flags=re.S)
     (ROOT / 'index.html').write_text(html, encoding='utf-8', newline='\n')
     print('atlases', [(f, Image.open(ROOT / f).size) for f in files], '| sprites', len(names), '| placements', len(place), '| chars', list(chars))
