@@ -1,0 +1,12 @@
+{
+  "id": "inseto_fenda",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_das_criaturas_ressonantes.png",
+  "rect": [
+    0,
+    656,
+    1402,
+    90
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

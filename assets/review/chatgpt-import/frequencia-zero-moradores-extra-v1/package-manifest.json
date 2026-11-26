@@ -1,0 +1,24 @@
+{
+  "package_name": "frequencia-zero-moradores-extra-v1",
+  "source": "frequencia-zero-canon.zip",
+  "status": "REVIEW",
+  "included_files": [
+    "LEIA-ME.txt",
+    "manifest.json",
+    "moradores/comerciante/folha_original.png",
+    "moradores/comerciante/retrato.png",
+    "moradores/crianca/folha_original.png",
+    "moradores/crianca/retrato.png",
+    "moradores/ferroviario/folha_original.png",
+    "moradores/ferroviario/retrato.png",
+    "moradores/guarda/folha_original.png",
+    "moradores/guarda/retrato.png",
+    "moradores/medico/folha_original.png",
+    "moradores/medico/retrato.png",
+    "moradores/professor/folha_original.png",
+    "moradores/professor/retrato.png",
+    "referencia-canonica.png"
+  ],
+  "count_files": 15,
+  "note": "Pacote derivado da referencia canonica aprovada. Revisar integracao e cortes no jogo antes de promover para PRODUCTION."
+}

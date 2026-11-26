@@ -1,0 +1,175 @@
+{
+  "status": "REVIEW",
+  "source": "a_large_composite_promotional_asset_pack_poster_fo.png",
+  "recortes": [
+    {
+      "id": "terrenos",
+      "file": "recortes/terrenos.png",
+      "source_rect": [
+        546,
+        475,
+        709,
+        546
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "cercas",
+      "file": "recortes/cercas.png",
+      "source_rect": [
+        547,
+        549,
+        704,
+        580
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "vegetacao_baixa",
+      "file": "recortes/vegetacao_baixa.png",
+      "source_rect": [
+        545,
+        583,
+        709,
+        619
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "arvores_copas",
+      "file": "recortes/arvores_copas.png",
+      "source_rect": [
+        709,
+        475,
+        944,
+        581
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "rochas_cachoeira",
+      "file": "recortes/rochas_cachoeira.png",
+      "source_rect": [
+        710,
+        580,
+        945,
+        669
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "postes_placa",
+      "file": "recortes/postes_placa.png",
+      "source_rect": [
+        546,
+        620,
+        623,
+        680
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "rochas_pequenas",
+      "file": "recortes/rochas_pequenas.png",
+      "source_rect": [
+        624,
+        620,
+        710,
+        660
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "caixas_bancos",
+      "file": "recortes/caixas_bancos.png",
+      "source_rect": [
+        627,
+        661,
+        854,
+        735
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "arvores_baixas",
+      "file": "recortes/arvores_baixas.png",
+      "source_rect": [
+        545,
+        685,
+        626,
+        735
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "pedras_pier",
+      "file": "recortes/pedras_pier.png",
+      "source_rect": [
+        852,
+        660,
+        945,
+        735
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "floresta",
+      "file": "recortes/floresta.png",
+      "source_rect": [
+        960,
+        471,
+        1132,
+        595
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "lago",
+      "file": "recortes/lago.png",
+      "source_rect": [
+        1137,
+        471,
+        1295,
+        595
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "bunker",
+      "file": "recortes/bunker.png",
+      "source_rect": [
+        960,
+        598,
+        1132,
+        740
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "horizonte",
+      "file": "recortes/horizonte.png",
+      "source_rect": [
+        1137,
+        598,
+        1295,
+        740
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    }
+  ],
+  "note": "Recortes de arte composta; não são sprites isolados nem animações homologadas. Reconstruir partes ocultas e remover fundo antes de promover."
+}

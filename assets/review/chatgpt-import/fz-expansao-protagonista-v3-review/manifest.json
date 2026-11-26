@@ -1,0 +1,175 @@
+{
+  "status": "REVIEW",
+  "source": "a_large_composite_promotional_asset_pack_poster_fo.png",
+  "recortes": [
+    {
+      "id": "corrida",
+      "file": "recortes/corrida.png",
+      "source_rect": [
+        16,
+        233,
+        191,
+        283
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "furtivo",
+      "file": "recortes/furtivo.png",
+      "source_rect": [
+        199,
+        233,
+        316,
+        283
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "interagir",
+      "file": "recortes/interagir.png",
+      "source_rect": [
+        320,
+        233,
+        384,
+        283
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "sentar_levantar",
+      "file": "recortes/sentar_levantar.png",
+      "source_rect": [
+        389,
+        233,
+        533,
+        283
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "usar_objeto",
+      "file": "recortes/usar_objeto.png",
+      "source_rect": [
+        13,
+        312,
+        107,
+        363
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "examinar",
+      "file": "recortes/examinar.png",
+      "source_rect": [
+        112,
+        312,
+        195,
+        363
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "conversar",
+      "file": "recortes/conversar.png",
+      "source_rect": [
+        204,
+        312,
+        277,
+        363
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "empurrar",
+      "file": "recortes/empurrar.png",
+      "source_rect": [
+        285,
+        312,
+        354,
+        363
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "pegar",
+      "file": "recortes/pegar.png",
+      "source_rect": [
+        357,
+        312,
+        417,
+        363
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "ferido_cair_levantar",
+      "file": "recortes/ferido_cair_levantar.png",
+      "source_rect": [
+        420,
+        312,
+        534,
+        363
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "idle",
+      "file": "recortes/idle.png",
+      "source_rect": [
+        13,
+        384,
+        162,
+        432
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "reacoes",
+      "file": "recortes/reacoes.png",
+      "source_rect": [
+        179,
+        384,
+        350,
+        432
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "defesa",
+      "file": "recortes/defesa.png",
+      "source_rect": [
+        363,
+        384,
+        444,
+        432
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "contrafase",
+      "file": "recortes/contrafase.png",
+      "source_rect": [
+        449,
+        384,
+        533,
+        432
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    }
+  ],
+  "note": "Recortes de arte composta; não são sprites isolados nem animações homologadas. Reconstruir partes ocultas e remover fundo antes de promover."
+}

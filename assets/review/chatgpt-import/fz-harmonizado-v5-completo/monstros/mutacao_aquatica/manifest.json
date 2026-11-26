@@ -1,0 +1,12 @@
+{
+  "id": "mutacao_aquatica",
+  "status": "REVIEW",
+  "source": "sprite_sheet_de_criaturas_pixel_art.png",
+  "rect_xyxy": [
+    10,
+    10,
+    463,
+    328
+  ],
+  "note": "Painel de referência; remover grade e revisar cada pose."
+}

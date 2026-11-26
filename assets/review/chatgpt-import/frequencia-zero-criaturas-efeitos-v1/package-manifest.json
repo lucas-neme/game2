@@ -1,0 +1,15 @@
+{
+  "package_name": "frequencia-zero-criaturas-efeitos-v1",
+  "source": "frequencia-zero-canon.zip",
+  "status": "REVIEW",
+  "included_files": [
+    "LEIA-ME.txt",
+    "clima.png",
+    "criaturas.png",
+    "efeitos_ambiente.png",
+    "manifest.json",
+    "referencia-canonica.png"
+  ],
+  "count_files": 6,
+  "note": "Pacote derivado da referencia canonica aprovada. Revisar integracao e cortes no jogo antes de promover para PRODUCTION."
+}

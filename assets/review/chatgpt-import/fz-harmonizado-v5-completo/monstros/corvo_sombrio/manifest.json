@@ -1,0 +1,12 @@
+{
+  "id": "corvo_sombrio",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_dos_monstros_pixel_art.png",
+  "rect": [
+    0,
+    262,
+    1402,
+    89
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

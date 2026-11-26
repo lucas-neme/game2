@@ -1,0 +1,12 @@
+{
+  "id": "cao_anomalo",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_das_criaturas_ressonantes.png",
+  "rect": [
+    0,
+    462,
+    1402,
+    81
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "mutante_floresta",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_das_criaturas_ressonantes.png",
+  "rect": [
+    0,
+    869,
+    1402,
+    94
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

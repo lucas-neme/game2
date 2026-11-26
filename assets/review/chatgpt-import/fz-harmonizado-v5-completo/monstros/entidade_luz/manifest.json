@@ -1,0 +1,12 @@
+{
+  "id": "entidade_luz",
+  "status": "REVIEW",
+  "source": "sprite_sheet_de_criaturas_pixel_art.png",
+  "rect_xyxy": [
+    10,
+    637,
+    407,
+    1110
+  ],
+  "note": "Painel de referência; remover grade e revisar cada pose."
+}

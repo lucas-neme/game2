@@ -1,0 +1,550 @@
+{
+  "source": "referencia.png",
+  "assets": [
+    {
+      "id": "estante",
+      "file": "recortes/estante.png",
+      "source_box": [
+        354,
+        107,
+        544,
+        345
+      ],
+      "size": [
+        190,
+        238
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "mesa_escrivaninha",
+      "file": "recortes/mesa_escrivaninha.png",
+      "source_box": [
+        436,
+        270,
+        678,
+        414
+      ],
+      "size": [
+        242,
+        144
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "radio_mesa",
+      "file": "recortes/radio_mesa.png",
+      "source_box": [
+        554,
+        259,
+        668,
+        328
+      ],
+      "size": [
+        114,
+        69
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "luminaria_mesa",
+      "file": "recortes/luminaria_mesa.png",
+      "source_box": [
+        454,
+        294,
+        504,
+        360
+      ],
+      "size": [
+        50,
+        66
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "relogio_parede",
+      "file": "recortes/relogio_parede.png",
+      "source_box": [
+        724,
+        34,
+        813,
+        167
+      ],
+      "size": [
+        89,
+        133
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "janela_cortinas",
+      "file": "recortes/janela_cortinas.png",
+      "source_box": [
+        529,
+        49,
+        728,
+        269
+      ],
+      "size": [
+        199,
+        220
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "comoda",
+      "file": "recortes/comoda.png",
+      "source_box": [
+        763,
+        139,
+        905,
+        301
+      ],
+      "size": [
+        142,
+        162
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "armario",
+      "file": "recortes/armario.png",
+      "source_box": [
+        986,
+        0,
+        1147,
+        176
+      ],
+      "size": [
+        161,
+        176
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "cama",
+      "file": "recortes/cama.png",
+      "source_box": [
+        1098,
+        82,
+        1319,
+        268
+      ],
+      "size": [
+        221,
+        186
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "abajur",
+      "file": "recortes/abajur.png",
+      "source_box": [
+        1102,
+        5,
+        1164,
+        90
+      ],
+      "size": [
+        62,
+        85
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "mesa_jantar",
+      "file": "recortes/mesa_jantar.png",
+      "source_box": [
+        800,
+        289,
+        1007,
+        443
+      ],
+      "size": [
+        207,
+        154
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "lampiao",
+      "file": "recortes/lampiao.png",
+      "source_box": [
+        872,
+        284,
+        923,
+        353
+      ],
+      "size": [
+        51,
+        69
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "cadeira_frente",
+      "file": "recortes/cadeira_frente.png",
+      "source_box": [
+        793,
+        351,
+        872,
+        494
+      ],
+      "size": [
+        79,
+        143
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "cadeira_fundo",
+      "file": "recortes/cadeira_fundo.png",
+      "source_box": [
+        804,
+        264,
+        857,
+        329
+      ],
+      "size": [
+        53,
+        65
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "fogao",
+      "file": "recortes/fogao.png",
+      "source_box": [
+        1207,
+        334,
+        1317,
+        486
+      ],
+      "size": [
+        110,
+        152
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "armario_cozinha",
+      "file": "recortes/armario_cozinha.png",
+      "source_box": [
+        1110,
+        284,
+        1238,
+        468
+      ],
+      "size": [
+        128,
+        184
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "tapete",
+      "file": "recortes/tapete.png",
+      "source_box": [
+        979,
+        405,
+        1169,
+        517
+      ],
+      "size": [
+        190,
+        112
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "porta_azul",
+      "file": "recortes/porta_azul.png",
+      "source_box": [
+        697,
+        477,
+        790,
+        678
+      ],
+      "size": [
+        93,
+        201
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "janela_externa",
+      "file": "recortes/janela_externa.png",
+      "source_box": [
+        482,
+        513,
+        611,
+        650
+      ],
+      "size": [
+        129,
+        137
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "floreira",
+      "file": "recortes/floreira.png",
+      "source_box": [
+        494,
+        602,
+        604,
+        660
+      ],
+      "size": [
+        110,
+        58
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "caixa_correio",
+      "file": "recortes/caixa_correio.png",
+      "source_box": [
+        534,
+        700,
+        614,
+        809
+      ],
+      "size": [
+        80,
+        109
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "barril",
+      "file": "recortes/barril.png",
+      "source_box": [
+        1348,
+        526,
+        1444,
+        660
+      ],
+      "size": [
+        96,
+        134
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "poste_luz",
+      "file": "recortes/poste_luz.png",
+      "source_box": [
+        18,
+        487,
+        111,
+        697
+      ],
+      "size": [
+        93,
+        210
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "bento",
+      "file": "recortes/bento.png",
+      "source_box": [
+        708,
+        211,
+        799,
+        381
+      ],
+      "size": [
+        91,
+        170
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "protagonista_costas",
+      "file": "recortes/protagonista_costas.png",
+      "source_box": [
+        788,
+        483,
+        887,
+        670
+      ],
+      "size": [
+        99,
+        187
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "vaso_planta",
+      "file": "recortes/vaso_planta.png",
+      "source_box": [
+        960,
+        474,
+        1069,
+        567
+      ],
+      "size": [
+        109,
+        93
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "quadro_parede",
+      "file": "recortes/quadro_parede.png",
+      "source_box": [
+        279,
+        188,
+        333,
+        257
+      ],
+      "size": [
+        54,
+        69
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "chaleira",
+      "file": "recortes/chaleira.png",
+      "source_box": [
+        1208,
+        330,
+        1262,
+        388
+      ],
+      "size": [
+        54,
+        58
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "lenha",
+      "file": "recortes/lenha.png",
+      "source_box": [
+        1137,
+        434,
+        1207,
+        503
+      ],
+      "size": [
+        70,
+        69
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "piso_madeira_amostra",
+      "file": "recortes/piso_madeira_amostra.png",
+      "source_box": [
+        869,
+        458,
+        948,
+        495
+      ],
+      "size": [
+        79,
+        37
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "parede_amostra",
+      "file": "recortes/parede_amostra.png",
+      "source_box": [
+        843,
+        66,
+        888,
+        112
+      ],
+      "size": [
+        45,
+        46
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "janela_quarto",
+      "file": "recortes/janela_quarto.png",
+      "source_box": [
+        1167,
+        2,
+        1266,
+        75
+      ],
+      "size": [
+        99,
+        73
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    }
+  ],
+  "note": "Recortes RGB da arte composta; não são sprites isolados. Reconstruir áreas ocultas e remover fundo antes da produção."
+}

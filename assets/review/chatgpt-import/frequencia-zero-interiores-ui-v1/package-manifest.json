@@ -1,0 +1,18 @@
+{
+  "package_name": "frequencia-zero-interiores-ui-v1",
+  "source": "frequencia-zero-canon.zip",
+  "status": "REVIEW",
+  "included_files": [
+    "LEIA-ME.txt",
+    "hud.png",
+    "interiores/clinica.png",
+    "interiores/escritorio.png",
+    "interiores/quarto.png",
+    "interiores/radio.png",
+    "inventario.png",
+    "manifest.json",
+    "referencia-canonica.png"
+  ],
+  "count_files": 9,
+  "note": "Pacote derivado da referencia canonica aprovada. Revisar integracao e cortes no jogo antes de promover para PRODUCTION."
+}

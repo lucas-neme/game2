@@ -1,0 +1,12 @@
+{
+  "id": "eco_humanoide",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_das_criaturas_ressonantes.png",
+  "rect": [
+    0,
+    45,
+    1402,
+    112
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

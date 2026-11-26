@@ -1,0 +1,583 @@
+{
+  "status": "REVIEW",
+  "source": "a_large_composite_promotional_asset_pack_poster_fo.png",
+  "recortes": [
+    {
+      "id": "objeto_r1_01",
+      "file": "recortes/objeto_r1_01.png",
+      "source_rect": [
+        8,
+        785,
+        60,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_02",
+      "file": "recortes/objeto_r1_02.png",
+      "source_rect": [
+        60,
+        785,
+        126,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_03",
+      "file": "recortes/objeto_r1_03.png",
+      "source_rect": [
+        126,
+        785,
+        153,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_04",
+      "file": "recortes/objeto_r1_04.png",
+      "source_rect": [
+        153,
+        785,
+        177,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_05",
+      "file": "recortes/objeto_r1_05.png",
+      "source_rect": [
+        177,
+        785,
+        209,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_06",
+      "file": "recortes/objeto_r1_06.png",
+      "source_rect": [
+        209,
+        785,
+        244,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_07",
+      "file": "recortes/objeto_r1_07.png",
+      "source_rect": [
+        244,
+        785,
+        281,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_08",
+      "file": "recortes/objeto_r1_08.png",
+      "source_rect": [
+        281,
+        785,
+        319,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_09",
+      "file": "recortes/objeto_r1_09.png",
+      "source_rect": [
+        319,
+        785,
+        352,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_10",
+      "file": "recortes/objeto_r1_10.png",
+      "source_rect": [
+        352,
+        785,
+        394,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r1_11",
+      "file": "recortes/objeto_r1_11.png",
+      "source_rect": [
+        394,
+        785,
+        449,
+        841
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_01",
+      "file": "recortes/objeto_r2_01.png",
+      "source_rect": [
+        8,
+        842,
+        48,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_02",
+      "file": "recortes/objeto_r2_02.png",
+      "source_rect": [
+        48,
+        842,
+        87,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_03",
+      "file": "recortes/objeto_r2_03.png",
+      "source_rect": [
+        87,
+        842,
+        132,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_04",
+      "file": "recortes/objeto_r2_04.png",
+      "source_rect": [
+        132,
+        842,
+        166,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_05",
+      "file": "recortes/objeto_r2_05.png",
+      "source_rect": [
+        166,
+        842,
+        205,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_06",
+      "file": "recortes/objeto_r2_06.png",
+      "source_rect": [
+        205,
+        842,
+        239,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_07",
+      "file": "recortes/objeto_r2_07.png",
+      "source_rect": [
+        239,
+        842,
+        265,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_08",
+      "file": "recortes/objeto_r2_08.png",
+      "source_rect": [
+        265,
+        842,
+        303,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_09",
+      "file": "recortes/objeto_r2_09.png",
+      "source_rect": [
+        303,
+        842,
+        338,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_10",
+      "file": "recortes/objeto_r2_10.png",
+      "source_rect": [
+        338,
+        842,
+        377,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_11",
+      "file": "recortes/objeto_r2_11.png",
+      "source_rect": [
+        377,
+        842,
+        414,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r2_12",
+      "file": "recortes/objeto_r2_12.png",
+      "source_rect": [
+        414,
+        842,
+        453,
+        890
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_01",
+      "file": "recortes/objeto_r3_01.png",
+      "source_rect": [
+        8,
+        890,
+        72,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_02",
+      "file": "recortes/objeto_r3_02.png",
+      "source_rect": [
+        72,
+        890,
+        112,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_03",
+      "file": "recortes/objeto_r3_03.png",
+      "source_rect": [
+        112,
+        890,
+        148,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_04",
+      "file": "recortes/objeto_r3_04.png",
+      "source_rect": [
+        148,
+        890,
+        190,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_05",
+      "file": "recortes/objeto_r3_05.png",
+      "source_rect": [
+        190,
+        890,
+        221,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_06",
+      "file": "recortes/objeto_r3_06.png",
+      "source_rect": [
+        221,
+        890,
+        260,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_07",
+      "file": "recortes/objeto_r3_07.png",
+      "source_rect": [
+        260,
+        890,
+        296,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_08",
+      "file": "recortes/objeto_r3_08.png",
+      "source_rect": [
+        296,
+        890,
+        338,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_09",
+      "file": "recortes/objeto_r3_09.png",
+      "source_rect": [
+        338,
+        890,
+        377,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r3_10",
+      "file": "recortes/objeto_r3_10.png",
+      "source_rect": [
+        377,
+        890,
+        451,
+        936
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_01",
+      "file": "recortes/objeto_r4_01.png",
+      "source_rect": [
+        8,
+        936,
+        84,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_02",
+      "file": "recortes/objeto_r4_02.png",
+      "source_rect": [
+        84,
+        936,
+        121,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_03",
+      "file": "recortes/objeto_r4_03.png",
+      "source_rect": [
+        121,
+        936,
+        190,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_04",
+      "file": "recortes/objeto_r4_04.png",
+      "source_rect": [
+        190,
+        936,
+        226,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_05",
+      "file": "recortes/objeto_r4_05.png",
+      "source_rect": [
+        226,
+        936,
+        265,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_06",
+      "file": "recortes/objeto_r4_06.png",
+      "source_rect": [
+        265,
+        936,
+        310,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_07",
+      "file": "recortes/objeto_r4_07.png",
+      "source_rect": [
+        310,
+        936,
+        349,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_08",
+      "file": "recortes/objeto_r4_08.png",
+      "source_rect": [
+        349,
+        936,
+        382,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_09",
+      "file": "recortes/objeto_r4_09.png",
+      "source_rect": [
+        382,
+        936,
+        420,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "objeto_r4_10",
+      "file": "recortes/objeto_r4_10.png",
+      "source_rect": [
+        420,
+        936,
+        454,
+        989
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "hud",
+      "file": "recortes/hud.png",
+      "source_rect": [
+        475,
+        782,
+        755,
+        907
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "dialogo",
+      "file": "recortes/dialogo.png",
+      "source_rect": [
+        475,
+        915,
+        755,
+        986
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "efeitos",
+      "file": "recortes/efeitos.png",
+      "source_rect": [
+        778,
+        776,
+        1101,
+        893
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "ceu_clima",
+      "file": "recortes/ceu_clima.png",
+      "source_rect": [
+        778,
+        895,
+        1101,
+        985
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "criaturas",
+      "file": "recortes/criaturas.png",
+      "source_rect": [
+        1118,
+        777,
+        1526,
+        988
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    }
+  ],
+  "note": "Recortes de arte composta; não são sprites isolados nem animações homologadas. Reconstruir partes ocultas e remover fundo antes de promover."
+}

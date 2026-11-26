@@ -1,0 +1,12 @@
+{
+  "id": "sombra_ressonante",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_das_criaturas_ressonantes.png",
+  "rect": [
+    0,
+    255,
+    1402,
+    86
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

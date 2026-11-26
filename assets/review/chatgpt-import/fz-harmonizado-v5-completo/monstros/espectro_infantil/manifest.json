@@ -1,0 +1,12 @@
+{
+  "id": "espectro_infantil",
+  "status": "REVIEW",
+  "source": "sprite_sheet_de_criaturas_pixel_art.png",
+  "rect_xyxy": [
+    941,
+    10,
+    1392,
+    328
+  ],
+  "note": "Painel de referência; remover grade e revisar cada pose."
+}

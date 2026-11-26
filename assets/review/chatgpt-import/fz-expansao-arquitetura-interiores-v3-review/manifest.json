@@ -1,0 +1,247 @@
+{
+  "status": "REVIEW",
+  "source": "a_large_composite_promotional_asset_pack_poster_fo.png",
+  "recortes": [
+    {
+      "id": "prefeitura",
+      "file": "recortes/prefeitura.png",
+      "source_rect": [
+        940,
+        102,
+        1046,
+        187
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "igreja",
+      "file": "recortes/igreja.png",
+      "source_rect": [
+        1046,
+        102,
+        1121,
+        187
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "mercado",
+      "file": "recortes/mercado.png",
+      "source_rect": [
+        1121,
+        102,
+        1210,
+        187
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "clinica",
+      "file": "recortes/clinica.png",
+      "source_rect": [
+        1210,
+        102,
+        1293,
+        187
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "radio",
+      "file": "recortes/radio.png",
+      "source_rect": [
+        940,
+        207,
+        1046,
+        289
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "estacao",
+      "file": "recortes/estacao.png",
+      "source_rect": [
+        1046,
+        207,
+        1121,
+        289
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "escola",
+      "file": "recortes/escola.png",
+      "source_rect": [
+        1121,
+        207,
+        1210,
+        289
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "observatorio",
+      "file": "recortes/observatorio.png",
+      "source_rect": [
+        1210,
+        207,
+        1293,
+        289
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "subestacao",
+      "file": "recortes/subestacao.png",
+      "source_rect": [
+        940,
+        310,
+        1046,
+        402
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "fabrica",
+      "file": "recortes/fabrica.png",
+      "source_rect": [
+        1046,
+        310,
+        1121,
+        402
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "serraria",
+      "file": "recortes/serraria.png",
+      "source_rect": [
+        1121,
+        310,
+        1210,
+        402
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "cabana_lago",
+      "file": "recortes/cabana_lago.png",
+      "source_rect": [
+        1210,
+        310,
+        1293,
+        402
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "sala_cozinha",
+      "file": "recortes/sala_cozinha.png",
+      "source_rect": [
+        6,
+        473,
+        137,
+        593
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "quarto",
+      "file": "recortes/quarto.png",
+      "source_rect": [
+        137,
+        473,
+        268,
+        593
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "oficina_bento",
+      "file": "recortes/oficina_bento.png",
+      "source_rect": [
+        268,
+        473,
+        399,
+        593
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "atelie_celina",
+      "file": "recortes/atelie_celina.png",
+      "source_rect": [
+        399,
+        473,
+        530,
+        593
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "arquivo_helena",
+      "file": "recortes/arquivo_helena.png",
+      "source_rect": [
+        6,
+        605,
+        137,
+        725
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "clinica_interior",
+      "file": "recortes/clinica_interior.png",
+      "source_rect": [
+        137,
+        605,
+        268,
+        725
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "radio_interior",
+      "file": "recortes/radio_interior.png",
+      "source_rect": [
+        268,
+        605,
+        399,
+        725
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "laboratorio",
+      "file": "recortes/laboratorio.png",
+      "source_rect": [
+        399,
+        605,
+        530,
+        725
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    }
+  ],
+  "note": "Recortes de arte composta; não são sprites isolados nem animações homologadas. Reconstruir partes ocultas e remover fundo antes de promover."
+}

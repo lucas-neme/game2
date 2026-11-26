@@ -1,0 +1,12 @@
+{
+  "id": "anomalia_esferica",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_dos_monstros_pixel_art.png",
+  "rect": [
+    0,
+    119,
+    1402,
+    79
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "guardiao_bunker",
+  "status": "REVIEW",
+  "source": "sprite_sheet_de_criaturas_pixel_art.png",
+  "rect_xyxy": [
+    474,
+    340,
+    929,
+    623
+  ],
+  "note": "Painel de referência; remover grade e revisar cada pose."
+}

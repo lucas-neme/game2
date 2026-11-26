@@ -1,0 +1,1 @@
+Arte canônica preservada integralmente. Recortes de referência, não sprites transparentes. Não usar como colisores nem promover automaticamente. Reconstruir partes ocultas, separar camadas e validar escala no motor.

@@ -1,0 +1,295 @@
+{
+  "status": "REVIEW",
+  "source": "a_large_composite_promotional_asset_pack_poster_fo.png",
+  "recortes": [
+    {
+      "id": "lia",
+      "file": "recortes/lia.png",
+      "source_rect": [
+        558,
+        112,
+        602,
+        189
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "raul",
+      "file": "recortes/raul.png",
+      "source_rect": [
+        602,
+        112,
+        649,
+        189
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "nora",
+      "file": "recortes/nora.png",
+      "source_rect": [
+        649,
+        112,
+        694,
+        189
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "helena",
+      "file": "recortes/helena.png",
+      "source_rect": [
+        694,
+        112,
+        741,
+        189
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "bento",
+      "file": "recortes/bento.png",
+      "source_rect": [
+        741,
+        112,
+        787,
+        189
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "celina",
+      "file": "recortes/celina.png",
+      "source_rect": [
+        787,
+        112,
+        831,
+        189
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "augusto",
+      "file": "recortes/augusto.png",
+      "source_rect": [
+        831,
+        112,
+        876,
+        189
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "vicente",
+      "file": "recortes/vicente.png",
+      "source_rect": [
+        876,
+        112,
+        925,
+        189
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "teresa",
+      "file": "recortes/teresa.png",
+      "source_rect": [
+        558,
+        212,
+        602,
+        286
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "miguel",
+      "file": "recortes/miguel.png",
+      "source_rect": [
+        602,
+        212,
+        649,
+        286
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "elisa",
+      "file": "recortes/elisa.png",
+      "source_rect": [
+        649,
+        212,
+        694,
+        286
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "samuel",
+      "file": "recortes/samuel.png",
+      "source_rect": [
+        694,
+        212,
+        741,
+        286
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "irene",
+      "file": "recortes/irene.png",
+      "source_rect": [
+        741,
+        212,
+        787,
+        286
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "joaquim",
+      "file": "recortes/joaquim.png",
+      "source_rect": [
+        787,
+        212,
+        831,
+        286
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "sofia",
+      "file": "recortes/sofia.png",
+      "source_rect": [
+        831,
+        212,
+        876,
+        286
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "otavio",
+      "file": "recortes/otavio.png",
+      "source_rect": [
+        876,
+        212,
+        925,
+        286
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "rosa",
+      "file": "recortes/rosa.png",
+      "source_rect": [
+        558,
+        313,
+        602,
+        389
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "padre_antonio",
+      "file": "recortes/padre_antonio.png",
+      "source_rect": [
+        602,
+        313,
+        649,
+        389
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "ernesto",
+      "file": "recortes/ernesto.png",
+      "source_rect": [
+        649,
+        313,
+        694,
+        389
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "beatriz",
+      "file": "recortes/beatriz.png",
+      "source_rect": [
+        694,
+        313,
+        741,
+        389
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "daniel",
+      "file": "recortes/daniel.png",
+      "source_rect": [
+        741,
+        313,
+        787,
+        389
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "arthur",
+      "file": "recortes/arthur.png",
+      "source_rect": [
+        787,
+        313,
+        831,
+        389
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "marina",
+      "file": "recortes/marina.png",
+      "source_rect": [
+        831,
+        313,
+        876,
+        389
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    },
+    {
+      "id": "tomas",
+      "file": "recortes/tomas.png",
+      "source_rect": [
+        876,
+        313,
+        925,
+        389
+      ],
+      "status": "REVIEW",
+      "transparent": false
+    }
+  ],
+  "note": "Recortes de arte composta; não são sprites isolados nem animações homologadas. Reconstruir partes ocultas e remover fundo antes de promover."
+}

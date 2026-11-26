@@ -1,0 +1,12 @@
+{
+  "id": "colosso_ressonancia",
+  "status": "REVIEW",
+  "source": "sprite_sheet_de_criaturas_pixel_art.png",
+  "rect_xyxy": [
+    420,
+    637,
+    1392,
+    1110
+  ],
+  "note": "Painel de referência; remover grade e revisar cada pose."
+}

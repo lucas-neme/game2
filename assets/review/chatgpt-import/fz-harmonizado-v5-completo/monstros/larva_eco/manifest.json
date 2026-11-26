@@ -1,0 +1,12 @@
+{
+  "id": "larva_eco",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_dos_monstros_pixel_art.png",
+  "rect": [
+    0,
+    418,
+    1402,
+    82
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

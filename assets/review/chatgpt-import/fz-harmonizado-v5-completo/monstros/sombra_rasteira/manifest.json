@@ -1,0 +1,12 @@
+{
+  "id": "sombra_rasteira",
+  "status": "REVIEW",
+  "source": "folha_de_sprites_dos_monstros_pixel_art.png",
+  "rect": [
+    0,
+    748,
+    1402,
+    74
+  ],
+  "note": "Sequência integral; quadros próximos ou unidos exigem separação manual."
+}

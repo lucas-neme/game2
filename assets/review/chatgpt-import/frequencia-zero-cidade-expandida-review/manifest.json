@@ -1,0 +1,686 @@
+{
+  "source": "referencia.png",
+  "assets": [
+    {
+      "id": "clinica",
+      "file": "recortes/clinica.png",
+      "source_box": [
+        46,
+        131,
+        377,
+        414
+      ],
+      "size": [
+        331,
+        283
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "casa_aberta",
+      "file": "recortes/casa_aberta.png",
+      "source_box": [
+        342,
+        110,
+        568,
+        304
+      ],
+      "size": [
+        226,
+        194
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "radio",
+      "file": "recortes/radio.png",
+      "source_box": [
+        522,
+        35,
+        852,
+        279
+      ],
+      "size": [
+        330,
+        244
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "igreja",
+      "file": "recortes/igreja.png",
+      "source_box": [
+        843,
+        67,
+        1074,
+        335
+      ],
+      "size": [
+        231,
+        268
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "horizonte",
+      "file": "recortes/horizonte.png",
+      "source_box": [
+        1217,
+        69,
+        1548,
+        243
+      ],
+      "size": [
+        331,
+        174
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "coreto",
+      "file": "recortes/coreto.png",
+      "source_box": [
+        381,
+        295,
+        570,
+        487
+      ],
+      "size": [
+        189,
+        192
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "fonte",
+      "file": "recortes/fonte.png",
+      "source_box": [
+        553,
+        454,
+        666,
+        558
+      ],
+      "size": [
+        113,
+        104
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "oficina_bento",
+      "file": "recortes/oficina_bento.png",
+      "source_box": [
+        849,
+        357,
+        1252,
+        594
+      ],
+      "size": [
+        403,
+        237
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "mercado",
+      "file": "recortes/mercado.png",
+      "source_box": [
+        1209,
+        327,
+        1600,
+        608
+      ],
+      "size": [
+        391,
+        281
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "estacao",
+      "file": "recortes/estacao.png",
+      "source_box": [
+        0,
+        509,
+        519,
+        834
+      ],
+      "size": [
+        519,
+        325
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "abrigo_onibus",
+      "file": "recortes/abrigo_onibus.png",
+      "source_box": [
+        681,
+        584,
+        869,
+        747
+      ],
+      "size": [
+        188,
+        163
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "pier",
+      "file": "recortes/pier.png",
+      "source_box": [
+        1075,
+        601,
+        1426,
+        814
+      ],
+      "size": [
+        351,
+        213
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "barco",
+      "file": "recortes/barco.png",
+      "source_box": [
+        1200,
+        754,
+        1339,
+        840
+      ],
+      "size": [
+        139,
+        86
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "arvore_vermelha",
+      "file": "recortes/arvore_vermelha.png",
+      "source_box": [
+        807,
+        256,
+        908,
+        392
+      ],
+      "size": [
+        101,
+        136
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "arvore_verde",
+      "file": "recortes/arvore_verde.png",
+      "source_box": [
+        656,
+        336,
+        765,
+        478
+      ],
+      "size": [
+        109,
+        142
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "banco_praca",
+      "file": "recortes/banco_praca.png",
+      "source_box": [
+        648,
+        427,
+        728,
+        481
+      ],
+      "size": [
+        80,
+        54
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "banco_estacao",
+      "file": "recortes/banco_estacao.png",
+      "source_box": [
+        352,
+        718,
+        420,
+        777
+      ],
+      "size": [
+        68,
+        59
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "poste_praca",
+      "file": "recortes/poste_praca.png",
+      "source_box": [
+        526,
+        283,
+        569,
+        391
+      ],
+      "size": [
+        43,
+        108
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "poste_ferrovia",
+      "file": "recortes/poste_ferrovia.png",
+      "source_box": [
+        578,
+        456,
+        617,
+        568
+      ],
+      "size": [
+        39,
+        112
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "poste_lago",
+      "file": "recortes/poste_lago.png",
+      "source_box": [
+        1114,
+        549,
+        1153,
+        660
+      ],
+      "size": [
+        39,
+        111
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "placa_lago",
+      "file": "recortes/placa_lago.png",
+      "source_box": [
+        998,
+        689,
+        1100,
+        777
+      ],
+      "size": [
+        102,
+        88
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "placa_onibus",
+      "file": "recortes/placa_onibus.png",
+      "source_box": [
+        851,
+        573,
+        894,
+        634
+      ],
+      "size": [
+        43,
+        61
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "antena_radio",
+      "file": "recortes/antena_radio.png",
+      "source_box": [
+        565,
+        35,
+        665,
+        178
+      ],
+      "size": [
+        100,
+        143
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "antena_parabolica",
+      "file": "recortes/antena_parabolica.png",
+      "source_box": [
+        610,
+        59,
+        678,
+        121
+      ],
+      "size": [
+        68,
+        62
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "torre_horizonte",
+      "file": "recortes/torre_horizonte.png",
+      "source_box": [
+        1178,
+        39,
+        1256,
+        190
+      ],
+      "size": [
+        78,
+        151
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "caixas_estacao",
+      "file": "recortes/caixas_estacao.png",
+      "source_box": [
+        291,
+        717,
+        361,
+        797
+      ],
+      "size": [
+        70,
+        80
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "cerca_lago",
+      "file": "recortes/cerca_lago.png",
+      "source_box": [
+        1386,
+        583,
+        1568,
+        679
+      ],
+      "size": [
+        182,
+        96
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "rochas_lago",
+      "file": "recortes/rochas_lago.png",
+      "source_box": [
+        1501,
+        556,
+        1669,
+        674
+      ],
+      "size": [
+        168,
+        118
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "grama_flores",
+      "file": "recortes/grama_flores.png",
+      "source_box": [
+        915,
+        796,
+        1015,
+        878
+      ],
+      "size": [
+        100,
+        82
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "agua_amostra",
+      "file": "recortes/agua_amostra.png",
+      "source_box": [
+        1471,
+        666,
+        1576,
+        726
+      ],
+      "size": [
+        105,
+        60
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "pedra_pavimento_amostra",
+      "file": "recortes/pedra_pavimento_amostra.png",
+      "source_box": [
+        746,
+        551,
+        816,
+        602
+      ],
+      "size": [
+        70,
+        51
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "trilhos_amostra",
+      "file": "recortes/trilhos_amostra.png",
+      "source_box": [
+        390,
+        802,
+        521,
+        885
+      ],
+      "size": [
+        131,
+        83
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "npc_praca",
+      "file": "recortes/npc_praca.png",
+      "source_box": [
+        758,
+        487,
+        788,
+        550
+      ],
+      "size": [
+        30,
+        63
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "npc_casal",
+      "file": "recortes/npc_casal.png",
+      "source_box": [
+        916,
+        554,
+        980,
+        619
+      ],
+      "size": [
+        64,
+        65
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "npc_estacao",
+      "file": "recortes/npc_estacao.png",
+      "source_box": [
+        472,
+        519,
+        517,
+        588
+      ],
+      "size": [
+        45,
+        69
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "npc_onibus",
+      "file": "recortes/npc_onibus.png",
+      "source_box": [
+        765,
+        651,
+        802,
+        717
+      ],
+      "size": [
+        37,
+        66
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "anomalia_ceu",
+      "file": "recortes/anomalia_ceu.png",
+      "source_box": [
+        1322,
+        0,
+        1455,
+        95
+      ],
+      "size": [
+        133,
+        95
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "anomalia_lago",
+      "file": "recortes/anomalia_lago.png",
+      "source_box": [
+        1533,
+        686,
+        1620,
+        748
+      ],
+      "size": [
+        87,
+        62
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "casa_colina",
+      "file": "recortes/casa_colina.png",
+      "source_box": [
+        1084,
+        207,
+        1318,
+        422
+      ],
+      "size": [
+        234,
+        215
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    },
+    {
+      "id": "jardim_praca",
+      "file": "recortes/jardim_praca.png",
+      "source_box": [
+        413,
+        498,
+        530,
+        576
+      ],
+      "size": [
+        117,
+        78
+      ],
+      "status": "REFERENCE_CROP",
+      "alpha": false,
+      "occlusion_possible": true
+    }
+  ],
+  "note": "Recortes RGB da arte composta; não são sprites isolados. Reconstruir áreas ocultas e remover fundo antes da produção."
+}

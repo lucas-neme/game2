@@ -1,0 +1,1 @@
+Material artístico REVIEW. Recortes preservam pixels da referência. Não usar fundo opaco como sprite. Não duplicar poses para simular animação. Não substituir assets aprovados sem comparar visualmente.
