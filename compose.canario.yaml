@@ -9,7 +9,7 @@ services:
     mem_limit: 64m
     security_opt: ["no-new-privileges:true"]
     healthcheck:
-      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1/nao-existe"]
+      test: ["CMD", "wget", "-q", "-O", "-", "http://127.0.0.1/healthz"]
       interval: 10s
       timeout: 3s
       retries: 2
