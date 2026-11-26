@@ -16,3 +16,15 @@ click('compare','Fita cassete');click('compare','Relógio parado');get('combine'
 click('compare','Carta do cofre');click('compare','Manifesto H-17');get('combine').onclick();assert(c.s.clues.includes('shipment'));
 for(let i=0;i<5;i++)c.move(1,0);for(let i=0;i<4;i++)c.move(0,1);c.interact();click('dialog','Comparar o registro de som com a fita');assert(c.s.clues.includes('altwitness'));assert(!c.s.clues.includes('witness'));
 get('cases').children[0].children.find(b=>b.textContent==='A ferrovia pode estar ativa clandestinamente.').onclick();assert(c.s.solved.includes('train'));console.log('PASS: alternate route and evidence comparison, 6 additional assertions');
+
+get('reset').onclick();
+const d=run(doc,storage,()=>{},()=>true);
+d.move(-1,0);d.move(-1,0);d.move(0,-1);d.interact();click('roomart','Fita cassete');assert(d.s.inspected.includes('radio:Fita cassete'));click('roomart','Cofre de aço');
+let pad3=get('puzzle').children.find(x=>x.className==='keypad');for(const key of ['0','3','1','7','Abrir'])pad3.children.find(x=>x.textContent===key).onclick();
+d.leaveRoom();d.move(-1,0);d.move(0,1);d.move(0,1);d.interact();click('roomart','Trilhos');click('roomart','Armário de sinalização');click('puzzle','Testar mecanismo');assert(!d.s.clues.includes('switchlog'));
+let dial=get('puzzle').children.find(x=>x.className==='dialrow');dial.children[0].onclick();dial.children[0].onclick();dial.children[1].onclick();click('puzzle','Testar mecanismo');assert(d.s.clues.includes('switchlog'));assert(d.s.puzzles.includes('cabinet'));
+d.leaveRoom();get('freq').value='103.7';get('tune').onclick();get('cases').children[0].children.find(b=>b.textContent==='A ferrovia pode estar ativa clandestinamente.').onclick();assert(d.s.solved.includes('train'));assert(!d.s.clues.includes('witness')&&!d.s.clues.includes('altwitness'));
+d.advance(1020-d.s.t);d.render();assert(get('weather').textContent.includes('Chuva'));assert(d.s.phenomena.includes('lights'));d.advance(240);assert(d.s.phenomena.includes('static'));get('night').onclick();assert(get('weather').textContent.includes('Neblina'));assert(d.s.phenomena.includes('whistle'));d.finish();assert(d.s.end?.includes('FIM DO CAPÍTULO I'));assert.equal(get('cinema').hidden,false);
+get('cinemaNext').onclick();assert.equal(d.s.endingScene,1);
+const e=run(doc,storage,()=>{},()=>true);assert.equal(e.s.endingScene,1);get('cinemaNext').onclick();get('cinemaNext').onclick();get('cinemaNext').onclick();assert(e.s.cinemaDismissed);assert.equal(get('cinema').hidden,true);
+console.log('PASS: mechanical route, weather, anomalies and finale, 17 additional assertions');
