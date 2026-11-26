@@ -13,6 +13,10 @@ const launchArgs=process.env.HOST_MAP?['--host-resolver-rules=MAP '+process.env.
 await mkdir(OUT,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--autoplay-policy=no-user-gesture-required',...launchArgs]});
 const log=(...a)=>console.log(...a);
+// HUD helpers: title screen, journal drawer and pause menu (the game keeps its element ids)
+async function start(page){await page.locator('#loading').waitFor({state:'detached',timeout:20000}).catch(()=>{});await page.locator('#startGame').click();await page.waitForFunction(()=>UI.started)}
+const J=(page,open)=>page.evaluate(o=>uiJournal(o),open);
+const pause=(page,open)=>page.evaluate(o=>uiPause(o),open);
 
 async function open(tag){
   const ctx=await browser.newContext({viewport:{width:1366,height:900}});
@@ -27,6 +31,7 @@ async function open(tag){
   await page.evaluate(()=>localStorage.clear());
   await page.reload({waitUntil:'networkidle'});
   await page.locator('#world').waitFor();
+  await start(page);
   return {ctx,page,problems,assets,tag};
 }
 const st=page=>page.evaluate(()=>({x:s.x,y:s.y,t:s.t,room:s.room,clues:[...s.clues],decisions:{...s.decisions},fates:{...s.fates},solved:[...s.solved],end:s.end,events:[...s.events]}));
@@ -37,7 +42,7 @@ const KEY={'1,0':'ArrowRight','-1,0':'ArrowLeft','0,1':'ArrowDown','0,-1':'Arrow
 async function walkNextTo(page,target,maxSteps=60){
   await blur(page);
   for(let n=0;n<maxSteps;n++){
-    const info=await page.evaluate(target=>{const t=typeof target==='string'?residents().find(p=>p.id===target):target;return {me:[s.x,s.y],t:t&&[t.x,t.y],blocked:sites.map(a=>a.x+','+a.y)}},target);
+    const info=await page.evaluate(target=>{const t=typeof target==='string'?residents().find(p=>p.id===target):target;return {me:[s.x,s.y],t:t&&[t.x,t.y],blocked:(()=>{const b=[];for(let x=0;x<14;x++)for(let y=0;y<14;y++)if(!walkable(x,y))b.push(x+','+y);return b})()}},target);
     if(!info.t)throw new Error('target not found '+JSON.stringify(target));
     const [tx,ty]=info.t,[mx,my]=info.me;
     if(Math.abs(tx-mx)+Math.abs(ty-my)<=1)return true;
@@ -92,6 +97,7 @@ async function core(page){
   await page.screenshot({path:`${OUT}/station.png`});
   await page.locator('#leave').click();
   // Radio: tune and solve the prime-number prediction (wrong answer first).
+  await J(page,true);
   await page.locator('#freq').evaluate(e=>{e.value='103.7';e.dispatchEvent(new Event('input',{bubbles:true}))});
   await page.locator('#tune').click();
   assert((await st(page)).clues.includes('warning'),'signal captured');
@@ -105,16 +111,17 @@ async function core(page){
   await page.locator('#combine').click();
   assert((await st(page)).clues.includes('confirmedtime'),'evidence comparison');
   const chips=await page.locator('#compare button').allTextContents();
+  await J(page,false);
   assert(!chips.some(t=>/^[a-z_]+$/.test(t.trim())),'raw ids in evidence chips: '+chips.join('|'));
   await blur(page);
 }
 
 async function finale(page,tag){
-  await page.locator('#cases').getByRole('button',{name:'A ferrovia pode estar ativa clandestinamente.',exact:true}).click();
+  await J(page,true);await page.locator('#cases').getByRole('button',{name:'A ferrovia pode estar ativa clandestinamente.',exact:true}).click();await J(page,false);
   assert((await st(page)).solved.includes('train'));
   await walkNextTo(page,{x:1,y:6});
   await page.locator('#night').click();
-  await page.locator('#final').click();
+  await J(page,true);await page.locator('#final').click();await J(page,false);
   await page.locator('#cinema').waitFor();
   assert.match(await page.locator('#cinema img').evaluate(i=>i.complete&&i.naturalWidth>0?i.src:''),/night-train\.svg/);
   const titles=[];
@@ -128,9 +135,9 @@ async function finale(page,tag){
   const {ctx,page,problems,assets}=await open('A');
   await page.screenshot({path:`${OUT}/A-town.png`});
   // Audio: real AudioContext running.
-  await page.locator('#audio').click();
+  await pause(page,true);await page.locator('#audio').click();
   await page.waitForFunction(()=>audio&&audio.state==='running',null,{timeout:5000});
-  assert.equal(await page.locator('#audio').getAttribute('aria-pressed'),'true');
+  assert.equal(await page.locator('#audio').getAttribute('aria-pressed'),'true');await pause(page,false);
   log('A audio running');
   await core(page);
   log('A puzzles ok');
@@ -146,8 +153,8 @@ async function finale(page,tag){
   assert.deepEqual(Object.fromEntries(Object.entries(A.decisions).map(([k,v])=>[k,v.choice])),{future:'public',clinic:'protect',guard:'warn'});
   log('A dialogue + decisions ok at t='+A.t);
   // Save, reload, keep going from the restored state.
-  await page.locator('#save').click();
-  await page.reload({waitUntil:'networkidle'});
+  await pause(page,true);await page.locator('#save').click();await pause(page,false);
+  await page.reload({waitUntil:'networkidle'});await start(page);
   const R=await st(page);
   assert.deepEqual(R.clues.sort(),A.clues.sort(),'clues persisted');
   assert.equal(R.t,A.t,'time persisted');
@@ -157,8 +164,9 @@ async function finale(page,tag){
   A=await st(page);
   assert.equal(A.fates.exchange,'relocated');assert.equal(A.fates.lia,'protected');
   const evA=await page.locator('#events').textContent();
-  await page.locator('#clues').scrollIntoViewIfNeeded();
+  await J(page,true);await page.locator('#clues').scrollIntoViewIfNeeded();
   await page.screenshot({path:`${OUT}/A-consequences.png`});
+  await J(page,false);
   await finale(page,'A');
   for(const f of ['ground.webp','atlas-0.png','ch-hero.png','ch-lia.png','ch-raul.png','ch-nora.png','portraits.svg','study.svg','station.svg','night-train.svg']){assert.equal(assets[f]?.status,200,f);assert.match(assets[f].type,/^image\//,f)}
   assert.equal(problems.length,0,problems.join('\n'));
@@ -190,7 +198,7 @@ async function finale(page,tag){
 // ---------- Mobile/touch layout on the same URL ----------
 {
   const ctx=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
-  const page=await ctx.newPage();await page.goto(BASE,{waitUntil:'networkidle'});
+  const page=await ctx.newPage();await page.goto(BASE,{waitUntil:'networkidle'});await start(page);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal page scroll');
   await page.locator('#controls button[data-m="-1,0"]').tap();
   await page.screenshot({path:`${OUT}/mobile.png`,fullPage:false});
