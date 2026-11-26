@@ -1,10 +1,10 @@
 import {chromium} from 'playwright';
 import {createServer} from 'node:http';
 import {readFile,mkdir} from 'node:fs/promises';
-import {resolve,extname} from 'node:path';
+import {resolve,extname,sep} from 'node:path';
 import assert from 'node:assert/strict';
 const root=resolve('.');
-const server=createServer(async(req,res)=>{try{const p=resolve(root,'.'+new URL(req.url,'http://localhost').pathname.replace(/^\/$/,'/index.html'));if(!p.startsWith(root+'/'))throw Error('path');const b=await readFile(p);res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.svg':'image/svg+xml'})[extname(p)]||'application/octet-stream');res.end(b)}catch{res.writeHead(404);res.end()}});
+const server=createServer(async(req,res)=>{try{const p=resolve(root,'.'+new URL(req.url,'http://localhost').pathname.replace(/^\/$/,'/index.html'));if(!p.startsWith(root+sep))throw Error('path');const b=await readFile(p);res.setHeader('Content-Type',({'.html':'text/html; charset=utf-8','.svg':'image/svg+xml'})[extname(p)]||'application/octet-stream');res.end(b)}catch{res.writeHead(404);res.end()}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const browser=await chromium.launch({headless:true});await mkdir('browser-evidence',{recursive:true});
 try{const page=await browser.newPage({viewport:{width:1366,height:900},reducedMotion:'reduce'});const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400&&!r.url().endsWith('favicon.ico'))errors.push(r.status()+' '+r.url())});await page.goto('http://127.0.0.1:'+server.address().port);await page.locator('#world').waitFor();await page.screenshot({path:'browser-evidence/01-town.png',fullPage:true});

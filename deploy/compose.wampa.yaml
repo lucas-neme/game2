@@ -1,0 +1,21 @@
+# Override for the Wampa VPS: joins the proxy network so Nginx Proxy Manager reaches
+# the container as game2-web:80. Usage on the server:
+#   docker compose -p game2 -f compose.yaml -f deploy/compose.wampa.yaml up -d --build
+services:
+  game2:
+    container_name: game2-web
+    image: game2-web:local
+    mem_limit: 64m
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+    networks:
+      - default
+      - proxynet
+networks:
+  proxynet:
+    external: true
