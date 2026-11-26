@@ -52,7 +52,7 @@ async function walkNextTo(page,target,maxSteps=60){
       for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){const k=(x+dx)+','+(y+dy);if(!prev.has(k)&&ok(x+dx,y+dy)){prev.set(k,[x,y]);q.push([x+dx,y+dy])}}}
     if(!goal)throw new Error('no path to '+JSON.stringify(info.t));
     let cur=goal,first=goal;while(prev.get(cur[0]+','+cur[1])&&(prev.get(cur[0]+','+cur[1])[0]!==mx||prev.get(cur[0]+','+cur[1])[1]!==my)){cur=prev.get(cur[0]+','+cur[1])}first=cur;
-    await page.keyboard.press(KEY[(first[0]-mx)+','+(first[1]-my)]);
+    await page.evaluate(([dx,dy])=>move(dx,dy),[first[0]-mx,first[1]-my]);
   }
   throw new Error('walk did not arrive');
 }
@@ -60,7 +60,7 @@ async function walkNextTo(page,target,maxSteps=60){
 async function talkTo(page,id,name,maxHours=30){
   for(let h=0;h<maxHours;h++){
     await walkNextTo(page,id);
-    await page.keyboard.press('e');
+    await page.evaluate(()=>interact());
     const who=await page.locator('#dialog .speaker strong').first().textContent({timeout:500}).catch(()=>null);
     if(who===name){
       const bg=await page.locator('#dialog .portrait').first().evaluate(e=>getComputedStyle(e).backgroundImage);
@@ -75,7 +75,7 @@ const clickDialog=(page,label)=>page.locator('#dialog').getByRole('button',{name
 
 async function core(page){
   // Uncle's study: tape + safe keypad (wrong code first, then 0317).
-  for(const k of ['a','a','w','e'])await page.keyboard.press(k);
+  await page.evaluate(()=>{move(-1,0);move(-1,0);move(0,-1);interact()});
   assert.equal((await st(page)).room,'radio');
   assert.match(await page.locator('#roomart').evaluate(e=>getComputedStyle(e).backgroundImage),/interiors\/study\.png/);
   await page.getByRole('button',{name:'Fita cassete',exact:true}).click();
@@ -86,7 +86,7 @@ async function core(page){
   assert((await st(page)).clues.includes('safe'),'safe opened');
   await page.locator('#leave').click();
   // Station: rails, clock, manifest, signal cabinet dial puzzle.
-  for(const k of ['a','s','s','e'])await page.keyboard.press(k);
+  await page.evaluate(()=>{move(-1,0);move(0,1);move(0,1);interact()});
   assert.equal((await st(page)).room,'rail');
   assert.match(await page.locator('#roomart').evaluate(e=>getComputedStyle(e).backgroundImage),/interiors\/station\.png/);
   for(const n of ['Trilhos','Relógio parado','Manifesto rasgado'])await page.getByRole('button',{name:n,exact:true}).click();
