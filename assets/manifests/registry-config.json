@@ -1,0 +1,323 @@
+{
+ "game": "Frequência Zero",
+ "repo": "lucas-neme/game2",
+ "branch": "main",
+ "scan": [
+  "assets/"
+ ],
+ "exclude": [],
+ "how_to_use": "One entry per graphic file of Frequência Zero (never Ashen Kingdoms). Runtime art: assets/production (atlases loaded by index.html; contract in production.json, v4.json, v5.json). Originals: assets/source. Every ChatGPT ZIP member individually: assets/review/chatgpt-import/<pack>/ (byte provenance in import-manifest.json). REVIEW is never deployed (.dockerignore). animation-index.json lists available and missing animations per character. Regenerate: python tools/assets/asset_tools.py registry && python tools/assets/asset_tools.py audit",
+ "runtime_globs": [
+  "index.html",
+  "campaign.html"
+ ],
+ "reference_regex": "assets/[A-Za-z0-9_./-]+[.](?:png|webp|jpg|svg|gif)",
+ "reference_bases": [
+  ""
+ ],
+ "fact_manifests": [
+  "assets/manifests/production.json",
+  "assets/manifests/v4.json",
+  "assets/manifests/v5.json"
+ ],
+ "frame_labels": [
+  {
+   "manifest": "assets/manifests/v5.json",
+   "root_key": "npcs",
+   "anims_key": "animations",
+   "src_key": "source_frames",
+   "path_regex": "npcs/([a-z_]+)/frames/r([0-9]+)_([0-9]+)[.]png$"
+  }
+ ],
+ "default_license": "Frequência Zero original art (project owner; generated for the project)",
+ "licenses": {
+  "assets/production/environment/atlas": "includes SBS Isometric Town Pack (CC0) — assets/licenses"
+ },
+ "characters": {
+  "hero": [
+   "protagonista",
+   "ch-hero"
+  ],
+  "lia": [],
+  "raul": [],
+  "nora": [],
+  "helena": [],
+  "bento": [],
+  "celina": [],
+  "samuel": [],
+  "miguel": [],
+  "padre_antonio": [],
+  "ferroviario": [],
+  "crianca": [],
+  "comerciante": [],
+  "guarda": [],
+  "medico": [],
+  "professor": [],
+  "arthur": [],
+  "augusto": [],
+  "beatriz": [],
+  "daniel": [],
+  "elisa": [],
+  "ernesto": [],
+  "irene": [],
+  "joaquim": [],
+  "marina": [],
+  "investigator": [],
+  "eco_humanoide": [],
+  "sombra_ressonante": [],
+  "vigia_projeto": [],
+  "mutante_floresta": [],
+  "anomalia_esferica": [],
+  "eco_corrompido": [],
+  "sentinela_drone": [],
+  "enxame": [],
+  "cao_anomalo": [
+   "cao"
+  ],
+  "inseto_fenda": [
+   "inseto"
+  ],
+  "corvo_sombrio": [
+   "corvo"
+  ],
+  "larva_eco": [
+   "larva"
+  ],
+  "sombra_rasteira": [],
+  "mutacao_aquatica": [],
+  "cepa_esporal": [],
+  "espectro_infantil": [],
+  "anomalia_temporal": [],
+  "guardiao_bunker": [],
+  "entidade_luz": [],
+  "colosso_ressonancia": [
+   "colosso"
+  ],
+  "echo": [],
+  "pulse": [],
+  "planta_espinhosa": [],
+  "deformado": []
+ },
+ "humans": [
+  "hero",
+  "lia",
+  "raul",
+  "nora",
+  "helena",
+  "bento",
+  "celina",
+  "samuel",
+  "miguel",
+  "padre_antonio",
+  "ferroviario",
+  "crianca",
+  "comerciante",
+  "guarda",
+  "medico",
+  "professor",
+  "arthur",
+  "augusto",
+  "beatriz",
+  "daniel",
+  "elisa",
+  "ernesto",
+  "irene",
+  "joaquim",
+  "marina",
+  "investigator"
+ ],
+ "classes": {},
+ "variants": {},
+ "animations": {
+  "idle": "idle",
+  "walk": "walk",
+  "run": "run",
+  "sneak": "sneak",
+  "talk": "talk",
+  "interact": "interact",
+  "sit": "sit",
+  "stand": "stand",
+  "work": "work",
+  "attack": "attack",
+  "ataque": "attack",
+  "movimento": "move",
+  "move": "move",
+  "dano": "hurt",
+  "hurt": "hurt",
+  "dissipacao": "death",
+  "death": "death",
+  "morte": "death",
+  "defend": "defend",
+  "dodge": "dodge",
+  "use": "use",
+  "react": "react"
+ },
+ "directions": {
+  "north": "north",
+  "south": "south",
+  "east": "east",
+  "west": "west",
+  "front": "south",
+  "back": "north",
+  "left": "west",
+  "right": "east",
+  "side": "side"
+ },
+ "expected_animations": {
+  "_humans": [
+   "idle",
+   "walk",
+   "run",
+   "sneak",
+   "talk",
+   "interact",
+   "sit",
+   "stand",
+   "work",
+   "defend",
+   "dodge",
+   "attack",
+   "hurt",
+   "downed",
+   "death"
+  ],
+  "_creatures": [
+   "idle",
+   "move",
+   "attack",
+   "hurt",
+   "death"
+  ]
+ },
+ "animated_categories": [
+  "characters",
+  "creatures"
+ ],
+ "categories": [
+  [
+   "atlases",
+   "atlas"
+  ],
+  [
+   "references",
+   "referencia|reference|preview|catalogo|folha_de_sprites|sprite_sheet|scene|/folhas/"
+  ],
+  [
+   "characters",
+   "personagens|npcs?[/-]|/characters/|protagonista|moradores|ch-|hero|walk-v|recortes/(lia|nora|helena|bento|celina|raul|samuel|miguel|padre|arthur|augusto|beatriz|daniel|elisa|ernesto|irene|joaquim|marina)"
+  ],
+  [
+   "creatures",
+   "monstros|criaturas|creatures|eco_|sombra_|vigia_|mutante_|anomalia_|enxame|drone|cao_|corvo|larva|inseto|colosso"
+  ],
+  [
+   "weapons",
+   "rifle|besta|revolver|pistola|espingarda|faca|machado|/armas"
+  ],
+  [
+   "keys",
+   "chave"
+  ],
+  [
+   "evidence",
+   "evidencia|documento|fita|fotografia|disco_dados|carta"
+  ],
+  [
+   "puzzles",
+   "enigma|puzzle|cofre|relogio|alavanca|lentes|engrenagen|painel|mapa_frag|prisma|cristal"
+  ],
+  [
+   "items",
+   "inventario|/items?/|objeto|item"
+  ],
+  [
+   "vegetation",
+   "vegeta|arvore|pinheiro|arbusto|flor|natureza|rocha"
+  ],
+  [
+   "vehicles",
+   "bicicleta|bike|carro|onibus[.]|trem|vagao"
+  ],
+  [
+   "interiors",
+   "interior|cutaway|quarto|escritorio|study|station|laboratorio"
+  ],
+  [
+   "furniture",
+   "mobiliario|banco|cadeira|mesa|fogao|chaleira|sofa|cama|poste|lixeira|hidrante|cerca"
+  ],
+  [
+   "buildings",
+   "construc|arquitetura|casa|cabana|escola|oficina|subestacao|bunker|building|roof|serraria|observatorio"
+  ],
+  [
+   "effects",
+   "efeito|effects|clima|fog|ceu|particula"
+  ],
+  [
+   "portraits",
+   "portrait|retrato"
+  ],
+  [
+   "ui",
+   "/ui/|hud|icon|logo|dialogo"
+  ],
+  [
+   "terrain",
+   "terreno|ground|trilho|tile"
+  ],
+  [
+   "environment",
+   "environment|cidade|sinaliza|placa"
+  ]
+ ],
+ "states": [
+  [
+   "REJECTED",
+   "frequencia-zero-npcs-coletivo-review/"
+  ],
+  [
+   "REVIEW",
+   "^assets/review/"
+  ],
+  [
+   "ARCHIVED",
+   "^assets/archived/"
+  ],
+  [
+   "SOURCE",
+   "^assets/source/"
+  ],
+  [
+   "APPROVED",
+   "^assets/production/"
+  ],
+  [
+   "SOURCE",
+   "^assets/[^/]+[.]svg$"
+  ]
+ ],
+ "animation_doc": "docs/ANIMATION_REGISTRY.md",
+ "atlas_animations": [
+  {
+   "manifest": "assets/manifests/production.json",
+   "root_key": "characters",
+   "anims_key": "animations",
+   "rename": {},
+   "atlas": {
+    "hero": "assets/production/characters/ch-hero.png"
+   }
+  },
+  {
+   "manifest": "assets/manifests/v5.json",
+   "root_key": "npcs",
+   "anims_key": "animations"
+  },
+  {
+   "manifest": "assets/manifests/v4.json",
+   "root_key": "creatures",
+   "anims_key": "animations",
+   "skip": "_retrato$"
+  }
+ ]
+}

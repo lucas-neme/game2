@@ -1,0 +1,5573 @@
+{
+ "schema": 1,
+ "game": "Frequência Zero",
+ "note": "available = frames per direction found in the repository (any state); missing = expected animations with no file.",
+ "characters": {
+  "anomalia_esferica": {
+   "available": {
+    "attack": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "death": {
+     "any": 12,
+     "any (atlas)": 5
+    },
+    "hurt": {
+     "any": 10,
+     "any (atlas)": 3
+    },
+    "idle": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "move": {
+     "any": 14,
+     "any (atlas)": 6
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/anomalia_esferica_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/anomalia_esferica_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/anomalia_esferica_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/anomalia_esferica_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/anomalia_esferica_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/anomalia_esferica_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/anomalia_esferica_ataque_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dano_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dano_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/anomalia_esferica_dissipacao_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/anomalia_esferica_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/anomalia_esferica_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/anomalia_esferica_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/anomalia_esferica_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/anomalia_esferica_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/anomalia_esferica_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/anomalia_esferica_idle_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/anomalia_esferica_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/anomalia_esferica_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/anomalia_esferica_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/anomalia_esferica_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/anomalia_esferica_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/anomalia_esferica_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/anomalia_esferica_movimento_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "bento": {
+   "available": {
+    "idle": {
+     "south": 4,
+     "side": 4,
+     "north": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "side (atlas)": 4,
+     "north (atlas)": 4
+    },
+    "sit": {
+     "any": 7,
+     "any (atlas)": 7
+    },
+    "stand": {
+     "any": 3,
+     "any (atlas)": 3
+    },
+    "talk": {
+     "south": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4
+    },
+    "walk": {
+     "south": 4,
+     "north": 6,
+     "side": 7,
+     "any (atlas)": 8,
+     "south (atlas)": 4,
+     "side (atlas)": 7,
+     "north (atlas)": 6
+    },
+    "work": {
+     "side": 8,
+     "side (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "downed",
+    "death"
+   ],
+   "frames": {
+    "idle": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_08.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_13.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_14.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_15.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r01_16.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "walk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_16.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_17.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_18.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_19.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_20.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r02_21.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r03_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r03_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r03_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r03_08.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r03_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r03_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r03_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "work": {
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r04_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r04_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r04_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r04_08.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r04_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r04_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r04_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r04_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "talk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r05_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r05_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r05_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r05_04.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "sit": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "stand": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_12.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/bento/frames/r06_13.png",
+       "state": "REVIEW"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "celina": {
+   "available": {
+    "idle": {
+     "south": 4,
+     "side": 4,
+     "north": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "side (atlas)": 4,
+     "north (atlas)": 4
+    },
+    "sit": {
+     "any": 6,
+     "any (atlas)": 6
+    },
+    "stand": {
+     "any": 4,
+     "any (atlas)": 4
+    },
+    "talk": {
+     "south": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4
+    },
+    "walk": {
+     "south": 8,
+     "side": 8,
+     "north": 8,
+     "any (atlas)": 8,
+     "south (atlas)": 8,
+     "side (atlas)": 8,
+     "north (atlas)": 8
+    },
+    "work": {
+     "side": 8,
+     "side (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "downed",
+    "death"
+   ],
+   "frames": {
+    "idle": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_08.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_13.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_14.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_15.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r01_16.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "walk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r02_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r02_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r02_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r02_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r02_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r02_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r02_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r02_08.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r04_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r04_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r04_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r04_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r04_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r04_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r04_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r04_08.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r05_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r05_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r05_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r05_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r05_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r05_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r05_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r05_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "talk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_04.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "work": {
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_08.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r06_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "sit": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "stand": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "colosso_ressonancia": {
+   "available": {
+    "attack": {
+     "any": 12,
+     "any (atlas)": 5
+    },
+    "death": {
+     "any": 12,
+     "any (atlas)": 5
+    },
+    "hurt": {
+     "any": 10,
+     "any (atlas)": 4
+    },
+    "idle": {
+     "any": 10,
+     "any (atlas)": 4
+    },
+    "move": {
+     "any": 10,
+     "any (atlas)": 4
+    },
+    "preparacao": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_ataque_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_ataque_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dano_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dano_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_dissipacao_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_dissipacao_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_idle_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_idle_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/colosso_ressonancia_movimento_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/colosso_ressonancia_movimento_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "eco_humanoide": {
+   "available": {
+    "attack": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "death": {
+     "any": 12,
+     "any (atlas)": 5
+    },
+    "hurt": {
+     "any": 10,
+     "any (atlas)": 3
+    },
+    "idle": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "move": {
+     "any": 14,
+     "any (atlas)": 6
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/eco_humanoide_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/eco_humanoide_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/eco_humanoide_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/eco_humanoide_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/eco_humanoide_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/eco_humanoide_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/eco_humanoide_ataque_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/eco_humanoide_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/eco_humanoide_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/eco_humanoide_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/eco_humanoide_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dano_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/eco_humanoide_dano_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/eco_humanoide_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/eco_humanoide_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/eco_humanoide_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/eco_humanoide_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/eco_humanoide_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/eco_humanoide_dissipacao_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/eco_humanoide_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/eco_humanoide_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/eco_humanoide_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/eco_humanoide_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/eco_humanoide_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/eco_humanoide_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/eco_humanoide_idle_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/eco_humanoide_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/eco_humanoide_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/eco_humanoide_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/eco_humanoide_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/eco_humanoide_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/eco_humanoide_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/eco_humanoide_movimento_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "helena": {
+   "available": {
+    "idle": {
+     "south": 4,
+     "north": 4,
+     "side": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "north (atlas)": 4,
+     "side (atlas)": 4
+    },
+    "sit": {
+     "any": 6,
+     "any (atlas)": 6
+    },
+    "stand": {
+     "any": 5,
+     "any (atlas)": 5
+    },
+    "talk": {
+     "south": 4,
+     "side": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "side (atlas)": 4
+    },
+    "walk": {
+     "south": 4,
+     "north": 4,
+     "side": 8,
+     "any (atlas)": 8,
+     "south (atlas)": 4,
+     "north (atlas)": 4,
+     "side (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "work",
+    "downed",
+    "death"
+   ],
+   "frames": {
+    "idle": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r01_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r01_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r01_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r01_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r02_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r02_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r02_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r02_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r03_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r03_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r03_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r03_04.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "walk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r01_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r01_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r01_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r01_12.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r02_08.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r02_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r02_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r02_11.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r04_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r04_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r04_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r04_08.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r04_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r04_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r04_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r04_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "talk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r05_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r05_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r05_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r05_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r07_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r07_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r07_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r07_04.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "sit": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "stand": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_12.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/helena/frames/r09_13.png",
+       "state": "REVIEW"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "hero": {
+   "available": {
+    "idle": {
+     "any": 1,
+     "any (atlas)": 4
+    },
+    "sit": {
+     "any": 1,
+     "any (atlas)": 3
+    },
+    "walk": {
+     "any": 1,
+     "east": 16,
+     "north": 16,
+     "south": 16,
+     "west": 16,
+     "any (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "talk": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "stand",
+    "work",
+    "downed",
+    "death"
+   ],
+   "frames": {
+    "sit": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/production/characters/ch-hero-sit.png",
+       "state": "PRODUCTION"
+      }
+     ]
+    },
+    "walk": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/production/characters/ch-hero-walk.png",
+       "state": "PRODUCTION"
+      }
+     ],
+     "east": [
+      {
+       "frame": 1,
+       "path": "assets/source/protagonista-walk-v2/game/east/walk_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/protagonista-walk-v2/source/east/walk_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/protagonista-walk-v2/game/east/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/protagonista-walk-v2/source/east/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/protagonista-walk-v2/game/east/walk_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/protagonista-walk-v2/source/east/walk_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/protagonista-walk-v2/game/east/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/protagonista-walk-v2/source/east/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/protagonista-walk-v2/game/east/walk_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/protagonista-walk-v2/source/east/walk_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/protagonista-walk-v2/game/east/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/protagonista-walk-v2/source/east/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/protagonista-walk-v2/game/east/walk_07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/protagonista-walk-v2/source/east/walk_07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/protagonista-walk-v2/game/east/walk_08.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/protagonista-walk-v2/source/east/walk_08.png",
+       "state": "SOURCE"
+      }
+     ],
+     "north": [
+      {
+       "frame": 1,
+       "path": "assets/source/protagonista-walk-v2/game/north/walk_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/protagonista-walk-v2/source/north/walk_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/protagonista-walk-v2/game/north/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/protagonista-walk-v2/source/north/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/protagonista-walk-v2/game/north/walk_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/protagonista-walk-v2/source/north/walk_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/protagonista-walk-v2/game/north/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/protagonista-walk-v2/source/north/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/protagonista-walk-v2/game/north/walk_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/protagonista-walk-v2/source/north/walk_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/protagonista-walk-v2/game/north/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/protagonista-walk-v2/source/north/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/protagonista-walk-v2/game/north/walk_07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/protagonista-walk-v2/source/north/walk_07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/protagonista-walk-v2/game/north/walk_08.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/protagonista-walk-v2/source/north/walk_08.png",
+       "state": "SOURCE"
+      }
+     ],
+     "south": [
+      {
+       "frame": 1,
+       "path": "assets/source/protagonista-walk-v2/game/south/walk_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/protagonista-walk-v2/source/south/walk_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/protagonista-walk-v2/game/south/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/protagonista-walk-v2/source/south/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/protagonista-walk-v2/game/south/walk_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/protagonista-walk-v2/source/south/walk_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/protagonista-walk-v2/game/south/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/protagonista-walk-v2/source/south/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/protagonista-walk-v2/game/south/walk_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/protagonista-walk-v2/source/south/walk_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/protagonista-walk-v2/game/south/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/protagonista-walk-v2/source/south/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/protagonista-walk-v2/game/south/walk_07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/protagonista-walk-v2/source/south/walk_07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/protagonista-walk-v2/game/south/walk_08.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/protagonista-walk-v2/source/south/walk_08.png",
+       "state": "SOURCE"
+      }
+     ],
+     "west": [
+      {
+       "frame": 1,
+       "path": "assets/source/protagonista-walk-v2/game/west/walk_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/protagonista-walk-v2/source/west/walk_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/protagonista-walk-v2/game/west/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/protagonista-walk-v2/source/west/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/protagonista-walk-v2/game/west/walk_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/protagonista-walk-v2/source/west/walk_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/protagonista-walk-v2/game/west/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/protagonista-walk-v2/source/west/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/protagonista-walk-v2/game/west/walk_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/protagonista-walk-v2/source/west/walk_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/protagonista-walk-v2/game/west/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/protagonista-walk-v2/source/west/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/protagonista-walk-v2/game/west/walk_07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/protagonista-walk-v2/source/west/walk_07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/protagonista-walk-v2/game/west/walk_08.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/protagonista-walk-v2/source/west/walk_08.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-expansao-protagonista-v3-review/recortes/idle.png",
+       "state": "REVIEW"
+      }
+     ]
+    }
+   },
+   "atlas": "assets/production/characters/ch-hero.png"
+  },
+  "lia": {
+   "available": {
+    "idle": {
+     "south": 4,
+     "side": 4,
+     "north": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "north (atlas)": 4,
+     "side (atlas)": 4
+    },
+    "sit": {
+     "any": 7,
+     "any (atlas)": 7
+    },
+    "stand": {
+     "any": 4,
+     "any (atlas)": 4
+    },
+    "talk": {
+     "south": 4,
+     "side": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "side (atlas)": 4
+    },
+    "walk": {
+     "side": 4,
+     "north": 4,
+     "any (atlas)": 8,
+     "side (atlas)": 4,
+     "north (atlas)": 4
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "work",
+    "downed",
+    "death"
+   ],
+   "frames": {
+    "idle": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r01_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r01_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r01_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r01_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r02_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r02_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r02_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r02_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r03_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r03_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r03_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r03_04.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "walk": {
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r02_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r02_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r02_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r02_08.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r03_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r03_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r03_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r03_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "talk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r05_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r05_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r05_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r05_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r06_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r06_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r06_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r06_04.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "sit": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "stand": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "mutante_floresta": {
+   "available": {
+    "attack": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "death": {
+     "any": 12,
+     "any (atlas)": 5
+    },
+    "hurt": {
+     "any": 10,
+     "any (atlas)": 4
+    },
+    "idle": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "move": {
+     "any": 14,
+     "any (atlas)": 6
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/mutante_floresta_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/mutante_floresta_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/mutante_floresta_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/mutante_floresta_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/mutante_floresta_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/mutante_floresta_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_ataque_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/mutante_floresta_ataque_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/mutante_floresta_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/mutante_floresta_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/mutante_floresta_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/mutante_floresta_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dano_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/mutante_floresta_dano_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/mutante_floresta_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/mutante_floresta_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/mutante_floresta_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/mutante_floresta_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/mutante_floresta_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_dissipacao_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/mutante_floresta_dissipacao_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/mutante_floresta_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/mutante_floresta_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/mutante_floresta_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/mutante_floresta_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/mutante_floresta_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/mutante_floresta_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_idle_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/mutante_floresta_idle_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/mutante_floresta_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/mutante_floresta_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/mutante_floresta_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/mutante_floresta_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/mutante_floresta_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/mutante_floresta_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/mutante_floresta_movimento_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/mutante_floresta_movimento_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "nora": {
+   "available": {
+    "idle": {
+     "south": 4,
+     "side": 4,
+     "north": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "side (atlas)": 4,
+     "north (atlas)": 4
+    },
+    "sit": {
+     "any": 5,
+     "any (atlas)": 5
+    },
+    "stand": {
+     "any": 2,
+     "any (atlas)": 2
+    },
+    "talk": {
+     "south": 4,
+     "side": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "side (atlas)": 4
+    },
+    "walk": {
+     "south": 8,
+     "side": 8,
+     "north": 8,
+     "any (atlas)": 8,
+     "south (atlas)": 8,
+     "side (atlas)": 8,
+     "north (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "work",
+    "downed",
+    "death"
+   ],
+   "frames": {
+    "idle": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r01_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r01_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r01_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r01_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r02_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r02_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r02_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r02_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r04_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r04_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r04_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r04_04.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "walk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r05_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r05_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r05_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r05_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r05_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r05_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r05_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r05_08.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r06_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r06_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r06_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r06_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r06_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r06_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r06_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r06_08.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r08_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r08_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r08_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r08_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r08_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r08_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r08_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r08_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "talk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r09_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r09_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r09_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r09_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r10_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r10_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r10_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r10_04.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "sit": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r13_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r13_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r13_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r13_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r13_06.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "stand": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r13_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/nora/frames/r13_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "raul": {
+   "available": {
+    "idle": {
+     "south": 4,
+     "north": 2,
+     "side": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "north (atlas)": 2,
+     "side (atlas)": 4
+    },
+    "sit": {
+     "any": 5,
+     "any (atlas)": 5
+    },
+    "stand": {
+     "any": 3,
+     "any (atlas)": 3
+    },
+    "talk": {
+     "south": 4,
+     "side": 4,
+     "any (atlas)": 4,
+     "south (atlas)": 4,
+     "side (atlas)": 4
+    },
+    "walk": {
+     "south": 6,
+     "north": 8,
+     "side": 8,
+     "any (atlas)": 8,
+     "south (atlas)": 6,
+     "north (atlas)": 8,
+     "side (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "work",
+    "downed",
+    "death"
+   ],
+   "frames": {
+    "idle": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_06.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r01_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "walk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r02_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r02_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r02_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r02_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r02_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r02_06.png",
+       "state": "REVIEW"
+      }
+     ],
+     "north": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r03_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r03_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r03_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r03_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r03_08.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r03_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r03_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r03_11.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r04_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r04_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r04_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r04_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r04_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 5,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r04_06.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 6,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r04_07.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 7,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r04_08.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "talk": {
+     "south": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r05_01.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r05_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r05_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r05_04.png",
+       "state": "REVIEW"
+      }
+     ],
+     "side": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r05_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r05_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r05_11.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r05_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "sit": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_02.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_03.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_04.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 3,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_05.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 4,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_06.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "stand": {
+     "any": [
+      {
+       "frame": 0,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_09.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 1,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_10.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": 2,
+       "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_11.png",
+       "state": "REVIEW"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "sombra_ressonante": {
+   "available": {
+    "attack": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "death": {
+     "any": 12,
+     "any (atlas)": 5
+    },
+    "hurt": {
+     "any": 10,
+     "any (atlas)": 4
+    },
+    "idle": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "move": {
+     "any": 14,
+     "any (atlas)": 6
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/sombra_ressonante_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/sombra_ressonante_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/sombra_ressonante_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/sombra_ressonante_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/sombra_ressonante_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/sombra_ressonante_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/sombra_ressonante_ataque_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dano_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dano_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/sombra_ressonante_dissipacao_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/sombra_ressonante_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/sombra_ressonante_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/sombra_ressonante_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/sombra_ressonante_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/sombra_ressonante_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/sombra_ressonante_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/sombra_ressonante_idle_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/sombra_ressonante_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/sombra_ressonante_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/sombra_ressonante_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/sombra_ressonante_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/sombra_ressonante_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/sombra_ressonante_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/sombra_ressonante_movimento_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "vigia_projeto": {
+   "available": {
+    "attack": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "death": {
+     "any": 12,
+     "any (atlas)": 5
+    },
+    "hurt": {
+     "any": 10,
+     "any (atlas)": 4
+    },
+    "idle": {
+     "any": 14,
+     "any (atlas)": 6
+    },
+    "move": {
+     "any": 14,
+     "any (atlas)": 6
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/vigia_projeto_ataque_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/vigia_projeto_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/vigia_projeto_ataque_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/vigia_projeto_ataque_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/vigia_projeto_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/vigia_projeto_ataque_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_ataque_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/vigia_projeto_ataque_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/vigia_projeto_dano_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/vigia_projeto_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/vigia_projeto_dano_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/vigia_projeto_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dano_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/vigia_projeto_dano_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/vigia_projeto_dissipacao_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/vigia_projeto_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/vigia_projeto_dissipacao_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/vigia_projeto_dissipacao_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/vigia_projeto_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_dissipacao_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/vigia_projeto_dissipacao_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/vigia_projeto_idle_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/vigia_projeto_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/vigia_projeto_idle_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/vigia_projeto_idle_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/vigia_projeto_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/vigia_projeto_idle_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_idle_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/vigia_projeto_idle_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v4/monstros/vigia_projeto_movimento_01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v4/monstros/vigia_projeto_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v4/monstros/vigia_projeto_movimento_03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v4/monstros/vigia_projeto_movimento_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v4/monstros/vigia_projeto_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v4/monstros/vigia_projeto_movimento_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/alpha-review/vigia_projeto_movimento_faixa.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": null,
+       "path": "assets/source/v4/monstros/vigia_projeto_movimento_faixa.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "m-medico": {
+   "available": {
+    "sit": {
+     "any (atlas)": 3
+    },
+    "idle": {
+     "any (atlas)": 4
+    },
+    "walk": {
+     "any (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "talk": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "move",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "m-guarda": {
+   "available": {
+    "sit": {
+     "any (atlas)": 3
+    },
+    "idle": {
+     "any (atlas)": 4
+    },
+    "walk": {
+     "any (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "talk": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "move",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "m-comerciante": {
+   "available": {
+    "sit": {
+     "any (atlas)": 3
+    },
+    "idle": {
+     "any (atlas)": 4
+    },
+    "walk": {
+     "any (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "talk": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "move",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "m-ferroviario": {
+   "available": {
+    "sit": {
+     "any (atlas)": 3
+    },
+    "idle": {
+     "any (atlas)": 4
+    },
+    "walk": {
+     "any (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "talk": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "move",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "m-professor": {
+   "available": {
+    "sit": {
+     "any (atlas)": 3
+    },
+    "idle": {
+     "any (atlas)": 4
+    },
+    "walk": {
+     "any (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "talk": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "move",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "m-crianca": {
+   "available": {
+    "sit": {
+     "any (atlas)": 3
+    },
+    "idle": {
+     "any (atlas)": 4
+    },
+    "walk": {
+     "any (atlas)": 8
+    },
+    "run": {
+     "any (atlas)": 8
+    },
+    "sneak": {
+     "any (atlas)": 8
+    },
+    "interact": {
+     "any (atlas)": 4
+    },
+    "talk": {
+     "any (atlas)": 4
+    },
+    "defend": {
+     "any (atlas)": 2
+    },
+    "dodge": {
+     "any (atlas)": 6
+    },
+    "attack": {
+     "any (atlas)": 6
+    },
+    "hurt": {
+     "any (atlas)": 3
+    },
+    "use": {
+     "any (atlas)": 4
+    },
+    "react": {
+     "any (atlas)": 4
+    }
+   },
+   "missing": [
+    "move",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "cao_anomalo": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "inseto_fenda": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "planta_espinhosa": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "deformado": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "corvo_sombrio": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "larva_eco": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "sentinela_drone": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "sombra_rasteira": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "eco_corrompido": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "mutacao_aquatica": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "cepa_esporal": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "espectro_infantil": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "anomalia_temporal": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "guardiao_bunker": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "enxame": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "entidade_luz": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {},
+   "atlas": null
+  },
+  "samuel": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "miguel": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "padre_antonio": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "ferroviario": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "crianca": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "comerciante": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "guarda": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "medico": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "professor": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "arthur": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "augusto": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "beatriz": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "daniel": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "elisa": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "ernesto": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "irene": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "joaquim": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "marina": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "investigator": {
+   "available": {},
+   "missing": [
+    "idle",
+    "walk",
+    "run",
+    "sneak",
+    "talk",
+    "interact",
+    "sit",
+    "stand",
+    "work",
+    "defend",
+    "dodge",
+    "attack",
+    "hurt",
+    "downed",
+    "death"
+   ],
+   "frames": {}
+  },
+  "echo": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {}
+  },
+  "pulse": {
+   "available": {},
+   "missing": [
+    "idle",
+    "move",
+    "attack",
+    "hurt",
+    "death"
+   ],
+   "frames": {}
+  }
+ }
+}
