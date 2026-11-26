@@ -83,3 +83,11 @@ socialPublic.advance(120);assert(socialPublic.s.rumors.clinic.missing);socialPub
 get('save').onclick();const socialReload=run(doc,storage,()=>{},()=>true);assert.equal(socialReload.s.social['future:guard'],-3);assert.equal(socialReload.s.rumors.clinic.missing.via,'Nora');
 const socialPrivate=branchNora('Preservar a gravação em sigilo');socialPrivate.advance(2700-socialPrivate.s.t);assert.equal(socialPrivate.s.social['future:guard'],2);assert(socialPrivate.s.rumors.future.alliance);assert(!socialPrivate.s.rumors.clinic?.official);
 console.log('PASS: rumor timing, divergent social bonds, provenance and persistence, 16 additional assertions');
+
+get('reset').onclick();const witness=run(doc,storage,()=>{},()=>true);
+witness.move(-1,0);witness.move(-1,0);witness.move(0,-1);witness.interact();click('roomart','Fita cassete');witness.leaveRoom();witness.move(-1,0);witness.move(0,1);witness.move(0,1);witness.interact();click('roomart','Trilhos');witness.leaveRoom();get('night').onclick();witness.interact();
+click('dialog','Registrar versão dos acontecimentos');assert(witness.s.clues.includes('statement_guard'));
+click('dialog','Apresentar: Fita cassete');assert(!witness.s.confrontations.guard);
+click('dialog','Apresentar: Marcas nos trilhos');assert.equal(witness.s.confrontations.guard.evidence,'rail');assert(witness.s.clues.includes('contradiction_guard'));assert.equal(witness.s.relations.guard,1);
+get('save').onclick();const witnessReload=run(doc,storage,()=>{},()=>true);assert(witnessReload.s.testimonies.guard);assert(witnessReload.s.confrontations.guard);
+console.log('PASS: testimony confrontation and persistence, 7 additional assertions');
