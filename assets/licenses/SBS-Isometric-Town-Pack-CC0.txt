@@ -1,0 +1,6 @@
+SBS - Isometric Town Pack, Screaming Brain Studios.
+All Screaming Brain Studios assets have been released under the CC0/Public Domain License.
+You are free to use these assets in any and all projects, commercial or non-commercial, 
+with no restrictions, and can be released with or without credit.
+Used: building wall modules (64x96) and roofs (143x92). The exact tiles of each building are listed in
+assets/manifests/production.json (field "source").
