@@ -1,2419 +1,1873 @@
 {
- "version": 1,
+ "version": 2,
  "generated": "2026-11-26",
- "scale": {
-  "terrain": [
-   128,
-   64
-  ],
-  "wall_module": [
-   64,
-   96
-  ],
-  "roof": [
-   143,
-   92
-  ],
-  "character_frame": [
-   64,
-   96
-  ],
-  "metre_px": 21.333333333333332
- },
- "licenses": {
-  "sbs": "assets/licenses/SBS-Isometric-Town-Pack-CC0.txt",
-  "original": "assets/licenses/FREQUENCIA-ZERO-ORIGINAL.txt"
- },
- "world": {
-  "ox": 1472,
-  "oy": 480,
-  "w": 2944,
-  "h": 1680,
-  "tile": [
-   128,
-   64
-  ],
-  "cam": [
-   384,
-   182,
-   2560,
-   1520
-  ]
- },
- "ground": "assets/production/environment/ground.webp",
- "atlases": [
-  "assets/production/environment/atlas-0.png"
+ "authority": "frequencia-zero-canon.zip (referencia-canonica.png)",
+ "states": [
+  "SOURCE",
+  "REVIEW",
+  "APPROVED",
+  "PRODUCTION",
+  "REJECTED"
  ],
- "sprites": {
-  "water-tower": {
-   "atlas": 0,
-   "rect": [
-    0,
-    0,
-    188,
-    286
-   ],
-   "anchor": [
-    62,
-    191
-   ],
-   "category": "props",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "b-clinic": {
-   "atlas": 0,
-   "rect": [
-    190,
-    0,
-    143,
-    263
-   ],
-   "anchor": [
-    71,
-    230
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-079/B1-080, B1-081/B1-082, B1-083/B1-084 + R05"
-  },
-  "n-clinic": {
-   "atlas": 0,
-   "rect": [
-    335,
-    0,
-    143,
-    263
-   ],
-   "anchor": [
-    71,
-    230
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "pylon": {
-   "atlas": 0,
-   "rect": [
-    480,
-    0,
-    133,
-    221
-   ],
-   "anchor": [
-    42,
-    147
-   ],
-   "category": "props",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "antenna": {
-   "atlas": 0,
-   "rect": [
-    615,
-    0,
-    84,
-    215
-   ],
-   "anchor": [
-    17,
-    151
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "boxcar": {
-   "atlas": 0,
-   "rect": [
-    701,
-    0,
-    212,
-    200
-   ],
-   "anchor": [
-    123,
-    104
-   ],
-   "category": "props",
-   "collision": "cells",
-   "source": "original (Frequência Zero pipeline)"
-  },
+ "scale": {
+  "cell": [
+   128,
+   64
+  ],
+  "metre_px": 21.3,
+  "character_frame": [
+   32,
+   48
+  ],
+  "camera_zoom": "pixel-art nearest, default ~2x"
+ },
+ "assets": {
   "b-uncle": {
-   "atlas": 0,
-   "rect": [
-    915,
-    0,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
    "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-121/B1-122, B1-123/B1-124 + R01"
-  },
-  "n-uncle": {
-   "atlas": 0,
-   "rect": [
-    1060,
-    0,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-radio": {
-   "atlas": 0,
-   "rect": [
-    1205,
-    0,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B2-061/B2-064, B2-063/B2-062 + R02"
-  },
-  "n-radio": {
-   "atlas": 0,
-   "rect": [
-    1350,
-    0,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-guard": {
-   "atlas": 0,
-   "rect": [
-    1495,
-    0,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-111/B1-110, B1-113/B1-114 + R04"
-  },
-  "n-guard": {
-   "atlas": 0,
-   "rect": [
-    1640,
-    0,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-station": {
-   "atlas": 0,
-   "rect": [
-    1785,
-    0,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-077/B1-078, B1-077/B1-078 + R11"
-  },
-  "n-station": {
-   "atlas": 0,
-   "rect": [
-    0,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-archive": {
-   "atlas": 0,
-   "rect": [
-    145,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B2-003/B2-004, B2-001/B2-002 + R05"
-  },
-  "n-archive": {
-   "atlas": 0,
-   "rect": [
-    290,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-bento-home": {
-   "atlas": 0,
-   "rect": [
-    435,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-037/B1-038, B1-037/B1-038 + R01"
-  },
-  "n-bento-home": {
-   "atlas": 0,
-   "rect": [
-    580,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-helena-home": {
-   "atlas": 0,
-   "rect": [
-    725,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-115/B1-116, B1-119/B1-120 + R02"
-  },
-  "n-helena-home": {
-   "atlas": 0,
-   "rect": [
-    870,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-celina-home": {
-   "atlas": 0,
-   "rect": [
-    1015,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-039/B1-040, B1-039/B1-040 + R01"
-  },
-  "n-celina-home": {
-   "atlas": 0,
-   "rect": [
-    1160,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-grocery": {
-   "atlas": 0,
-   "rect": [
-    1305,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B2-083/B2-084, B1-073/B1-074 + R03"
-  },
-  "n-grocery": {
-   "atlas": 0,
-   "rect": [
-    1450,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-abandoned": {
-   "atlas": 0,
-   "rect": [
-    1595,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B3-007/B3-008, B3-011/B3-012 + R06"
-  },
-  "n-abandoned": {
-   "atlas": 0,
-   "rect": [
-    1740,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-house-b": {
-   "atlas": 0,
-   "rect": [
-    1885,
-    288,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-075/B1-076, B1-075/B1-076 + R04"
-  },
-  "n-house-b": {
-   "atlas": 0,
-   "rect": [
-    0,
-    489,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-house-d": {
-   "atlas": 0,
-   "rect": [
-    145,
-    489,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B3-079/B3-080, B3-079/B3-080 + R05"
-  },
-  "n-house-d": {
-   "atlas": 0,
-   "rect": [
-    290,
-    489,
-    143,
-    199
-   ],
-   "anchor": [
-    71,
-    166
-   ],
-   "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "canopy": {
-   "atlas": 0,
-   "rect": [
-    435,
-    489,
-    146,
-    169
-   ],
-   "anchor": [
-    45,
-    99
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "canopy-end": {
-   "atlas": 0,
-   "rect": [
-    583,
-    489,
-    146,
-    169
-   ],
-   "anchor": [
-    45,
-    99
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "floodlight": {
-   "atlas": 0,
-   "rect": [
-    1930,
-    0,
-    70,
+   "source": "canon:construcoes/casa_tio.png",
+   "license": "canon (project owner)",
+   "size": [
+    253,
     154
    ],
    "anchor": [
-    18,
-    103
+    79,
+    153
    ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "signal": {
-   "atlas": 0,
-   "rect": [
-    731,
-    489,
-    67,
-    143
-   ],
-   "anchor": [
-    17,
-    97
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "b-bento-shop": {
-   "atlas": 0,
-   "rect": [
-    800,
-    489,
-    143,
-    135
-   ],
-   "anchor": [
-    71,
-    102
-   ],
-   "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B2-081/B2-082 + R04"
-  },
-  "n-bento-shop": {
-   "atlas": 0,
-   "rect": [
-    945,
-    489,
-    143,
-    135
-   ],
-   "anchor": [
-    71,
-    102
-   ],
+  "n-uncle": {
    "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-celina-shop": {
-   "atlas": 0,
-   "rect": [
-    1090,
-    489,
-    143,
-    135
+   "source": "canon:construcoes/casa_tio.png (window mask)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    71,
-    102
+    79,
+    153
    ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "b-radio": {
    "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B2-079/B2-080 + R02"
-  },
-  "n-celina-shop": {
-   "atlas": 0,
-   "rect": [
-    1235,
-    489,
-    143,
-    135
+   "source": "canon:construcoes/radio.png",
+   "license": "canon (project owner)",
+   "size": [
+    233,
+    152
    ],
    "anchor": [
-    71,
-    102
+    99,
+    151
    ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "n-radio": {
    "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-bar": {
-   "atlas": 0,
-   "rect": [
-    1380,
-    489,
-    143,
-    135
+   "source": "canon:construcoes/radio.png (window mask)",
+   "license": "canon (project owner)",
+   "size": [
+    233,
+    152
    ],
    "anchor": [
-    71,
-    102
+    99,
+    151
    ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "b-clinic": {
    "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B2-077/B2-078 + R02"
-  },
-  "n-bar": {
-   "atlas": 0,
-   "rect": [
-    1525,
-    489,
-    143,
-    135
+   "source": "canon:construcoes/clinica.png",
+   "license": "canon (project owner)",
+   "size": [
+    190,
+    150
    ],
    "anchor": [
-    71,
-    102
+    68,
+    149
    ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "n-clinic": {
    "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-workshop": {
-   "atlas": 0,
-   "rect": [
-    1670,
-    489,
-    143,
-    135
+   "source": "canon:construcoes/clinica.png (window mask)",
+   "license": "canon (project owner)",
+   "size": [
+    190,
+    150
    ],
    "anchor": [
-    71,
-    102
+    68,
+    149
    ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "b-guard": {
    "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B2-115/B2-116 + R11"
-  },
-  "n-workshop": {
-   "atlas": 0,
-   "rect": [
-    1815,
-    489,
-    143,
-    135
+   "source": "canon:construcoes/posto.png",
+   "license": "canon (project owner)",
+   "size": [
+    205,
+    168
    ],
    "anchor": [
-    71,
-    102
+    74,
+    167
    ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "n-guard": {
    "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-house-a": {
-   "atlas": 0,
-   "rect": [
-    0,
-    690,
-    143,
-    135
+   "source": "canon:construcoes/posto.png (window mask)",
+   "license": "canon (project owner)",
+   "size": [
+    205,
+    168
    ],
    "anchor": [
-    71,
-    102
+    74,
+    167
    ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "b-station": {
    "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-073/B1-074 + R02"
-  },
-  "n-house-a": {
-   "atlas": 0,
-   "rect": [
-    145,
-    690,
-    143,
-    135
+   "source": "canon:construcoes/estacao.png",
+   "license": "canon (project owner)",
+   "size": [
+    301,
+    168
    ],
    "anchor": [
-    71,
-    102
+    230,
+    167
    ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": "mirrored so its track follows the rail (y axis)"
+  },
+  "n-station": {
    "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-house-c": {
-   "atlas": 0,
-   "rect": [
-    290,
-    690,
-    143,
-    135
+   "source": "canon:construcoes/estacao.png (window mask)",
+   "license": "canon (project owner)",
+   "size": [
+    301,
+    168
    ],
    "anchor": [
-    71,
-    102
+    230,
+    167
    ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "b-archive": {
    "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B1-117/B1-118 + R01"
-  },
-  "n-house-c": {
-   "atlas": 0,
-   "rect": [
-    435,
-    690,
-    143,
-    135
+   "source": "canon:construcoes/arquivo.png",
+   "license": "canon (project owner)",
+   "size": [
+    204,
+    152
    ],
    "anchor": [
-    71,
-    102
+    99,
+    151
    ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "n-archive": {
    "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-house-e": {
-   "atlas": 0,
-   "rect": [
-    580,
-    690,
-    143,
-    135
+   "source": "canon:construcoes/arquivo.png (window mask)",
+   "license": "canon (project owner)",
+   "size": [
+    204,
+    152
    ],
    "anchor": [
-    71,
-    102
+    99,
+    151
    ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "h-bento": {
    "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B3-003/B3-004 + R03"
-  },
-  "n-house-e": {
-   "atlas": 0,
-   "rect": [
-    725,
-    690,
-    143,
-    135
+   "source": "canon:construcoes/casa_tio.png (variant)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    71,
-    102
+    79,
+    153
    ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": "canon house, roof brown"
+  },
+  "n-bento": {
    "category": "lighting",
-   "collision": null,
-   "source": "derived from SBS faces (window mask)"
-  },
-  "b-house-f": {
-   "atlas": 0,
-   "rect": [
-    870,
-    690,
-    143,
-    135
+   "source": "derived window mask",
+   "license": "original",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    71,
-    102
+    79,
+    153
    ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "h-helena": {
    "category": "architecture",
-   "collision": "cell",
-   "source": "SBS Isometric Town Pack (CC0): B3-001/B3-002 + R01"
-  },
-  "n-house-f": {
-   "atlas": 0,
-   "rect": [
-    1015,
-    690,
-    143,
-    135
+   "source": "canon:construcoes/casa_tio.png (variant)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    71,
-    102
+    173,
+    153
    ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": "canon house, roof slate"
+  },
+  "n-helena": {
    "category": "lighting",
+   "source": "derived window mask",
+   "license": "original",
+   "size": [
+    253,
+    154
+   ],
+   "anchor": [
+    173,
+    153
+   ],
    "collision": null,
-   "source": "derived from SBS faces (window mask)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "station-clock": {
-   "atlas": 0,
-   "rect": [
-    1960,
-    489,
-    66,
-    132
+  "h-celina": {
+   "category": "architecture",
+   "source": "canon:construcoes/casa_tio.png (variant)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    19,
-    88
+    79,
+    153
    ],
-   "category": "props",
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": "canon house, roof teal"
+  },
+  "n-celina": {
+   "category": "lighting",
+   "source": "derived window mask",
+   "license": "original",
+   "size": [
+    253,
+    154
+   ],
+   "anchor": [
+    79,
+    153
+   ],
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "tree-oak-a": {
-   "atlas": 0,
-   "rect": [
-    1160,
-    690,
-    96,
-    128
+  "h-red": {
+   "category": "architecture",
+   "source": "canon:construcoes/casa_tio.png (variant)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    48,
-    118
+    173,
+    153
    ],
-   "category": "vegetation",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": "canon house, roof red"
   },
-  "tree-oak-b": {
-   "atlas": 0,
-   "rect": [
-    1258,
-    690,
-    96,
-    128
+  "n-red": {
+   "category": "lighting",
+   "source": "derived window mask",
+   "license": "original",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    45,
-    118
+    173,
+    153
    ],
-   "category": "vegetation",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "tree-ipe": {
-   "atlas": 0,
-   "rect": [
-    1356,
-    690,
-    96,
-    128
-   ],
-   "anchor": [
-    48,
-    118
-   ],
-   "category": "vegetation",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "tree-jacaranda": {
-   "atlas": 0,
-   "rect": [
-    1454,
-    690,
-    96,
-    128
-   ],
-   "anchor": [
-    50,
-    118
-   ],
-   "category": "vegetation",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "lamp": {
-   "atlas": 0,
-   "rect": [
-    1552,
-    690,
-    65,
-    128
-   ],
-   "anchor": [
-    26,
-    80
-   ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "lamp-lit": {
-   "atlas": 0,
-   "rect": [
-    1619,
-    690,
-    65,
-    128
+  "h-teal": {
+   "category": "architecture",
+   "source": "canon:construcoes/casa_tio.png (variant)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    26,
-    80
+    79,
+    153
    ],
-   "category": "props",
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": "canon house, roof blue"
+  },
+  "n-teal": {
+   "category": "lighting",
+   "source": "derived window mask",
+   "license": "original",
+   "size": [
+    253,
+    154
+   ],
+   "anchor": [
+    79,
+    153
+   ],
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "tree-cypress": {
-   "atlas": 0,
-   "rect": [
-    1686,
-    690,
-    48,
-    128
+  "h-slate": {
+   "category": "architecture",
+   "source": "canon:construcoes/casa_tio.png (variant)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
    ],
    "anchor": [
-    24,
-    118
+    173,
+    153
    ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": "canon house, roof slate"
+  },
+  "n-slate": {
+   "category": "lighting",
+   "source": "derived window mask",
+   "license": "original",
+   "size": [
+    253,
+    154
+   ],
+   "anchor": [
+    173,
+    153
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "h-brown": {
+   "category": "architecture",
+   "source": "canon:construcoes/casa_tio.png (variant)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
+   ],
+   "anchor": [
+    79,
+    153
+   ],
+   "collision": "2x2 footprint",
+   "state": "PRODUCTION",
+   "note": "canon house, roof brown"
+  },
+  "n-brown": {
+   "category": "lighting",
+   "source": "derived window mask",
+   "license": "original",
+   "size": [
+    253,
+    154
+   ],
+   "anchor": [
+    79,
+    153
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "h-ruin": {
+   "category": "architecture",
+   "source": "canon:construcoes/casa_tio.png (variant)",
+   "license": "canon (project owner)",
+   "size": [
+    253,
+    154
+   ],
+   "anchor": [
+    173,
+    153
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": "abandoned: desaturated, windows dark"
+  },
+  "tree-green": {
    "category": "vegetation",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "tree-mango": {
-   "atlas": 0,
-   "rect": [
-    1736,
-    690,
-    104,
-    120
-   ],
-   "anchor": [
-    52,
-    110
-   ],
-   "category": "vegetation",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "tree-dead": {
-   "atlas": 0,
-   "rect": [
-    1842,
-    690,
-    96,
-    120
-   ],
-   "anchor": [
-    48,
-    110
-   ],
-   "category": "vegetation",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "tree-dry": {
-   "atlas": 0,
-   "rect": [
-    1940,
-    690,
-    88,
-    116
-   ],
-   "anchor": [
-    44,
-    106
-   ],
-   "category": "vegetation",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "well": {
-   "atlas": 0,
-   "rect": [
-    0,
-    827,
-    90,
-    111
-   ],
-   "anchor": [
-    38,
-    69
-   ],
-   "category": "props",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "chain-x+": {
-   "atlas": 0,
-   "rect": [
-    92,
-    827,
-    97,
-    110
-   ],
-   "anchor": [
-    70,
-    51
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "chain-y+": {
-   "atlas": 0,
-   "rect": [
-    191,
-    827,
-    97,
-    110
-   ],
-   "anchor": [
-    10,
-    51
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "chain-x-": {
-   "atlas": 0,
-   "rect": [
-    290,
-    827,
-    97,
-    110
-   ],
-   "anchor": [
-    10,
-    80
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "chain-y-": {
-   "atlas": 0,
-   "rect": [
-    389,
-    827,
-    97,
-    110
-   ],
-   "anchor": [
-    70,
-    80
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "statue": {
-   "atlas": 0,
-   "rect": [
-    488,
-    827,
-    86,
-    107
+   "source": "canon:objetos/arvore_verde.png",
+   "license": "canon (project owner)",
+   "size": [
+    71,
+    93
    ],
    "anchor": [
     40,
-    70
+    92
    ],
-   "category": "props",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "transformer": {
-   "atlas": 0,
-   "rect": [
-    576,
-    827,
-    83,
-    100
+  "tree-autumn": {
+   "category": "vegetation",
+   "source": "canon:objetos/arvore_outono.png",
+   "license": "canon (project owner)",
+   "size": [
+    66,
+    93
+   ],
+   "anchor": [
+    34,
+    92
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "tree-pink": {
+   "category": "vegetation",
+   "source": "canon:objetos/arvore_rosa.png",
+   "license": "canon (project owner)",
+   "size": [
+    62,
+    91
+   ],
+   "anchor": [
+    31,
+    90
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "tree-pine": {
+   "category": "vegetation",
+   "source": "canon:objetos/pinheiro.png",
+   "license": "canon (project owner)",
+   "size": [
+    52,
+    92
+   ],
+   "anchor": [
+    26,
+    91
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "bush": {
+   "category": "vegetation",
+   "source": "canon:objetos/arbusto.png",
+   "license": "canon (project owner)",
+   "size": [
+    46,
+    39
+   ],
+   "anchor": [
+    37,
+    38
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "flowers": {
+   "category": "vegetation",
+   "source": "canon:objetos/flores.png",
+   "license": "canon (project owner)",
+   "size": [
+    29,
+    40
+   ],
+   "anchor": [
+    19,
+    39
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "rock": {
+   "category": "vegetation",
+   "source": "canon:objetos/rocha.png",
+   "license": "canon (project owner)",
+   "size": [
+    40,
+    36
+   ],
+   "anchor": [
+    4,
+    35
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "log": {
+   "category": "vegetation",
+   "source": "canon:objetos/tronco.png",
+   "license": "canon (project owner)",
+   "size": [
+    38,
+    28
+   ],
+   "anchor": [
+    30,
+    27
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "branches": {
+   "category": "vegetation",
+   "source": "canon:objetos/galhos.png",
+   "license": "canon (project owner)",
+   "size": [
+    31,
+    39
+   ],
+   "anchor": [
+    15,
+    38
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "bench": {
+   "category": "props",
+   "source": "canon:objetos/banco.png",
+   "license": "canon (project owner)",
+   "size": [
+    52,
+    38
+   ],
+   "anchor": [
+    16,
+    37
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "barrel": {
+   "category": "props",
+   "source": "canon:objetos/barril.png",
+   "license": "canon (project owner)",
+   "size": [
+    26,
+    41
+   ],
+   "anchor": [
+    16,
+    40
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "bike": {
+   "category": "props",
+   "source": "canon:objetos/bicicleta.png",
+   "license": "canon (project owner)",
+   "size": [
+    51,
+    34
+   ],
+   "anchor": [
+    22,
+    33
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "hydrant": {
+   "category": "props",
+   "source": "canon:objetos/hidrante.png",
+   "license": "canon (project owner)",
+   "size": [
+    31,
+    41
+   ],
+   "anchor": [
+    15,
+    40
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "bin": {
+   "category": "props",
+   "source": "canon:objetos/lixeira.png",
+   "license": "canon (project owner)",
+   "size": [
+    28,
+    40
+   ],
+   "anchor": [
+    13,
+    39
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "sign-centro": {
+   "category": "signs",
+   "source": "canon:objetos/placa_centro.png",
+   "license": "canon (project owner)",
+   "size": [
+    80,
+    28
+   ],
+   "anchor": [
+    39,
+    27
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "sign-clinica": {
+   "category": "signs",
+   "source": "canon:objetos/placa_clinica.png",
+   "license": "canon (project owner)",
+   "size": [
+    89,
+    28
+   ],
+   "anchor": [
+    44,
+    27
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "sign-estacao": {
+   "category": "signs",
+   "source": "canon:objetos/placa_estacao.png",
+   "license": "canon (project owner)",
+   "size": [
+    95,
+    32
+   ],
+   "anchor": [
+    42,
+    31
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "sign-radio": {
+   "category": "signs",
+   "source": "canon:objetos/placa_radio.png",
+   "license": "canon (project owner)",
+   "size": [
+    84,
+    32
    ],
    "anchor": [
     38,
-    63
-   ],
-   "category": "props",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "fence-x+": {
-   "atlas": 0,
-   "rect": [
-    661,
-    827,
-    90,
-    84
-   ],
-   "anchor": [
-    70,
     31
    ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "fence-y+": {
-   "atlas": 0,
-   "rect": [
-    753,
-    827,
-    90,
-    84
+  "lamp": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#0",
+   "license": "canon (project owner)",
+   "size": [
+    28,
+    80
    ],
    "anchor": [
-    10,
-    31
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "fence-x-": {
-   "atlas": 0,
-   "rect": [
-    845,
-    827,
-    90,
-    84
-   ],
-   "anchor": [
-    10,
-    61
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "fence-y-": {
-   "atlas": 0,
-   "rect": [
-    937,
-    827,
-    90,
-    84
-   ],
-   "anchor": [
-    70,
-    61
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "crates": {
-   "atlas": 0,
-   "rect": [
-    1029,
-    827,
-    78,
-    82
-   ],
-   "anchor": [
-    36,
-    53
-   ],
-   "category": "props",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "barrier": {
-   "atlas": 0,
-   "rect": [
-    1109,
-    827,
-    80,
+    13,
     79
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "bench-b": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#3",
+   "license": "canon (project owner)",
+   "size": [
+    53,
+    41
+   ],
+   "anchor": [
+    13,
+    40
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "barrel-b": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#5",
+   "license": "canon (project owner)",
+   "size": [
+    29,
+    34
    ],
    "anchor": [
     12,
     33
    ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "mailbox": {
-   "atlas": 0,
-   "rect": [
-    1191,
-    827,
-    45,
-    73
+  "cabinet": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#6",
+   "license": "canon (project owner)",
+   "size": [
+    30,
+    45
    ],
    "anchor": [
-    16,
+    14,
     44
    ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "wall-x+": {
-   "atlas": 0,
-   "rect": [
-    1238,
-    827,
-    87,
-    70
-   ],
-   "anchor": [
-    70,
-    21
-   ],
+  "kiosk": {
    "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "wall-y+": {
-   "atlas": 0,
-   "rect": [
-    1327,
-    827,
-    87,
-    70
-   ],
-   "anchor": [
-    11,
-    21
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "barrels": {
-   "atlas": 0,
-   "rect": [
-    1416,
-    827,
-    68,
-    69
-   ],
-   "anchor": [
-    29,
-    40
-   ],
-   "category": "props",
-   "collision": "cell",
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "bench-x": {
-   "atlas": 0,
-   "rect": [
-    1486,
-    827,
-    65,
-    64
-   ],
-   "anchor": [
-    28,
+   "source": "canon:folhas/mobiliario.png#7",
+   "license": "canon (project owner)",
+   "size": [
+    26,
     36
    ],
-   "category": "props",
+   "anchor": [
+    13,
+    35
+   ],
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "bench-y": {
-   "atlas": 0,
-   "rect": [
-    1553,
-    827,
-    62,
-    64
+  "stall": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#10",
+   "license": "canon (project owner)",
+   "size": [
+    52,
+    30
    ],
    "anchor": [
-    29,
-    36
+    25,
+    29
    ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "crate": {
-   "atlas": 0,
-   "rect": [
-    1617,
-    827,
-    54,
-    59
-   ],
-   "anchor": [
-    23,
-    32
-   ],
+  "notice": {
    "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "barrel": {
-   "atlas": 0,
-   "rect": [
-    1673,
-    827,
-    46,
-    59
-   ],
-   "anchor": [
-    19,
-    33
-   ],
-   "category": "props",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "bin": {
-   "atlas": 0,
-   "rect": [
-    2002,
-    0,
-    43,
-    56
+   "source": "canon:folhas/mobiliario.png#11",
+   "license": "canon (project owner)",
+   "size": [
+    37,
+    25
    ],
    "anchor": [
     18,
-    31
+    24
    ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "planter-red": {
-   "atlas": 0,
-   "rect": [
-    1721,
-    827,
-    57,
-    54
+  "fence-wood": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#12",
+   "license": "canon (project owner)",
+   "size": [
+    58,
+    33
+   ],
+   "anchor": [
+    28,
+    32
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "wall-stone": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#13",
+   "license": "canon (project owner)",
+   "size": [
+    47,
+    30
+   ],
+   "anchor": [
+    23,
+    29
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "crate-a": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#14",
+   "license": "canon (project owner)",
+   "size": [
+    24,
+    35
+   ],
+   "anchor": [
+    11,
+    34
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "crate-b": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#15",
+   "license": "canon (project owner)",
+   "size": [
+    25,
+    38
+   ],
+   "anchor": [
+    12,
+    37
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "signpost": {
+   "category": "props",
+   "source": "canon:folhas/mobiliario.png#18",
+   "license": "canon (project owner)",
+   "size": [
+    62,
+    43
    ],
    "anchor": [
     26,
-    28
+    42
    ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "planter-white": {
-   "atlas": 0,
-   "rect": [
-    1780,
-    827,
-    57,
-    54
+  "board": {
+   "category": "signs",
+   "source": "canon:folhas/sinalizacao.png#1",
+   "license": "canon (project owner)",
+   "size": [
+    88,
+    29
    ],
    "anchor": [
-    26,
+    44,
     28
    ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "tires": {
-   "atlas": 0,
-   "rect": [
-    1839,
-    827,
-    66,
+  "booth": {
+   "category": "signs",
+   "source": "canon:folhas/sinalizacao.png#2",
+   "license": "canon (project owner)",
+   "size": [
+    83,
+    29
+   ],
+   "anchor": [
+    37,
+    28
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "grass-tall": {
+   "category": "vegetation",
+   "source": "canon:folhas/efeitos_ambiente.png#2",
+   "license": "canon (project owner)",
+   "size": [
+    36,
+    48
+   ],
+   "anchor": [
+    18,
+    47
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "grass-bush": {
+   "category": "vegetation",
+   "source": "canon:folhas/efeitos_ambiente.png#3",
+   "license": "canon (project owner)",
+   "size": [
+    49,
     52
    ],
    "anchor": [
-    22,
+    32,
+    51
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "portal-a": {
+   "category": "effects",
+   "source": "canon:folhas/efeitos_ambiente.png#4",
+   "license": "canon (project owner)",
+   "size": [
+    51,
+    59
+   ],
+   "anchor": [
+    32,
+    58
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "portal-b": {
+   "category": "effects",
+   "source": "canon:folhas/efeitos_ambiente.png#5",
+   "license": "canon (project owner)",
+   "size": [
+    56,
+    76
+   ],
+   "anchor": [
+    29,
+    75
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "orb": {
+   "category": "effects",
+   "source": "canon:folhas/efeitos_ambiente.png#6",
+   "license": "canon (project owner)",
+   "size": [
+    55,
+    68
+   ],
+   "anchor": [
+    28,
+    67
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "sparks": {
+   "category": "effects",
+   "source": "canon:folhas/efeitos_ambiente.png#7",
+   "license": "canon (project owner)",
+   "size": [
+    33,
+    63
+   ],
+   "anchor": [
+    16,
+    62
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "smoke": {
+   "category": "effects",
+   "source": "canon:folhas/efeitos_ambiente.png#8",
+   "license": "canon (project owner)",
+   "size": [
+    25,
+    65
+   ],
+   "anchor": [
+    9,
+    64
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-big-0": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#0",
+   "license": "canon (project owner)",
+   "size": [
+    54,
+    63
+   ],
+   "anchor": [
+    30,
+    62
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-big-1": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#1",
+   "license": "canon (project owner)",
+   "size": [
+    56,
+    64
+   ],
+   "anchor": [
+    30,
+    63
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-big-2": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#2",
+   "license": "canon (project owner)",
+   "size": [
+    54,
+    66
+   ],
+   "anchor": [
+    27,
+    65
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-big-3": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#3",
+   "license": "canon (project owner)",
+   "size": [
+    83,
+    68
+   ],
+   "anchor": [
+    31,
+    67
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-burst-0": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#4",
+   "license": "canon (project owner)",
+   "size": [
+    81,
+    70
+   ],
+   "anchor": [
+    39,
+    69
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-burst-1": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#5",
+   "license": "canon (project owner)",
+   "size": [
+    84,
+    70
+   ],
+   "anchor": [
+    40,
+    69
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-shadow": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#6",
+   "license": "canon (project owner)",
+   "size": [
+    51,
+    113
+   ],
+   "anchor": [
+    27,
+    112
+   ],
+   "collision": null,
+   "state": "REJECTED",
+   "note": "dark body equals the board background; needs a manual cut"
+  },
+  "cr-small-0": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#7",
+   "license": "canon (project owner)",
+   "size": [
+    27,
+    30
+   ],
+   "anchor": [
+    10,
+    29
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-small-1": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#8",
+   "license": "canon (project owner)",
+   "size": [
+    28,
+    30
+   ],
+   "anchor": [
+    11,
+    29
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-small-2": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#9",
+   "license": "canon (project owner)",
+   "size": [
+    27,
+    30
+   ],
+   "anchor": [
+    11,
+    29
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-small-3": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#10",
+   "license": "canon (project owner)",
+   "size": [
+    30,
+    30
+   ],
+   "anchor": [
+    14,
+    29
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-small-4": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#11",
+   "license": "canon (project owner)",
+   "size": [
+    27,
+    30
+   ],
+   "anchor": [
+    11,
+    29
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-small-5": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#12",
+   "license": "canon (project owner)",
+   "size": [
+    29,
+    30
+   ],
+   "anchor": [
+    11,
+    29
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-mat-0": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#13",
+   "license": "canon (project owner)",
+   "size": [
+    55,
+    26
+   ],
+   "anchor": [
+    26,
     25
    ],
-   "category": "props",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "sign-clinic": {
-   "atlas": 0,
-   "rect": [
-    1907,
-    827,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-radio": {
-   "atlas": 0,
-   "rect": [
-    1972,
-    827,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-guard": {
-   "atlas": 0,
-   "rect": [
-    0,
-    940,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-station": {
-   "atlas": 0,
-   "rect": [
-    65,
-    940,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-archive": {
-   "atlas": 0,
-   "rect": [
-    130,
-    940,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-watch": {
-   "atlas": 0,
-   "rect": [
-    195,
-    940,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-grocery": {
-   "atlas": 0,
-   "rect": [
-    260,
-    940,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-bar": {
-   "atlas": 0,
-   "rect": [
-    325,
-    940,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-workshop": {
-   "atlas": 0,
-   "rect": [
-    390,
-    940,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "sign-tailor": {
-   "atlas": 0,
-   "rect": [
-    455,
-    940,
-    63,
-    50
-   ],
-   "anchor": [
-    31,
-    19
-   ],
-   "category": "signs",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "shrub-a": {
-   "atlas": 0,
-   "rect": [
-    520,
-    940,
-    56,
-    48
-   ],
-   "anchor": [
-    28,
-    40
-   ],
-   "category": "vegetation",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "shrub-flower-red": {
-   "atlas": 0,
-   "rect": [
-    578,
-    940,
-    56,
-    48
-   ],
-   "anchor": [
-    28,
-    40
-   ],
-   "category": "vegetation",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "shrub-flower-white": {
-   "atlas": 0,
-   "rect": [
-    636,
-    940,
-    56,
-    48
-   ],
-   "anchor": [
-    28,
-    40
-   ],
-   "category": "vegetation",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "reeds-a": {
-   "atlas": 0,
-   "rect": [
-    694,
-    940,
-    40,
-    48
-   ],
-   "anchor": [
-    20,
-    43
-   ],
-   "category": "vegetation",
-   "collision": null,
-   "source": "original (Frequência Zero pipeline)"
-  },
-  "shrub-b": {
-   "atlas": 0,
-   "rect": [
-    736,
-    940,
-    48,
-    40
+  "cr-mat-1": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#14",
+   "license": "canon (project owner)",
+   "size": [
+    50,
+    26
    ],
    "anchor": [
     24,
-    32
+    25
    ],
-   "category": "vegetation",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "grass-a": {
-   "atlas": 0,
-   "rect": [
-    786,
-    940,
-    32,
-    24
+  "cr-mat-2": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#15",
+   "license": "canon (project owner)",
+   "size": [
+    43,
+    27
    ],
    "anchor": [
-    16,
-    20
+    21,
+    26
    ],
-   "category": "vegetation",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
   },
-  "grass-b": {
-   "atlas": 0,
-   "rect": [
-    820,
-    940,
-    32,
-    24
+  "cr-mat-3": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#16",
+   "license": "canon (project owner)",
+   "size": [
+    47,
+    28
    ],
    "anchor": [
-    16,
-    20
+    23,
+    27
    ],
-   "category": "vegetation",
    "collision": null,
-   "source": "original (Frequência Zero pipeline)"
+   "state": "PRODUCTION",
+   "note": ""
+  },
+  "cr-mat-4": {
+   "category": "creatures",
+   "source": "canon:folhas/criaturas.png#17",
+   "license": "canon (project owner)",
+   "size": [
+    50,
+    26
+   ],
+   "anchor": [
+    24,
+    25
+   ],
+   "collision": null,
+   "state": "PRODUCTION",
+   "note": ""
   }
  },
  "characters": {
   "hero": {
-   "file": "assets/production/characters/ch-hero.png",
-   "fw": 64,
-   "fh": 96,
-   "ax": 32,
-   "ay": 88,
-   "anims": {
-    "idle:front": {
-     "row": 0,
-     "frames": 4
-    },
-    "idle:back": {
-     "row": 1,
-     "frames": 4
-    },
-    "walk:front": {
-     "row": 2,
-     "frames": 8
-    },
-    "walk:back": {
-     "row": 3,
-     "frames": 8
-    },
-    "run:front": {
-     "row": 4,
-     "frames": 8
-    },
-    "run:back": {
-     "row": 5,
-     "frames": 8
-    },
-    "interact:front": {
-     "row": 6,
-     "frames": 4
-    },
-    "interact:back": {
-     "row": 7,
-     "frames": 4
-    },
-    "sneak:front": {
-     "row": 8,
-     "frames": 8
-    },
-    "sneak:back": {
-     "row": 9,
-     "frames": 8
-    },
-    "defend:front": {
-     "row": 10,
-     "frames": 2
-    },
-    "defend:back": {
-     "row": 11,
-     "frames": 2
-    },
-    "dodge:front": {
-     "row": 12,
-     "frames": 6
-    },
-    "dodge:back": {
-     "row": 13,
-     "frames": 6
-    },
-    "combat:front": {
-     "row": 14,
-     "frames": 6
-    },
-    "combat:back": {
-     "row": 15,
-     "frames": 6
-    },
-    "use:front": {
-     "row": 16,
-     "frames": 4
-    },
-    "use:back": {
-     "row": 17,
-     "frames": 4
-    },
-    "hurt:front": {
-     "row": 18,
-     "frames": 3
-    },
-    "hurt:back": {
-     "row": 19,
-     "frames": 3
-    },
-    "react:front": {
-     "row": 20,
-     "frames": 4
-    },
-    "react:back": {
-     "row": 21,
-     "frames": 4
-    }
-   }
+   "source": "canon:personagens/protagonista/recortes/r1_c1.png",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
   },
   "lia": {
-   "file": "assets/production/characters/ch-lia.png",
-   "fw": 64,
-   "fh": 96,
-   "ax": 32,
-   "ay": 88,
-   "anims": {
-    "idle:front": {
-     "row": 0,
-     "frames": 4
-    },
-    "idle:back": {
-     "row": 1,
-     "frames": 4
-    },
-    "walk:front": {
-     "row": 2,
-     "frames": 8
-    },
-    "walk:back": {
-     "row": 3,
-     "frames": 8
-    },
-    "run:front": {
-     "row": 4,
-     "frames": 8
-    },
-    "run:back": {
-     "row": 5,
-     "frames": 8
-    },
-    "interact:front": {
-     "row": 6,
-     "frames": 4
-    },
-    "interact:back": {
-     "row": 7,
-     "frames": 4
-    },
-    "sneak:front": {
-     "row": 8,
-     "frames": 8
-    },
-    "sneak:back": {
-     "row": 9,
-     "frames": 8
-    },
-    "defend:front": {
-     "row": 10,
-     "frames": 2
-    },
-    "defend:back": {
-     "row": 11,
-     "frames": 2
-    },
-    "dodge:front": {
-     "row": 12,
-     "frames": 6
-    },
-    "dodge:back": {
-     "row": 13,
-     "frames": 6
-    },
-    "combat:front": {
-     "row": 14,
-     "frames": 6
-    },
-    "combat:back": {
-     "row": 15,
-     "frames": 6
-    },
-    "use:front": {
-     "row": 16,
-     "frames": 4
-    },
-    "use:back": {
-     "row": 17,
-     "frames": 4
-    },
-    "hurt:front": {
-     "row": 18,
-     "frames": 3
-    },
-    "hurt:back": {
-     "row": 19,
-     "frames": 3
-    },
-    "react:front": {
-     "row": 20,
-     "frames": 4
-    },
-    "react:back": {
-     "row": 21,
-     "frames": 4
-    }
-   }
+   "source": "canon:personagens/lia/recortes/r1_c1.png",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
   },
   "raul": {
-   "file": "assets/production/characters/ch-raul.png",
-   "fw": 64,
-   "fh": 96,
-   "ax": 32,
-   "ay": 88,
-   "anims": {
-    "idle:front": {
-     "row": 0,
-     "frames": 4
-    },
-    "idle:back": {
-     "row": 1,
-     "frames": 4
-    },
-    "walk:front": {
-     "row": 2,
-     "frames": 8
-    },
-    "walk:back": {
-     "row": 3,
-     "frames": 8
-    },
-    "run:front": {
-     "row": 4,
-     "frames": 8
-    },
-    "run:back": {
-     "row": 5,
-     "frames": 8
-    },
-    "interact:front": {
-     "row": 6,
-     "frames": 4
-    },
-    "interact:back": {
-     "row": 7,
-     "frames": 4
-    },
-    "sneak:front": {
-     "row": 8,
-     "frames": 8
-    },
-    "sneak:back": {
-     "row": 9,
-     "frames": 8
-    },
-    "defend:front": {
-     "row": 10,
-     "frames": 2
-    },
-    "defend:back": {
-     "row": 11,
-     "frames": 2
-    },
-    "dodge:front": {
-     "row": 12,
-     "frames": 6
-    },
-    "dodge:back": {
-     "row": 13,
-     "frames": 6
-    },
-    "combat:front": {
-     "row": 14,
-     "frames": 6
-    },
-    "combat:back": {
-     "row": 15,
-     "frames": 6
-    },
-    "use:front": {
-     "row": 16,
-     "frames": 4
-    },
-    "use:back": {
-     "row": 17,
-     "frames": 4
-    },
-    "hurt:front": {
-     "row": 18,
-     "frames": 3
-    },
-    "hurt:back": {
-     "row": 19,
-     "frames": 3
-    },
-    "react:front": {
-     "row": 20,
-     "frames": 4
-    },
-    "react:back": {
-     "row": 21,
-     "frames": 4
-    }
-   }
+   "source": "canon:personagens/raul/recortes/r1_c1.png",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
   },
   "nora": {
-   "file": "assets/production/characters/ch-nora.png",
-   "fw": 64,
-   "fh": 96,
-   "ax": 32,
-   "ay": 88,
-   "anims": {
-    "idle:front": {
-     "row": 0,
-     "frames": 4
-    },
-    "idle:back": {
-     "row": 1,
-     "frames": 4
-    },
-    "walk:front": {
-     "row": 2,
-     "frames": 8
-    },
-    "walk:back": {
-     "row": 3,
-     "frames": 8
-    },
-    "run:front": {
-     "row": 4,
-     "frames": 8
-    },
-    "run:back": {
-     "row": 5,
-     "frames": 8
-    },
-    "interact:front": {
-     "row": 6,
-     "frames": 4
-    },
-    "interact:back": {
-     "row": 7,
-     "frames": 4
-    },
-    "sneak:front": {
-     "row": 8,
-     "frames": 8
-    },
-    "sneak:back": {
-     "row": 9,
-     "frames": 8
-    },
-    "defend:front": {
-     "row": 10,
-     "frames": 2
-    },
-    "defend:back": {
-     "row": 11,
-     "frames": 2
-    },
-    "dodge:front": {
-     "row": 12,
-     "frames": 6
-    },
-    "dodge:back": {
-     "row": 13,
-     "frames": 6
-    },
-    "combat:front": {
-     "row": 14,
-     "frames": 6
-    },
-    "combat:back": {
-     "row": 15,
-     "frames": 6
-    },
-    "use:front": {
-     "row": 16,
-     "frames": 4
-    },
-    "use:back": {
-     "row": 17,
-     "frames": 4
-    },
-    "hurt:front": {
-     "row": 18,
-     "frames": 3
-    },
-    "hurt:back": {
-     "row": 19,
-     "frames": 3
-    },
-    "react:front": {
-     "row": 20,
-     "frames": 4
-    },
-    "react:back": {
-     "row": 21,
-     "frames": 4
-    }
-   }
+   "source": "canon:personagens/nora/recortes/r1_c2.png",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
   },
   "helena": {
-   "file": "assets/production/characters/ch-helena.png",
-   "fw": 64,
-   "fh": 96,
-   "ax": 32,
-   "ay": 88,
-   "anims": {
-    "idle:front": {
-     "row": 0,
-     "frames": 4
-    },
-    "idle:back": {
-     "row": 1,
-     "frames": 4
-    },
-    "walk:front": {
-     "row": 2,
-     "frames": 8
-    },
-    "walk:back": {
-     "row": 3,
-     "frames": 8
-    },
-    "run:front": {
-     "row": 4,
-     "frames": 8
-    },
-    "run:back": {
-     "row": 5,
-     "frames": 8
-    },
-    "interact:front": {
-     "row": 6,
-     "frames": 4
-    },
-    "interact:back": {
-     "row": 7,
-     "frames": 4
-    },
-    "sneak:front": {
-     "row": 8,
-     "frames": 8
-    },
-    "sneak:back": {
-     "row": 9,
-     "frames": 8
-    },
-    "defend:front": {
-     "row": 10,
-     "frames": 2
-    },
-    "defend:back": {
-     "row": 11,
-     "frames": 2
-    },
-    "dodge:front": {
-     "row": 12,
-     "frames": 6
-    },
-    "dodge:back": {
-     "row": 13,
-     "frames": 6
-    },
-    "combat:front": {
-     "row": 14,
-     "frames": 6
-    },
-    "combat:back": {
-     "row": 15,
-     "frames": 6
-    },
-    "use:front": {
-     "row": 16,
-     "frames": 4
-    },
-    "use:back": {
-     "row": 17,
-     "frames": 4
-    },
-    "hurt:front": {
-     "row": 18,
-     "frames": 3
-    },
-    "hurt:back": {
-     "row": 19,
-     "frames": 3
-    },
-    "react:front": {
-     "row": 20,
-     "frames": 4
-    },
-    "react:back": {
-     "row": 21,
-     "frames": 4
-    }
-   }
+   "source": "canon:personagens/helena/recortes/r1_c5.png",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
   },
   "bento": {
-   "file": "assets/production/characters/ch-bento.png",
-   "fw": 64,
-   "fh": 96,
-   "ax": 32,
-   "ay": 88,
-   "anims": {
-    "idle:front": {
-     "row": 0,
-     "frames": 4
-    },
-    "idle:back": {
-     "row": 1,
-     "frames": 4
-    },
-    "walk:front": {
-     "row": 2,
-     "frames": 8
-    },
-    "walk:back": {
-     "row": 3,
-     "frames": 8
-    },
-    "run:front": {
-     "row": 4,
-     "frames": 8
-    },
-    "run:back": {
-     "row": 5,
-     "frames": 8
-    },
-    "interact:front": {
-     "row": 6,
-     "frames": 4
-    },
-    "interact:back": {
-     "row": 7,
-     "frames": 4
-    },
-    "sneak:front": {
-     "row": 8,
-     "frames": 8
-    },
-    "sneak:back": {
-     "row": 9,
-     "frames": 8
-    },
-    "defend:front": {
-     "row": 10,
-     "frames": 2
-    },
-    "defend:back": {
-     "row": 11,
-     "frames": 2
-    },
-    "dodge:front": {
-     "row": 12,
-     "frames": 6
-    },
-    "dodge:back": {
-     "row": 13,
-     "frames": 6
-    },
-    "combat:front": {
-     "row": 14,
-     "frames": 6
-    },
-    "combat:back": {
-     "row": 15,
-     "frames": 6
-    },
-    "use:front": {
-     "row": 16,
-     "frames": 4
-    },
-    "use:back": {
-     "row": 17,
-     "frames": 4
-    },
-    "hurt:front": {
-     "row": 18,
-     "frames": 3
-    },
-    "hurt:back": {
-     "row": 19,
-     "frames": 3
-    },
-    "react:front": {
-     "row": 20,
-     "frames": 4
-    },
-    "react:back": {
-     "row": 21,
-     "frames": 4
-    }
-   }
+   "source": "canon:personagens/bento/recortes/r1_c1.png",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
   },
   "celina": {
-   "file": "assets/production/characters/ch-celina.png",
-   "fw": 64,
-   "fh": 96,
-   "ax": 32,
-   "ay": 88,
-   "anims": {
-    "idle:front": {
-     "row": 0,
-     "frames": 4
-    },
-    "idle:back": {
-     "row": 1,
-     "frames": 4
-    },
-    "walk:front": {
-     "row": 2,
-     "frames": 8
-    },
-    "walk:back": {
-     "row": 3,
-     "frames": 8
-    },
-    "run:front": {
-     "row": 4,
-     "frames": 8
-    },
-    "run:back": {
-     "row": 5,
-     "frames": 8
-    },
-    "interact:front": {
-     "row": 6,
-     "frames": 4
-    },
-    "interact:back": {
-     "row": 7,
-     "frames": 4
-    },
-    "sneak:front": {
-     "row": 8,
-     "frames": 8
-    },
-    "sneak:back": {
-     "row": 9,
-     "frames": 8
-    },
-    "defend:front": {
-     "row": 10,
-     "frames": 2
-    },
-    "defend:back": {
-     "row": 11,
-     "frames": 2
-    },
-    "dodge:front": {
-     "row": 12,
-     "frames": 6
-    },
-    "dodge:back": {
-     "row": 13,
-     "frames": 6
-    },
-    "combat:front": {
-     "row": 14,
-     "frames": 6
-    },
-    "combat:back": {
-     "row": 15,
-     "frames": 6
-    },
-    "use:front": {
-     "row": 16,
-     "frames": 4
-    },
-    "use:back": {
-     "row": 17,
-     "frames": 4
-    },
-    "hurt:front": {
-     "row": 18,
-     "frames": 3
-    },
-    "hurt:back": {
-     "row": 19,
-     "frames": 3
-    },
-    "react:front": {
-     "row": 20,
-     "frames": 4
-    },
-    "react:back": {
-     "row": 21,
-     "frames": 4
-    }
+   "source": "canon:personagens/celina/recortes/r1_c5.png",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
+  },
+  "m-medico": {
+   "source": "canon:moradores/medico/folha_original.png (row 1, col 1)",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
+  },
+  "m-guarda": {
+   "source": "canon:moradores/guarda/folha_original.png (row 1, col 1)",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
+  },
+  "m-comerciante": {
+   "source": "canon:moradores/comerciante/folha_original.png (row 1, col 1)",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
+  },
+  "m-ferroviario": {
+   "source": "canon:moradores/ferroviario/folha_original.png (row 1, col 1)",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
+  },
+  "m-professor": {
+   "source": "canon:moradores/professor/folha_original.png (row 1, col 1)",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
+  },
+  "m-crianca": {
+   "source": "canon:moradores/crianca/folha_original.png (row 1, col 1)",
+   "frame": [
+    32,
+    48
+   ],
+   "anchor": [
+    16,
+    45
+   ],
+   "views": [
+    "front (SE, mirrored SW)",
+    "back (NE, mirrored NW)"
+   ],
+   "animations": {
+    "idle": 4,
+    "walk": 8,
+    "run": 8,
+    "sneak": 8,
+    "interact": 4,
+    "talk": 4,
+    "defend": 2,
+    "dodge": 6,
+    "attack": 6,
+    "hurt": 3,
+    "use": 4,
+    "react": 4
+   },
+   "state": "PRODUCTION"
+  }
+ },
+ "interiors": {
+  "study": {
+   "file": "assets/production/interiors/study.png",
+   "w": 220,
+   "h": 109,
+   "source": "canon:interiores/escritorio.png",
+   "state": "APPROVED",
+   "hotspots": {
+    "Fita cassete": [
+     44.0,
+     74.0
+    ],
+    "Fotografia": [
+     12.5,
+     22.0
+    ],
+    "Cofre de aço": [
+     70.5,
+     21.0
+    ],
+    "Agenda": [
+     36.5,
+     66.0
+    ]
+   }
+  },
+  "station": {
+   "file": "assets/production/interiors/station.png",
+   "w": 360,
+   "h": 200,
+   "source": "composition of canon art (station facade, props, terrain)",
+   "state": "APPROVED",
+   "hotspots": {
+    "Relógio parado": [
+     60.0,
+     28.6
+    ],
+    "Bilheteria": [
+     61.8,
+     53.1
+    ],
+    "Trilhos": [
+     33.3,
+     92.0
+    ],
+    "Manifesto rasgado": [
+     83.3,
+     71.9
+    ],
+    "Armário de sinalização": [
+     72.8,
+     66.6
+    ]
    }
   }
  },
+ "atlases": [
+  "assets/production/environment/atlas-0.png"
+ ],
  "layout": {
-  "placements": 125,
+  "placements": 85,
   "blocked": [
-   "0,13",
+   "0,12",
+   "1,0",
+   "1,1",
+   "1,10",
    "1,11",
-   "1,2",
-   "1,3",
-   "1,9",
+   "1,12",
+   "1,13",
+   "1,8",
    "10,12",
-   "10,2",
+   "10,3",
    "10,7",
+   "10,8",
    "11,0",
+   "11,1",
+   "12,0",
    "12,1",
-   "12,2",
-   "12,7",
-   "13,4",
+   "12,5",
+   "12,8",
+   "13,1",
+   "13,3",
    "13,5",
-   "13,8",
+   "13,7",
    "2,0",
+   "2,1",
+   "2,10",
+   "2,11",
    "2,12",
+   "2,13",
+   "2,7",
    "2,8",
    "3,10",
+   "3,11",
    "3,7",
-   "4,1",
-   "4,13",
-   "4,7",
-   "4,8",
-   "6,12",
+   "4,0",
+   "4,11",
+   "6,10",
+   "6,13",
    "6,9",
-   "7,1",
-   "8,10",
+   "7,13",
+   "7,2",
+   "8,0",
+   "8,1",
    "8,12",
-   "8,5",
-   "8,7",
-   "8,9",
+   "8,13",
+   "9,0",
    "9,1",
-   "9,5",
-   "9,9"
-  ],
-  "lights": 14
+   "9,8"
+  ]
  }
 }
