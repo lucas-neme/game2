@@ -110,7 +110,7 @@ class Base:
     def __init__(self, key):
         spec = CHARS[key]; self.key = key
         a = spec['array'] if spec.get('array') is not None else load_crop(spec['src'], spec['crop'])
-        rgb, solid, pal = clean(a, seed=hash(key) % 1000)
+        rgb, solid, pal = clean(a, seed=__import__("zlib").crc32(key.encode()) % 1000)
         ys, xs = np.nonzero(solid)
         y0, y1, x0, x1 = ys.min(), ys.max(), xs.min(), xs.max()
         self.rgb, self.solid = rgb[y0:y1 + 1, x0:x1 + 1], solid[y0:y1 + 1, x0:x1 + 1]

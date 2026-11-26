@@ -328,7 +328,24 @@ def export():
     night = {}
     for n, gx, gy, bias, kind, bld in placements():
         if bld and ('n-' + n[2:]) in idx: night[kind or f'{gx},{gy}'] = idx['n-' + n[2:]]
-    data = {'v': 2, 'canon': True, 'world': world, 'ground': 'assets/production/environment/ground.webp', 'atlases': files,
+    # ---- collision shapes (world units = cells; feet plane). 0=box [cx,cy,hx,hy], 1=circle [cx,cy,r]
+    PROP_R = {'lamp': .09, 'bench': .26, 'bench-b': .26, 'barrel': .17, 'barrel-b': .17, 'barrels': .3, 'hydrant': .12, 'bin': .13,
+              'crate-a': .2, 'crate-b': .2, 'stall': .36, 'kiosk': .26, 'bike': .2, 'cabinet': .22, 'notice': .2, 'signpost': .1,
+              'sign-estacao': .08, 'sign-clinica': .08, 'sign-radio': .08, 'sign-centro': .08, 'fence-wood': .28, 'wall-stone': .3}
+    cols = []
+    bset = {(int(c.split(',')[0]), int(c.split(',')[1])) for c in blocked}
+    trees = {(x, y): s_ for s_, x, y in L.DECOR_BLOCK}
+    for (x, y) in sorted(bset):
+        if (x, y) in trees:
+            cols.append([1, x, y, .27 if trees[(x, y)] == 'rock' else .2, 'trunk:' + trees[(x, y)]])
+        else:
+            cols.append([0, x, y, .5, .5, 'building'])
+    for site, (x, y) in L.SITES.items(): cols.append([0, x, y, .5, .5, 'site:' + site])
+    for s_, x, y, dx, dy in L.PROPS:
+        if s_ in PROP_R and 0 <= x < 14 and 0 <= y < 14: cols.append([1, round(x + dx / 3, 3), round(y + dy / 3, 3), PROP_R[s_], 'prop:' + s_])
+    cols.append([0, 12.5, 11.5, 2.0, 3.0, 'water'])
+    data_cols = [c[:-1] for c in cols]
+    data = {'v': 2, 'canon': True, 'colliders': data_cols, 'world': world, 'ground': 'assets/production/environment/ground.webp', 'atlases': files,
             'fog': 'assets/production/effects/fog.png', 'names': names,
             'sprites': [[table[n]['atlas'], *table[n]['rect'], *REG[n]['anchor']] for n in names],
             'place': place, 'night': night, 'blocked': blocked, 'lights': lights,
@@ -345,6 +362,8 @@ def export():
                                'state': ('PRODUCTION' if d['state'] == 'APPROVED' else d['state']), 'note': d['note']} for n, d in REG.items()},
                 'characters': {k: {'source': v['source'], 'frame': [CC.FW, CC.FH], 'anchor': [CC.FW // 2, CC.FOOT_Y], 'views': ['front (SE, mirrored SW)', 'back (NE, mirrored NW)'],
                                    'animations': {a: n for a, n in CC.ANIMS}, 'state': 'PRODUCTION'} for k, v in chmeta.items()},
+                'collision': {'units': 'grid cells (3 m); feet plane', 'hero_radius': .22, 'npc_radius': .22, 'shapes': cols,
+                              'rules': 'buildings: ground footprint; trees/rocks: trunk circle; props: base circle; canopies and roofs never collide'},
                 'interiors': room_meta, 'atlases': files, 'layout': {'placements': len(place), 'blocked': blocked}}
     (man / 'production.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding='utf-8')
     html = (ROOT / 'index.html').read_text(encoding='utf-8')
