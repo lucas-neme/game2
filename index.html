@@ -1349,6 +1349,41 @@ function createValleyCampaign(data){
  {id:'patient-archive',giver:'clinic',target:'helena',title:'Nomes sob proteção',request:'Confirme com Helena que os registros serão mantidos sob acesso restrito.',reply:'Guardarei os registros sem publicar os nomes.',result:'Lia e Helena confirmaram o compromisso de proteger a identidade dos pacientes.'},
  {id:'patient-dispute',giver:'helena',target:'clinic',title:'Verdade sem exposição',request:'Ouça a posição de Lia sobre a divulgação.',reply:'Aceito discutir os fatos, mas não a exposição de pacientes.',result:'Helena ouviu a posição de Lia; o desacordo sobre a divulgação ficou documentado.'}
  ];
+ const sideCaseDocuments={
+  "rail-protection": {
+    "loc": "rail",
+    "title": "Circular de segurança ferroviária",
+    "text": "Circular de turno — 1998. Conferir a equipe antes da partida; registrar interrupções de rádio e comunicar qualquer ausência ao responsável da estação. A circulação deste aviso ainda não foi confirmada.",
+    "hint": "Examine os avisos na estação ferroviária."
+  },
+  "rail-silence": {
+    "loc": "guard",
+    "title": "Cópia do livro de ocorrências",
+    "text": "Ocorrência: interferência no rádio e divergência entre o horário anotado e o relógio da estação. O campo de comunicação à equipe está em branco. A ausência de registro não prova quem decidiu manter silêncio.",
+    "hint": "Procure a cópia do livro de ocorrências no posto de vigilância."
+  },
+  "patient-archive": {
+    "loc": "archive",
+    "title": "Termo de custódia restrita",
+    "text": "Termo de custódia: manter a identificação dos pacientes em envelope lacrado. A cópia de consulta deve conter apenas datas e referências anonimizadas. A assinatura de recebimento permanece em branco.",
+    "hint": "Localize o termo de custódia no arquivo municipal."
+  },
+  "patient-dispute": {
+    "loc": "clinic",
+    "title": "Parecer sobre divulgação",
+    "text": "Parecer clínico: os dados de horário e sintomas podem ser discutidos sem revelar nomes ou endereços. A divulgação integral do prontuário não é necessária para investigar a anomalia.",
+    "hint": "Examine o parecer na clínica."
+  }
+};
+ function sideCaseDocumentOffers(c,t,loc,deadAt=()=>null){
+  if(c.outcome)return [];
+  return sideCasesFor(c,t,deadAt).filter(q=>q.status==='active'&&q.stage==='search'&&q.document?.loc===loc).map(q=>({id:q.id,...q.document}));
+ }
+ function collectSideCaseDocument(c,t,key,loc,deadAt=()=>null){
+  const q=sideCaseDocumentOffers(c,t,loc,deadAt).find(x=>x.id===key),row=c.sideCases?.[key];
+  if(!q||!row||t<row.acceptedAt)return null;
+  row.documentAt=t;row.stage='visit';return q;
+ }
  function sideCaseAlive(id,t,c,deadAt){return (deadAt(id)==null||deadAt(id)>t)&&!departed(c,id,t)&&(departureAt(c,id)==null||departureAt(c,id)>t)}
  function sideCaseOffers(id,t,c,deadAt=()=>null){
   if(c.outcome||t>=43200||!sideCaseAlive(id,t,c,deadAt))return [];
@@ -1356,7 +1391,7 @@ function createValleyCampaign(data){
  }
  function acceptSideCase(c,t,id,key,deadAt=()=>null){
   const r=sideCaseOffers(id,t,c,deadAt).find(q=>q.id===key);if(!r)return false;
-  c.sideCases??={};c.sideCases[key]={id:key,acceptedAt:t,deadline:Math.min(t+2880,43200),status:'active',stage:'visit'};return true;
+  c.sideCases??={};c.sideCases[key]={id:key,acceptedAt:t,deadline:Math.min(t+2880,43200),status:'active',stage:'search',documentRequired:true};return true;
  }
  function sideCaseStatus(c,t,row,deadAt=()=>null){
   if(row.status!=='active')return row.status;
@@ -1369,12 +1404,12 @@ function createValleyCampaign(data){
  function advanceSideCase(c,t,id,key,deadAt=()=>null){
   const row=c.sideCases?.[key],r=sideCaseRules.find(q=>q.id===key);
   if(!row||!r||c.outcome||t<row.acceptedAt||sideCaseStatus(c,t,row,deadAt)!=='active')return null;
-  if(row.stage==='visit'&&id===r.target){row.stage='report';row.visitedAt=t;return r.reply}
-  if(row.stage==='report'&&id===r.giver&&t>=row.visitedAt){row.status='completed';row.completedAt=t;row.result=r.result;return r.result}
+  if(row.stage==='visit'&&id===r.target&&(!row.documentRequired||Number.isFinite(row.documentAt)&&row.documentAt<=t)){row.stage='report';row.visitedAt=t;return r.reply}
+  if(row.stage==='report'&&id===r.giver&&t>=row.visitedAt&&(!row.documentRequired||Number.isFinite(row.documentAt)&&row.documentAt<=row.visitedAt)){row.status='completed';row.completedAt=t;row.result=r.result;return r.result}
   return null;
  }
  function sideCasesFor(c,t,deadAt=()=>null){return Object.values(c.sideCases||{}).flatMap(row=>{
-  const r=sideCaseRules.find(q=>q.id===row.id);return r?[{...r,...row,status:sideCaseStatus(c,t,row,deadAt)}]:[];
+  const r=sideCaseRules.find(q=>q.id===row.id);return r&&row.acceptedAt<=t?[{...r,...row,document:sideCaseDocuments[r.id],status:sideCaseStatus(c,t,row,deadAt)}]:[];
  })}
  function witnessSocial(c,t,id,actor,near,deadAt=()=>null){
   const e=activeSocial(actor,t,c,deadAt);if(!near||!e||e.id!==id)return false;c.socialSeen??={};if(c.socialSeen[id])return false;c.socialSeen[id]={at:t,actor};return true;
@@ -1570,7 +1605,7 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,informationNetwork,informationFor,loyaltyFor,loyaltyDuty,sideCaseOffers,acceptSideCase,advanceSideCase,sideCasesFor,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,informationNetwork,informationFor,loyaltyFor,loyaltyDuty,sideCaseOffers,acceptSideCase,advanceSideCase,sideCasesFor,sideCaseDocumentOffers,collectSideCaseDocument,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }
 
 /* CAMPAIGN_RUNTIME:BEGIN */
@@ -1800,6 +1835,8 @@ function valleyMechanismPanel(e){
  valleyButton(el,'Voltar aos objetos',()=>{if(s.room===e.loc){el.replaceChildren();valleySitePanel(e.loc,true)}});
 }
 function valleySitePanel(id,inside=false){if(!valleyActive()||s.end||dangerActive())return false;const c=valleyState(),p=valleyLocation(id);if(!p)return false;const el=$('dialog');const entries=[];
+ for(const doc of VALLEY.sideCaseDocumentOffers(c,s.t,id,key=>mortState().npcs[key]?.t??null)){if(FZ_ROOMS.layouts[id]&&!inside)continue;entries.push(['Examinar: '+doc.title,()=>{if(s.end||dangerActive()||(FZ_ROOMS.layouts[id]?s.room!==id:!(s.room===id||valleyNear(id))))return;const result=VALLEY.collectSideCaseDocument(c,s.t,doc.id,id,key=>mortState().npcs[key]?.t??null);if(!result)return;advance(12);say(result.title+' — '+result.text);render();valleySave() }])}
+
  for(const e of VALLEY.data.mechanisms||[])if(inside&&e.loc===id&&VALLEY.mechanismReady(c,s.t,e.id))entries.push(['Operar: '+e.title,()=>valleyMechanismPanel(e)]);
  for(const e of VALLEY.activeManifestations(c,s.t)){if(e.loc!==id||inside)continue;
  const run=(action,freq=null)=>{if(s.room||s.end||dangerActive()||!valleyNear(id))return;const result=VALLEY.manifestAction(c,s.t,e.id,action,freq);if(!result)return;advance(result.minutes);render();valleySave();if(!s.end)valleySitePanel(id);say(result.text)};
@@ -1821,8 +1858,8 @@ function valleySitePanel(id,inside=false){if(!valleyActive()||s.end||dangerActiv
 }
 talkToResident=function(id){if(!valleyActive())return valleyBaseTalk(id);if(s.end||!npcReachable(id))return;const n=VALLEY.byId[id];if(!n)return valleyBaseTalk(id);if(valleyBase.npcKeys.has(id))valleyBaseTalk(id);else{stopRoute();if(!s.npcKnown.includes(id)){s.npcKnown.push(id);advance(5)}$('dialog').replaceChildren();say(n.name+': '+n.bio);render()}
  const el=$('dialog'),c=valleyState(),a=VALLEY.schedule(id,s.t,c,false,key=>mortState().npcs[key]?.t??null);if(n.psychology)valleyButton(el,'Perguntar como está',()=>{if(!npcReachable(id)||s.end)return;const p=VALLEY.personalTalk(c,s.t,id,key=>mortState().npcs[key]?.t??null);if(!p)return;const behavior=VALLEY.autonomousBehavior(id,s.t,c,key=>mortState().npcs[key]?.t??null);const ally=VALLEY.byId[p.ally];const received=VALLEY.informationFor(id,s.t,c,key=>mortState().npcs[key]?.t??null).filter(f=>f.depth>0).at(-1);const hearsay=received?' '+VALLEY.byId[received.via].name+' me contou sobre uma decisão sua. Ainda estou pensando no que isso significa.':'';const grief=p.memories.includes('loss:'+p.ally)?' Desde que '+ally.name+' morreu, tudo mudou.':'';say(n.name+': '+p.dialogue+grief+hearsay+(behavior&&VALLEY.schedule(id,s.t,c,false,key=>mortState().npcs[key]?.t??null)?.autonomous?' '+({fear:'Preciso ficar em um lugar seguro por enquanto.',distrust:'Prefiro não conversar em público agora.',resolve:'Ainda tenho trabalho a fazer hoje.'}[behavior.reason]):''));if(p.recorded){s.events.push(n.name+' parece '+p.mood+'.');valleySave()}render()});if(a?.loyalty)valleyButton(el,'Conversar sobre seus planos',()=>{if(!npcReachable(id)||s.end)return;const current=VALLEY.schedule(id,s.t,c,false,key=>mortState().npcs[key]?.t??null);if(current?.loyalty===a.loyalty){say(n.name+': '+current.dialogue);render()}});
- for(const q of VALLEY.sideCaseOffers(id,s.t,c,key=>mortState().npcs[key]?.t??null))valleyButton(el,'Aceitar: '+q.title,()=>{if(!npcReachable(id)||s.end)return;if(VALLEY.acceptSideCase(c,s.t,id,q.id,key=>mortState().npcs[key]?.t??null)){say(n.name+': '+q.request);valleySave();render()}});
- for(const q of VALLEY.sideCasesFor(c,s.t,key=>mortState().npcs[key]?.t??null))if(q.status==='active'&&(q.stage==='visit'?q.target:q.giver)===id)valleyButton(el,(q.stage==='visit'?'Conversar: ':'Relatar: ')+q.title,()=>{if(!npcReachable(id)||s.end)return;const reply=VALLEY.advanceSideCase(c,s.t,id,q.id,key=>mortState().npcs[key]?.t??null);if(reply){say(n.name+': '+reply);valleySave();render()}});
+ for(const q of VALLEY.sideCaseOffers(id,s.t,c,key=>mortState().npcs[key]?.t??null))valleyButton(el,'Aceitar: '+q.title,()=>{if(!npcReachable(id)||s.end)return;if(VALLEY.acceptSideCase(c,s.t,id,q.id,key=>mortState().npcs[key]?.t??null)){const active=VALLEY.sideCasesFor(c,s.t,key=>mortState().npcs[key]?.t??null).find(x=>x.id===q.id);say(n.name+': '+q.request+' '+(active?.document?.hint||''));valleySave();render()}});
+ for(const q of VALLEY.sideCasesFor(c,s.t,key=>mortState().npcs[key]?.t??null))if(q.status==='active'&&['visit','report'].includes(q.stage)&&(q.stage==='visit'?q.target:q.giver)===id)valleyButton(el,(q.stage==='visit'?'Conversar: ':'Relatar: ')+q.title,()=>{if(!npcReachable(id)||s.end)return;const reply=VALLEY.advanceSideCase(c,s.t,id,q.id,key=>mortState().npcs[key]?.t??null);if(reply){say(n.name+': '+reply);valleySave();render()}});
  for(const rumor of VALLEY.rumorsFor(id,s.t,c,key=>mortState().npcs[key]?.t??null)){
  if(!c.rumorJournal?.[rumor.id])valleyButton(el,'Ouvir relato de '+n.name,()=>{if(!npcReachable(id)||s.end)return;if(VALLEY.recordRumor(c,s.t,id,rumor.id,key=>mortState().npcs[key]?.t??null)){say(n.name+': Ouvi dizer que... '+rumor.claim+' Não sei se é verdade.');valleySave();render()}});
  else if(c.rumorJournal[rumor.id].verifiedAt==null)valleyButton(el,'Esclarecer informação incorreta',()=>{if(!npcReachable(id)||s.end)return;if(VALLEY.clarifyRumor(c,s.t,id,rumor.id,key=>mortState().npcs[key]?.t??null)){say('Você: '+rumor.truth+' '+n.name+': Entendo. Vou considerar isso.');valleySave();render()}});
@@ -1883,7 +1920,7 @@ var valleyJournalKey=null;function valleyJournal(){if(!HAS_DOM)return;const el=$
  const chronicle=document.createElement('details'),chronicleTitle=document.createElement('summary');chronicleTitle.textContent='Crônica das consequências';chronicle.append(chronicleTitle);
  for(const e of VALLEY.storyEpilogue(c)){const p=document.createElement('p');const causes=e.causes.map(id=>VALLEY.data.storyReactions.find(r=>r.id===id)).filter(Boolean).map(r=>VALLEY.byId[r.npc].name);p.textContent=e.name+' — '+e.result+(causes.length?' (após a ação de '+causes.join(' e ')+')':'');chronicle.append(p)}if(chronicle.children.length>1)el.append(chronicle);
  const people=document.createElement('details'),peopleTitle=document.createElement('summary');peopleTitle.textContent='Vínculos e motivações';people.append(peopleTitle);
- for(const id of s.npcKnown){if(isDead(id)||!VALLEY.byId[id]?.psychology)continue;const n=VALLEY.byId[id],p=VALLEY.psychology(id,s.t,c,key=>mortState().npcs[key]?.t??null);const observed=Object.entries(c.personalTalks||{}).filter(([key,q])=>key.startsWith(id+':')&&q.at<=s.t).sort((a,b)=>b[1].at-a[1].at)[0]?.[1];const row=document.createElement('p');row.textContent=n.name+' — '+p.goal+(observed?' · Última impressão: '+observed.mood:'');people.append(row)}if(people.children.length>1)el.append(people);const casePanel=document.createElement('details'),caseTitle=document.createElement('summary');caseTitle.textContent='Compromissos opcionais';casePanel.append(caseTitle);for(const q of VALLEY.sideCasesFor(c,s.t,key=>mortState().npcs[key]?.t??null)){const p=document.createElement('p');p.textContent=q.title+' — '+({active:q.stage==='visit'?q.request:'Retorne a '+VALLEY.byId[q.giver].name+'.',completed:q.result,expired:'Prazo encerrado.',cancelled:'Compromisso interrompido.'}[q.status])+(q.status==='active'?' · Prazo: '+Math.max(0,Math.ceil((q.deadline-s.t)/60))+' h':'');casePanel.append(p)}if(casePanel.children.length>1)el.append(casePanel);const rumorPanel=document.createElement('details'),rumorTitle=document.createElement('summary');rumorTitle.textContent='Relatos não confirmados';rumorPanel.append(rumorTitle);for(const r of Object.values(c.rumorJournal||{})){const p=document.createElement('p');p.textContent=VALLEY.byId[r.npc].name+' — '+r.claim+' · '+(r.verifiedAt!=null?'Esclarecido: '+r.correction:'Não é evidência confirmada');rumorPanel.append(p)}if(rumorPanel.children.length>1)el.append(rumorPanel);
+ for(const id of s.npcKnown){if(isDead(id)||!VALLEY.byId[id]?.psychology)continue;const n=VALLEY.byId[id],p=VALLEY.psychology(id,s.t,c,key=>mortState().npcs[key]?.t??null);const observed=Object.entries(c.personalTalks||{}).filter(([key,q])=>key.startsWith(id+':')&&q.at<=s.t).sort((a,b)=>b[1].at-a[1].at)[0]?.[1];const row=document.createElement('p');row.textContent=n.name+' — '+p.goal+(observed?' · Última impressão: '+observed.mood:'');people.append(row)}if(people.children.length>1)el.append(people);const casePanel=document.createElement('details'),caseTitle=document.createElement('summary');caseTitle.textContent='Compromissos opcionais';casePanel.append(caseTitle);for(const q of VALLEY.sideCasesFor(c,s.t,key=>mortState().npcs[key]?.t??null)){const p=document.createElement('p');p.textContent=q.title+' — '+({active:q.stage==='search'?q.document.hint:q.stage==='visit'?q.request:'Retorne a '+VALLEY.byId[q.giver].name+'.',completed:q.result,expired:'Prazo encerrado.',cancelled:'Compromisso interrompido.'}[q.status])+(q.status==='active'?' · Prazo: '+Math.max(0,Math.ceil((q.deadline-s.t)/60))+' h':'');casePanel.append(p);if(Number.isFinite(q.documentAt)&&q.documentAt<=s.t){const detail=document.createElement('details'),label=document.createElement('summary'),body=document.createElement('p');label.textContent=q.document.title;body.textContent=q.document.text;detail.append(label,body);casePanel.append(detail)}}if(casePanel.children.length>1)el.append(casePanel);const rumorPanel=document.createElement('details'),rumorTitle=document.createElement('summary');rumorTitle.textContent='Relatos não confirmados';rumorPanel.append(rumorTitle);for(const r of Object.values(c.rumorJournal||{})){const p=document.createElement('p');p.textContent=VALLEY.byId[r.npc].name+' — '+r.claim+' · '+(r.verifiedAt!=null?'Esclarecido: '+r.correction:'Não é evidência confirmada');rumorPanel.append(p)}if(rumorPanel.children.length>1)el.append(rumorPanel);
  const social=document.createElement('details'),socialTitle=document.createElement('summary');socialTitle.textContent='Relações entre moradores';social.append(socialTitle);
  for(const [id,e] of Object.entries(c.socialHistory||{})){if(!e.witnessed)continue;const p=document.createElement('p'),r=VALLEY.relationship(...e.actors,s.t,c,key=>mortState().npcs[key]?.t??null);p.textContent=e.actors.map(id=>VALLEY.byId[id].name).join(' / ')+' — '+e.result+' ('+r.status+')';social.append(p)}if(social.children.length>1)el.append(social);
  const grid=VALLEY.infrastructure(c,s.t),gridRow=document.createElement('p'),labels={normal:'normal',unstable:'instável',off:'sem energia',emergency:'emergência'};
