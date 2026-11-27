@@ -998,8 +998,8 @@ if(HAS_DOM){const _dwc=drawWorld;drawWorld=function(){_dwc();try{drawCalibration
 /*DIAG:BEGIN*/
 /* Render diagnostic: which PNG, animation and frame each character drew last, and whether it came from a fallback.
    FZ_DIAG() in the console; ?debug=sprites shows it on screen. */
-var FZ_RENDER={};
-function fzDiag(who,file,anim,frame,fallback){const r=FZ_RENDER[who]||(FZ_RENDER[who]={frames:0});r.file=file;r.anim=anim;r.frame=frame;r.fallback=!!fallback;r.frames++;r.at=Math.round(performance.now())}
+var FZ_RENDER=FZ_RENDER||{};
+function fzDiag(who,file,anim,frame,fallback){FZ_RENDER??={};const r=FZ_RENDER[who]||(FZ_RENDER[who]={frames:0});r.file=file;r.anim=anim;r.frame=frame;r.fallback=!!fallback;r.frames++;r.at=Math.round(performance.now())}
 function FZ_DIAG(){const rows=Object.entries(FZ_RENDER).map(([k,r])=>({personagem:k,png:r.file,animacao:r.anim,quadro:r.frame,fallback:r.fallback}));if(typeof console!=='undefined'&&console.table)console.table(rows);return rows}
 if(typeof window!=='undefined')window.FZ_DIAG=FZ_DIAG;
 if(HAS_DOM&&/[?&]debug=sprites/.test(location.search)){const box=document.createElement('pre');box.id='fzDiag';box.style.cssText='position:fixed;left:8px;bottom:60px;z-index:50;margin:0;padding:8px;background:#000c;color:#9f9;font:11px ui-monospace,monospace;pointer-events:none;max-width:70vw;white-space:pre';document.body.append(box);
