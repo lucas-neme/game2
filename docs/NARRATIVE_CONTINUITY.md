@@ -17,3 +17,7 @@ Eleven downstream activities depend on one or more completed prior reactions, wi
 ## V5 — NPC psychology
 
 All sixteen residents have authored goals, baseline trust/fear/resolve, an important social bond and contextual personal dialogue. Sixteen existing choices produce timestamped psychological effects; completed/cancelled tasks and death of an important ally influence mood. Values are derived from saved facts, clamped and independent of frame count. Proximity dialogue records at most one observation per NPC/day, and the journal exposes last observed mood rather than hidden numeric scores. This increment changes dialogue and personal memory, not autonomous schedule decisions or physical behavior. Existing mission evidence remains obtainable.
+
+## V6 — Bounded autonomous routines
+
+From chapter III, residents can change otherwise unreserved schedule windows based on fear, trust and resolve. Fear redirects 08:00–10:00 to a familiar safe location when fear exceeds resolve; distrust redirects 12:00–13:00 away from public activity; determination redirects 20:00–21:00 to a character-specific useful task. Authored meetings, causal events and explicit choice rules take precedence. The browser passes actual ally mortality to schedule calculations and shows contextual dialogue. This is deterministic schedule autonomy, not a full social AI or execution of physical tasks. Evidence availability remains unchanged; archive fallback remains intact.

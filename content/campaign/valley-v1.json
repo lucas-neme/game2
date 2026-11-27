@@ -1267,7 +1267,12 @@
         "goal": "Salvar os pacientes sem sacrificar sua identidade",
         "ally": "nurse",
         "calm": "Não posso tratar pessoas como números.",
-        "afraid": "Se eu errar, alguém ficará sem cuidado."
+        "afraid": "Se eu errar, alguém ficará sem cuidado.",
+        "behavior": {
+          "safe": "clinic",
+          "help": "shelter",
+          "activity": "Reorganiza o atendimento aos feridos"
+        }
       }
     },
     {
@@ -2367,7 +2372,12 @@
         "goal": "Proteger a filha e os moradores sem obedecer cegamente",
         "ally": "rail-worker",
         "calm": "Preciso saber se posso confiar em você.",
-        "afraid": "As ordens já não fazem sentido."
+        "afraid": "As ordens já não fazem sentido.",
+        "behavior": {
+          "safe": "guard",
+          "help": "rail",
+          "activity": "Reforça a vigilância da estação"
+        }
       }
     },
     {
@@ -3467,7 +3477,12 @@
         "goal": "Preservar as gravações e entender suas previsões",
         "ally": "radio-technician",
         "calm": "Uma gravação pode mudar o que esperamos do amanhã.",
-        "afraid": "Tenho medo de ouvir uma voz que ainda não falou."
+        "afraid": "Tenho medo de ouvir uma voz que ainda não falou.",
+        "behavior": {
+          "safe": "future",
+          "help": "radio",
+          "activity": "Preserva gravações de emergência"
+        }
       }
     },
     {
@@ -4567,7 +4582,12 @@
         "goal": "Devolver identidade às vítimas",
         "ally": "elder",
         "calm": "Cada nome merece permanecer escrito.",
-        "afraid": "Temo que destruam o que ainda resta."
+        "afraid": "Temo que destruam o que ainda resta.",
+        "behavior": {
+          "safe": "helena",
+          "help": "archive",
+          "activity": "Protege os registros ameaçados"
+        }
       }
     },
     {
@@ -5667,7 +5687,12 @@
         "goal": "Compreender a anomalia temporal e a perda da filha",
         "ally": "future",
         "calm": "O tempo não explica tudo que perdemos.",
-        "afraid": "Não quero reviver aquele dia."
+        "afraid": "Não quero reviver aquele dia.",
+        "behavior": {
+          "safe": "bento",
+          "help": "bento",
+          "activity": "Repara equipamentos de comunicação"
+        }
       }
     },
     {
@@ -6767,7 +6792,12 @@
         "goal": "Encontrar o filho desaparecido",
         "ally": "clinic",
         "calm": "Só quero saber onde ele está.",
-        "afraid": "Não sei quanto mais consigo esperar."
+        "afraid": "Não sei quanto mais consigo esperar.",
+        "behavior": {
+          "safe": "celina",
+          "help": "clinic",
+          "activity": "Procura informações sobre o filho"
+        }
       }
     },
     {
@@ -7867,7 +7897,12 @@
         "goal": "Proteger os colegas e compreender a remessa H-17",
         "ally": "guard",
         "calm": "Conheço esta ferrovia melhor que os papéis.",
-        "afraid": "Não quero colocar os colegas em perigo."
+        "afraid": "Não quero colocar os colegas em perigo.",
+        "behavior": {
+          "safe": "village",
+          "help": "rail",
+          "activity": "Verifica os equipamentos ferroviários"
+        }
       }
     },
     {
@@ -8967,7 +9002,12 @@
         "goal": "Demonstrar a origem do sinal",
         "ally": "future",
         "calm": "Uma boa medição vale mais que um rumor.",
-        "afraid": "O rádio está se tornando imprevisível."
+        "afraid": "O rádio está se tornando imprevisível.",
+        "behavior": {
+          "safe": "village",
+          "help": "radio",
+          "activity": "Mantém a comunicação de emergência"
+        }
       }
     },
     {
@@ -10067,7 +10107,12 @@
         "goal": "Manter os pacientes vivos e protegidos",
         "ally": "clinic",
         "calm": "O que importa é quem precisa de ajuda.",
-        "afraid": "Não temos recursos para todos."
+        "afraid": "Não temos recursos para todos.",
+        "behavior": {
+          "safe": "clinic",
+          "help": "clinic",
+          "activity": "Reforça a triagem dos feridos"
+        }
       }
     },
     {
@@ -11167,7 +11212,12 @@
         "goal": "Corrigir o erro do Horizonte",
         "ally": "electrician",
         "calm": "Não posso prometer que compreendo o sinal.",
-        "afraid": "Se falharmos novamente, não haverá desculpa."
+        "afraid": "Se falharmos novamente, não haverá desculpa.",
+        "behavior": {
+          "safe": "village",
+          "help": "observatory",
+          "activity": "Revisa medições para corrigir o protocolo"
+        }
       }
     },
     {
@@ -12267,7 +12317,12 @@
         "goal": "Impedir que os acontecimentos de 1958 sejam esquecidos",
         "ally": "helena",
         "calm": "Já vi esta cidade esquecer coisas importantes.",
-        "afraid": "Há lembranças que eu preferia não recuperar."
+        "afraid": "Há lembranças que eu preferia não recuperar.",
+        "behavior": {
+          "safe": "farm",
+          "help": "archive",
+          "activity": "Preserva relatos sobre 1958"
+        }
       }
     },
     {
@@ -13367,7 +13422,12 @@
         "goal": "Preservar a comunidade e a dignidade dos mortos",
         "ally": "elder",
         "calm": "As pessoas precisam de alguém que as escute.",
-        "afraid": "Não posso oferecer certezas que não tenho."
+        "afraid": "Não posso oferecer certezas que não tenho.",
+        "behavior": {
+          "safe": "village",
+          "help": "shelter",
+          "activity": "Organiza auxílio às famílias"
+        }
       }
     },
     {
@@ -14467,7 +14527,12 @@
         "goal": "Sobreviver sem abandonar a responsabilidade",
         "ally": "guard",
         "calm": "Não sei mais a quem devo obedecer.",
-        "afraid": "Se descobrirem o que eu sei, estarei em perigo."
+        "afraid": "Se descobrirem o que eu sei, estarei em perigo.",
+        "behavior": {
+          "safe": "village",
+          "help": "tunnel",
+          "activity": "Confere a saída de manutenção"
+        }
       }
     },
     {
@@ -15567,7 +15632,12 @@
         "goal": "Proteger a família e os caminhos da floresta",
         "ally": "young-explorer",
         "calm": "A mata tem regras que não aparecem nos mapas.",
-        "afraid": "Não quero que ninguém se perca lá."
+        "afraid": "Não quero que ninguém se perca lá.",
+        "behavior": {
+          "safe": "farm",
+          "help": "sawmill",
+          "activity": "Prepara materiais para o abrigo"
+        }
       }
     },
     {
@@ -16667,7 +16737,12 @@
         "goal": "Restabelecer uma rede segura",
         "ally": "scientist",
         "calm": "A rede não deveria se comportar assim.",
-        "afraid": "Não posso garantir que o próximo apagão seja reversível."
+        "afraid": "Não posso garantir que o próximo apagão seja reversível.",
+        "behavior": {
+          "safe": "village",
+          "help": "substation",
+          "activity": "Verifica a alimentação de emergência"
+        }
       }
     },
     {
@@ -17767,7 +17842,12 @@
         "goal": "Encontrar o amigo e mapear passagens",
         "ally": "woodcutter",
         "calm": "Ainda há caminhos que ninguém investigou.",
-        "afraid": "Talvez eu tenha ido longe demais."
+        "afraid": "Talvez eu tenha ido longe demais.",
+        "behavior": {
+          "safe": "farm",
+          "help": "forest",
+          "activity": "Confere marcas nas trilhas"
+        }
       }
     }
   ],
