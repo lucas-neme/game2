@@ -25,3 +25,7 @@ From chapter III, residents can change otherwise unreserved schedule windows bas
 ## V7 — Social conflict and reconciliation
 
 Ten two-actor scenes branch on campaign choices and, for reconciliation, completed earlier social scenes. They reserve shared locations around mission-related appointments and causal tasks. Witnessed conversations appear in the journal; relationship scores derive from completed scenes and death, not repeated interaction. Both actors must survive until completion. Social scenes do not yet unlock physical tasks or independently propagate rumors. Fixed V6 chapter boundary test: day 13 is the first day of chapter III, not chapter II.
+
+## V8 — Physical electrical escalation
+
+Four time-dependent outage stages begin on days 17, 21, 25 and 28. West, east and project districts are evaluated independently. A choice alone no longer represents a physical intervention: after solving the power case and waiting for the choice to activate, the player must operate the substation from inside. The operation persists and changes actual exterior lamp rendering and interior tint; emergency power is limited to designated facilities. The base demo remains unaffected. Journal and weather HUD report grid state. This does not yet close establishments, block trails, simulate trains, or create new creature encounters. Dedicated automated infrastructure tests cover timing, prerequisites and save persistence; actual visual quality remains subject to browser and manual checks.

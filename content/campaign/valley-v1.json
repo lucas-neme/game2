@@ -19884,5 +19884,58 @@
       "result": "Raul e Anselmo retomaram a cooperação.",
       "delta": 35
     }
-  ]
+  ],
+  "infrastructure": {
+    "districts": {
+      "west": {
+        "label": "Centro",
+        "emergency": [
+          "clinic",
+          "rail",
+          "future"
+        ]
+      },
+      "east": {
+        "label": "Vale oriental",
+        "emergency": [
+          "shelter",
+          "substation",
+          "village"
+        ]
+      },
+      "project": {
+        "label": "Complexo Horizonte",
+        "emergency": [
+          "horizon",
+          "bunker"
+        ]
+      }
+    },
+    "timeline": [
+      {
+        "day": 17,
+        "from": 1140,
+        "to": 1320,
+        "level": 1
+      },
+      {
+        "day": 21,
+        "from": 1080,
+        "to": 1440,
+        "level": 2
+      },
+      {
+        "day": 25,
+        "from": 0,
+        "to": 1440,
+        "level": 3
+      },
+      {
+        "day": 28,
+        "from": 0,
+        "to": 1440,
+        "level": 4
+      }
+    ]
+  }
 }

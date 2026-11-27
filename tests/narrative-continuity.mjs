@@ -109,3 +109,27 @@ const cancelled=campaign.fresh();cancelled.train=true;cancelled.choices=social.c
 assert.equal(cancelled.socialHistory[dispute.id].status,'cancelado');assert.equal(cancelled.socialHistory[reconcile.id],undefined);
 const ally=campaign.fresh();ally.train=true;ally.choices.missing={id:'protect-patient',at:5*1440};campaign.settleSocial(ally,43200);assert.equal(campaign.relationship('clinic','helena',43200,ally).score,70);assert.equal(ally.socialHistory[dispute.id],undefined);
 console.log('Social scenes: shared scheduling, alternatives, reconciliation, witnessing, mortality and idempotence passed.');
+
+const grid=campaign.fresh();grid.train=true;
+assert.equal(campaign.infrastructure(grid,15*1440+1200).level,0);
+assert.equal(campaign.infrastructure(grid,16*1440+1200).level,1);
+assert.equal(campaign.powerAt(grid,20*1440+1200,19,6),'off');
+assert.equal(campaign.powerAt(grid,24*1440+700,8,3),'off');
+assert.equal(campaign.operateGrid(grid,24*1440,'repair'),false);
+grid.solved.power={at:12*1440};grid.choices.power={id:'repair-grid',at:12*1440};
+assert.equal(campaign.operateGrid(grid,12*1440+59,'repair'),false);
+assert.equal(campaign.operateGrid(grid,12*1440+60,'repair'),true);
+assert.equal(campaign.operateGrid(grid,24*1440,'repair'),false);
+assert.equal(campaign.powerAt(grid,24*1440+700,8,3),'emergency');
+assert.equal(campaign.powerAt(grid,24*1440+700,5,5),'off');
+assert.equal(campaign.powerAt(grid,24*1440+700,19,6),'emergency');
+const isoGrid=campaign.fresh();isoGrid.train=true;isoGrid.solved.power={at:12*1440};isoGrid.choices.power={id:'isolate-grid',at:12*1440};
+assert.equal(campaign.operateGrid(isoGrid,12*1440+60,'repair'),false);
+assert.equal(campaign.operateGrid(isoGrid,12*1440+60,'isolate'),true);
+assert.equal(campaign.powerAt(isoGrid,24*1440+700,26,7),'off');
+assert.equal(campaign.powerAt(isoGrid,24*1440+700,19,6),'off');
+assert.equal(campaign.powerAt(isoGrid,24*1440+700,8,3),'emergency');
+const gridSave=campaign.normalize(JSON.parse(JSON.stringify(grid)));
+assert.deepEqual(campaign.infrastructure(gridSave,24*1440+700),campaign.infrastructure(grid,24*1440+700));
+assert.equal(campaign.infrastructure(campaign.fresh(),29*1440+700).level,0);
+console.log('Infrastructure: progressive outages, circuit choices, local intervention, sector power and persistence passed.');

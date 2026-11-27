@@ -5,7 +5,7 @@ function createValleyCampaign(data){
  const phase=d=>data.chapters.find(c=>d>=c.days[0]&&d<=c.days[1])?.id||5;
  const day=t=>Math.max(1,Math.min(30,1+Math.floor(t/1440)));
  const minute=t=>((Math.floor(t)%1440)+1440)%1440;
- const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},outcome:null,uncle:null,evacuation:null});
+ const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},outcome:null,uncle:null,evacuation:null});
  const normalize=c=>Object.assign(fresh(),c||{});
  function chapter(c,t){if(!c.train)return 1;const cap=phase(day(t));for(let ch=2;ch<=5;ch++){if(ch>cap)return cap;if(data.missions.some(m=>m.chapter===ch&&!c.solved[m.id]))return ch}return 5}
  function available(c,t){return c.train&&!c.outcome?data.missions.filter(m=>m.chapter<=chapter(c,t)&&m.chapter<=phase(day(t))&&!c.solved[m.id]):[]}
@@ -114,6 +114,30 @@ function createValleyCampaign(data){
  function witnessSocial(c,t,id,actor,near,deadAt=()=>null){
   const e=activeSocial(actor,t,c,deadAt);if(!near||!e||e.id!==id)return false;c.socialSeen??={};if(c.socialSeen[id])return false;c.socialSeen[id]={at:t,actor};return true;
  }
+ // Electrical conditions depend on the story clock and actual local intervention.
+ function infrastructure(c,t){
+  const d=day(t),m=minute(t),cfg=data.infrastructure;
+  if(!c.train||!cfg)return {level:0,mode:'normal',west:'normal',east:'normal',project:'normal'};
+  let level=0;
+  for(const r of cfg.timeline){if(d>=r.day&&m>=r.from&&m<r.to)level=Math.max(level,r.level)}
+  const action=c.infrastructure?.switchgear,done=action&&action.at<=t;
+  let west=level>=2?'off':level===1?'unstable':'normal',east=level>=1?'off':'normal',project=level>=4?'unstable':'normal';
+  if(done&&action.mode==='repair'&&level>=1){west='emergency';east='emergency'}
+  if(done&&action.mode==='isolate'){project='off';if(level>=1){west='emergency';east=level>=3?'off':'unstable'}}
+  return {level,mode:done?action.mode:'normal',west,east,project};
+ }
+ function districtAt(x,y){return x>=25&&y>=6?'project':x>=14?'east':'west'}
+ function powerAt(c,t,x,y){
+  const p=infrastructure(c,t),district=districtAt(x,y),status=p[district];
+  if(status==='normal'||status==='unstable')return status;
+  const near=(data.infrastructure?.districts[district].emergency||[]).some(id=>{const a=data.locations[id];return Math.hypot(a.x-x,a.y-y)<=1.1});
+  return status==='emergency'&&near?'emergency':'off';
+ }
+ function operateGrid(c,t,mode){
+  const chosen=mode==='repair'?'repair-grid':mode==='isolate'?'isolate-grid':null;
+  if(!chosen||!c.train||c.outcome||!c.solved.power||c.choices.power?.id!==chosen||c.choices.power.at+60>t||c.infrastructure?.switchgear)return false;
+  c.infrastructure??={};c.infrastructure.switchgear={mode,at:t};return true;
+ }
  function schedule(id,t,c,dead=false,deadAt=()=>null){if(dead||!byId[id])return null;const n=byId[id],d=day(t),m=minute(t),row=n.days[d-1],base=row.slots.findLast(x=>x.minute<=m)||row.slots[0];let result={...base,day:d,id,name:n.name,sprite:n.sprite,changed:false};
   const meeting=(data.appointments||[]).find(e=>e.day===d&&m>=e.minute&&m<e.until&&e.actors.includes(id));if(meeting){const a=meetingVariant(meeting,c,(d-1)*1440+meeting.minute);return {...result,loc:a.loc,activity:a.activity,changed:!!a.redirected,reason:a.id,meeting:a.id}}
   const reaction=storyReaction(id,t,c);if(reaction)return {...result,loc:reaction.loc,activity:reaction.activity,changed:true,reason:reaction.id,storyReaction:reaction.id,dialogue:reaction.dialogue};
@@ -140,5 +164,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&!c.evacuation&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }
