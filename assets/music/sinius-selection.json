@@ -10,7 +10,8 @@
       "album": "dark-territory-original-motion-picture-soundtrack",
       "cue": "bunker",
       "page": "https://freemusicarchive.org/music/sinius/dark-territory-original-motion-picture-soundtrack/infinite-darkness/",
-      "file": "assets/music/sinius-infinite-darkness.mp3"
+      "file": "assets/music/sinius-infinite-darkness.mp3",
+      "officialDownloadPage": "https://sinius.itch.io/dark-territory-original-motion-picture-soundtrack"
     },
     {
       "id": "sinius-phantom-travelers",
@@ -18,7 +19,8 @@
       "album": "paranormal-activity",
       "cue": "rail",
       "page": "https://freemusicarchive.org/music/sinius/paranormal-activity/phantom-travelers/",
-      "file": "assets/music/sinius-phantom-travelers.mp3"
+      "file": "assets/music/sinius-phantom-travelers.mp3",
+      "officialDownloadPage": "https://sinius.itch.io/paranormal-activity"
     },
     {
       "id": "sinius-faceless-woman",
@@ -26,7 +28,8 @@
       "album": "paranormal-activity",
       "cue": "apparition",
       "page": "https://freemusicarchive.org/music/sinius/paranormal-activity/faceless-woman/",
-      "file": "assets/music/sinius-faceless-woman.mp3"
+      "file": "assets/music/sinius-faceless-woman.mp3",
+      "officialDownloadPage": "https://sinius.itch.io/paranormal-activity"
     },
     {
       "id": "sinius-cold-spots-and-spirit-portals",
@@ -34,7 +37,8 @@
       "album": "paranormal-activity",
       "cue": "anomaly",
       "page": "https://freemusicarchive.org/music/sinius/paranormal-activity/cold-spots-and-spirit-portals/",
-      "file": "assets/music/sinius-cold-spots-and-spirit-portals.mp3"
+      "file": "assets/music/sinius-cold-spots-and-spirit-portals.mp3",
+      "officialDownloadPage": "https://sinius.itch.io/paranormal-activity"
     },
     {
       "id": "sinius-unconscious-memory",
@@ -42,7 +46,8 @@
       "album": "the-silence-before-the-haunting",
       "cue": "memory",
       "page": "https://freemusicarchive.org/music/sinius/the-silence-before-the-haunting/unconscious-memory/",
-      "file": "assets/music/sinius-unconscious-memory.mp3"
+      "file": "assets/music/sinius-unconscious-memory.mp3",
+      "officialDownloadPage": "https://sinius.itch.io/the-silence-before-the-haunting"
     },
     {
       "id": "sinius-the-conjuring-mirror",
@@ -50,7 +55,9 @@
       "album": "the-silence-before-the-haunting",
       "cue": "revelation",
       "page": "https://freemusicarchive.org/music/sinius/the-silence-before-the-haunting/the-conjuring-mirror/",
-      "file": "assets/music/sinius-the-conjuring-mirror.mp3"
+      "file": "assets/music/sinius-the-conjuring-mirror.mp3",
+      "officialDownloadPage": "https://sinius.itch.io/the-silence-before-the-haunting"
     }
-  ]
+  ],
+  "licenseNote": "CC BY 4.0 as stated by artist on album pages (The Silence Before the Haunting also confirms version 4.0 on Bandcamp)."
 }
