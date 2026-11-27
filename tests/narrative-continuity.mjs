@@ -223,6 +223,24 @@ assert.equal(rows.find(r=>r.id==='guard').fulfilled,true);
 assert.equal(rows.find(r=>r.id==='celina').fulfilled,false);
 assert.ok(rows.find(r=>r.id==='watchman').text.includes('retirado do confinamento'));
 assert.deepEqual(campaign.freezeEpilogues(epi,()=>et-1),rows);
-const restored=campaign.normalize(JSON.parse(JSON.stringify(epi)));assert.deepEqual(campaign.freezeEpilogues(restored),rows);
+const restored=campaign.normalize(JSON.parse(JSON.stringify(epi)));assert.equal(JSON.stringify(campaign.freezeEpilogues(restored)),JSON.stringify(rows));
 for(const id of ['shutdown','horizon','zero','contact','truth','sacrifice','silence']){const c=campaign.fresh();c.outcome={id,at:et};const rs=campaign.residentEpilogues(c);assert.equal(rs.length,16);assert.ok(rs.every(r=>r.text.includes(data.endingEpilogues[id])))}
 console.log('Resident epilogues: all residents, seven endings, death/departure precedence, cutoff and immutable snapshot passed.');
+
+const film=campaign.fresh();film.train=true;
+assert.equal(campaign.collectCinema(film,0).length,0);
+film.choices.missing={id:'protect-patient',at:5*1440+700};
+campaign.collectCinema(film,5*1440+700);
+assert.ok(campaign.cinemaArchive(film).some(x=>x.id==='privacy-protect'));
+assert.ok(!campaign.cinemaArchive(film).some(x=>x.id==='privacy-public'));
+assert.equal(campaign.collectCinema(film,5*1440+700).length,0);
+film.outcome={id:'zero',at:27*1440+700,uncle:'resgatado',evacuation:'não confirmada'};
+campaign.freezeEpilogues(film);
+campaign.collectCinema(film,43200);
+const filmEnd=campaign.cinemaArchive(film).find(e=>e.id==='ending:zero');
+assert.ok(filmEnd);assert.equal(filmEnd.frames.length,20);
+assert.ok(campaign.cinemaArchive(film).every(e=>e.at<=film.outcome.at));
+assert.equal(campaign.collectCinema(film,43200).length,0);
+const filmSave=campaign.normalize(JSON.parse(JSON.stringify(film)));
+assert.equal(JSON.stringify(campaign.cinemaArchive(filmSave)),JSON.stringify(campaign.cinemaArchive(film)));
+console.log('Cinema archive: choice branches, ending frames, cutoff, replay persistence and idempotence passed.');

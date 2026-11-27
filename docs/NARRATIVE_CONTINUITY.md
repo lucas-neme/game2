@@ -49,3 +49,7 @@ Six optional evidence-gated control panels with dependency ordering, recoverable
 ## V13 — Resident epilogues
 
 Sixteen individually authored outcome profiles, seven ending contexts, completed tasks, social relationships, evacuation and mortality at the final timestamp. Frozen snapshot in outcome prevents post-ending changes or false survival claims. Personal objectives are not assumed achieved when a related preparation task is completed; prose distinguishes partial progress from confirmed facts. Existing saves with endings can derive a snapshot from available historical state. Journal renders sixteen expandable entries. This is text epilogue, not an animated cinematic. Calendar and meeting settlement honor final cutoff; active social scenes exclude evacuated actors.
+
+## V14 — Cinematic archive
+
+Four chapter interludes, six choice branches, six possible evacuation records and seven final sequences with resident epilogues. Manual replay from journal, next/skip, procedural backdrop. No bespoke animation or adaptive music. Fixed V13 cross-realm save comparison using serialized content.

@@ -5,7 +5,7 @@ function createValleyCampaign(data){
  const phase=d=>data.chapters.find(c=>d>=c.days[0]&&d<=c.days[1])?.id||5;
  const day=t=>Math.max(1,Math.min(30,1+Math.floor(t/1440)));
  const minute=t=>((Math.floor(t)%1440)+1440)%1440;
- const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},mechanisms:{},outcome:null,uncle:null,evacuation:null});
+ const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},mechanisms:{},cinemaArchive:{},outcome:null,uncle:null,evacuation:null});
  const normalize=c=>Object.assign(fresh(),c||{});
  function chapter(c,t){if(!c.train)return 1;const cap=phase(day(t));for(let ch=2;ch<=5;ch++){if(ch>cap)return cap;if(data.missions.some(m=>m.chapter===ch&&!c.solved[m.id]))return ch}return 5}
  function available(c,t){return c.train&&!c.outcome?data.missions.filter(m=>m.chapter<=chapter(c,t)&&m.chapter<=phase(day(t))&&!c.solved[m.id]):[]}
@@ -265,6 +265,17 @@ function createValleyCampaign(data){
   if(!Array.isArray(c.outcome.residents))c.outcome.residents=residentEpilogues(c,deadAt);
   return c.outcome.residents;
  }
+ function collectCinema(c,t){
+ c.cinemaArchive??={};if(!c.train)return [];
+ const cfg=data.cinema||{},cutoff=Math.min(t,c.outcome?.at??43200),added=[];
+ const add=(id,at,title,frames)=>{if(c.cinemaArchive[id]||at>cutoff)return;const row={id,at,title,frames:frames.map(f=>f.slice())};c.cinemaArchive[id]=row;added.push(row)};
+ for(const e of cfg.chapters||[]){const at=(e.day-1)*1440;if(at<=cutoff&&chapter(c,cutoff)>=Number(e.id.split('-')[1]))add(e.id,at,e.title,e.frames)}
+ for(const e of cfg.choices||[]){const q=Object.values(c.choices||{}).find(q=>q.id===e.choice);if(q)add(e.id,q.at,e.title,e.frames)}
+ for(const n of data.npcs){const r=c.departures?.[n.id];if(r?.status==='evacuado')add('departure:'+n.id,r.at,'Retirada de '+n.name,[['A estação',n.name+' embarcou no trem de retirada. O Vale ficou um pouco mais vazio.']])}
+ if(c.outcome&&cfg.endings?.[c.outcome.id]){const frames=cfg.endings[c.outcome.id].map(f=>f.slice());frames.push(['O destino dos moradores','Tio: '+(c.outcome.uncle||'desconhecido')+'. Moradores: '+(c.outcome.evacuation||'não confirmada')+'.']);for(const e of c.outcome.residents||[])frames.push([e.name+' — '+e.status,e.text]);frames.push(['Frequência Zero','Fim da campanha. Roteiro, investigação e memória do Vale.']);add('ending:'+c.outcome.id,c.outcome.at,'Desfecho — '+c.outcome.id,frames)}
+ return added.sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id));
+ }
+ function cinemaArchive(c){return Object.values(c.cinemaArchive||{}).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id))}
  function endings(c,t){if(!c.train||!c.solved.last||day(t)<28||t>=43200||c.outcome)return [];const selected=id=>Object.values(c.choices).some(x=>x.id===id);
   const out=[["shutdown","Desligar fisicamente o emissor"],["horizon","Autorizar a amplificação"]];
   if(c.solved.zero&&selected("test-counterwave"))out.push(["zero","Emitir a Frequência Zero"]);
@@ -276,5 +287,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }

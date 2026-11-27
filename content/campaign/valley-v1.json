@@ -20550,5 +20550,209 @@
     "truth": "O emissor foi desligado e o desfecho registra o envio das provas.",
     "sacrifice": "A contramedida foi mantida manualmente; o destino posterior dos presentes não foi confirmado.",
     "silence": "O Vale perdeu contato com o exterior; não há confirmação posterior dos que ficaram."
+  },
+  "cinema": {
+    "chapters": [
+      {
+        "id": "chapter-2",
+        "day": 6,
+        "title": "II — As pessoas esquecidas",
+        "frames": [
+          [
+            "Os nomes apagados",
+            "As fichas da clínica não contam toda a história."
+          ],
+          [
+            "O desvio",
+            "A remessa H-17 liga a estação aos limites do Vale."
+          ]
+        ]
+      },
+      {
+        "id": "chapter-3",
+        "day": 13,
+        "title": "III — Projeto Horizonte",
+        "frames": [
+          [
+            "1958",
+            "Os registros apontam para uma recepção anterior aos transmissores."
+          ],
+          [
+            "O experimento",
+            "A origem do sinal não é necessariamente a máquina que o amplifica."
+          ]
+        ]
+      },
+      {
+        "id": "chapter-4",
+        "day": 21,
+        "title": "IV — O Vale em colapso",
+        "frames": [
+          [
+            "As luzes se apagam",
+            "A rede falha e o medo altera as prioridades dos moradores."
+          ],
+          [
+            "A retirada",
+            "Proteger pessoas e preservar provas são decisões diferentes."
+          ]
+        ]
+      },
+      {
+        "id": "chapter-5",
+        "day": 28,
+        "title": "V — O último sinal",
+        "frames": [
+          [
+            "A janela",
+            "O dia 30 se aproxima. Resta pouco tempo para agir."
+          ],
+          [
+            "Duas vozes",
+            "Uma resposta não é uma promessa. A decisão ainda pertence ao protagonista."
+          ]
+        ]
+      }
+    ],
+    "choices": [
+      {
+        "id": "privacy-protect",
+        "choice": "protect-patient",
+        "title": "Os nomes sob proteção",
+        "frames": [
+          [
+            "Os nomes sob proteção",
+            "Os prontuários serão preservados sem expor os pacientes."
+          ]
+        ]
+      },
+      {
+        "id": "privacy-public",
+        "choice": "public-patient",
+        "title": "A verdade em público",
+        "frames": [
+          [
+            "A verdade em público",
+            "A revisão foi solicitada. A verdade entra em tensão com a privacidade."
+          ]
+        ]
+      },
+      {
+        "id": "grid-repair",
+        "choice": "repair-grid",
+        "title": "Uma rede de emergência",
+        "frames": [
+          [
+            "Uma rede de emergência",
+            "A intervenção na subestação ainda precisa acontecer."
+          ]
+        ]
+      },
+      {
+        "id": "grid-isolate",
+        "choice": "isolate-grid",
+        "title": "O circuito isolado",
+        "frames": [
+          [
+            "O circuito isolado",
+            "A fonte do sinal não será necessariamente eliminada."
+          ]
+        ]
+      },
+      {
+        "id": "evacuate",
+        "choice": "evacuate",
+        "title": "A partida",
+        "frames": [
+          [
+            "A partida",
+            "A retirada foi escolhida. É necessário confirmar sua organização."
+          ]
+        ]
+      },
+      {
+        "id": "shelter",
+        "choice": "shelter-in-place",
+        "title": "Permanecer",
+        "frames": [
+          [
+            "Permanecer",
+            "O reforço do abrigo foi escolhido. A preparação ainda precisa ser confirmada."
+          ]
+        ]
+      }
+    ],
+    "endings": {
+      "shutdown": [
+        [
+          "O último comando",
+          "O emissor foi desligado; o destino posterior dos que ficaram não foi observado."
+        ],
+        [
+          "O que permanece",
+          "O diário preserva o último estado conhecido das pessoas e das investigações."
+        ]
+      ],
+      "horizon": [
+        [
+          "A amplificação",
+          "A amplificação começou; o futuro dos que permaneceram não pôde ser confirmado."
+        ],
+        [
+          "O que permanece",
+          "O diário preserva o último estado conhecido das pessoas e das investigações."
+        ]
+      ],
+      "zero": [
+        [
+          "Frequência Zero",
+          "A componente sincronizante foi interrompida; as consequências posteriores ainda são desconhecidas."
+        ],
+        [
+          "O que permanece",
+          "O diário preserva o último estado conhecido das pessoas e das investigações."
+        ]
+      ],
+      "contact": [
+        [
+          "A resposta",
+          "Um contato limitado foi estabelecido; sua intenção permanece incerta."
+        ],
+        [
+          "O que permanece",
+          "O diário preserva o último estado conhecido das pessoas e das investigações."
+        ]
+      ],
+      "truth": [
+        [
+          "Os nomes",
+          "O emissor foi desligado e o desfecho registra o envio das provas."
+        ],
+        [
+          "O que permanece",
+          "O diário preserva o último estado conhecido das pessoas e das investigações."
+        ]
+      ],
+      "sacrifice": [
+        [
+          "O preço",
+          "A contramedida foi mantida manualmente; o destino posterior dos presentes não foi confirmado."
+        ],
+        [
+          "O que permanece",
+          "O diário preserva o último estado conhecido das pessoas e das investigações."
+        ]
+      ],
+      "silence": [
+        [
+          "Sem resposta",
+          "O Vale perdeu contato com o exterior; não há confirmação posterior dos que ficaram."
+        ],
+        [
+          "O que permanece",
+          "O diário preserva o último estado conhecido das pessoas e das investigações."
+        ]
+      ]
+    }
   }
 }
