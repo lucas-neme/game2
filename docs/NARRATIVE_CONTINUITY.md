@@ -41,3 +41,7 @@ Three authored single-cell barriers appear according to crisis stage and forest 
 ## V11 — Regional signal and manifestations
 
 Five optional anomalies with chapter, time and local signal requirements. Electrical intervention reduces amplification but not the source. Procedural exterior silhouettes, observation, avoidance, frequency-selection contact and scripted dispersal, persistent outcomes and NPC avoidance. No new combat arena or premium sprites. Mandatory evidence remains independent.
+
+## V12 — Environmental mechanisms
+
+Six optional evidence-gated control panels with dependency ordering, recoverable mistakes, time costs and persistent calibration. Counterwave calibration reduces project signal by six internal points; final preparation records completed calibrations. Existing clues and endings remain independent. Controls are in-game buttons rather than new meshes or animations; transfer authorization does not open a new physical passage.

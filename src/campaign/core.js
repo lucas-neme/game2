@@ -5,7 +5,7 @@ function createValleyCampaign(data){
  const phase=d=>data.chapters.find(c=>d>=c.days[0]&&d<=c.days[1])?.id||5;
  const day=t=>Math.max(1,Math.min(30,1+Math.floor(t/1440)));
  const minute=t=>((Math.floor(t)%1440)+1440)%1440;
- const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},outcome:null,uncle:null,evacuation:null});
+ const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},mechanisms:{},outcome:null,uncle:null,evacuation:null});
  const normalize=c=>Object.assign(fresh(),c||{});
  function chapter(c,t){if(!c.train)return 1;const cap=phase(day(t));for(let ch=2;ch<=5;ch++){if(ch>cap)return cap;if(data.missions.some(m=>m.chapter===ch&&!c.solved[m.id]))return ch}return 5}
  function available(c,t){return c.train&&!c.outcome?data.missions.filter(m=>m.chapter<=chapter(c,t)&&m.chapter<=phase(day(t))&&!c.solved[m.id]):[]}
@@ -183,7 +183,7 @@ function createValleyCampaign(data){
  const d=day(t),m=minute(t),p=data.locations[loc],district=districtAt(p.x,p.y),grid=infrastructure(c,t);
  let v=d>=28?82:d>=25?65:d>=21?53:d>=17?42:d>=13?30:d>=6?18:5;
  v+=district==='project'?14:district==='east'?8:0;if(m<360||m>=1080)v+=8;v+=grid.level*2;
- if(grid.mode==='isolate')v-=district==='project'?16:8;if(grid.mode==='repair')v-=5;
+ if(grid.mode==='isolate')v-=district==='project'?16:8;if(grid.mode==='repair')v-=5;if(mechanismEffects(c,t).includes('counterwave-reference')&&district==='project')v-=6;
  return Math.max(0,Math.min(100,v));
  }
  function activeManifestations(c,t){
@@ -205,6 +205,19 @@ function createValleyCampaign(data){
  const e=activeManifestations(c,t).find(q=>q.actor===id);if(!e||psychology(id,t,c)?.resolve>=80)return null;
  return {loc:e.refuge,activity:'Evita a região onde o sinal se manifesta',reason:'manifest:'+e.id,changed:true};
  }
+ function mechanismReady(c,t,id){
+  const e=(data.mechanisms||[]).find(q=>q.id===id);
+  return !!e&&c.train&&!c.outcome&&t<43200&&phase(day(t))>=e.chapter&&!c.mechanisms?.[id]?.solved&&e.requires.every(k=>c.evidence[k]&&c.evidence[k].at<=t)&&(e.after||[]).every(k=>c.mechanisms?.[k]?.solved&&c.mechanisms[k].at<=t);
+ }
+ function mechanismAttempt(c,t,id,values){
+  const e=(data.mechanisms||[]).find(q=>q.id===id);
+  if(!mechanismReady(c,t,id)||!Array.isArray(values)||values.length!==e.controls.length||values.some((v,i)=>!Number.isInteger(v)||v<0||v>=e.controls[i].options.length))return null;
+  c.mechanisms??={};const r=c.mechanisms[id]??={attempts:0,solved:false};
+  r.attempts++;r.lastAt=t;const ok=values.every((v,i)=>v===e.answer[i]);
+  if(ok){r.solved=true;r.at=t;r.effect=e.effect}
+  return {ok,minutes:ok?15:10,text:ok?e.result:'A configuração não coincide com os registros. O equipamento volta à posição segura.'};
+ }
+ function mechanismEffects(c,t){return Object.values(c.mechanisms||{}).filter(r=>r.solved&&r.at<=t).map(r=>r.effect)}
  function schedule(id,t,c,dead=false,deadAt=()=>null){if(dead||!byId[id]||departed(c,id,t))return null;const n=byId[id],d=day(t),m=minute(t),row=n.days[d-1],base=row.slots.findLast(x=>x.minute<=m)||row.slots[0];let result={...base,day:d,id,name:n.name,sprite:n.sprite,changed:false};
   const departure=departureAt(c,id);if(departure!=null&&t>=departure-60&&t<departure)return {...result,loc:'rail',activity:'Aguarda o embarque para sair do Vale',changed:true,reason:'evacuation-boarding'};
   const meeting=(data.appointments||[]).find(e=>e.day===d&&m>=e.minute&&m<e.until&&e.actors.includes(id));if(meeting){const a=meetingVariant(meeting,c,(d-1)*1440+meeting.minute);return {...result,loc:a.loc,activity:a.activity,changed:!!a.redirected,reason:a.id,meeting:a.id}}
@@ -232,8 +245,8 @@ function createValleyCampaign(data){
   if(c.solved.rescue&&selected("rescue-uncle"))out.push(["sacrifice","Manter a contramedida manualmente"]);
   return out;
  }
- function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
+ function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }

@@ -20163,5 +20163,266 @@
       "contact": "A resposta chega antes do fim da sequência; sua identidade permanece incerta.",
       "disperse": "A forma se desfaz, mas a portadora continua presente."
     }
+  ],
+  "mechanisms": [
+    {
+      "id": "switchgear",
+      "loc": "substation",
+      "chapter": 3,
+      "requires": [
+        "power:0",
+        "power:1"
+      ],
+      "after": [],
+      "title": "Bancada de isolamento",
+      "intro": "Separe a alimentação local da recepção independente.",
+      "controls": [
+        {
+          "label": "Alimentação",
+          "options": [
+            "Ligada",
+            "Isolada"
+          ]
+        },
+        {
+          "label": "Bobina H-17",
+          "options": [
+            "Gerador",
+            "Receptor"
+          ]
+        },
+        {
+          "label": "Instrumento",
+          "options": [
+            "Rede local",
+            "Receptor independente"
+          ]
+        }
+      ],
+      "answer": [
+        1,
+        1,
+        1
+      ],
+      "result": "A portadora permanece detectável sem a alimentação local.",
+      "effect": "grid-reference"
+    },
+    {
+      "id": "plate",
+      "loc": "observatory",
+      "chapter": 3,
+      "requires": [
+        "history:0",
+        "history:1"
+      ],
+      "after": [],
+      "title": "Comparador de placas astronômicas",
+      "intro": "Compare noites diferentes utilizando uma referência celeste comum.",
+      "controls": [
+        {
+          "label": "Referência",
+          "options": [
+            "Direção celeste",
+            "Relógio local"
+          ]
+        },
+        {
+          "label": "Ordem",
+          "options": [
+            "Instalação → recepção",
+            "Recepção → instalação"
+          ]
+        },
+        {
+          "label": "Amostras",
+          "options": [
+            "Uma noite",
+            "Noites separadas"
+          ]
+        }
+      ],
+      "answer": [
+        0,
+        1,
+        1
+      ],
+      "result": "A direção se repete antes da instalação do transmissor.",
+      "effect": "historical-reference"
+    },
+    {
+      "id": "tape",
+      "loc": "future",
+      "chapter": 4,
+      "requires": [
+        "zero:1",
+        "history:0"
+      ],
+      "after": [],
+      "title": "Montador de fita magnética",
+      "intro": "Reconstrua a gravação pela ordem dos fatos, não pela ordem da descoberta.",
+      "controls": [
+        {
+          "label": "Primeiro fragmento",
+          "options": [
+            "Advertência anterior",
+            "Ensaio"
+          ]
+        },
+        {
+          "label": "Segundo fragmento",
+          "options": [
+            "Resposta à advertência",
+            "Ensaio"
+          ]
+        },
+        {
+          "label": "Canal",
+          "options": [
+            "Transmissor local",
+            "Gravação independente"
+          ]
+        }
+      ],
+      "answer": [
+        0,
+        1,
+        1
+      ],
+      "result": "A advertência antecede o ensaio; sua origem não está confirmada.",
+      "effect": "tape-reference"
+    },
+    {
+      "id": "phase",
+      "loc": "observatory",
+      "chapter": 4,
+      "requires": [
+        "zero:0",
+        "zero:2"
+      ],
+      "after": [
+        "plate"
+      ],
+      "title": "Calibrador de contrafase",
+      "intro": "Use o espectrograma e a calibração de Bento para reduzir a componente sincronizante.",
+      "controls": [
+        {
+          "label": "Fase relativa",
+          "options": [
+            "0°",
+            "90°",
+            "180°"
+          ]
+        },
+        {
+          "label": "Portadora",
+          "options": [
+            "Faixa de oposição",
+            "Todas as frequências"
+          ]
+        },
+        {
+          "label": "Verificação",
+          "options": [
+            "Receptor independente",
+            "Indicador do emissor"
+          ]
+        }
+      ],
+      "answer": [
+        2,
+        0,
+        0
+      ],
+      "result": "A componente sincronizante diminui no receptor separado.",
+      "effect": "counterwave-reference"
+    },
+    {
+      "id": "transfer",
+      "loc": "tunnel",
+      "chapter": 4,
+      "requires": [
+        "rescue:0",
+        "rescue:1"
+      ],
+      "after": [],
+      "title": "Painel de transferência H-17",
+      "intro": "O mapa e o registro do turno identificam uma saída de manutenção.",
+      "controls": [
+        {
+          "label": "Destino",
+          "options": [
+            "Plataforma pública",
+            "Saída de serviço"
+          ]
+        },
+        {
+          "label": "Circuito",
+          "options": [
+            "Manutenção",
+            "Confinamento"
+          ]
+        },
+        {
+          "label": "Identificação",
+          "options": [
+            "Registro de turno",
+            "Ordem de ativação"
+          ]
+        }
+      ],
+      "answer": [
+        1,
+        0,
+        0
+      ],
+      "result": "O painel registra a autorização da rota de manutenção.",
+      "effect": "service-reference"
+    },
+    {
+      "id": "final-reference",
+      "loc": "horizon",
+      "chapter": 5,
+      "requires": [
+        "last:0",
+        "last:1",
+        "last:2"
+      ],
+      "after": [
+        "tape",
+        "phase"
+      ],
+      "title": "Comparador das duas vozes",
+      "intro": "Compare alcance, prazo e origem. Não confunda resposta com intenção.",
+      "controls": [
+        {
+          "label": "Alcance",
+          "options": [
+            "Somente o Vale",
+            "Além do Vale"
+          ]
+        },
+        {
+          "label": "Janela",
+          "options": [
+            "Dia 30",
+            "Sem prazo"
+          ]
+        },
+        {
+          "label": "Origem da segunda voz",
+          "options": [
+            "Transmissor local confirmado",
+            "Origem não confirmada"
+          ]
+        }
+      ],
+      "answer": [
+        1,
+        0,
+        1
+      ],
+      "result": "O risco de alcance externo é confirmado, mas a intenção continua incerta.",
+      "effect": "final-reference"
+    }
   ]
 }

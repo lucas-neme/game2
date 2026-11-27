@@ -188,3 +188,21 @@ const risk=campaign.fresh();risk.train=true;assert.equal(campaign.manifestationA
 const strength=campaign.signalStrength(risk,28*1440+720,'horizon');risk.infrastructure.switchgear={mode:'isolate',at:27*1440};assert.ok(campaign.signalStrength(risk,28*1440+720,'horizon')<strength);
 assert.ok(campaign.signalStrength(risk,28*1440,'horizon')>0);assert.equal(campaign.activeManifestations(risk,43200).length,0);
 console.log('Manifestations: signal escalation, observation, tuning, persistence and NPC avoidance passed.');
+
+const mech=campaign.fresh();mech.train=true;let mt=27*1440+700;
+for(const e of data.mechanisms){
+ assert.equal(campaign.mechanismReady(mech,mt,e.id),false);
+ for(const k of e.requires)mech.evidence[k]={at:mt-1,via:'site'};
+ assert.equal(campaign.mechanismReady(mech,mt,e.id),true);
+ assert.equal(campaign.mechanismAttempt(mech,mt,e.id,[-1,0,0]),null);
+ const bad=e.answer.slice();bad[0]=(bad[0]+1)%e.controls[0].options.length;
+ assert.equal(campaign.mechanismAttempt(mech,mt,e.id,bad).ok,false);
+ assert.equal(campaign.mechanismAttempt(mech,mt+10,e.id,e.answer).ok,true);
+ assert.equal(campaign.mechanismAttempt(mech,mt+11,e.id,e.answer),null);
+ assert.equal(mech.mechanisms[e.id].attempts,2);mt+=30;
+}
+assert.equal(campaign.mechanismEffects(mech,mt).length,6);
+assert.equal(campaign.mechanismEffects(mech,27*1440+699).length,0);
+const mechSave=campaign.normalize(JSON.parse(JSON.stringify(mech)));
+assert.equal(campaign.mechanismEffects(mechSave,mt).length,6);
+console.log('Environmental mechanisms: evidence gating, ordered calibrations, invalid inputs, retry, completion and persistence passed.');
