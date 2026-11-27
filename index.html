@@ -343,7 +343,7 @@ const heroVis={x:5,y:5,dir:'se',anim:'idle',t:0,act:null,actT:0};
 const npcVis={};
 function dirFrom(dx,dy,prev){if(Math.abs(dx)<1e-3&&Math.abs(dy)<1e-3)return prev;if(Math.abs(dx)>=Math.abs(dy))return dx>0?'se':'nw';return dy>0?'sw':'ne'}
 function charFrame(key,anim,dir,t){const ch=ART.chars[key];if(!ch)return null;const view=dir==='se'||dir==='sw'?'front':'back';const a=ch.anims[anim+':'+view]||ch.anims['idle:'+view];const fps={idle:3,walk:10,run:14,sneak:8,interact:8,use:6,react:8,hurt:8,dodge:12,combat:10,defend:4}[anim]||8;return {row:a.row,col:Math.floor(t*fps)%a.frames,flip:dir==='sw'||dir==='nw',ch}}
-function drawChar(key,x,y,anim,dir,t,alpha=1){const f=charFrame(key,anim,dir,t),im=CHAR_IMG[key];if(!f||!ready(im))return;const ch=f.ch;g.save();g.globalAlpha=alpha;g.translate(Math.round(x),Math.round(y));const ck=SCALE.k*(CHILD_KEYS.includes(key)?.62:1.17);g.scale(f.flip?-ck:ck,ck);g.drawImage(im,f.col*ch.fw,f.row*ch.fh,ch.fw,ch.fh,-ch.ax,-ch.ay,ch.fw,ch.fh);g.restore()}
+function drawChar(key,x,y,anim,dir,t,alpha=1){const f=charFrame(key,anim,dir,t),im=CHAR_IMG[key];if(!f||!ready(im))return;fzDiag(key,ART.chars[key]?.file,anim+':'+dir,f.col,true);const ch=f.ch;g.save();g.globalAlpha=alpha;g.translate(Math.round(x),Math.round(y));const ck=SCALE.k*(CHILD_KEYS.includes(key)?.62:1.17);g.scale(f.flip?-ck:ck,ck);g.drawImage(im,f.col*ch.fw,f.row*ch.fh,ch.fw,ch.fh,-ch.ax,-ch.ay,ch.fw,ch.fh);g.restore()}
 var CHILD_KEYS=['m-crianca'];
 function bfsPath(from,to){const key=(x,y)=>x+','+y;const q=[[from[0],from[1]]],prev=new Map([[key(...from),null]]);const goalOk=(x,y)=>x===to[0]&&y===to[1];for(let i=0;i<q.length&&i<400;i++){const [x,y]=q[i];if(goalOk(x,y)){const path=[];let k=key(x,y);while(k){const [a,b]=k.split(',').map(Number);path.unshift([a,b]);k=prev.get(k)}return path}for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){const nx=x+dx,ny=y+dy,k=key(nx,ny);if(prev.has(k))continue;if(!(goalOk(nx,ny)||walkable(nx,ny)))continue;prev.set(k,key(x,y));q.push([nx,ny])}}return null}
 function updateNpcs(dt,view){const list=residents();for(const p of list){let v=npcVis[p.id];if(!v){v=npcVis[p.id]={x:p.x,y:p.y,tx:p.x,ty:p.y,path:[],dir:'sw',t:Math.random()*3}}
@@ -644,7 +644,7 @@ function drawHero4(x,y,alpha=1){if(!H4||!ready(H4_WALK))return false;const st=SE
  if(st){im=H4_SIT;row=0;col=Math.max(0,Math.min(3,st.frame|0));lift=st.seat.lift*Math.min(1,col/3)}
  else if(['walk','run','sneak'].includes(heroVis.anim))col=Math.floor(heroVis.ph*H4.frames)%H4.frames;
  if(!ready(im))return false;g.save();g.globalAlpha=alpha;
- const hs=SCALE.hero;g.drawImage(im,col*H4.fw,row*H4.fh,H4.fw,H4.fh,Math.round(x-H4.ax*hs),Math.round(y-lift-H4.ay*hs),Math.round(H4.fw*hs),Math.round(H4.fh*hs));g.restore();return true}
+ const hs=SCALE.hero;fzDiag('hero',st?H4.sit:H4.walk,st?'sit':heroVis.anim+':'+heroVis.dir4,col,false);g.drawImage(im,col*H4.fw,row*H4.fh,H4.fw,H4.fh,Math.round(x-H4.ax*hs),Math.round(y-lift-H4.ay*hs),Math.round(H4.fw*hs),Math.round(H4.fh*hs));g.restore();return true}
 /* ---- seats (benches) ---- */
 var SEATS=[];if(ART.place)for(const p of ART.place){const n=ART.names[p[0]];if(n==='bench'||n==='bench-b'){const d=ART.sprites[p[0]];SEATS.push({i:p[0],gx:p[1],gy:p[2],x:p[1]+.12,y:p[2]+.12,lift:Math.round(d[4]*.22*((typeof SCALE!=='undefined'&&SCALE.props[n])||1)),front:.52,occ:null})}}
 var SEAT={hero:null};
@@ -880,7 +880,7 @@ function drawNpcV5(key,e,x,y,activity){const D=typeof V5!=='undefined'&&V5[key];
  else if((V5WORK??={bento:/rel[oó]g|consert|corda/i,celina:/costur|bord|roupa/i})[key]&&V5WORK[key].test(activity||'')){[key2,A]=v5pick(D,['work:side','idle:side']);col=Math.floor((e.t||0)*3)%A.frames}
  else{[key2,A]=v5pick(D,['idle:'+vk,'idle:south']);col=Math.floor((e.t||0)*2.5)%A.frames}
  const sidePose=key2==='work:side'||key2==='sit'||key2==='stand'||key2.endsWith(':side');const face=D.faceByAnim?.[key2]||D.face;const flip2=sidePose&&((face==='right')!==(view==='east'));
- const sc=D.scale*(A.k||1)*SCALE.k;g.save();g.translate(Math.round(x),Math.round(y-(e.seat?e.seat.lift*Math.min(1,(e.sitF||0)/2):0)));if(flip2)g.scale(-1,1);g.imageSmoothingEnabled=false;
+ const sc=D.scale*(A.k||1)*SCALE.k;fzDiag(key,D.file,key2+(flip2?' (espelhado)':''),col,false);g.save();g.translate(Math.round(x),Math.round(y-(e.seat?e.seat.lift*Math.min(1,(e.sitF||0)/2):0)));if(flip2)g.scale(-1,1);g.imageSmoothingEnabled=false;
  g.drawImage(im,col*D.fw,A.row*D.fh,D.fw,D.fh,-D.ax*sc,-D.ay*sc,D.fw*sc,D.fh*sc);g.restore();e.v5anim=key2;return true}
 if(HAS_DOM&&typeof V5!=='undefined')for(const k in V5)v5img(k);
 /*V5NPC:END*/
@@ -910,5 +910,15 @@ function drawCalibration(){if(!CALIB||$('world').hidden)return;g.save();g.setTra
  g.strokeStyle='rgba(255,80,80,.8)';g.lineWidth=.5;g.beginPath();g.moveTo(bx-270,y-H);g.lineTo(x,y-H);g.moveTo(bx-270,y);g.lineTo(x,y);g.stroke();g.fillStyle='#ff8080';g.fillText('altura humana = '+H.toFixed(0)+' px (fator '+SCALE.factor+')',bx-268,y-H-3);g.restore()}
 if(HAS_DOM){const _dwc=drawWorld;drawWorld=function(){_dwc();try{drawCalibration()}catch(e){}}}
 /*CALIB:END*/
+/*DIAG:BEGIN*/
+/* Render diagnostic: which PNG, animation and frame each character drew last, and whether it came from a fallback.
+   FZ_DIAG() in the console; ?debug=sprites shows it on screen. */
+var FZ_RENDER={};
+function fzDiag(who,file,anim,frame,fallback){const r=FZ_RENDER[who]||(FZ_RENDER[who]={frames:0});r.file=file;r.anim=anim;r.frame=frame;r.fallback=!!fallback;r.frames++;r.at=Math.round(performance.now())}
+function FZ_DIAG(){const rows=Object.entries(FZ_RENDER).map(([k,r])=>({personagem:k,png:r.file,animacao:r.anim,quadro:r.frame,fallback:r.fallback}));if(typeof console!=='undefined'&&console.table)console.table(rows);return rows}
+if(typeof window!=='undefined')window.FZ_DIAG=FZ_DIAG;
+if(HAS_DOM&&/[?&]debug=sprites/.test(location.search)){const box=document.createElement('pre');box.id='fzDiag';box.style.cssText='position:fixed;left:8px;bottom:60px;z-index:50;margin:0;padding:8px;background:#000c;color:#9f9;font:11px ui-monospace,monospace;pointer-events:none;max-width:70vw;white-space:pre';document.body.append(box);
+ setInterval(()=>{box.textContent=Object.entries(FZ_RENDER).map(([k,r])=>(r.fallback?'! ':'  ')+k.padEnd(8)+' '+String(r.png??r.file).padEnd(52)+' '+String(r.anim).padEnd(22)+' q'+r.frame).join(String.fromCharCode(10))},300)}
+/*DIAG:END*/
 
 </script></html>
