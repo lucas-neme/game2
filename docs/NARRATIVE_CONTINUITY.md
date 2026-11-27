@@ -21,3 +21,7 @@ All sixteen residents have authored goals, baseline trust/fear/resolve, an impor
 ## V6 — Bounded autonomous routines
 
 From chapter III, residents can change otherwise unreserved schedule windows based on fear, trust and resolve. Fear redirects 08:00–10:00 to a familiar safe location when fear exceeds resolve; distrust redirects 12:00–13:00 away from public activity; determination redirects 20:00–21:00 to a character-specific useful task. Authored meetings, causal events and explicit choice rules take precedence. The browser passes actual ally mortality to schedule calculations and shows contextual dialogue. This is deterministic schedule autonomy, not a full social AI or execution of physical tasks. Evidence availability remains unchanged; archive fallback remains intact.
+
+## V7 — Social conflict and reconciliation
+
+Ten two-actor scenes branch on campaign choices and, for reconciliation, completed earlier social scenes. They reserve shared locations around mission-related appointments and causal tasks. Witnessed conversations appear in the journal; relationship scores derive from completed scenes and death, not repeated interaction. Both actors must survive until completion. Social scenes do not yet unlock physical tasks or independently propagate rumors. Fixed V6 chapter boundary test: day 13 is the first day of chapter III, not chapter II.

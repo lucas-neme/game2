@@ -19694,5 +19694,195 @@
         0
       ]
     }
-  }
+  },
+  "socialScenes": [
+    {
+      "id": "privacy-dispute",
+      "actors": [
+        "clinic",
+        "helena"
+      ],
+      "choices": [
+        "public-patient"
+      ],
+      "day": 14,
+      "from": 780,
+      "to": 840,
+      "loc": "archive",
+      "activity": "Discute os limites da divulgação dos prontuários",
+      "dialogue": "Lia: A verdade não pode expor quem ainda precisa de proteção. Helena: E o silêncio não pode apagar os nomes.",
+      "result": "Lia e Helena discordaram sobre a divulgação.",
+      "delta": -25
+    },
+    {
+      "id": "privacy-alliance",
+      "actors": [
+        "clinic",
+        "helena"
+      ],
+      "choices": [
+        "protect-patient"
+      ],
+      "day": 14,
+      "from": 780,
+      "to": 840,
+      "loc": "archive",
+      "activity": "Combina a preservação dos registros",
+      "dialogue": "Lia: Podemos proteger os pacientes sem apagar os nomes. Helena: Vou guardar uma cópia restrita.",
+      "result": "Lia e Helena combinaram preservar os nomes sob acesso restrito.",
+      "delta": 20
+    },
+    {
+      "id": "rail-alliance",
+      "actors": [
+        "guard",
+        "rail-worker"
+      ],
+      "choices": [
+        "warn-workers"
+      ],
+      "day": 15,
+      "from": 780,
+      "to": 840,
+      "loc": "village",
+      "activity": "Combina proteção dos ferroviários",
+      "dialogue": "Raul: Não quero que ninguém desapareça neste turno. Anselmo: Então vamos manter os colegas informados.",
+      "result": "Raul e Anselmo reforçaram a cooperação.",
+      "delta": 20
+    },
+    {
+      "id": "rail-dispute",
+      "actors": [
+        "guard",
+        "rail-worker"
+      ],
+      "choices": [
+        "observe-workers"
+      ],
+      "day": 15,
+      "from": 780,
+      "to": 840,
+      "loc": "village",
+      "activity": "Discute a investigação mantida em segredo",
+      "dialogue": "Anselmo: Meus colegas não sabiam do risco. Raul: Sem provas, um aviso também poderia colocá-los em perigo.",
+      "result": "Raul e Anselmo divergiram sobre o silêncio.",
+      "delta": -25
+    },
+    {
+      "id": "scientist-dispute",
+      "actors": [
+        "scientist",
+        "electrician"
+      ],
+      "choices": [
+        "expose-scientist"
+      ],
+      "day": 17,
+      "from": 780,
+      "to": 840,
+      "loc": "substation",
+      "activity": "Discute a responsabilidade pelos apagões",
+      "dialogue": "Vicente: Quem autorizou isso precisa responder. Augusto: Não vou negar minha responsabilidade, mas precisamos impedir outra falha.",
+      "result": "Vicente e Augusto entraram em conflito.",
+      "delta": -35
+    },
+    {
+      "id": "scientist-alliance",
+      "actors": [
+        "scientist",
+        "electrician"
+      ],
+      "choices": [
+        "recruit-scientist"
+      ],
+      "day": 17,
+      "from": 780,
+      "to": 840,
+      "loc": "substation",
+      "activity": "Combina a revisão do circuito",
+      "dialogue": "Vicente: Preciso dos seus registros. Augusto: Vou entregar o que sei, inclusive os erros.",
+      "result": "Vicente e Augusto firmaram cooperação técnica.",
+      "delta": 25
+    },
+    {
+      "id": "trail-dispute",
+      "actors": [
+        "woodcutter",
+        "young-explorer"
+      ],
+      "choices": [
+        "seal-trails"
+      ],
+      "day": 16,
+      "from": 780,
+      "to": 840,
+      "loc": "farm",
+      "activity": "Discute a interdição da floresta",
+      "dialogue": "Tomás: Meu amigo pode estar lá. Ernesto: Não quero perder mais ninguém naquela mata.",
+      "result": "Ernesto e Tomás divergiram sobre a interdição.",
+      "delta": -30
+    },
+    {
+      "id": "trail-alliance",
+      "actors": [
+        "woodcutter",
+        "young-explorer"
+      ],
+      "choices": [
+        "mark-trails"
+      ],
+      "day": 16,
+      "from": 780,
+      "to": 840,
+      "loc": "farm",
+      "activity": "Combina regras para a exploração",
+      "dialogue": "Ernesto: Você não entra sozinho. Tomás: Vou respeitar as marcas e avisar quando sair.",
+      "result": "Ernesto e Tomás combinaram uma exploração mais segura.",
+      "delta": 20
+    },
+    {
+      "id": "privacy-reconcile",
+      "actors": [
+        "clinic",
+        "helena"
+      ],
+      "choices": [
+        "public-patient",
+        "shelter-in-place"
+      ],
+      "requires": [
+        "privacy-dispute"
+      ],
+      "day": 23,
+      "from": 780,
+      "to": 840,
+      "loc": "shelter",
+      "activity": "Reconcilia a proteção dos pacientes com os registros",
+      "dialogue": "Helena: Podemos separar os nomes públicos dos dados médicos. Lia: Assim conseguimos trabalhar juntas.",
+      "result": "Lia e Helena chegaram a um compromisso.",
+      "delta": 35
+    },
+    {
+      "id": "rail-reconcile",
+      "actors": [
+        "guard",
+        "rail-worker"
+      ],
+      "choices": [
+        "observe-workers",
+        "evacuate"
+      ],
+      "requires": [
+        "rail-dispute"
+      ],
+      "day": 24,
+      "from": 780,
+      "to": 840,
+      "loc": "rail",
+      "activity": "Deixa as divergências de lado para organizar a retirada",
+      "dialogue": "Anselmo: Ainda discordo de você. Raul: Mas agora precisamos tirar as famílias daqui.",
+      "result": "Raul e Anselmo retomaram a cooperação.",
+      "delta": 35
+    }
+  ]
 }

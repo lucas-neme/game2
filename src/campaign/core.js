@@ -5,7 +5,7 @@ function createValleyCampaign(data){
  const phase=d=>data.chapters.find(c=>d>=c.days[0]&&d<=c.days[1])?.id||5;
  const day=t=>Math.max(1,Math.min(30,1+Math.floor(t/1440)));
  const minute=t=>((Math.floor(t)%1440)+1440)%1440;
- const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},outcome:null,uncle:null,evacuation:null});
+ const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},outcome:null,uncle:null,evacuation:null});
  const normalize=c=>Object.assign(fresh(),c||{});
  function chapter(c,t){if(!c.train)return 1;const cap=phase(day(t));for(let ch=2;ch<=5;ch++){if(ch>cap)return cap;if(data.missions.some(m=>m.chapter===ch&&!c.solved[m.id]))return ch}return 5}
  function available(c,t){return c.train&&!c.outcome?data.missions.filter(m=>m.chapter<=chapter(c,t)&&m.chapter<=phase(day(t))&&!c.solved[m.id]):[]}
@@ -78,9 +78,46 @@ function createValleyCampaign(data){
   if(m>=1200&&m<1260&&p.resolve>=80&&p.resolve>=p.fear+10)return {loc:b.help,activity:b.activity,reason:'resolve',autonomous:true};
   return null;
  }
+ // Social scenes reserve shared windows after all mission-related appointments.
+ function socialWindow(e,c){
+  const list=data.socialScenes||[],choices=Object.values(c.choices||{}),chosen=e.choices.map(id=>choices.find(q=>q.id===id)),prior=(e.requires||[]).map(id=>c.socialHistory?.[id]);
+  if(chosen.some(q=>!q)||prior.some(q=>q?.status!=='concluído'))return null;
+  const ready=Math.max((e.day-1)*1440,...chosen.map(q=>q.at+60),...prior.map(q=>q.end+60));
+  for(let d=Math.max(e.day,1+Math.floor(ready/1440));d<=30;d++){
+   const at=(d-1)*1440+e.from,end=(d-1)*1440+e.to;
+   if(at<ready||end>43200)continue;
+   if((data.appointments||[]).some(q=>q.day===d&&q.actors.some(id=>e.actors.includes(id))&&q.minute<e.to&&q.until>e.from))continue;
+   if((data.storyReactions||[]).some(q=>{if(!e.actors.includes(q.npc))return false;const w=c.storyHistory?.[q.id]||reactionWindow(q,c);return w&&w.at<end&&w.end>at}))continue;
+   if(list.slice(0,list.indexOf(e)).some(q=>{if(!q.actors.some(id=>e.actors.includes(id)))return false;const w=c.socialHistory?.[q.id]||socialWindow(q,c);return w&&w.at<end&&w.end>at}))continue;
+   return {at,end};
+  }return null;
+ }
+ function activeSocial(id,t,c,deadAt=()=>null){
+  if(!c.train||c.outcome)return null;
+  return (data.socialScenes||[]).find(e=>{if(!e.actors.includes(id)||c.socialHistory?.[e.id]||e.actors.some(a=>deadAt(a)!=null&&deadAt(a)<=t))return false;const w=socialWindow(e,c);return w&&t>=w.at&&t<w.end})||null;
+ }
+ function settleSocial(c,t,deadAt=()=>null){
+  c.socialHistory??={};const added=[];if(!c.train)return added;
+  for(const e of data.socialScenes||[]){if(c.socialHistory[e.id])continue;const w=socialWindow(e,c);if(!w||w.end>Math.min(t,c.outcome?.at??43200))continue;
+   const cancelled=e.actors.some(id=>deadAt(id)!=null&&deadAt(id)<w.end);
+   const row={...w,actors:e.actors.slice(),loc:e.loc,status:cancelled?'cancelado':'concluído',delta:cancelled?0:e.delta,result:cancelled?'O encontro não pôde ser concluído devido à perda de um participante.':e.result,witnessed:!!c.socialSeen?.[e.id]};c.socialHistory[e.id]=row;added.push({id:e.id,...row});
+  }return added.sort((a,b)=>a.end-b.end||a.id.localeCompare(b.id));
+ }
+ function relationship(a,b,t,c,deadAt=()=>null){
+  if(!byId[a]||!byId[b]||a===b)return null;
+  let score=50+(byId[a].psychology?.ally===b||byId[b].psychology?.ally===a?15:0);
+  const memories=[];
+  for(const [id,r] of Object.entries(c.socialHistory||{})){if(r.end<=t&&r.status==='concluído'&&r.actors.includes(a)&&r.actors.includes(b)){score+=r.delta;memories.push(id)}}
+  score=Math.max(0,Math.min(100,score));const lost=[a,b].some(id=>deadAt(id)!=null&&deadAt(id)<=t);
+  return {score,memories,status:lost?'vínculo interrompido':score>=75?'aliados':score<=40?'em conflito':'coexistência'};
+ }
+ function witnessSocial(c,t,id,actor,near,deadAt=()=>null){
+  const e=activeSocial(actor,t,c,deadAt);if(!near||!e||e.id!==id)return false;c.socialSeen??={};if(c.socialSeen[id])return false;c.socialSeen[id]={at:t,actor};return true;
+ }
  function schedule(id,t,c,dead=false,deadAt=()=>null){if(dead||!byId[id])return null;const n=byId[id],d=day(t),m=minute(t),row=n.days[d-1],base=row.slots.findLast(x=>x.minute<=m)||row.slots[0];let result={...base,day:d,id,name:n.name,sprite:n.sprite,changed:false};
   const meeting=(data.appointments||[]).find(e=>e.day===d&&m>=e.minute&&m<e.until&&e.actors.includes(id));if(meeting){const a=meetingVariant(meeting,c,(d-1)*1440+meeting.minute);return {...result,loc:a.loc,activity:a.activity,changed:!!a.redirected,reason:a.id,meeting:a.id}}
   const reaction=storyReaction(id,t,c);if(reaction)return {...result,loc:reaction.loc,activity:reaction.activity,changed:true,reason:reaction.id,storyReaction:reaction.id,dialogue:reaction.dialogue};
+  const social=activeSocial(id,t,c,deadAt);if(social)return {...result,loc:social.loc,activity:social.activity,changed:true,reason:social.id,socialScene:social.id,dialogue:social.dialogue};
   const changes=data.rules.filter(r=>r.npc===id&&m>=r.from&&m<r.to&&Object.values(c.choices).some(x=>x.id===r.choice&&x.at+60<=t));
   changes.sort((a,b)=>Object.values(c.choices).find(x=>x.id===b.choice).at-Object.values(c.choices).find(x=>x.id===a.choice).at);
   if(changes.length){const z=changes[0];return {...result,loc:z.loc,activity:z.activity,changed:true,reason:z.choice}}
@@ -103,5 +140,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&!c.evacuation&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,psychology,personalTalk,autonomousBehavior,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }
