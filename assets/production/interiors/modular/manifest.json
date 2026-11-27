@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "assets": {
     "bed": {
       "file": "assets/production/interiors/modular/bed.svg",
@@ -130,6 +130,56 @@
       "file": "assets/production/interiors/modular/sink.svg",
       "w": 0.9,
       "d": 0.65
+    },
+    "toilet": {
+      "file": "assets/production/interiors/modular/toilet.svg",
+      "w": 0.65,
+      "d": 0.8
+    },
+    "shower": {
+      "file": "assets/production/interiors/modular/shower.svg",
+      "w": 1.05,
+      "d": 1.05
+    },
+    "fridge": {
+      "file": "assets/production/interiors/modular/fridge.svg",
+      "w": 0.8,
+      "d": 0.7
+    },
+    "stove": {
+      "file": "assets/production/interiors/modular/stove.svg",
+      "w": 0.95,
+      "d": 0.7
+    },
+    "monitor": {
+      "file": "assets/production/interiors/modular/monitor.svg",
+      "w": 0.65,
+      "d": 0.6
+    },
+    "screen": {
+      "file": "assets/production/interiors/modular/screen.svg",
+      "w": 1.45,
+      "d": 0.23
+    },
+    "locker": {
+      "file": "assets/production/interiors/modular/locker.svg",
+      "w": 1.35,
+      "d": 0.6
+    },
+    "display": {
+      "file": "assets/production/interiors/modular/display.svg",
+      "w": 1.6,
+      "d": 0.8
+    },
+    "seatpair": {
+      "file": "assets/production/interiors/modular/seatpair.svg",
+      "w": 1.45,
+      "d": 0.8
+    },
+    "switchstand": {
+      "file": "assets/production/interiors/modular/switchstand.svg",
+      "w": 0.7,
+      "d": 0.5
     }
   },
   "floors": {
@@ -212,7 +262,7 @@
   ],
   "layouts": {
     "radio": {
-      "title": "Casa do tio — escritório e quarto",
+      "title": "Casa do tio — escritório e sala",
       "size": [
         9,
         8
@@ -263,16 +313,6 @@
           "As consultas de uma data foram riscadas."
         ],
         [
-          "bed",
-          2,
-          6
-        ],
-        [
-          "wardrobe",
-          0.9,
-          3.1
-        ],
-        [
           "radio",
           7.1,
           3.5
@@ -281,6 +321,25 @@
           "chair",
           3.8,
           4.5
+        ],
+        [
+          "sofa",
+          2,
+          6
+        ]
+      ],
+      "portals": [
+        [
+          7.9,
+          6.8,
+          "Quarto do tio",
+          "uncle-bedroom"
+        ],
+        [
+          0.55,
+          4.2,
+          "Cozinha",
+          "uncle-kitchen"
         ]
       ]
     },
@@ -533,6 +592,14 @@
           "Caixa de sinalização",
           null,
           "Cabos de comando recentes chegam à estação."
+        ],
+        [
+          "switchstand",
+          17.8,
+          6.1,
+          "Desvio de linha",
+          null,
+          "A alavanca está lacrada. A linha de manobra não está aberta ao público."
         ]
       ],
       "portals": [
@@ -541,6 +608,12 @@
           10.8,
           "Depósito de carga",
           "rail-depot"
+        ],
+        [
+          9,
+          3.4,
+          "Entrar no vagão estacionado",
+          "rail-car"
         ]
       ]
     },
@@ -603,10 +676,18 @@
           null,
           "O último registro público é de 1978. Folhas foram arrancadas depois dele."
         ]
+      ],
+      "portals": [
+        [
+          10.2,
+          0.6,
+          "Sala de controle",
+          "rail-control"
+        ]
       ]
     },
     "clinic": {
-      "title": "Clínica — recepção, consulta e enfermaria",
+      "title": "Clínica — recepção e triagem",
       "size": [
         12,
         9
@@ -636,50 +717,52 @@
           7.6
         ],
         [
-          "desk",
-          2,
-          1.5,
-          "Consultório",
-          null,
-          "Os prontuários confidenciais estão guardados; Lia pode explicar o paciente 47."
-        ],
-        [
-          "exam",
-          5,
-          1.5
-        ],
-        [
-          "exam",
-          9.2,
-          1.5
-        ],
-        [
-          "medicine",
-          10.5,
-          4.3,
-          "Armário de medicamentos",
-          null,
-          "Material de primeiros socorros. Peça autorização a Lia."
-        ],
-        [
-          "sink",
-          7.5,
-          0.8
-        ],
-        [
           "chair",
           3.1,
           3.1
         ],
         [
-          "bed",
-          9,
-          6.5
+          "desk",
+          2,
+          2,
+          "Fichas de triagem",
+          null,
+          "Os atendimentos do dia estão organizados por horário."
         ],
         [
-          "wardrobe",
-          0.9,
-          4.3
+          "seatpair",
+          4,
+          2
+        ],
+        [
+          "seatpair",
+          8,
+          2
+        ],
+        [
+          "display",
+          10,
+          6
+        ]
+      ],
+      "portals": [
+        [
+          0.6,
+          4,
+          "Consultório",
+          "clinic-consult"
+        ],
+        [
+          11.3,
+          4.5,
+          "Enfermaria",
+          "clinic-ward"
+        ],
+        [
+          6,
+          0.5,
+          "Sanitário",
+          "clinic-bath"
         ]
       ]
     },
@@ -884,11 +967,6 @@
           1.3
         ],
         [
-          "bed",
-          7.1,
-          5.6
-        ],
-        [
           "table",
           2.3,
           4.5
@@ -902,6 +980,14 @@
           "wardrobe",
           0.8,
           2.9
+        ]
+      ],
+      "portals": [
+        [
+          7.8,
+          6.2,
+          "Quarto",
+          "bento-bedroom"
         ]
       ]
     },
@@ -941,11 +1027,6 @@
           "Recortes e anotações sobre a história de Vale do Cedro."
         ],
         [
-          "bed",
-          7.1,
-          5.6
-        ],
-        [
           "table",
           2.3,
           4.3
@@ -954,6 +1035,14 @@
           "chair",
           2.3,
           5.5
+        ]
+      ],
+      "portals": [
+        [
+          7.8,
+          6.1,
+          "Quarto",
+          "helena-bedroom"
         ]
       ]
     },
@@ -993,11 +1082,6 @@
           1
         ],
         [
-          "bed",
-          7.1,
-          5.6
-        ],
-        [
           "table",
           2.2,
           4.1
@@ -1011,6 +1095,14 @@
           "sofa",
           1.9,
           6.6
+        ]
+      ],
+      "portals": [
+        [
+          7.8,
+          6.2,
+          "Quarto",
+          "celina-bedroom"
         ]
       ]
     },
@@ -1166,14 +1258,39 @@
           3.4
         ],
         [
-          "crate",
-          9.5,
+          "display",
+          5,
+          3.5,
+          "Balcão de produtos",
+          null,
+          "Conservas, farinha e mantimentos. Os preços estão marcados em reais."
+        ],
+        [
+          "fridge",
+          9.6,
+          6
+        ]
+      ],
+      "portals": [
+        [
+          9.9,
+          0.5,
+          "Estoque",
+          "market-stock"
+        ]
+      ],
+      "partitions": [
+        [
+          0,
+          5,
+          2.9,
           5
         ],
         [
-          "crate",
-          9.5,
-          6
+          7.1,
+          5,
+          11,
+          5
         ]
       ]
     },
@@ -1272,6 +1389,605 @@
           5.5
         ]
       ]
+    },
+    "uncle-bedroom": {
+      "title": "Casa do tio — quarto",
+      "size": [
+        7,
+        6
+      ],
+      "floor": "wood",
+      "wall": "#89755e",
+      "start": [
+        3.5,
+        5.3
+      ],
+      "exit": [
+        3.5,
+        5.6
+      ],
+      "obj": [
+        [
+          "bed",
+          2.2,
+          1.5
+        ],
+        [
+          "wardrobe",
+          5.9,
+          1
+        ],
+        [
+          "desk",
+          5,
+          3,
+          "Mesa de cabeceira",
+          null,
+          "Há um exemplar de astronomia com a dedicatória: Para que você nunca deixe de olhar para o céu."
+        ],
+        [
+          "chair",
+          2,
+          3.4
+        ]
+      ],
+      "returnTo": "radio",
+      "portals": [
+        [
+          0.6,
+          4.6,
+          "Banheiro",
+          "uncle-bath"
+        ]
+      ]
+    },
+    "uncle-bath": {
+      "title": "Casa do tio — banheiro",
+      "size": [
+        5,
+        5
+      ],
+      "floor": "tile",
+      "wall": "#97aca0",
+      "start": [
+        2.5,
+        4.3
+      ],
+      "exit": [
+        2.5,
+        4.6
+      ],
+      "obj": [
+        [
+          "shower",
+          1,
+          1
+        ],
+        [
+          "toilet",
+          3.7,
+          1
+        ],
+        [
+          "sink",
+          1,
+          3,
+          "Lavatório",
+          null,
+          "Um lavatório simples. Não há indícios relevantes."
+        ]
+      ],
+      "returnTo": "uncle-bedroom"
+    },
+    "uncle-kitchen": {
+      "title": "Casa do tio — cozinha",
+      "size": [
+        7,
+        6
+      ],
+      "floor": "wood",
+      "wall": "#9b896e",
+      "start": [
+        3.5,
+        5.3
+      ],
+      "exit": [
+        3.5,
+        5.6
+      ],
+      "obj": [
+        [
+          "kitchen",
+          2,
+          1
+        ],
+        [
+          "stove",
+          4,
+          1
+        ],
+        [
+          "fridge",
+          6,
+          1
+        ],
+        [
+          "table",
+          3,
+          3
+        ],
+        [
+          "chair",
+          3,
+          4.3
+        ],
+        [
+          "rack",
+          0.7,
+          4
+        ]
+      ],
+      "returnTo": "radio",
+      "partitions": [
+        [
+          0,
+          2.15,
+          1.6,
+          2.15
+        ]
+      ]
+    },
+    "clinic-consult": {
+      "title": "Clínica — consultório de Lia",
+      "size": [
+        8,
+        7
+      ],
+      "floor": "tile",
+      "wall": "#abb7aa",
+      "start": [
+        4,
+        6.3
+      ],
+      "exit": [
+        4,
+        6.6
+      ],
+      "obj": [
+        [
+          "desk",
+          2,
+          1.3,
+          "Consultório",
+          null,
+          "Os prontuários confidenciais estão guardados. Lia pode explicar o paciente 47."
+        ],
+        [
+          "exam",
+          5.9,
+          2
+        ],
+        [
+          "sink",
+          6.9,
+          0.8
+        ],
+        [
+          "chair",
+          2,
+          3
+        ],
+        [
+          "locker",
+          0.8,
+          4
+        ]
+      ],
+      "returnTo": "clinic"
+    },
+    "clinic-ward": {
+      "title": "Clínica — enfermaria",
+      "size": [
+        10,
+        8
+      ],
+      "floor": "tile",
+      "wall": "#9baea1",
+      "start": [
+        5,
+        7.3
+      ],
+      "exit": [
+        5,
+        7.6
+      ],
+      "obj": [
+        [
+          "bed",
+          2,
+          1.3
+        ],
+        [
+          "monitor",
+          3.7,
+          1.3
+        ],
+        [
+          "bed",
+          7.4,
+          1.3
+        ],
+        [
+          "monitor",
+          9,
+          1.3
+        ],
+        [
+          "screen",
+          5,
+          2.8
+        ],
+        [
+          "medicine",
+          8.5,
+          4.2,
+          "Armário de medicamentos",
+          null,
+          "Material de primeiros socorros. Peça autorização a Lia."
+        ],
+        [
+          "exam",
+          2,
+          5
+        ],
+        [
+          "sink",
+          0.9,
+          3.2
+        ]
+      ],
+      "returnTo": "clinic",
+      "partitions": [
+        [
+          0,
+          3.6,
+          3.7,
+          3.6
+        ],
+        [
+          6.1,
+          3.6,
+          10,
+          3.6
+        ]
+      ]
+    },
+    "clinic-bath": {
+      "title": "Clínica — sanitário",
+      "size": [
+        5,
+        5
+      ],
+      "floor": "tile",
+      "wall": "#97aca0",
+      "start": [
+        2.5,
+        4.3
+      ],
+      "exit": [
+        2.5,
+        4.6
+      ],
+      "obj": [
+        [
+          "shower",
+          1,
+          1
+        ],
+        [
+          "toilet",
+          3.7,
+          1
+        ],
+        [
+          "sink",
+          1,
+          3,
+          "Lavatório",
+          null,
+          "Um lavatório simples. Não há indícios relevantes."
+        ]
+      ],
+      "returnTo": "clinic"
+    },
+    "market-stock": {
+      "title": "Mercado do Cedro — estoque",
+      "size": [
+        8,
+        7
+      ],
+      "floor": "stone",
+      "wall": "#8a806a",
+      "start": [
+        4,
+        6.3
+      ],
+      "exit": [
+        4,
+        6.6
+      ],
+      "obj": [
+        [
+          "rack",
+          2,
+          1
+        ],
+        [
+          "rack",
+          5,
+          1
+        ],
+        [
+          "crate",
+          6.5,
+          3
+        ],
+        [
+          "crate",
+          2,
+          4.5
+        ],
+        [
+          "crate",
+          3,
+          4.5
+        ],
+        [
+          "locker",
+          6.9,
+          5
+        ]
+      ],
+      "returnTo": "market"
+    },
+    "rail-car": {
+      "title": "Ferrovia — vagão de passageiros desativado",
+      "size": [
+        12,
+        5
+      ],
+      "floor": "wood",
+      "wall": "#757d70",
+      "start": [
+        6,
+        4.3
+      ],
+      "exit": [
+        6,
+        4.6
+      ],
+      "obj": [
+        [
+          "seatpair",
+          2,
+          1
+        ],
+        [
+          "seatpair",
+          4.4,
+          1
+        ],
+        [
+          "seatpair",
+          6.8,
+          1
+        ],
+        [
+          "seatpair",
+          9.2,
+          1
+        ],
+        [
+          "seatpair",
+          2,
+          3.7
+        ],
+        [
+          "seatpair",
+          9.2,
+          3.7
+        ],
+        [
+          "rack",
+          11,
+          0.8
+        ],
+        [
+          "locker",
+          0.8,
+          2.5,
+          "Compartimento de bagagem",
+          null,
+          "O compartimento está vazio; uma etiqueta menciona a antiga linha regional."
+        ]
+      ],
+      "returnTo": "rail-yard"
+    },
+    "rail-control": {
+      "title": "Ferrovia — sala de controle",
+      "size": [
+        8,
+        7
+      ],
+      "floor": "stone",
+      "wall": "#65756e",
+      "start": [
+        4,
+        6.3
+      ],
+      "exit": [
+        4,
+        6.6
+      ],
+      "obj": [
+        [
+          "signal",
+          2,
+          1.2,
+          "Painel ferroviário",
+          null,
+          "A linha principal está bloqueada no quadro de controle, mas o circuito de retorno apresenta atividade."
+        ],
+        [
+          "radio",
+          4.2,
+          1.2
+        ],
+        [
+          "desk",
+          6.6,
+          3
+        ],
+        [
+          "locker",
+          0.9,
+          4
+        ],
+        [
+          "clock",
+          6.8,
+          0.8
+        ]
+      ],
+      "returnTo": "rail-depot",
+      "partitions": [
+        [
+          0,
+          2.6,
+          2.5,
+          2.6
+        ]
+      ]
+    },
+    "bento-bedroom": {
+      "title": "Casa de Bento — quarto",
+      "size": [
+        6,
+        6
+      ],
+      "floor": "wood",
+      "wall": "#8c735b",
+      "start": [
+        3,
+        5.3
+      ],
+      "exit": [
+        3,
+        5.6
+      ],
+      "obj": [
+        [
+          "bed",
+          2,
+          1.5
+        ],
+        [
+          "wardrobe",
+          5,
+          1
+        ],
+        [
+          "clock",
+          0.7,
+          3
+        ],
+        [
+          "table",
+          4.2,
+          3.3
+        ]
+      ],
+      "returnTo": "bento"
+    },
+    "helena-bedroom": {
+      "title": "Casa de Helena — quarto",
+      "size": [
+        6,
+        6
+      ],
+      "floor": "wood",
+      "wall": "#8b8172",
+      "start": [
+        3,
+        5.3
+      ],
+      "exit": [
+        3,
+        5.6
+      ],
+      "obj": [
+        [
+          "bed",
+          2,
+          1.5
+        ],
+        [
+          "wardrobe",
+          5,
+          1
+        ],
+        [
+          "bookcase",
+          0.9,
+          4
+        ],
+        [
+          "chair",
+          4.2,
+          3.3
+        ]
+      ],
+      "returnTo": "helena"
+    },
+    "celina-bedroom": {
+      "title": "Casa de Celina — quarto",
+      "size": [
+        6,
+        6
+      ],
+      "floor": "wood",
+      "wall": "#ab8873",
+      "start": [
+        3,
+        5.3
+      ],
+      "exit": [
+        3,
+        5.6
+      ],
+      "obj": [
+        [
+          "bed",
+          2,
+          1.5
+        ],
+        [
+          "wardrobe",
+          5,
+          1
+        ],
+        [
+          "sewing",
+          0.9,
+          4
+        ],
+        [
+          "chair",
+          4.2,
+          3.3
+        ]
+      ],
+      "returnTo": "celina"
     }
   }
 }
