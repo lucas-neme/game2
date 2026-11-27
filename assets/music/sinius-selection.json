@@ -1,0 +1,56 @@
+{
+  "artist": "SINIUS (Daljit Kundi)",
+  "license": "CC BY 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "credit": "Music by SINIUS",
+  "tracks": [
+    {
+      "id": "sinius-infinite-darkness",
+      "title": "Infinite Darkness",
+      "album": "dark-territory-original-motion-picture-soundtrack",
+      "cue": "bunker",
+      "page": "https://freemusicarchive.org/music/sinius/dark-territory-original-motion-picture-soundtrack/infinite-darkness/",
+      "file": "assets/music/sinius-infinite-darkness.mp3"
+    },
+    {
+      "id": "sinius-phantom-travelers",
+      "title": "Phantom Travelers",
+      "album": "paranormal-activity",
+      "cue": "rail",
+      "page": "https://freemusicarchive.org/music/sinius/paranormal-activity/phantom-travelers/",
+      "file": "assets/music/sinius-phantom-travelers.mp3"
+    },
+    {
+      "id": "sinius-faceless-woman",
+      "title": "Faceless Woman",
+      "album": "paranormal-activity",
+      "cue": "apparition",
+      "page": "https://freemusicarchive.org/music/sinius/paranormal-activity/faceless-woman/",
+      "file": "assets/music/sinius-faceless-woman.mp3"
+    },
+    {
+      "id": "sinius-cold-spots-and-spirit-portals",
+      "title": "Cold Spots and Spirit Portals",
+      "album": "paranormal-activity",
+      "cue": "anomaly",
+      "page": "https://freemusicarchive.org/music/sinius/paranormal-activity/cold-spots-and-spirit-portals/",
+      "file": "assets/music/sinius-cold-spots-and-spirit-portals.mp3"
+    },
+    {
+      "id": "sinius-unconscious-memory",
+      "title": "Unconscious Memory",
+      "album": "the-silence-before-the-haunting",
+      "cue": "memory",
+      "page": "https://freemusicarchive.org/music/sinius/the-silence-before-the-haunting/unconscious-memory/",
+      "file": "assets/music/sinius-unconscious-memory.mp3"
+    },
+    {
+      "id": "sinius-the-conjuring-mirror",
+      "title": "The Conjuring Mirror",
+      "album": "the-silence-before-the-haunting",
+      "cue": "revelation",
+      "page": "https://freemusicarchive.org/music/sinius/the-silence-before-the-haunting/the-conjuring-mirror/",
+      "file": "assets/music/sinius-the-conjuring-mirror.mp3"
+    }
+  ]
+}
