@@ -18397,5 +18397,408 @@
    ],
    "title": "O último sinal"
   }
+ ],
+ "appointments": [
+  {
+   "id": "meeting-1",
+   "day": 1,
+   "minute": 1080,
+   "until": 1170,
+   "loc": "radio",
+   "actors": [
+    "bento",
+    "future"
+   ],
+   "activity": "Confere o ruído deixado na fita"
+  },
+  {
+   "id": "meeting-2",
+   "day": 2,
+   "minute": 1020,
+   "until": 1110,
+   "loc": "future",
+   "actors": [
+    "future",
+    "radio-technician"
+   ],
+   "activity": "Compara a previsão gravada com o relógio"
+  },
+  {
+   "id": "meeting-3",
+   "day": 3,
+   "minute": 840,
+   "until": 930,
+   "loc": "rail",
+   "actors": [
+    "rail-worker",
+    "guard"
+   ],
+   "activity": "Confere a guia de carga sem assinatura"
+  },
+  {
+   "id": "meeting-4",
+   "day": 4,
+   "minute": 960,
+   "until": 1050,
+   "loc": "clinic",
+   "actors": [
+    "clinic",
+    "nurse"
+   ],
+   "activity": "Revisa a ficha sem identificação"
+  },
+  {
+   "id": "meeting-5",
+   "day": 5,
+   "minute": 1170,
+   "until": 1260,
+   "loc": "shore",
+   "actors": [
+    "young-explorer",
+    "woodcutter"
+   ],
+   "activity": "Observa as luzes na margem"
+  },
+  {
+   "id": "meeting-6",
+   "day": 6,
+   "minute": 930,
+   "until": 1020,
+   "loc": "clinic",
+   "actors": [
+    "clinic",
+    "celina"
+   ],
+   "activity": "Compara a descrição do paciente 47"
+  },
+  {
+   "id": "meeting-7",
+   "day": 7,
+   "minute": 1020,
+   "until": 1110,
+   "loc": "sawmill",
+   "actors": [
+    "rail-worker",
+    "woodcutter"
+   ],
+   "activity": "Confere a descarga fora do expediente"
+  },
+  {
+   "id": "meeting-8",
+   "day": 8,
+   "minute": 840,
+   "until": 930,
+   "loc": "cemetery",
+   "actors": [
+    "elder",
+    "priest",
+    "helena"
+   ],
+   "activity": "Confere nomes de 1958"
+  },
+  {
+   "id": "meeting-9",
+   "day": 9,
+   "minute": 900,
+   "until": 990,
+   "loc": "forest",
+   "actors": [
+    "young-explorer",
+    "woodcutter"
+   ],
+   "activity": "Segue vestígios animais"
+  },
+  {
+   "id": "meeting-10",
+   "day": 10,
+   "minute": 1020,
+   "until": 1110,
+   "loc": "future",
+   "actors": [
+    "future",
+    "bento",
+    "radio-technician"
+   ],
+   "activity": "Compara horários dos sinais"
+  },
+  {
+   "id": "meeting-11",
+   "day": 11,
+   "minute": 900,
+   "until": 990,
+   "loc": "cemetery",
+   "actors": [
+    "priest",
+    "helena"
+   ],
+   "activity": "Confere a data de sepultamento"
+  },
+  {
+   "id": "meeting-12",
+   "day": 12,
+   "minute": 990,
+   "until": 1080,
+   "loc": "horizon",
+   "actors": [
+    "guard",
+    "watchman"
+   ],
+   "activity": "Discute o reforço da vigilância"
+  },
+  {
+   "id": "meeting-13",
+   "day": 13,
+   "minute": 900,
+   "until": 990,
+   "loc": "observatory",
+   "actors": [
+    "scientist",
+    "radio-technician"
+   ],
+   "activity": "Acompanha um ensaio"
+  },
+  {
+   "id": "meeting-14",
+   "day": 14,
+   "minute": 960,
+   "until": 1050,
+   "loc": "substation",
+   "actors": [
+    "electrician",
+    "bento"
+   ],
+   "activity": "Mede o pulso com a rede isolada"
+  },
+  {
+   "id": "meeting-15",
+   "day": 15,
+   "minute": 840,
+   "until": 930,
+   "loc": "village",
+   "actors": [
+    "rail-worker",
+    "guard"
+   ],
+   "activity": "Discute as restrições de transporte"
+  },
+  {
+   "id": "meeting-16",
+   "day": 16,
+   "minute": 930,
+   "until": 1020,
+   "loc": "archive",
+   "actors": [
+    "scientist",
+    "helena"
+   ],
+   "activity": "Preserva a ordem de ativação"
+  },
+  {
+   "id": "meeting-17",
+   "day": 17,
+   "minute": 1050,
+   "until": 1140,
+   "loc": "substation",
+   "actors": [
+    "electrician",
+    "nurse"
+   ],
+   "activity": "Verifica danos e ferimentos"
+  },
+  {
+   "id": "meeting-18",
+   "day": 18,
+   "minute": 900,
+   "until": 990,
+   "loc": "archive",
+   "actors": [
+    "helena",
+    "future"
+   ],
+   "activity": "Duplica documentos para o exterior"
+  },
+  {
+   "id": "meeting-19",
+   "day": 19,
+   "minute": 960,
+   "until": 1050,
+   "loc": "tunnel",
+   "actors": [
+    "watchman",
+    "rail-worker"
+   ],
+   "activity": "Confere a escala de manutenção"
+  },
+  {
+   "id": "meeting-20",
+   "day": 20,
+   "minute": 1020,
+   "until": 1110,
+   "loc": "horizon",
+   "actors": [
+    "watchman",
+    "scientist"
+   ],
+   "activity": "Analisa a ordem final"
+  },
+  {
+   "id": "meeting-21",
+   "day": 21,
+   "minute": 930,
+   "until": 1020,
+   "loc": "shelter",
+   "actors": [
+    "clinic",
+    "celina",
+    "nurse"
+   ],
+   "activity": "Organiza cuidados durante os apagões"
+  },
+  {
+   "id": "meeting-22",
+   "day": 22,
+   "minute": 840,
+   "until": 930,
+   "loc": "clinic",
+   "actors": [
+    "nurse",
+    "clinic"
+   ],
+   "activity": "Lista pacientes para retirada"
+  },
+  {
+   "id": "meeting-23",
+   "day": 23,
+   "minute": 960,
+   "until": 1050,
+   "loc": "rail",
+   "actors": [
+    "rail-worker",
+    "guard",
+    "electrician"
+   ],
+   "activity": "Testa a rota de evacuação"
+  },
+  {
+   "id": "meeting-24",
+   "day": 24,
+   "minute": 900,
+   "until": 990,
+   "loc": "shelter",
+   "actors": [
+    "priest",
+    "elder",
+    "woodcutter"
+   ],
+   "activity": "Recebe famílias e provisões"
+  },
+  {
+   "id": "meeting-25",
+   "day": 25,
+   "minute": 1020,
+   "until": 1110,
+   "loc": "future",
+   "actors": [
+    "future",
+    "radio-technician"
+   ],
+   "activity": "Transmite avisos de emergência"
+  },
+  {
+   "id": "meeting-26",
+   "day": 26,
+   "minute": 960,
+   "until": 1050,
+   "loc": "observatory",
+   "actors": [
+    "scientist",
+    "bento",
+    "radio-technician"
+   ],
+   "activity": "Testa a resposta da onda inversa"
+  },
+  {
+   "id": "meeting-27",
+   "day": 27,
+   "minute": 1020,
+   "until": 1110,
+   "loc": "village",
+   "actors": [
+    "watchman",
+    "guard"
+   ],
+   "activity": "Confere a passagem de serviço"
+  },
+  {
+   "id": "meeting-28",
+   "day": 28,
+   "minute": 900,
+   "until": 990,
+   "loc": "bunker",
+   "actors": [
+    "scientist",
+    "watchman"
+   ],
+   "activity": "Verifica o protocolo da janela"
+  },
+  {
+   "id": "meeting-29",
+   "day": 29,
+   "minute": 1020,
+   "until": 1110,
+   "loc": "shelter",
+   "actors": [
+    "celina",
+    "nurse",
+    "priest",
+    "elder"
+   ],
+   "activity": "Prepara a última retirada"
+  },
+  {
+   "id": "meeting-30",
+   "day": 30,
+   "minute": 1080,
+   "until": 1170,
+   "loc": "horizon",
+   "actors": [
+    "scientist",
+    "electrician",
+    "radio-technician"
+   ],
+   "activity": "Prepara o painel de emergência"
+  }
+ ],
+ "meetingRules": [
+  {
+   "choice": "protect-patient",
+   "meeting": "meeting-21",
+   "loc": "shelter",
+   "activity": "Compara os registros em local protegido"
+  },
+  {
+   "choice": "warn-workers",
+   "meeting": "meeting-15",
+   "loc": "shelter",
+   "activity": "Combina uma rota de retirada longe da vigilância"
+  },
+  {
+   "choice": "seal-trails",
+   "meeting": "meeting-24",
+   "loc": "shelter",
+   "activity": "Organiza materiais sem atravessar a floresta"
+  },
+  {
+   "choice": "recruit-scientist",
+   "meeting": "meeting-28",
+   "loc": "observatory",
+   "activity": "Prepara a contramedida fora do bunker"
+  },
+  {
+   "choice": "evacuate",
+   "meeting": "meeting-29",
+   "loc": "rail",
+   "activity": "Confere a lista de embarque"
+  }
  ]
 }
