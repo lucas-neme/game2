@@ -6,23 +6,23 @@
   "anomalia_esferica": {
    "available": {
     "attack": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     },
     "death": {
-     "any": 12,
+     "any": 18,
      "any (atlas)": 5
     },
     "hurt": {
-     "any": 10,
+     "any": 14,
      "any (atlas)": 3
     },
     "idle": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     },
     "move": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     }
    },
@@ -41,6 +41,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/anomalia_esferica/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_02.png",
        "state": "SOURCE"
@@ -48,6 +53,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/anomalia_esferica_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/anomalia_esferica/ataque/02.png",
        "state": "SOURCE"
       },
       {
@@ -61,6 +71,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/anomalia_esferica/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_04.png",
        "state": "SOURCE"
@@ -71,6 +86,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/anomalia_esferica/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_ataque_05.png",
        "state": "SOURCE"
@@ -78,6 +98,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/anomalia_esferica_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/anomalia_esferica/ataque/05.png",
        "state": "SOURCE"
       },
       {
@@ -115,6 +140,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dano_02.png",
        "state": "SOURCE"
@@ -122,6 +152,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/anomalia_esferica_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dano/02.png",
        "state": "SOURCE"
       },
       {
@@ -135,6 +170,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dano_04.png",
        "state": "SOURCE"
@@ -142,6 +182,11 @@
       {
        "frame": 4,
        "path": "assets/source/v4/monstros/anomalia_esferica_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dano/04.png",
        "state": "SOURCE"
       },
       {
@@ -169,6 +214,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_02.png",
        "state": "SOURCE"
@@ -176,6 +226,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/anomalia_esferica_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dissipacao/02.png",
        "state": "SOURCE"
       },
       {
@@ -189,6 +244,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_04.png",
        "state": "SOURCE"
@@ -199,6 +259,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_dissipacao_05.png",
        "state": "SOURCE"
@@ -206,6 +271,16 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/anomalia_esferica_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/anomalia_esferica/dissipacao/06.png",
        "state": "SOURCE"
       },
       {
@@ -233,6 +308,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/anomalia_esferica/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_02.png",
        "state": "SOURCE"
@@ -240,6 +320,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/anomalia_esferica_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/anomalia_esferica/idle/02.png",
        "state": "SOURCE"
       },
       {
@@ -253,6 +338,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/anomalia_esferica/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_04.png",
        "state": "SOURCE"
@@ -263,6 +353,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/anomalia_esferica/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_idle_05.png",
        "state": "SOURCE"
@@ -270,6 +365,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/anomalia_esferica_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/anomalia_esferica/idle/05.png",
        "state": "SOURCE"
       },
       {
@@ -307,6 +407,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/anomalia_esferica/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_02.png",
        "state": "SOURCE"
@@ -314,6 +419,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/anomalia_esferica_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/anomalia_esferica/movimento/02.png",
        "state": "SOURCE"
       },
       {
@@ -327,6 +437,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/anomalia_esferica/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_04.png",
        "state": "SOURCE"
@@ -337,6 +452,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/anomalia_esferica/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/anomalia_esferica_movimento_05.png",
        "state": "SOURCE"
@@ -344,6 +464,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/anomalia_esferica_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/anomalia_esferica/movimento/05.png",
        "state": "SOURCE"
       },
       {
@@ -741,6 +866,174 @@
        "frame": null,
        "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/bento/death.png",
        "state": "REVIEW"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "cao_anomalo": {
+   "available": {
+    "attack": {
+     "any": 5
+    },
+    "death": {
+     "any": 6
+    },
+    "hurt": {
+     "any": 4
+    },
+    "idle": {
+     "any": 5
+    },
+    "move": {
+     "any": 5
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/cao_anomalo/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/cao_anomalo/ataque/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/cao_anomalo/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/cao_anomalo/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/cao_anomalo/ataque/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/cao_anomalo/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/cao_anomalo/dano/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/cao_anomalo/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/cao_anomalo/dano/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/cao_anomalo/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/cao_anomalo/dissipacao/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/cao_anomalo/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/cao_anomalo/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/cao_anomalo/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/cao_anomalo/dissipacao/06.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/cao_anomalo/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/cao_anomalo/idle/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/cao_anomalo/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/cao_anomalo/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/cao_anomalo/idle/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/cao_anomalo/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/cao_anomalo/movimento/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/cao_anomalo/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/cao_anomalo/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/cao_anomalo/movimento/05.png",
+       "state": "SOURCE"
       }
      ]
     }
@@ -1479,26 +1772,362 @@
    },
    "atlas": null
   },
+  "corvo_sombrio": {
+   "available": {
+    "attack": {
+     "any": 5
+    },
+    "death": {
+     "any": 6
+    },
+    "hurt": {
+     "any": 4
+    },
+    "idle": {
+     "any": 5
+    },
+    "move": {
+     "any": 5
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/corvo_sombrio/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/corvo_sombrio/ataque/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/corvo_sombrio/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/corvo_sombrio/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/corvo_sombrio/ataque/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dano/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dano/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dissipacao/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/corvo_sombrio/dissipacao/06.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/corvo_sombrio/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/corvo_sombrio/idle/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/corvo_sombrio/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/corvo_sombrio/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/corvo_sombrio/idle/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/corvo_sombrio/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/corvo_sombrio/movimento/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/corvo_sombrio/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/corvo_sombrio/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/corvo_sombrio/movimento/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "eco_corrompido": {
+   "available": {
+    "attack": {
+     "any": 5
+    },
+    "death": {
+     "any": 6
+    },
+    "hurt": {
+     "any": 4
+    },
+    "idle": {
+     "any": 5
+    },
+    "move": {
+     "any": 5
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_corrompido/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_corrompido/ataque/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_corrompido/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_corrompido/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/eco_corrompido/ataque/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_corrompido/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_corrompido/dano/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_corrompido/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_corrompido/dano/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_corrompido/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_corrompido/dissipacao/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_corrompido/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_corrompido/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/eco_corrompido/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/eco_corrompido/dissipacao/06.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_corrompido/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_corrompido/idle/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_corrompido/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_corrompido/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/eco_corrompido/idle/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_corrompido/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_corrompido/movimento/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_corrompido/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_corrompido/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/eco_corrompido/movimento/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
   "eco_humanoide": {
    "available": {
     "attack": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     },
     "death": {
-     "any": 12,
+     "any": 18,
      "any (atlas)": 5
     },
     "hurt": {
-     "any": 10,
+     "any": 14,
      "any (atlas)": 3
     },
     "idle": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     },
     "move": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     }
    },
@@ -1517,6 +2146,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_humanoide/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_02.png",
        "state": "SOURCE"
@@ -1524,6 +2158,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/eco_humanoide_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_humanoide/ataque/02.png",
        "state": "SOURCE"
       },
       {
@@ -1537,6 +2176,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_humanoide/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_04.png",
        "state": "SOURCE"
@@ -1547,6 +2191,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_humanoide/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_ataque_05.png",
        "state": "SOURCE"
@@ -1554,6 +2203,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/eco_humanoide_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/eco_humanoide/ataque/05.png",
        "state": "SOURCE"
       },
       {
@@ -1591,6 +2245,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_humanoide/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dano_02.png",
        "state": "SOURCE"
@@ -1598,6 +2257,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/eco_humanoide_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_humanoide/dano/02.png",
        "state": "SOURCE"
       },
       {
@@ -1611,6 +2275,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_humanoide/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dano_04.png",
        "state": "SOURCE"
@@ -1618,6 +2287,11 @@
       {
        "frame": 4,
        "path": "assets/source/v4/monstros/eco_humanoide_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_humanoide/dano/04.png",
        "state": "SOURCE"
       },
       {
@@ -1645,6 +2319,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_humanoide/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_02.png",
        "state": "SOURCE"
@@ -1652,6 +2331,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/eco_humanoide_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_humanoide/dissipacao/02.png",
        "state": "SOURCE"
       },
       {
@@ -1665,6 +2349,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_humanoide/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_04.png",
        "state": "SOURCE"
@@ -1675,6 +2364,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_humanoide/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_dissipacao_05.png",
        "state": "SOURCE"
@@ -1682,6 +2376,16 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/eco_humanoide_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/eco_humanoide/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/eco_humanoide/dissipacao/06.png",
        "state": "SOURCE"
       },
       {
@@ -1709,6 +2413,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_humanoide/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_02.png",
        "state": "SOURCE"
@@ -1716,6 +2425,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/eco_humanoide_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_humanoide/idle/02.png",
        "state": "SOURCE"
       },
       {
@@ -1729,6 +2443,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_humanoide/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_04.png",
        "state": "SOURCE"
@@ -1739,6 +2458,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_humanoide/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_idle_05.png",
        "state": "SOURCE"
@@ -1746,6 +2470,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/eco_humanoide_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/eco_humanoide/idle/05.png",
        "state": "SOURCE"
       },
       {
@@ -1783,6 +2512,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/eco_humanoide/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_02.png",
        "state": "SOURCE"
@@ -1790,6 +2524,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/eco_humanoide_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/eco_humanoide/movimento/02.png",
        "state": "SOURCE"
       },
       {
@@ -1803,6 +2542,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/eco_humanoide/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_04.png",
        "state": "SOURCE"
@@ -1813,6 +2557,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/eco_humanoide/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/eco_humanoide_movimento_05.png",
        "state": "SOURCE"
@@ -1820,6 +2569,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/eco_humanoide_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/eco_humanoide/movimento/05.png",
        "state": "SOURCE"
       },
       {
@@ -3124,6 +3878,342 @@
     }
    },
    "atlas": "assets/production/characters/ch-hero.png"
+  },
+  "inseto_fenda": {
+   "available": {
+    "attack": {
+     "any": 5
+    },
+    "death": {
+     "any": 6
+    },
+    "hurt": {
+     "any": 4
+    },
+    "idle": {
+     "any": 5
+    },
+    "move": {
+     "any": 5
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/inseto_fenda/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/inseto_fenda/ataque/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/inseto_fenda/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/inseto_fenda/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/inseto_fenda/ataque/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/inseto_fenda/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/inseto_fenda/dano/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/inseto_fenda/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/inseto_fenda/dano/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/inseto_fenda/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/inseto_fenda/dissipacao/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/inseto_fenda/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/inseto_fenda/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/inseto_fenda/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/inseto_fenda/dissipacao/06.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/inseto_fenda/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/inseto_fenda/idle/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/inseto_fenda/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/inseto_fenda/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/inseto_fenda/idle/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/inseto_fenda/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/inseto_fenda/movimento/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/inseto_fenda/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/inseto_fenda/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/inseto_fenda/movimento/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "larva_eco": {
+   "available": {
+    "attack": {
+     "any": 5
+    },
+    "death": {
+     "any": 6
+    },
+    "hurt": {
+     "any": 4
+    },
+    "idle": {
+     "any": 5
+    },
+    "move": {
+     "any": 5
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/larva_eco/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/larva_eco/ataque/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/larva_eco/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/larva_eco/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/larva_eco/ataque/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/larva_eco/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/larva_eco/dano/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/larva_eco/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/larva_eco/dano/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/larva_eco/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/larva_eco/dissipacao/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/larva_eco/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/larva_eco/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/larva_eco/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/larva_eco/dissipacao/06.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/larva_eco/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/larva_eco/idle/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/larva_eco/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/larva_eco/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/larva_eco/idle/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/larva_eco/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/larva_eco/movimento/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/larva_eco/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/larva_eco/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/larva_eco/movimento/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
   },
   "lia": {
    "available": {
@@ -4533,26 +5623,362 @@
    },
    "atlas": null
   },
+  "sentinela_drone": {
+   "available": {
+    "attack": {
+     "any": 5
+    },
+    "death": {
+     "any": 6
+    },
+    "hurt": {
+     "any": 4
+    },
+    "idle": {
+     "any": 5
+    },
+    "move": {
+     "any": 5
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sentinela_drone/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sentinela_drone/ataque/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sentinela_drone/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sentinela_drone/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sentinela_drone/ataque/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sentinela_drone/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sentinela_drone/dano/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sentinela_drone/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sentinela_drone/dano/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sentinela_drone/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sentinela_drone/dissipacao/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sentinela_drone/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sentinela_drone/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sentinela_drone/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/sentinela_drone/dissipacao/06.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sentinela_drone/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sentinela_drone/idle/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sentinela_drone/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sentinela_drone/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sentinela_drone/idle/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sentinela_drone/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sentinela_drone/movimento/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sentinela_drone/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sentinela_drone/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sentinela_drone/movimento/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
+  "sombra_rasteira": {
+   "available": {
+    "attack": {
+     "any": 5
+    },
+    "death": {
+     "any": 6
+    },
+    "hurt": {
+     "any": 4
+    },
+    "idle": {
+     "any": 5
+    },
+    "move": {
+     "any": 5
+    }
+   },
+   "missing": [],
+   "frames": {
+    "attack": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_rasteira/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_rasteira/ataque/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_rasteira/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_rasteira/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sombra_rasteira/ataque/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "hurt": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dano/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dano/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dissipacao/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/sombra_rasteira/dissipacao/06.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "idle": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_rasteira/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_rasteira/idle/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_rasteira/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_rasteira/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sombra_rasteira/idle/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "move": {
+     "any": [
+      {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_rasteira/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_rasteira/movimento/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_rasteira/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_rasteira/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sombra_rasteira/movimento/05.png",
+       "state": "SOURCE"
+      }
+     ]
+    }
+   },
+   "atlas": null
+  },
   "sombra_ressonante": {
    "available": {
     "attack": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     },
     "death": {
-     "any": 12,
+     "any": 18,
      "any (atlas)": 5
     },
     "hurt": {
-     "any": 10,
+     "any": 14,
      "any (atlas)": 4
     },
     "idle": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     },
     "move": {
-     "any": 14,
+     "any": 19,
      "any (atlas)": 6
     }
    },
@@ -4571,6 +5997,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_ressonante/ataque/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_02.png",
        "state": "SOURCE"
@@ -4578,6 +6009,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/sombra_ressonante_ataque_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_ressonante/ataque/02.png",
        "state": "SOURCE"
       },
       {
@@ -4591,6 +6027,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_ressonante/ataque/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_04.png",
        "state": "SOURCE"
@@ -4601,6 +6042,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_ressonante/ataque/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_ataque_05.png",
        "state": "SOURCE"
@@ -4608,6 +6054,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/sombra_ressonante_ataque_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sombra_ressonante/ataque/05.png",
        "state": "SOURCE"
       },
       {
@@ -4645,6 +6096,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dano/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dano_02.png",
        "state": "SOURCE"
@@ -4652,6 +6108,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/sombra_ressonante_dano_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dano/02.png",
        "state": "SOURCE"
       },
       {
@@ -4665,6 +6126,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dano/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dano_04.png",
        "state": "SOURCE"
@@ -4672,6 +6138,11 @@
       {
        "frame": 4,
        "path": "assets/source/v4/monstros/sombra_ressonante_dano_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dano/04.png",
        "state": "SOURCE"
       },
       {
@@ -4699,6 +6170,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dissipacao/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_02.png",
        "state": "SOURCE"
@@ -4706,6 +6182,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/sombra_ressonante_dissipacao_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dissipacao/02.png",
        "state": "SOURCE"
       },
       {
@@ -4719,6 +6200,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dissipacao/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_04.png",
        "state": "SOURCE"
@@ -4729,6 +6215,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dissipacao/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_dissipacao_05.png",
        "state": "SOURCE"
@@ -4736,6 +6227,16 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/sombra_ressonante_dissipacao_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dissipacao/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v5-creatures/sombra_ressonante/dissipacao/06.png",
        "state": "SOURCE"
       },
       {
@@ -4763,6 +6264,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_ressonante/idle/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_02.png",
        "state": "SOURCE"
@@ -4770,6 +6276,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/sombra_ressonante_idle_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_ressonante/idle/02.png",
        "state": "SOURCE"
       },
       {
@@ -4783,6 +6294,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_ressonante/idle/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_04.png",
        "state": "SOURCE"
@@ -4793,6 +6309,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_ressonante/idle/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_idle_05.png",
        "state": "SOURCE"
@@ -4800,6 +6321,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/sombra_ressonante_idle_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sombra_ressonante/idle/05.png",
        "state": "SOURCE"
       },
       {
@@ -4837,6 +6363,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v5-creatures/sombra_ressonante/movimento/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_02.png",
        "state": "SOURCE"
@@ -4844,6 +6375,11 @@
       {
        "frame": 2,
        "path": "assets/source/v4/monstros/sombra_ressonante_movimento_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v5-creatures/sombra_ressonante/movimento/02.png",
        "state": "SOURCE"
       },
       {
@@ -4857,6 +6393,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v5-creatures/sombra_ressonante/movimento/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_04.png",
        "state": "SOURCE"
@@ -4867,6 +6408,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 4,
+       "path": "assets/source/v5-creatures/sombra_ressonante/movimento/04.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 5,
        "path": "assets/source/v4/monstros/alpha-review/sombra_ressonante_movimento_05.png",
        "state": "SOURCE"
@@ -4874,6 +6420,11 @@
       {
        "frame": 5,
        "path": "assets/source/v4/monstros/sombra_ressonante_movimento_05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v5-creatures/sombra_ressonante/movimento/05.png",
        "state": "SOURCE"
       },
       {
@@ -5563,30 +7114,6 @@
    "frames": {},
    "atlas": null
   },
-  "cao_anomalo": {
-   "available": {},
-   "missing": [
-    "idle",
-    "move",
-    "attack",
-    "hurt",
-    "death"
-   ],
-   "frames": {},
-   "atlas": null
-  },
-  "inseto_fenda": {
-   "available": {},
-   "missing": [
-    "idle",
-    "move",
-    "attack",
-    "hurt",
-    "death"
-   ],
-   "frames": {},
-   "atlas": null
-  },
   "planta_espinhosa": {
    "available": {},
    "missing": [
@@ -5600,66 +7127,6 @@
    "atlas": null
   },
   "deformado": {
-   "available": {},
-   "missing": [
-    "idle",
-    "move",
-    "attack",
-    "hurt",
-    "death"
-   ],
-   "frames": {},
-   "atlas": null
-  },
-  "corvo_sombrio": {
-   "available": {},
-   "missing": [
-    "idle",
-    "move",
-    "attack",
-    "hurt",
-    "death"
-   ],
-   "frames": {},
-   "atlas": null
-  },
-  "larva_eco": {
-   "available": {},
-   "missing": [
-    "idle",
-    "move",
-    "attack",
-    "hurt",
-    "death"
-   ],
-   "frames": {},
-   "atlas": null
-  },
-  "sentinela_drone": {
-   "available": {},
-   "missing": [
-    "idle",
-    "move",
-    "attack",
-    "hurt",
-    "death"
-   ],
-   "frames": {},
-   "atlas": null
-  },
-  "sombra_rasteira": {
-   "available": {},
-   "missing": [
-    "idle",
-    "move",
-    "attack",
-    "hurt",
-    "death"
-   ],
-   "frames": {},
-   "atlas": null
-  },
-  "eco_corrompido": {
    "available": {},
    "missing": [
     "idle",

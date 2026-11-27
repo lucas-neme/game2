@@ -6,18 +6,25 @@ cada frame estão em `assets/manifests/animation-index.json`.
 
 | Personagem | Disponível (animação: direção×frames) | Faltando |
 |---|---|---|
-| anomalia_esferica | attack: any×14, any (atlas)×6; death: any×12, any (atlas)×5; hurt: any×10, any (atlas)×3; idle: any×14, any (atlas)×6; move: any×14, any (atlas)×6 | — |
+| anomalia_esferica | attack: any×19, any (atlas)×6; death: any×18, any (atlas)×5; hurt: any×14, any (atlas)×3; idle: any×19, any (atlas)×6; move: any×19, any (atlas)×6 | — |
 | bento | death: any×2; idle: south×4, side×4, north×4, any (atlas)×4, south (atlas)×4, side (atlas)×4, north (atlas)×4; sit: any×7, any (atlas)×7; stand: any×3, any (atlas)×3; talk: south×4, any (atlas)×4, south (atlas)×4; walk: south×4, north×6, side×7, any (atlas)×8, south (atlas)×4, side (atlas)×7, north (atlas)×6; work: side×8, side (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | downed |
+| cao_anomalo | attack: any×5; death: any×6; hurt: any×4; idle: any×5; move: any×5 | — |
 | celina | death: any×2; idle: south×4, side×4, north×4, any (atlas)×4, south (atlas)×4, side (atlas)×4, north (atlas)×4; sit: any×6, any (atlas)×6; stand: any×4, any (atlas)×4; talk: south×4, any (atlas)×4, south (atlas)×4; walk: south×8, side×8, north×8, any (atlas)×8, south (atlas)×8, side (atlas)×8, north (atlas)×8; work: side×8, side (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | downed |
 | colosso_ressonancia | attack: any×12, any (atlas)×5; death: any×12, any (atlas)×5; hurt: any×10, any (atlas)×4; idle: any×10, any (atlas)×4; move: any×10, any (atlas)×4; preparacao: any (atlas)×4 | — |
-| eco_humanoide | attack: any×14, any (atlas)×6; death: any×12, any (atlas)×5; hurt: any×10, any (atlas)×3; idle: any×14, any (atlas)×6; move: any×14, any (atlas)×6 | — |
+| corvo_sombrio | attack: any×5; death: any×6; hurt: any×4; idle: any×5; move: any×5 | — |
+| eco_corrompido | attack: any×5; death: any×6; hurt: any×4; idle: any×5; move: any×5 | — |
+| eco_humanoide | attack: any×19, any (atlas)×6; death: any×18, any (atlas)×5; hurt: any×14, any (atlas)×3; idle: any×19, any (atlas)×6; move: any×19, any (atlas)×6 | — |
 | helena | death: any×2; idle: south×4, north×4, side×4, any (atlas)×4, south (atlas)×4, north (atlas)×4, side (atlas)×4; sit: any×6, any (atlas)×6; stand: any×5, any (atlas)×5; talk: south×4, side×4, any (atlas)×4, south (atlas)×4, side (atlas)×4; walk: south×4, north×4, side×8, any (atlas)×8, south (atlas)×4, north (atlas)×4, side (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | work, downed |
 | hero | death: any×2, east×12, north×6, south×6; idle: any×1, east×8, north×4, south×4, any (atlas)×4; sit: any×1, east×4, any (atlas)×3; stand: east×4; talk: east×8, south×4, any (atlas)×4; walk: any×1, east×32, north×24, south×24, west×16, any (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | work, downed |
+| inseto_fenda | attack: any×5; death: any×6; hurt: any×4; idle: any×5; move: any×5 | — |
+| larva_eco | attack: any×5; death: any×6; hurt: any×4; idle: any×5; move: any×5 | — |
 | lia | death: any×2; idle: south×4, side×4, north×4, any (atlas)×4, south (atlas)×4, north (atlas)×4, side (atlas)×4; sit: any×7, any (atlas)×7; stand: any×4, any (atlas)×4; talk: south×4, side×4, any (atlas)×4, south (atlas)×4, side (atlas)×4; walk: side×4, north×4, any (atlas)×8, side (atlas)×4, north (atlas)×4; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | work, downed |
 | mutante_floresta | attack: any×14, any (atlas)×6; death: any×12, any (atlas)×5; hurt: any×10, any (atlas)×4; idle: any×14, any (atlas)×6; move: any×14, any (atlas)×6 | — |
 | nora | death: any×2; idle: south×4, side×4, north×4, any (atlas)×4, south (atlas)×4, side (atlas)×4, north (atlas)×4; sit: any×5, any (atlas)×5; stand: any×2, any (atlas)×2; talk: south×4, side×4, any (atlas)×4, south (atlas)×4, side (atlas)×4; walk: south×8, side×8, north×8, any (atlas)×8, south (atlas)×8, side (atlas)×8, north (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | work, downed |
 | raul | death: any×2; idle: south×4, north×2, side×4, any (atlas)×4, south (atlas)×4, north (atlas)×2, side (atlas)×4; sit: any×5, any (atlas)×5; stand: any×3, any (atlas)×3; talk: south×4, side×4, any (atlas)×4, south (atlas)×4, side (atlas)×4; walk: south×6, north×8, side×8, any (atlas)×8, south (atlas)×6, north (atlas)×8, side (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | work, downed |
-| sombra_ressonante | attack: any×14, any (atlas)×6; death: any×12, any (atlas)×5; hurt: any×10, any (atlas)×4; idle: any×14, any (atlas)×6; move: any×14, any (atlas)×6 | — |
+| sentinela_drone | attack: any×5; death: any×6; hurt: any×4; idle: any×5; move: any×5 | — |
+| sombra_rasteira | attack: any×5; death: any×6; hurt: any×4; idle: any×5; move: any×5 | — |
+| sombra_ressonante | attack: any×19, any (atlas)×6; death: any×18, any (atlas)×5; hurt: any×14, any (atlas)×4; idle: any×19, any (atlas)×6; move: any×19, any (atlas)×6 | — |
 | vigia_projeto | attack: any×14, any (atlas)×6; death: any×12, any (atlas)×5; hurt: any×10, any (atlas)×4; idle: any×14, any (atlas)×6; move: any×14, any (atlas)×6 | — |
 | m-medico | sit: any (atlas)×3; idle: any (atlas)×4; walk: any (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; talk: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | move, death |
 | m-guarda | sit: any (atlas)×3; idle: any (atlas)×4; walk: any (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; talk: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | move, death |
@@ -25,15 +32,8 @@ cada frame estão em `assets/manifests/animation-index.json`.
 | m-ferroviario | sit: any (atlas)×3; idle: any (atlas)×4; walk: any (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; talk: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | move, death |
 | m-professor | sit: any (atlas)×3; idle: any (atlas)×4; walk: any (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; talk: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | move, death |
 | m-crianca | sit: any (atlas)×3; idle: any (atlas)×4; walk: any (atlas)×8; run: any (atlas)×8; sneak: any (atlas)×8; interact: any (atlas)×4; talk: any (atlas)×4; defend: any (atlas)×2; dodge: any (atlas)×6; attack: any (atlas)×6; hurt: any (atlas)×3; use: any (atlas)×4; react: any (atlas)×4 | move, death |
-| cao_anomalo | — | idle, move, attack, hurt, death |
-| inseto_fenda | — | idle, move, attack, hurt, death |
 | planta_espinhosa | — | idle, move, attack, hurt, death |
 | deformado | — | idle, move, attack, hurt, death |
-| corvo_sombrio | — | idle, move, attack, hurt, death |
-| larva_eco | — | idle, move, attack, hurt, death |
-| sentinela_drone | — | idle, move, attack, hurt, death |
-| sombra_rasteira | — | idle, move, attack, hurt, death |
-| eco_corrompido | — | idle, move, attack, hurt, death |
 | mutacao_aquatica | — | idle, move, attack, hurt, death |
 | cepa_esporal | — | idle, move, attack, hurt, death |
 | espectro_infantil | — | idle, move, attack, hurt, death |

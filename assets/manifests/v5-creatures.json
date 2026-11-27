@@ -1,0 +1,129 @@
+{
+ "source": "fz-harmonizado-v5-completo.zip (monstros/*/sequence.png)",
+ "atlas": "assets/production/creatures/v5/atlas.png",
+ "sha256": "bda4e5996499e52729071da21de2433d93c319522674060ad643b15fb8637833",
+ "frames_dir": "assets/source/v5-creatures/",
+ "creatures": {
+  "anomalia_esferica": {
+   "k": 0.6909,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "cao_anomalo": {
+   "k": 0.254,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "corvo_sombrio": {
+   "k": 0.1659,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "eco_corrompido": {
+   "k": 0.3571,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "eco_humanoide": {
+   "k": 0.4111,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "inseto_fenda": {
+   "k": 0.1319,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "larva_eco": {
+   "k": 0.1786,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "sentinela_drone": {
+   "k": 0.3558,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "sombra_rasteira": {
+   "k": 0.2689,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  },
+  "sombra_ressonante": {
+   "k": 0.3547,
+   "frames": {
+    "idle": 5,
+    "movimento": 5,
+    "ataque": 5,
+    "dano": 4,
+    "dissipacao": 6
+   },
+   "state": "PRODUCTION"
+  }
+ },
+ "not_integrated": {
+  "anomalia_temporal": "opaque block sheet (background and grid need manual separation)",
+  "cepa_esporal": "opaque block sheet (background and grid need manual separation)",
+  "colosso_ressonancia": "opaque block sheet (background and grid need manual separation)",
+  "entidade_luz": "opaque block sheet (background and grid need manual separation)",
+  "enxame": "opaque block sheet (background and grid need manual separation)",
+  "espectro_infantil": "opaque block sheet (background and grid need manual separation)",
+  "guardiao_bunker": "opaque block sheet (background and grid need manual separation)",
+  "mutacao_aquatica": "opaque block sheet (background and grid need manual separation)",
+  "mutante_floresta": "sequence boundaries not distinct"
+ }
+}
