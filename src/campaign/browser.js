@@ -6,6 +6,21 @@ var valleyActorsCache={key:null,rows:null};
 var valleyBaseNight=drawNight,valleyBaseRoomDraw=fzDrawRoom;
 var valleyAudioBase=soundscape,valleyAudioGraph=null,valleyAudioTimer=null,valleyAudioEventKey=null;
 var valleyMusic={current:null,previous:null,pending:null,failed:new Map(),volume:.38,fadeAt:0,desired:null,since:0};
+var valleyMix={music:.38,atmosphere:1};
+try{const saved=JSON.parse(localStorage.getItem('fz.audio.mix.v1')||'null');if(saved)for(const k of Object.keys(valleyMix))if(Number.isFinite(saved[k]))valleyMix[k]=Math.max(0,Math.min(1,saved[k]))}catch{}
+function valleyInstallMixer(){
+ if(typeof document==='undefined'||document.getElementById('valleyMixer'))return;
+ const settings=document.getElementById('combatSettings');if(!settings)return;
+ const panel=document.createElement('details');panel.id='valleyMixer';const summary=document.createElement('summary');summary.textContent='Áudio da campanha';panel.append(summary);
+ for(const [key,title] of [['music','Trilha musical'],['atmosphere','Atmosfera paranormal']]){
+  const label=document.createElement('label'),input=document.createElement('input'),value=document.createElement('output');
+  label.style.display='block';label.style.padding='8px';input.type='range';input.min='0';input.max='100';input.step='1';input.value=String(Math.round(valleyMix[key]*100));input.setAttribute('aria-label',title);value.textContent=input.value+'%';
+  input.addEventListener('input',()=>{valleyMix[key]=Number(input.value)/100;value.textContent=input.value+'%';try{localStorage.setItem('fz.audio.mix.v1',JSON.stringify(valleyMix))}catch{}});
+  label.append(document.createTextNode(title+' '),input,value);panel.append(label);
+ }
+ settings.before(panel);
+}
+valleyInstallMixer();
 function valleyMusicDispose(a){if(a){a.pause();a.removeAttribute('src');a.load()}}
 function valleyMusicStop(){const m=valleyMusic;const tracks=[m.current,m.previous,m.pending];m.current=m.previous=m.pending=null;m.desired=null;m.failed.clear();for(const a of tracks)valleyMusicDispose(a)}
 function valleyMusicUpdate(c,loc){
@@ -21,7 +36,7 @@ function valleyMusicUpdate(c,loc){
   a.addEventListener('error',failed,{once:true});
   Promise.resolve(a.play()).then(()=>{if(m.pending!==a)return;m.pending=null;valleyMusicDispose(m.previous);m.previous=m.current;m.current=a;m.fadeAt=audio.currentTime;m.failed.delete(cue.id)}).catch(failed);
  }
- const vol=hidden?0:m.volume,fade=Math.min(1,Math.max(0,(now-m.fadeAt)/3));
+ const vol=hidden?0:valleyMix.music,fade=Math.min(1,Math.max(0,(now-m.fadeAt)/3));
  if(m.current)m.current.volume=vol*Math.sin(fade*Math.PI/2);
  if(m.previous){m.previous.volume=vol*Math.cos(fade*Math.PI/2);if(fade>=1){const a=m.previous;m.previous=null;valleyMusicDispose(a)}}
  return [m.current,m.previous].some(a=>a&&!a.paused&&!a.ended&&a.readyState>=2);
@@ -49,7 +64,7 @@ function valleyAudioUpdate(){
  const g=valleyAudioGraph,now=audio.currentTime,c=valleyState(),loc=valleyAudioLocation(),p=VALLEY.audioDirection(c,s.t,loc,!!valleyCinemaReplay);
  const musicPlaying=valleyMusicUpdate(c,loc);
  const hidden=typeof document!=='undefined'&&document.hidden;
- const volume=hidden?0:musicPlaying?.12:1;
+ const volume=hidden?0:valleyMix.atmosphere*(musicPlaying?.12:1);
  g.bus.gain.setTargetAtTime(.65*volume,now,.2);
  g.nodes.forEach((o,i)=>{o.frequency.setTargetAtTime(p.root*[1,1.5,2.01][i],now,.65);g.gains[i].gain.setTargetAtTime(p.bed*[1,.42,p.anomaly?.6:.17][i],now,.7)});
  if(g.lastMood!==p.mood){g.lastMood=p.mood;g.step=0;g.next=now+.1}
