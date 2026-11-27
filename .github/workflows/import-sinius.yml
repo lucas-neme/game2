@@ -1,0 +1,50 @@
+name: Import SINIUS soundtrack
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/import-sinius.yml']
+permissions:
+  contents: write
+concurrency:
+  group: sinius-import
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: python -m pip install --upgrade yt-dlp
+      - name: Import and validate public audio
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, pathlib, subprocess, hashlib
+          root = pathlib.Path('assets/music')
+          catalog = json.loads((root/'sinius-selection.json').read_text())
+          records = []
+          for track in catalog['tracks']:
+              target = pathlib.Path(track['file'])
+              if target.parent != root or not target.name.startswith('sinius-'):
+                  raise ValueError('Invalid output path')
+              if not target.exists():
+                  subprocess.run(['yt-dlp','--no-playlist','--no-overwrites','--extract-audio','--audio-format','mp3','--audio-quality','0','-o',str(target.with_suffix('.%(ext)s')),track['page']],check=True)
+              info = json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(target)]))
+              duration = float(info['format']['duration'])
+              if duration < 60 or not any(s['codec_type']=='audio' for s in info['streams']):
+                  raise ValueError('Incomplete audio: '+track['id'])
+              records.append(dict(track, artist=catalog['artist'], license=catalog['license'], licenseUrl=catalog['licenseUrl'], duration=duration, bytes=target.stat().st_size, sha256=hashlib.sha256(target.read_bytes()).hexdigest()))
+          (root/'sinius-manifest.json').write_text(json.dumps(records,indent=2)+'\n')
+          credits = ['# Complementary soundtrack — SINIUS','', 'Music by SINIUS (Daljit Kundi). Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Audio may be transcoded to MP3 for playback.','']
+          credits += ['- ['+r['title']+']('+r['page']+') — '+r['file'] for r in records]
+          (root/'SINIUS-CREDITS.md').write_text('\n'.join(credits)+'\n')
+          PY
+      - name: Commit verified audio
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/music/sinius-*.mp3 assets/music/sinius-manifest.json assets/music/SINIUS-CREDITS.md
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "assets(audio): import verified SINIUS soundtrack"
+          git push origin HEAD:main
