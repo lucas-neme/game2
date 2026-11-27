@@ -176,6 +176,33 @@ function createValleyCampaign(data){
   score=Math.max(0,Math.min(100,score));const lost=[a,b].some(id=>deadAt(id)!=null&&deadAt(id)<=t);
   return {score,memories,status:lost?'vínculo interrompido':score>=75?'aliados':score<=40?'em conflito':'coexistência'};
  }
+ // Loyalty is derived from authored conflicts, never from random betrayal rolls.
+ const loyaltyRules=[
+ {id:'rail-protection',actors:['guard','rail-worker'],choice:'warn-workers',loc:'village',goal:'Proteger os ferroviários',support:'Vamos avisar os colegas antes do próximo turno.'},
+ {id:'rail-silence',actors:['guard','rail-worker'],choice:'observe-workers',loc:'village',goal:'Questionar o silêncio sobre os desaparecimentos',conflict:'Não vou mais depender de avisos que chegam tarde.'},
+ {id:'patient-archive',actors:['clinic','helena'],choice:'protect-patient',loc:'archive',goal:'Preservar os registros sem expor pacientes',support:'Vamos manter uma cópia protegida dos registros.'},
+ {id:'patient-dispute',actors:['clinic','helena'],choice:'public-patient',loc:'archive',goal:'Disputar os limites da divulgação',conflict:'A verdade não justifica expor os pacientes.'}
+ ];
+ function loyaltyFor(id,t,c,deadAt=()=>null){
+  if(!c.train||!byId[id])return [];
+  const cutoff=Math.min(t,c.outcome?.at??43200);
+  const alive=a=>(deadAt(a)==null||deadAt(a)>cutoff)&&!departed(c,a,cutoff)&&(departureAt(c,a)==null||departureAt(c,a)>cutoff);
+  if(!alive(id))return [];
+  return loyaltyRules.filter(r=>r.actors.includes(id)&&Object.values(c.choices||{}).some(q=>q.id===r.choice&&q.at+60<=cutoff)).flatMap(r=>{
+   const other=r.actors.find(a=>a!==id);if(!alive(other))return [];
+   const link=relationship(id,other,cutoff,c,deadAt);
+   const mode=r.support&&link.score>=75?'alliance':r.conflict&&link.score<=40?'conflict':null;
+   return mode?[{id:r.id,other,mode,loc:r.loc,goal:r.goal,dialogue:mode==='alliance'?r.support:r.conflict}]:[];
+  });
+ }
+ function loyaltyDuty(id,t,c,deadAt=()=>null){
+  if(c.outcome||day(t)<14||minute(t)<1140||minute(t)>=1200)return null;
+  const l=loyaltyFor(id,t,c,deadAt)[0];if(!l)return null;
+  // Conflict keeps the character away from the disputed place; cooperation assigns a shared goal.
+  const loc=l.mode==='alliance'?l.loc:byId[id].psychology?.behavior?.safe;
+  if(!loc||!data.locations[loc])return null;
+  return {loc,activity:l.goal,reason:'loyalty:'+l.id,loyalty:l.id,dialogue:l.dialogue,changed:true};
+ }
  function witnessSocial(c,t,id,actor,near,deadAt=()=>null){
   const e=activeSocial(actor,t,c,deadAt);if(!near||!e||e.id!==id)return false;c.socialSeen??={};if(c.socialSeen[id])return false;c.socialSeen[id]={at:t,actor};return true;
  }
@@ -294,6 +321,7 @@ function createValleyCampaign(data){
   const role=minute(t)>=660&&minute(t)<720?roleAssignments(c,t,deadAt).find(r=>r.actor===id):null;
   if(role)return {...result,loc:role.loc,activity:role.activity,changed:true,reason:'succession:'+role.id};
   const hazard=manifestationAvoidance(id,t,c);if(hazard)return {...result,...hazard};
+  const loyalty=loyaltyDuty(id,t,c,deadAt);if(loyalty)return {...result,...loyalty};
   const autonomous=autonomousBehavior(id,t,c,deadAt);return autonomous?{...result,...autonomous,changed:true}:result;
  }
  function collect(c,t,id,index,via){const m=missions[id],e=m?.sources[index];if(!e||!available(c,t).includes(m))return false;const key=id+':'+index;if(c.evidence[key])return false;if(e.actor?!['actor','archive'].includes(via):via!=='site')return false;c.evidence[key]={at:t,via};return true}
@@ -315,6 +343,7 @@ function createValleyCampaign(data){
    const scenes=Object.entries(c.socialHistory||{}).filter(([id,r])=>r.end<=t&&r.status==='concluído'&&r.actors.includes(n.id)).sort((a,b)=>a[1].end-b[1].end);
    const partners=[...new Set(scenes.flatMap(([id,r])=>r.actors.filter(id=>id!==n.id)))];
    for(const other of partners){const rel=relationship(n.id,other,t,c,deadAt);lines.push('Vínculo com '+byId[other].name+': '+rel.status+'.')}
+   for(const l of loyaltyFor(n.id,t,c,deadAt))lines.push((l.mode==='alliance'?'Manteve a cooperação com ':'Rompeu a cooperação com ')+byId[l.other].name+' em torno do objetivo: '+l.goal.toLowerCase()+'.');
    if(n.id==='electrician'&&c.infrastructure?.switchgear?.at<=t)lines.push(c.infrastructure.switchgear.mode==='repair'?'O protagonista acionou a alimentação de emergência.':'O protagonista isolou os circuitos do Horizonte.');
    if(n.id==='watchman'&&c.outcome.uncle==='resgatado')lines.push('O tio do protagonista foi retirado do confinamento.');
    if(n.id==='bento'||n.id==='scientist'||n.id==='radio-technician'){if(mechanismEffects(c,t).includes('counterwave-reference'))lines.push('A contrafase foi calibrada antes do desfecho.')}
@@ -367,5 +396,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,informationNetwork,informationFor,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,informationNetwork,informationFor,loyaltyFor,loyaltyDuty,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }
