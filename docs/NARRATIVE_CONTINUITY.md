@@ -45,3 +45,7 @@ Five optional anomalies with chapter, time and local signal requirements. Electr
 ## V12 — Environmental mechanisms
 
 Six optional evidence-gated control panels with dependency ordering, recoverable mistakes, time costs and persistent calibration. Counterwave calibration reduces project signal by six internal points; final preparation records completed calibrations. Existing clues and endings remain independent. Controls are in-game buttons rather than new meshes or animations; transfer authorization does not open a new physical passage.
+
+## V13 — Resident epilogues
+
+Sixteen individually authored outcome profiles, seven ending contexts, completed tasks, social relationships, evacuation and mortality at the final timestamp. Frozen snapshot in outcome prevents post-ending changes or false survival claims. Personal objectives are not assumed achieved when a related preparation task is completed; prose distinguishes partial progress from confirmed facts. Existing saves with endings can derive a snapshot from available historical state. Journal renders sixteen expandable entries. This is text epilogue, not an animated cinematic. Calendar and meeting settlement honor final cutoff; active social scenes exclude evacuated actors.

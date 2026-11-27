@@ -94,7 +94,7 @@ function createValleyCampaign(data){
  }
  function activeSocial(id,t,c,deadAt=()=>null){
   if(!c.train||c.outcome)return null;
-  return (data.socialScenes||[]).find(e=>{if(!e.actors.includes(id)||c.socialHistory?.[e.id]||e.actors.some(a=>deadAt(a)!=null&&deadAt(a)<=t))return false;const w=socialWindow(e,c);return w&&t>=w.at&&t<w.end})||null;
+  return (data.socialScenes||[]).find(e=>{if(!e.actors.includes(id)||c.socialHistory?.[e.id]||e.actors.some(a=>(deadAt(a)!=null&&deadAt(a)<=t)||departed(c,a,t)))return false;const w=socialWindow(e,c);return w&&t>=w.at&&t<w.end})||null;
  }
  function settleSocial(c,t,deadAt=()=>null){
   c.socialHistory??={};const added=[];if(!c.train)return added;
@@ -234,9 +234,37 @@ function createValleyCampaign(data){
  function collect(c,t,id,index,via){const m=missions[id],e=m?.sources[index];if(!e||!available(c,t).includes(m))return false;const key=id+':'+index;if(c.evidence[key])return false;if(e.actor?!['actor','archive'].includes(via):via!=='site')return false;c.evidence[key]={at:t,via};return true}
  function solve(c,t,id,answer){const m=missions[id];if(!m||!available(c,t).includes(m)||!m.sources.every((_,i)=>c.evidence[id+':'+i])||answer!==m.answer)return false;c.solved[id]={at:t};return true}
  function choose(c,t,id,choice){const m=missions[id];if(c.outcome||!m||!c.solved[id]||c.choices[id]||!m.choices.some(q=>q[0]===choice))return false;c.choices[id]={id:choice,at:t};return true}
- function tick(c,t){const added=[];for(const e of data.events){const at=(e.day-1)*1440+e.minute;if(at<=t&&!c.events[e.day]){c.events[e.day]=at;added.push(e)}}return added}
- function settleMeetings(c,t,deadAt=()=>null){c.meetings??={};const added=[];for(const e of data.appointments||[]){const at=(e.day-1)*1440+e.minute,end=(e.day-1)*1440+e.until;if(end>t||c.meetings[e.id])continue;const a=meetingVariant(e,c,at),actors=e.actors.filter(id=>{const dead=deadAt(id);return (dead==null||dead>at)&&(departureAt(c,id)==null||departureAt(c,id)>at)});const row={at,end,loc:a.loc,activity:a.activity,actors,redirected:!!a.redirected,status:actors.length>=2?'realizado':'cancelado',witnessed:!!c.seenMeetings?.[e.id]};c.meetings[e.id]=row;added.push({id:e.id,...row})}return added}
+ function tick(c,t){const added=[];for(const e of data.events){const at=(e.day-1)*1440+e.minute;if(at<=Math.min(t,c.outcome?.at??43200)&&!c.events[e.day]){c.events[e.day]=at;added.push(e)}}return added}
+ function settleMeetings(c,t,deadAt=()=>null){c.meetings??={};const added=[];for(const e of data.appointments||[]){const at=(e.day-1)*1440+e.minute,end=(e.day-1)*1440+e.until;if(end>Math.min(t,c.outcome?.at??43200)||c.meetings[e.id])continue;const a=meetingVariant(e,c,at),actors=e.actors.filter(id=>{const dead=deadAt(id);return (dead==null||dead>at)&&(departureAt(c,id)==null||departureAt(c,id)>at)});const row={at,end,loc:a.loc,activity:a.activity,actors,redirected:!!a.redirected,status:actors.length>=2?'realizado':'cancelado',witnessed:!!c.seenMeetings?.[e.id]};c.meetings[e.id]=row;added.push({id:e.id,...row})}return added}
  function witness(c,t,id,near){const e=(data.appointments||[]).find(e=>e.id===id);if(!e||!near)return false;const at=(e.day-1)*1440+e.minute,end=(e.day-1)*1440+e.until;if(t<at||t>=end)return false;c.seenMeetings??={};if(c.seenMeetings[id])return false;c.seenMeetings[id]={at:t,loc:meetingVariant(e,c,at).loc};return true}
+ // Freeze only facts known at the final timestamp; never invent deaths or fulfilled personal goals.
+ function residentEpilogues(c,deadAt=()=>null){
+  if(!c.outcome)return [];
+  const t=c.outcome.at;
+  return data.npcs.map(n=>{
+   const death=deadAt(n.id),left=departed(c,n.id,t),dead=death!=null&&death<=t;
+   const status=dead?'morto':left?'evacuado':'presente no último registro';
+   const tasks=Object.entries(c.storyHistory||{}).filter(([id,r])=>r.npc===n.id&&r.end<=t&&r.status==='concluído');
+   const fulfilled=!!n.epilogue?.requires.some(id=>tasks.some(([k])=>k===id));
+   const lines=[fulfilled?n.epilogue.achieved:n.epilogue?.pending||n.bio];
+   const scenes=Object.entries(c.socialHistory||{}).filter(([id,r])=>r.end<=t&&r.status==='concluído'&&r.actors.includes(n.id)).sort((a,b)=>a[1].end-b[1].end);
+   const partners=[...new Set(scenes.flatMap(([id,r])=>r.actors.filter(id=>id!==n.id)))];
+   for(const other of partners){const rel=relationship(n.id,other,t,c,deadAt);lines.push('Vínculo com '+byId[other].name+': '+rel.status+'.')}
+   if(n.id==='electrician'&&c.infrastructure?.switchgear?.at<=t)lines.push(c.infrastructure.switchgear.mode==='repair'?'O protagonista acionou a alimentação de emergência.':'O protagonista isolou os circuitos do Horizonte.');
+   if(n.id==='watchman'&&c.outcome.uncle==='resgatado')lines.push('O tio do protagonista foi retirado do confinamento.');
+   if(n.id==='bento'||n.id==='scientist'||n.id==='radio-technician'){if(mechanismEffects(c,t).includes('counterwave-reference'))lines.push('A contrafase foi calibrada antes do desfecho.')}
+   if(n.id==='future'&&c.outcome.id==='truth')lines.push('O desfecho registra a divulgação das provas.');
+   if(dead)lines.push('Sua morte foi registrada antes do encerramento da campanha.');
+   else if(left)lines.push('Embarcou no trem de retirada; sua vida posterior não foi acompanhada.');
+   else lines.push(data.endingEpilogues?.[c.outcome.id]||'O destino posterior permanece desconhecido.');
+   return {id:n.id,name:n.name,status,fulfilled,tasks:tasks.map(([id,r])=>id),text:lines.join(' ')};
+  });
+ }
+ function freezeEpilogues(c,deadAt=()=>null){
+  if(!c.outcome)return [];
+  if(!Array.isArray(c.outcome.residents))c.outcome.residents=residentEpilogues(c,deadAt);
+  return c.outcome.residents;
+ }
  function endings(c,t){if(!c.train||!c.solved.last||day(t)<28||t>=43200||c.outcome)return [];const selected=id=>Object.values(c.choices).some(x=>x.id===id);
   const out=[["shutdown","Desligar fisicamente o emissor"],["horizon","Autorizar a amplificação"]];
   if(c.solved.zero&&selected("test-counterwave"))out.push(["zero","Emitir a Frequência Zero"]);
@@ -248,5 +276,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }

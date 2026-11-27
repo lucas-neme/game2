@@ -206,3 +206,23 @@ assert.equal(campaign.mechanismEffects(mech,27*1440+699).length,0);
 const mechSave=campaign.normalize(JSON.parse(JSON.stringify(mech)));
 assert.equal(campaign.mechanismEffects(mechSave,mt).length,6);
 console.log('Environmental mechanisms: evidence gating, ordered calibrations, invalid inputs, retry, completion and persistence passed.');
+
+const epi=campaign.fresh();epi.train=true;const et=29*1440+700;
+assert.equal(campaign.residentEpilogues(epi).length,0);
+epi.outcome={id:'zero',at:et,uncle:'resgatado'};
+epi.departures.elder={at:23*1440+1080,status:'evacuado'};
+epi.storyHistory['guard-corridor']={npc:'guard',end:22*1440,status:'concluído'};
+epi.storyHistory['celina-patient-list']={npc:'celina',end:et+1,status:'concluído'};
+const loss=id=>id==='clinic'?et-1:id==='helena'?et+1:null;
+const rows=campaign.freezeEpilogues(epi,loss);
+assert.equal(rows.length,16);assert.equal(new Set(rows.map(r=>r.id)).size,16);
+assert.equal(rows.find(r=>r.id==='clinic').status,'morto');
+assert.equal(rows.find(r=>r.id==='elder').status,'evacuado');
+assert.equal(rows.find(r=>r.id==='helena').status,'presente no último registro');
+assert.equal(rows.find(r=>r.id==='guard').fulfilled,true);
+assert.equal(rows.find(r=>r.id==='celina').fulfilled,false);
+assert.ok(rows.find(r=>r.id==='watchman').text.includes('retirado do confinamento'));
+assert.deepEqual(campaign.freezeEpilogues(epi,()=>et-1),rows);
+const restored=campaign.normalize(JSON.parse(JSON.stringify(epi)));assert.deepEqual(campaign.freezeEpilogues(restored),rows);
+for(const id of ['shutdown','horizon','zero','contact','truth','sacrifice','silence']){const c=campaign.fresh();c.outcome={id,at:et};const rs=campaign.residentEpilogues(c);assert.equal(rs.length,16);assert.ok(rs.every(r=>r.text.includes(data.endingEpilogues[id])))}
+console.log('Resident epilogues: all residents, seven endings, death/departure precedence, cutoff and immutable snapshot passed.');

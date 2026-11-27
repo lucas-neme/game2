@@ -1273,6 +1273,13 @@
           "help": "shelter",
           "activity": "Reorganiza o atendimento aos feridos"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "public-shelter"
+        ],
+        "achieved": "Lia deixou um registro de leitos e prontuários conciliados.",
+        "pending": "A proteção dos pacientes continuava sendo sua prioridade; não há confirmação de que todos tenham sido atendidos."
       }
     },
     {
@@ -2378,6 +2385,14 @@
           "help": "rail",
           "activity": "Reforça a vigilância da estação"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "guard-corridor",
+          "guard-trail"
+        ],
+        "achieved": "Raul registrou rotas de proteção para os moradores.",
+        "pending": "A segurança da comunidade e de sua filha permaneceu uma preocupação sem resolução registrada."
       }
     },
     {
@@ -3483,6 +3498,13 @@
           "help": "radio",
           "activity": "Preserva gravações de emergência"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "archive-evidence"
+        ],
+        "achieved": "Nora organizou cópias das provas e preservou parte da memória do Vale.",
+        "pending": "As gravações permaneceram uma pergunta sem resposta definitiva."
       }
     },
     {
@@ -4588,6 +4610,13 @@
           "help": "archive",
           "activity": "Protege os registros ameaçados"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "exposure-evidence"
+        ],
+        "achieved": "Helena cruzou os nomes apagados com as provas do Horizonte.",
+        "pending": "A recuperação da identidade das vítimas permaneceu incompleta."
       }
     },
     {
@@ -5693,6 +5722,13 @@
           "help": "bento",
           "activity": "Repara equipamentos de comunicação"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "bento-calibration"
+        ],
+        "achieved": "Bento reuniu referências temporais para a contramedida; a perda da filha não foi desfeita.",
+        "pending": "Os relógios não forneceram uma resposta definitiva sobre sua filha."
       }
     },
     {
@@ -6798,6 +6834,13 @@
           "help": "clinic",
           "activity": "Procura informações sobre o filho"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "celina-patient-list"
+        ],
+        "achieved": "Celina examinou a lista protegida de pacientes, mas o destino do filho não foi confirmado.",
+        "pending": "A busca pelo filho permaneceu sem conclusão."
       }
     },
     {
@@ -7903,6 +7946,14 @@
           "help": "rail",
           "activity": "Verifica os equipamentos ferroviários"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "workers-rescue",
+          "discreet-evidence"
+        ],
+        "achieved": "Anselmo deixou trabalho documentado sobre a remessa H-17 e as rotas de serviço.",
+        "pending": "As dúvidas sobre a remessa H-17 não receberam uma conclusão pessoal registrada."
       }
     },
     {
@@ -9008,6 +9059,15 @@
           "help": "radio",
           "activity": "Mantém a comunicação de emergência"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "radio-calibration",
+          "radio-isolation",
+          "radio-evidence"
+        ],
+        "achieved": "Davi deixou registros técnicos destinados a preservar a comunicação ou as provas.",
+        "pending": "A origem do sinal continuou sendo uma investigação em aberto."
       }
     },
     {
@@ -10113,6 +10173,13 @@
           "help": "clinic",
           "activity": "Reforça a triagem dos feridos"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "protected-evacuation"
+        ],
+        "achieved": "Marta conferiu a lista nominal de pacientes.",
+        "pending": "Não há confirmação de que todos os pacientes tenham recebido proteção."
       }
     },
     {
@@ -11218,6 +11285,13 @@
           "help": "observatory",
           "activity": "Revisa medições para corrigir o protocolo"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "scientist-counterwave"
+        ],
+        "achieved": "Augusto reexaminou as medições da onda de oposição.",
+        "pending": "Sua responsabilidade pelo projeto permaneceu uma questão sem reparação comprovada."
       }
     },
     {
@@ -12323,6 +12397,13 @@
           "help": "archive",
           "activity": "Preserva relatos sobre 1958"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "elder-shelter"
+        ],
+        "achieved": "Alzira reuniu relatos de 1958 para orientar os moradores.",
+        "pending": "Não há registro de que todas as suas lembranças tenham sido preservadas."
       }
     },
     {
@@ -13428,6 +13509,13 @@
           "help": "shelter",
           "activity": "Organiza auxílio às famílias"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "priest-shelter"
+        ],
+        "achieved": "Padre Miguel organizou provisões com base nos registros do abrigo.",
+        "pending": "A assistência às famílias permaneceu uma responsabilidade sem conclusão documentada."
       }
     },
     {
@@ -14533,6 +14621,13 @@
           "help": "tunnel",
           "activity": "Confere a saída de manutenção"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "watchman-corridor"
+        ],
+        "achieved": "Sérgio registrou a saída de serviço para o resgate.",
+        "pending": "Seu testemunho não se transformou em uma ação de resgate documentada."
       }
     },
     {
@@ -15638,6 +15733,13 @@
           "help": "sawmill",
           "activity": "Prepara materiais para o abrigo"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "sealed-shelter"
+        ],
+        "achieved": "Ernesto orientou famílias sobre as trilhas interditadas.",
+        "pending": "O destino das famílias e a segurança das trilhas não foram plenamente confirmados."
       }
     },
     {
@@ -16743,6 +16845,14 @@
           "help": "substation",
           "activity": "Verifica a alimentação de emergência"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "grid-counterwave",
+          "isolated-shutdown"
+        ],
+        "achieved": "Vicente deixou verificações documentadas dos circuitos elétricos.",
+        "pending": "A estabilidade da rede não foi comprovada por uma tarefa concluída por Vicente."
       }
     },
     {
@@ -17848,6 +17958,13 @@
           "help": "forest",
           "activity": "Confere marcas nas trilhas"
         }
+      },
+      "epilogue": {
+        "requires": [
+          "marked-evacuation"
+        ],
+        "achieved": "Tomás marcou uma rota de retirada, mas o amigo desaparecido não foi localizado nos registros.",
+        "pending": "A busca pelo amigo continuou sem resposta."
       }
     }
   ],
@@ -20424,5 +20541,14 @@
       "result": "O risco de alcance externo é confirmado, mas a intenção continua incerta.",
       "effect": "final-reference"
     }
-  ]
+  ],
+  "endingEpilogues": {
+    "shutdown": "O emissor foi desligado; o destino posterior dos que ficaram não foi observado.",
+    "horizon": "A amplificação começou; o futuro dos que permaneceram não pôde ser confirmado.",
+    "zero": "A componente sincronizante foi interrompida; as consequências posteriores ainda são desconhecidas.",
+    "contact": "Um contato limitado foi estabelecido; sua intenção permanece incerta.",
+    "truth": "O emissor foi desligado e o desfecho registra o envio das provas.",
+    "sacrifice": "A contramedida foi mantida manualmente; o destino posterior dos presentes não foi confirmado.",
+    "silence": "O Vale perdeu contato com o exterior; não há confirmação posterior dos que ficaram."
+  }
 }
