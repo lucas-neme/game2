@@ -5,7 +5,7 @@ function createValleyCampaign(data){
  const phase=d=>data.chapters.find(c=>d>=c.days[0]&&d<=c.days[1])?.id||5;
  const day=t=>Math.max(1,Math.min(30,1+Math.floor(t/1440)));
  const minute=t=>((Math.floor(t)%1440)+1440)%1440;
- const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},outcome:null,uncle:null,evacuation:null});
+ const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},outcome:null,uncle:null,evacuation:null});
  const normalize=c=>Object.assign(fresh(),c||{});
  function chapter(c,t){if(!c.train)return 1;const cap=phase(day(t));for(let ch=2;ch<=5;ch++){if(ch>cap)return cap;if(data.missions.some(m=>m.chapter===ch&&!c.solved[m.id]))return ch}return 5}
  function available(c,t){return c.train&&!c.outcome?data.missions.filter(m=>m.chapter<=chapter(c,t)&&m.chapter<=phase(day(t))&&!c.solved[m.id]):[]}
@@ -178,6 +178,33 @@ function createValleyCampaign(data){
    rows.push({...role,actor:actor||null});
   }return rows;
  }
+ function signalStrength(c,t,loc){
+ if(!c.train||!data.locations[loc])return 0;
+ const d=day(t),m=minute(t),p=data.locations[loc],district=districtAt(p.x,p.y),grid=infrastructure(c,t);
+ let v=d>=28?82:d>=25?65:d>=21?53:d>=17?42:d>=13?30:d>=6?18:5;
+ v+=district==='project'?14:district==='east'?8:0;if(m<360||m>=1080)v+=8;v+=grid.level*2;
+ if(grid.mode==='isolate')v-=district==='project'?16:8;if(grid.mode==='repair')v-=5;
+ return Math.max(0,Math.min(100,v));
+ }
+ function activeManifestations(c,t){
+ if(!c.train||c.outcome||t>=43200)return [];
+ const m=minute(t);return (data.manifestations||[]).filter(e=>day(t)>=e.day&&m>=e.from&&m<e.to&&!c.manifestHistory?.[e.id]?.resolved&&signalStrength(c,t,e.loc)>=e.min);
+ }
+ function manifestAction(c,t,id,action,frequency=null){
+ const e=activeManifestations(c,t).find(q=>q.id===id);if(!e||!['observe','avoid','contact','disperse'].includes(action))return null;
+ c.manifestHistory??={};const r=c.manifestHistory[id]??={attempts:[],observed:false,resolved:null};
+ if(action==='observe'&&r.observed)return null;
+ if(action==='avoid'&&r.attempts.some(q=>q.action==='avoid'&&day(q.at)===day(t)))return null;
+ if((action==='contact'||action==='disperse')&&!r.observed)return null;
+ if(action==='contact'&&(!Number.isFinite(frequency)||Math.abs(frequency-e.frequency)>.051)){if(r.attempts.some(q=>q.action==='contact-failed'&&q.at===t))return null;r.attempts.push({action:'contact-failed',at:t});return {ok:false,text:'A modulação não coincide com o vestígio.',minutes:10}}
+ r.attempts.push({action,at:t});if(action==='observe')r.observed=true;
+ if(action==='contact'||action==='disperse')r.resolved={action,at:t};
+ return {ok:true,text:action==='avoid'?'Você se afasta sem perturbar a manifestação.':e[action],minutes:action==='observe'?10:action==='avoid'?5:20};
+ }
+ function manifestationAvoidance(id,t,c){
+ const e=activeManifestations(c,t).find(q=>q.actor===id);if(!e||psychology(id,t,c)?.resolve>=80)return null;
+ return {loc:e.refuge,activity:'Evita a região onde o sinal se manifesta',reason:'manifest:'+e.id,changed:true};
+ }
  function schedule(id,t,c,dead=false,deadAt=()=>null){if(dead||!byId[id]||departed(c,id,t))return null;const n=byId[id],d=day(t),m=minute(t),row=n.days[d-1],base=row.slots.findLast(x=>x.minute<=m)||row.slots[0];let result={...base,day:d,id,name:n.name,sprite:n.sprite,changed:false};
   const departure=departureAt(c,id);if(departure!=null&&t>=departure-60&&t<departure)return {...result,loc:'rail',activity:'Aguarda o embarque para sair do Vale',changed:true,reason:'evacuation-boarding'};
   const meeting=(data.appointments||[]).find(e=>e.day===d&&m>=e.minute&&m<e.until&&e.actors.includes(id));if(meeting){const a=meetingVariant(meeting,c,(d-1)*1440+meeting.minute);return {...result,loc:a.loc,activity:a.activity,changed:!!a.redirected,reason:a.id,meeting:a.id}}
@@ -188,6 +215,7 @@ function createValleyCampaign(data){
   if(changes.length){const z=changes[0];return {...result,loc:z.loc,activity:z.activity,changed:true,reason:z.choice}}
   const role=minute(t)>=660&&minute(t)<720?roleAssignments(c,t,deadAt).find(r=>r.actor===id):null;
   if(role)return {...result,loc:role.loc,activity:role.activity,changed:true,reason:'succession:'+role.id};
+  const hazard=manifestationAvoidance(id,t,c);if(hazard)return {...result,...hazard};
   const autonomous=autonomousBehavior(id,t,c,deadAt);return autonomous?{...result,...autonomous,changed:true}:result;
  }
  function collect(c,t,id,index,via){const m=missions[id],e=m?.sources[index];if(!e||!available(c,t).includes(m))return false;const key=id+':'+index;if(c.evidence[key])return false;if(e.actor?!['actor','archive'].includes(via):via!=='site')return false;c.evidence[key]={at:t,via};return true}
@@ -207,5 +235,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }

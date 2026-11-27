@@ -20086,5 +20086,82 @@
       "activity": "Mantém os registros da rádio comunitária",
       "label": "Comunicação de emergência"
     }
+  ],
+  "manifestations": [
+    {
+      "id": "forest-imprint",
+      "loc": "forest",
+      "day": 8,
+      "from": 1080,
+      "to": 1380,
+      "min": 20,
+      "actor": "young-explorer",
+      "refuge": "farm",
+      "name": "O Eco entre as árvores",
+      "frequency": 103.7,
+      "observe": "A silhueta repete o movimento de alguém que já deixou a trilha.",
+      "contact": "Uma voz repete uma advertência anterior à passagem do protagonista.",
+      "disperse": "A forma se desfaz, mas a portadora continua presente."
+    },
+    {
+      "id": "shore-reflection",
+      "loc": "shore",
+      "day": 13,
+      "from": 0,
+      "to": 360,
+      "min": 30,
+      "actor": "woodcutter",
+      "refuge": "village",
+      "name": "O Reflexo sem corpo",
+      "frequency": 97.3,
+      "observe": "O reflexo não acompanha a posição das luzes.",
+      "contact": "O reflexo acompanha a modulação, mas não responde como voz humana.",
+      "disperse": "A forma se desfaz, mas a portadora continua presente."
+    },
+    {
+      "id": "observatory-double",
+      "loc": "observatory",
+      "day": 17,
+      "from": 1140,
+      "to": 1440,
+      "min": 45,
+      "actor": "scientist",
+      "refuge": "bunker",
+      "name": "A Segunda Voz",
+      "frequency": 110.5,
+      "observe": "Duas oscilações se sobrepõem; uma antecede a leitura do instrumento.",
+      "contact": "Uma sequência responde à modulação de oposição, sem revelar intenção.",
+      "disperse": "A forma se desfaz, mas a portadora continua presente."
+    },
+    {
+      "id": "rail-echo",
+      "loc": "rail",
+      "day": 23,
+      "from": 1020,
+      "to": 1260,
+      "min": 55,
+      "actor": "rail-worker",
+      "refuge": "village",
+      "name": "O Passageiro sem destino",
+      "frequency": 103.7,
+      "observe": "O som da figura parece vir de um vagão ausente.",
+      "contact": "A voz avisa sobre uma partida que ainda não ocorreu.",
+      "disperse": "A forma se desfaz, mas a portadora continua presente."
+    },
+    {
+      "id": "horizon-shadow",
+      "loc": "horizon",
+      "day": 28,
+      "from": 0,
+      "to": 1440,
+      "min": 70,
+      "actor": "watchman",
+      "refuge": "village",
+      "name": "A Sombra do Horizonte",
+      "frequency": 110.5,
+      "observe": "A forma acompanha a portadora, mesmo durante oscilações elétricas.",
+      "contact": "A resposta chega antes do fim da sequência; sua identidade permanece incerta.",
+      "disperse": "A forma se desfaz, mas a portadora continua presente."
+    }
   ]
 }

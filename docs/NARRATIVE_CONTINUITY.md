@@ -37,3 +37,7 @@ After the local withdrawal confirmation, six named civilians are assigned to thr
 ## V10 — Physical route obstructions and continuity roles
 
 Three authored single-cell barriers appear according to crisis stage and forest choice. They enter the spatial collision hash and are drawn procedurally; one can be removed locally for 30 game minutes. Spawn is deferred while the protagonist occupies a cell. Alternative approaches remain intended but require route QA across all states. Five role assignments select living, non-evacuated substitutes, with one bounded work window and priority below mission commitments. Old saves with a confirmed withdrawal but missing timestamp can explicitly reconfirm without retroactive departures. Role changes are scheduled activities, not full independent physical task execution. No new authored PNG sprites in this increment.
+
+## V11 — Regional signal and manifestations
+
+Five optional anomalies with chapter, time and local signal requirements. Electrical intervention reduces amplification but not the source. Procedural exterior silhouettes, observation, avoidance, frequency-selection contact and scripted dispersal, persistent outcomes and NPC avoidance. No new combat arena or premium sprites. Mandatory evidence remains independent.

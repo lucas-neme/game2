@@ -173,3 +173,18 @@ assert.equal(campaign.roleAssignments(roles,20*1440+680,id=>['clinic','nurse'].i
 const legacy=campaign.fresh();legacy.train=true;legacy.evacuation='retirada organizada';legacy.solved.evacuation={at:20*1440};legacy.choices.evacuation={id:'evacuate',at:20*1440};
 assert.equal(campaign.resolveAction(legacy,21*1440,'evacuation'),true);assert.equal(legacy.evacuationAt,21*1440);
 console.log('Routes, clearance, role substitution and legacy evacuation recovery passed.');
+
+const anomaly=campaign.fresh();anomaly.train=true;const ft=7*1440+1200;
+assert.equal(campaign.activeManifestations(anomaly,ft-1440).length,0);
+assert.ok(campaign.activeManifestations(anomaly,ft).some(e=>e.id==='forest-imprint'));
+assert.equal(campaign.manifestAction(anomaly,ft,'forest-imprint','contact',103.7),null);
+assert.equal(campaign.manifestAction(anomaly,ft,'forest-imprint','observe').ok,true);
+assert.equal(campaign.manifestAction(anomaly,ft,'forest-imprint','observe'),null);
+assert.equal(campaign.manifestAction(anomaly,ft+10,'forest-imprint','contact',97.3).ok,false);
+assert.equal(campaign.manifestAction(anomaly,ft+20,'forest-imprint','contact',103.7).ok,true);
+assert.equal(campaign.activeManifestations(anomaly,ft+30).some(e=>e.id==='forest-imprint'),false);
+const aSave=campaign.normalize(JSON.parse(JSON.stringify(anomaly)));assert.equal(aSave.manifestHistory['forest-imprint'].resolved.action,'contact');
+const risk=campaign.fresh();risk.train=true;assert.equal(campaign.manifestationAvoidance('young-explorer',ft,risk).loc,'farm');
+const strength=campaign.signalStrength(risk,28*1440+720,'horizon');risk.infrastructure.switchgear={mode:'isolate',at:27*1440};assert.ok(campaign.signalStrength(risk,28*1440+720,'horizon')<strength);
+assert.ok(campaign.signalStrength(risk,28*1440,'horizon')>0);assert.equal(campaign.activeManifestations(risk,43200).length,0);
+console.log('Manifestations: signal escalation, observation, tuning, persistence and NPC avoidance passed.');

@@ -59,7 +59,14 @@ function valleySyncBarriers(){
  }
  valleyRehash();valleyActorsCache.key=null;
 }
-function valleyDrawBarriers(ctx){
+function valleyDrawManifestations(ctx){
+ if(!valleyActive()||!valleyState().train)return;
+ const tm=typeof performance!=='undefined'?performance.now()/1000:0;
+ for(const e of VALLEY.activeManifestations(valleyState(),s.t)){const p=valleyLocation(e.loc),[x,y]=iso(p.x,p.y);ctx.save();ctx.translate(x,y-12);const a=.35+.12*Math.sin(tm*2.4);
+ ctx.fillStyle='rgba(112,200,210,'+a+')';ctx.beginPath();ctx.ellipse(0,7,24,10,0,0,Math.PI*2);ctx.fill();
+ ctx.fillStyle='rgba(156,221,224,'+a+')';ctx.beginPath();ctx.ellipse(0,-24,9,22,0,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.ellipse(0,-50,6,7,0,0,Math.PI*2);ctx.fill();ctx.restore()}
+ }
+ function valleyDrawBarriers(ctx){
  if(!valleyActive())return;
  for(const ob of STATIC.filter(q=>q.valleyBarrier)){
   const [x,y]=iso(ob.x,ob.y);ctx.save();ctx.translate(x,y);
@@ -76,7 +83,7 @@ function valleyNearbyCell(loc,n,used=new Set()){const p=valleyLocation(loc);if(!
  for(let radius=1;radius<5;radius++)for(let x=Math.max(0,p.x-radius);x<=Math.min(27,p.x+radius);x++)for(let y=Math.max(0,p.y-radius);y<=Math.min(13,p.y+radius);y++)if(!used.has(x+','+y)&&walkable(x,y)&&!solidAt(x,y,PHYS.npcR))return [x,y];return [5,5]}
 for(const p of VALLEY.data.npcs){if(valleyBase.npcKeys.has(p.id))continue;NPC_SHEET[p.id]=p.sprite;MORT_NAMES[p.id]=p.name;socialNames[p.id]=p.name;personalStories[p.id]={bio:p.bio,goal:p.bio,routine:[],events:[]}}
 residents=function(){if(!valleyActive()||!valleyInstalled)return valleyBaseResidents();
- const c=valleyState(),key=[s.t,c.train,Object.values(c.choices).map(x=>x.id+':'+x.at).join(','),Object.keys(mortState().npcs).filter(isDead).join(','),JSON.stringify(s.fates),JSON.stringify(s.personalCases),JSON.stringify(c.storyHistory||{}),JSON.stringify(c.socialHistory||{}),JSON.stringify(c.departures||{}),c.evacuationAt].join('|');if(valleyActorsCache.key===key)return valleyActorsCache.rows;
+ const c=valleyState(),key=[s.t,c.train,Object.values(c.choices).map(x=>x.id+':'+x.at).join(','),Object.keys(mortState().npcs).filter(isDead).join(','),JSON.stringify(s.fates),JSON.stringify(s.personalCases),JSON.stringify(c.storyHistory||{}),JSON.stringify(c.socialHistory||{}),JSON.stringify(c.departures||{}),JSON.stringify(c.manifestHistory||{}),JSON.stringify(c.infrastructure||{}),c.evacuationAt].join('|');if(valleyActorsCache.key===key)return valleyActorsCache.rows;
  const old=new Map(valleyBaseResidents().map(p=>[p.id,p])),rows=[],used=new Set();
  for(let i=0;i<VALLEY.data.npcs.length;i++){const n=VALLEY.data.npcs[i];if(isDead(n.id))continue;const a=VALLEY.schedule(n.id,s.t,c,false,key=>mortState().npcs[key]?.t??null);if(!a)continue;
   const legacy=old.get(n.id),personalEvent=legacy&&!c.train&&day()<=5&&(alteredRoutine(n.id)||personalStories[n.id].events.some(e=>s.t>=e.at&&s.t<e.until));if(personalEvent&&!used.has(legacy.x+','+legacy.y)){rows.push({...legacy,loc:null,inside:null});used.add(legacy.x+','+legacy.y);continue}
@@ -128,6 +135,12 @@ function valleyCollect(m,i,via,loc){if(!valleyActive()||s.end||dangerActive())re
  if(!VALLEY.collect(valleyState(),s.t,m.id,i,via))return false;record(valleySourceKey(m,i));advance(12);say(e.truth+(via==='archive'?' (Cópia preservada no registro local.)':''));render();valleySave();return true}
 function valleyButton(el,label,fn){const b=document.createElement('button');b.textContent=label;b.onclick=fn;el.append(b);return b}
 function valleySitePanel(id,inside=false){if(!valleyActive()||s.end||dangerActive())return false;const c=valleyState(),p=valleyLocation(id);if(!p)return false;const el=$('dialog');const entries=[];
+ for(const e of VALLEY.activeManifestations(c,s.t)){if(e.loc!==id||inside)continue;
+ const run=(action,freq=null)=>{if(s.room||s.end||dangerActive()||!valleyNear(id))return;const result=VALLEY.manifestAction(c,s.t,e.id,action,freq);if(!result)return;advance(result.minutes);render();valleySave();if(!s.end)valleySitePanel(id);say(result.text)};
+ if(!c.manifestHistory?.[e.id]?.observed)entries.push(['Observar: '+e.name,()=>run('observe')]);
+ entries.push(['Evitar a manifestação',()=>run('avoid')]);
+ if(c.manifestHistory?.[e.id]?.observed){for(const f of [97.3,103.7,110.5])entries.push(['Tentar contato em '+String(f).replace('.',',')+' MHz',()=>run('contact',f)]);entries.push(['Dispersar com pulso de oposição',()=>run('disperse')])}
+ }
  for(const r of VALLEY.activeBarriers(c,s.t)){if(r.loc!==id)continue;if(r.clear)entries.push(['Remover madeira caída',()=>{if(!(s.room===id||valleyNear(id))||!VALLEY.clearBarrier(c,s.t,r.id))return;advance(30);say('A madeira foi removida. O caminho está novamente disponível.');render();valleySave()}]);else entries.push(['Examinar interdição',()=>{if(s.room===id||valleyNear(id))say(r.label+'. '+r.alternative)}])}
  if(id==='substation'&&inside&&c.solved.power&&!c.infrastructure?.switchgear&&c.choices.power&&c.choices.power.at+60<=s.t){const mode=c.choices.power.id==='repair-grid'?'repair':'isolate';entries.push([mode==='repair'?'Acionar alimentação de emergência':'Isolar circuitos do Horizonte',()=>{if(s.room!==id||s.end||dangerActive())return;if(!VALLEY.operateGrid(c,s.t,mode))return;advance(30);say(mode==='repair'?'Circuito de emergência acionado. Apenas pontos essenciais recebem energia durante a crise.':'Circuitos do Horizonte isolados. A distribuição civil permanece limitada.');render();valleySave()}])}
  for(const m of VALLEY.available(c,s.t))for(let i=0;i<m.sources.length;i++){const e=m.sources[i];if(c.evidence[m.id+':'+i]||e.place!==id)continue;if(!e.actor&&(!valleyIsNew(p)||!FZ_ROOMS.layouts[id]||inside))entries.push([e.label,()=>valleyCollect(m,i,'site',id)]);else if(e.actor&&valleyArchiveAllowed(e,m))entries.push(['Consultar cópia: '+e.label,()=>valleyCollect(m,i,'archive',id)])}
@@ -176,6 +189,9 @@ var valleyJournalKey=null;function valleyJournal(){if(!HAS_DOM)return;const el=$
  for(const r of VALLEY.activeBarriers(c,s.t)){const p=document.createElement('p');p.textContent=r.label+' — '+r.alternative;routes.append(p)}
  for(const r of VALLEY.roleAssignments(c,s.t,key=>mortState().npcs[key]?.t??null)){const p=document.createElement('p');p.textContent=r.label+' — '+(r.actor?VALLEY.byId[r.actor].name+' assumiu a responsabilidade':'Sem substituto disponível');routes.append(p)}
  if(routes.children.length>1)el.append(routes);
+ const signal=document.createElement('details'),signalTitle=document.createElement('summary');signalTitle.textContent='Fenômenos e registros do sinal';signal.append(signalTitle);
+ for(const e of VALLEY.data.manifestations){const row=c.manifestHistory?.[e.id];if(!row)continue;const p=document.createElement('p');p.textContent=e.name+' — '+(row.resolved?row.resolved.action==='contact'?'Contato registrado':'Dispersão registrada':row.observed?'Vestígio observado · frequência '+String(e.frequency).replace('.',',')+' MHz':'Área evitada');signal.append(p)}
+ if(signal.children.length>1)el.append(signal);
  const available=VALLEY.available(c,s.t);
  for(const m of available){const card=document.createElement('section'),t=document.createElement('strong');t.textContent=m.title;card.append(t);const p=document.createElement('p');p.textContent=m.summary;card.append(p);m.sources.forEach((e,i)=>{const v=c.evidence[m.id+':'+i],row=document.createElement('p');row.textContent=(v?'✓ ':'○ ')+e.label+' — '+(e.actor&&!v?VALLEY.byId[e.actor].name+(valleyArchiveAllowed(e,m)?' ou registro em '+valleyLocation(e.place).name:''):valleyLocation(e.place).name)+(v?' · '+v.via:'');card.append(row)});if(m.sources.every((_,i)=>c.evidence[m.id+':'+i])){const q=document.createElement('p');q.textContent=m.question;card.append(q);m.options.forEach((o,i)=>valleyButton(card,o,()=>{if(s.end||dangerActive()||!VALLEY.solve(c,s.t,m.id,i)){say('A conclusão não corresponde às evidências.');return}say('Caso concluído: '+m.title);render();valleySave()}))}el.append(card)}
  for(const m of VALLEY.data.missions){if(!c.solved[m.id]||c.choices[m.id]||!m.choices.length)continue;const card=document.createElement('section'),p=document.createElement('p');p.textContent='Decisão: '+m.title+' (altera rotinas futuras)';card.append(p);for(const [id,label] of m.choices)valleyButton(card,label,()=>{if(s.end||dangerActive()||!VALLEY.choose(c,s.t,m.id,id))return;valleyActorsCache.key=null;advance(15);say('Decisão registrada. Os moradores reagirão a partir da próxima hora.');render();valleySave()});el.append(card)}
@@ -191,7 +207,7 @@ function campaignDrawTerrain(ctx){if(!valleyInstalled||!HAS_DOM||!ctx?.drawImage
  for(let i=0;i<85;i++){const r=valleyHash(x,y,i),px=X-64+r%128,py=Y-32+(r>>>8)%64;k.fillStyle=rail?'#777161':road?['#ac967b','#7c6b59','#bdab8c'][r%3]:['#526832','#879443','#667936','#a0a45b'][r%4];k.globalAlpha=.35+(r%3)*.12;k.fillRect(px,py,2+(r>>>16)%7,2+(r>>>22)%4)}k.restore();
  if(rail){k.save();k.strokeStyle='#403a31';k.lineWidth=5;for(let i=-2;i<=2;i++){k.beginPath();k.moveTo(X+i*20-13,Y+i*10+7);k.lineTo(X+i*20+13,Y+i*10-7);k.stroke()}for(const o of [-7,7]){k.strokeStyle='#a2a09a';k.lineWidth=2;k.beginPath();k.moveTo(X-64,Y-32+o);k.lineTo(X+64,Y+32+o);k.stroke()}k.restore()}}
  valleyGround={cv,x:x0,y:y0,w,h}}
- const z=valleyGround;if(ctx===g){const x=Math.max(z.x,Math.floor(cam.x-c.width/(2*cam.z))-4),y=Math.max(z.y,Math.floor(cam.y-c.height/(2*cam.z))-4),X=Math.min(z.x+z.w,Math.ceil(cam.x+c.width/(2*cam.z))+4),Y=Math.min(z.y+z.h,Math.ceil(cam.y+c.height/(2*cam.z))+4);if(X>x&&Y>y)ctx.drawImage(z.cv,x-z.x,y-z.y,X-x,Y-y,x,y,X-x,Y-y)};valleyDrawBarriers(ctx)
+ const z=valleyGround;if(ctx===g){const x=Math.max(z.x,Math.floor(cam.x-c.width/(2*cam.z))-4),y=Math.max(z.y,Math.floor(cam.y-c.height/(2*cam.z))-4),X=Math.min(z.x+z.w,Math.ceil(cam.x+c.width/(2*cam.z))+4),Y=Math.min(z.y+z.h,Math.ceil(cam.y+c.height/(2*cam.z))+4);if(X>x&&Y>y)ctx.drawImage(z.cv,x-z.x,y-z.y,X-x,Y-y,x,y,X-x,Y-y)};valleyDrawBarriers(ctx);valleyDrawManifestations(ctx)
 }
 if(HAS_DOM){
  const panel=document.createElement('section');panel.id='valleyCampaign';panel.className='valley-campaign';$('journal').prepend(panel);
