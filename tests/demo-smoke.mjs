@@ -156,3 +156,21 @@ visitResident(expanded,'celina');click('dialog','Receber o resultado');assert(ex
 get('save').onclick();const expandedReload=run(doc,storage,()=>{},()=>true);assert.equal(expandedReload.s.personalCases.helena.outcome,'copy');assert(expandedReload.s.clues.includes('patientInquiry'));assert.equal(expandedReload.s.social['celina:clinic'],2);
 const ignored=freshPeople();ignored.advance(2400-ignored.s.t);ignored.render();for(const id of ['helena','bento','celina'])assert.equal(ignored.s.personalCases[id].outcome,'alone');ignored.record('cargo');visitResident(ignored,'helena');assert(!get('dialog').children.some(x=>x.textContent==='Guardar uma cópia com Nora'));assert(!ignored.s.clues.includes('archiveCopy'));
 console.log('PASS: six residents, interconnected personal quests, autonomous outcomes, rewards and persistence');
+
+// All modular interiors must be navigable, including connected railway zones.
+const roomConfig=JSON.parse(code.match(/const FZ_ROOMS=(.*?);\nconst FZ_R=/s)[1]);
+const roomCore=new Function('FZ_ROOMS',code.slice(code.indexOf('function fzRoomSolid('),code.indexOf('function fzRoomDoor('))+'return {fzRoomSolid,fzRoomMove,fzRoomTarget}')(roomConfig);
+let roomAssertions=0;
+for(const [id,R] of Object.entries(roomConfig.layouts)){
+ const step=.25,[sx,sy]=R.start,q=[[sx,sy]],visited=new Set(['0,0']),found=new Set();
+ assert(!roomCore.fzRoomSolid(R,sx,sy),id+' spawn');roomAssertions++;
+ assert(roomCore.fzRoomSolid(R,-1,sy),id+' wall');roomAssertions++;
+ for(let j=0;j<q.length;j++){const [x,y]=q[j],t=roomCore.fzRoomTarget(R,{x,y});if(t)found.add(t.label);
+ for(const [dx,dy] of [[step,0],[-step,0],[0,step],[0,-step]]){const nx=x+dx,ny=y+dy,k=Math.round((nx-sx)/step)+','+Math.round((ny-sy)/step);if(!visited.has(k)&&!roomCore.fzRoomSolid(R,nx,ny)){visited.add(k);q.push([nx,ny])}}}
+ const expected=[...R.obj.filter(o=>o[3]).map(o=>o[3]),...(R.portals||[]).map(p=>p[2]),R.returnTo?'Voltar':'Sair pela porta'];
+ for(const label of expected){assert(found.has(label),id+' unreachable '+label);roomAssertions++}
+ for(const o of R.obj){if(o[0]==='rail'||o[0]==='platform')continue;assert(roomCore.fzRoomSolid(R,o[1],o[2]),id+' missing collision '+o[0]);roomAssertions++}
+ for(const p of R.portals||[]){assert(roomConfig.layouts[p[3]]?.returnTo===id,id+' portal return');roomAssertions++}
+}
+const rp={x:1,y:1},empty={size:[5,5],obj:[]};roomCore.fzRoomMove(empty,rp,-20,0);assert(rp.x>=.18);roomAssertions++;
+console.log('PASS: modular rooms, swept movement, all interaction locations and railway links: '+roomAssertions+' assertions');
