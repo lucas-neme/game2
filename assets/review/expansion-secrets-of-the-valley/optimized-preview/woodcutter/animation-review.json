@@ -1,0 +1,53 @@
+{
+  "status": "REVIEW",
+  "sourcePack": "fz-valley-animations-review.zip",
+  "packSha256": "78c6a7eef01d3d57f77e5d178e29cb67028330811c581854d26eb6da24db48d2",
+  "candidateClipCount": 55,
+  "candidatePoseCount": 180,
+  "actors": [
+    "rail-worker",
+    "radio-technician",
+    "nurse",
+    "scientist",
+    "elder",
+    "priest",
+    "guard",
+    "woodcutter",
+    "electrician",
+    "young-explorer",
+    "echo-hound",
+    "resonant-colossus",
+    "blue-echo",
+    "cave-mutant",
+    "sentinel-drone",
+    "spore-creature"
+  ],
+  "remoteNativeFramesPresent": false,
+  "preview": {
+    "clip": "chop-composite/side-right/manifest.json",
+    "frameCount": 8,
+    "canvas": [
+      31,
+      56
+    ],
+    "notes": "Eight unique composite body-and-stump poses, optimized only; not a 12-unique-pose final animation."
+  },
+  "chips": {
+    "frames": 8,
+    "fps": 12,
+    "loop": false,
+    "anchor": [
+      32,
+      32
+    ],
+    "trigger": "axe-contact"
+  },
+  "promotionGate": [
+    "compare silhouette/face/clothes with canonical approved sprite",
+    "check crops and disconnected artifacts, especially small sources",
+    "separate axe, body and stump",
+    "complete directional coverage and required unique poses",
+    "verify feet/pivot, weapon continuity, collision and mortality",
+    "approve visual preview and browser performance before production"
+  ]
+}
