@@ -23,7 +23,8 @@
   "fz-monstros-harmonizados-v5-review.zip",
   "fz-monstros-itens-enigmas-v4-completo.zip",
   "fz-monstros-v4-review.zip",
-  "fz-npcs-harmonizados-v5-review.zip"
+  "fz-npcs-harmonizados-v5-review.zip",
+  "fz-personagens-v6-morte-review.zip"
  ],
  "files": [
   {
@@ -35584,6 +35585,186 @@
    "deduplicated": true,
    "sha256": "66246d8684fd1fa53d88d52edab29eaeb8f608b40d272aef4799730ee774980f",
    "bytes": 3662897,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "README.txt",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/README.txt",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/README.txt",
+   "deduplicated": false,
+   "sha256": "6feacc93d0bb4226ede38cdd09ced9391f8f3ad71ed050f1c837773d74a937c3",
+   "bytes": 374,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/bento/actions.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/bento/actions.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/bento/actions.png",
+   "deduplicated": false,
+   "sha256": "26a7038600d2438ae915a650171f0ff14c93d33d616ac13c68d021a8546d6de9",
+   "bytes": 1728081,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/bento/death.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/bento/death.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/bento/death.png",
+   "deduplicated": false,
+   "sha256": "46166577e97d53c824f11c4b7ec5174a26ca1cd2fe12e610fa3dd9057013bf9e",
+   "bytes": 2062028,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/celina/actions.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/celina/actions.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/celina/actions.png",
+   "deduplicated": false,
+   "sha256": "44101704089db0c0b568caf04a26c9e29a30fcd9d1a0ad4e0a8bfdbbddace1dd",
+   "bytes": 1851828,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/celina/death.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/celina/death.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/celina/death.png",
+   "deduplicated": false,
+   "sha256": "439d59d0f1e4607f0fe05a02083acfbc3bd34045ae3e7202d294ab8884216ce5",
+   "bytes": 1941163,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/helena/actions.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/helena/actions.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/helena/actions.png",
+   "deduplicated": false,
+   "sha256": "5c4993cfa4dbc9817e7e012fb7d6c5d0606065e6a57971b4a7d3974f98c32cca",
+   "bytes": 1883615,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/helena/death.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/helena/death.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/helena/death.png",
+   "deduplicated": false,
+   "sha256": "ed9bcab38f03b15dbe30484da459c6ca5740951eb2a0f02fcc5c38c6e3d22a51",
+   "bytes": 2002132,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/hero/actions.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/hero/actions.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/hero/actions.png",
+   "deduplicated": false,
+   "sha256": "cfa1b6e1b98e4b82870730aed03cef82860877aaca1fb48a4d56a5e7d8e68754",
+   "bytes": 920934,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/hero/death.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/hero/death.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/hero/death.png",
+   "deduplicated": false,
+   "sha256": "d604e9f246418d34f2654028fa5c6f1687bf271ab0ba957653ad2bddf38afae0",
+   "bytes": 1871165,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/lia/actions.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/lia/actions.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/lia/actions.png",
+   "deduplicated": false,
+   "sha256": "3aef2f3f5ac3c1c1eff17336418b59543adbf73c272a8538bc891f11dfafa350",
+   "bytes": 2180717,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/lia/death.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/lia/death.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/lia/death.png",
+   "deduplicated": false,
+   "sha256": "0fdde443f8aa87354ef0cec815143b299a0e921793d060f68bf0db69d607331a",
+   "bytes": 2088963,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/nora/actions.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/nora/actions.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/nora/actions.png",
+   "deduplicated": false,
+   "sha256": "c039cf3e3b821b958a4e0e8cf1dd530506dd6dad44f240a2da2f11d464f62590",
+   "bytes": 1603260,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/nora/death.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/nora/death.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/nora/death.png",
+   "deduplicated": false,
+   "sha256": "9c0073266c76e0e63691ea68e0bc4dba5a35696e53867dcda6307af2125b47b7",
+   "bytes": 1790636,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/raul/actions.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/raul/actions.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/raul/actions.png",
+   "deduplicated": false,
+   "sha256": "e89b63ce97ee97768d627cb42200035eb4384e01260a0312d40f0d7ea3b12020",
+   "bytes": 1530433,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "characters/raul/death.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/raul/death.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/raul/death.png",
+   "deduplicated": false,
+   "sha256": "c171e16b3da56a4309f6dd88079c19da379728c45f42f22dad783f7e3dfb8b6b",
+   "bytes": 1859940,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "creatures/actions.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/creatures/actions.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/creatures/actions.png",
+   "deduplicated": false,
+   "sha256": "20bf259a9bd41df5514f379d5a16e46b85b70d2916796a05865a6ee77d80c129",
+   "bytes": 1901982,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "manifest.json",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/manifest.json",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/manifest.json",
+   "deduplicated": false,
+   "sha256": "986b734d477bd5f2884f7c52445a67fb424841e3b7d06fbe3e7aabc935c237da",
+   "bytes": 3492,
+   "status": "REVIEW"
+  },
+  {
+   "package": "fz-personagens-v6-morte-review.zip",
+   "member": "references/investigator.png",
+   "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/references/investigator.png",
+   "stored_at": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/references/investigator.png",
+   "deduplicated": false,
+   "sha256": "4b43ac519b1c24cec0b7d459c5e5941151e229e61187bd8b5ecf2f94923d50ce",
+   "bytes": 1117929,
    "status": "REVIEW"
   }
  ]

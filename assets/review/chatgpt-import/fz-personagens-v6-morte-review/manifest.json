@@ -1,0 +1,133 @@
+{
+  "version": "V6",
+  "status": "REVIEW",
+  "characters": {
+    "hero": {
+      "actions": {
+        "path": "characters/hero/actions.png",
+        "size": [
+          1122,
+          1402
+        ],
+        "sha256": "cfa1b6e1b98e4b82870730aed03cef82860877aaca1fb48a4d56a5e7d8e68754"
+      },
+      "death": {
+        "path": "characters/hero/death.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "d604e9f246418d34f2654028fa5c6f1687bf271ab0ba957653ad2bddf38afae0"
+      }
+    },
+    "lia": {
+      "actions": {
+        "path": "characters/lia/actions.png",
+        "size": [
+          1122,
+          1402
+        ],
+        "sha256": "3aef2f3f5ac3c1c1eff17336418b59543adbf73c272a8538bc891f11dfafa350"
+      },
+      "death": {
+        "path": "characters/lia/death.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "0fdde443f8aa87354ef0cec815143b299a0e921793d060f68bf0db69d607331a"
+      }
+    },
+    "raul": {
+      "actions": {
+        "path": "characters/raul/actions.png",
+        "size": [
+          1122,
+          1402
+        ],
+        "sha256": "e89b63ce97ee97768d627cb42200035eb4384e01260a0312d40f0d7ea3b12020"
+      },
+      "death": {
+        "path": "characters/raul/death.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "c171e16b3da56a4309f6dd88079c19da379728c45f42f22dad783f7e3dfb8b6b"
+      }
+    },
+    "nora": {
+      "actions": {
+        "path": "characters/nora/actions.png",
+        "size": [
+          1122,
+          1402
+        ],
+        "sha256": "c039cf3e3b821b958a4e0e8cf1dd530506dd6dad44f240a2da2f11d464f62590"
+      },
+      "death": {
+        "path": "characters/nora/death.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "9c0073266c76e0e63691ea68e0bc4dba5a35696e53867dcda6307af2125b47b7"
+      }
+    },
+    "helena": {
+      "actions": {
+        "path": "characters/helena/actions.png",
+        "size": [
+          1122,
+          1402
+        ],
+        "sha256": "5c4993cfa4dbc9817e7e012fb7d6c5d0606065e6a57971b4a7d3974f98c32cca"
+      },
+      "death": {
+        "path": "characters/helena/death.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "ed9bcab38f03b15dbe30484da459c6ca5740951eb2a0f02fcc5c38c6e3d22a51"
+      }
+    },
+    "bento": {
+      "actions": {
+        "path": "characters/bento/actions.png",
+        "size": [
+          1122,
+          1402
+        ],
+        "sha256": "26a7038600d2438ae915a650171f0ff14c93d33d616ac13c68d021a8546d6de9"
+      },
+      "death": {
+        "path": "characters/bento/death.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "46166577e97d53c824f11c4b7ec5174a26ca1cd2fe12e610fa3dd9057013bf9e"
+      }
+    },
+    "celina": {
+      "actions": {
+        "path": "characters/celina/actions.png",
+        "size": [
+          1122,
+          1402
+        ],
+        "sha256": "44101704089db0c0b568caf04a26c9e29a30fcd9d1a0ad4e0a8bfdbbddace1dd"
+      },
+      "death": {
+        "path": "characters/celina/death.png",
+        "size": [
+          1536,
+          1024
+        ],
+        "sha256": "439d59d0f1e4607f0fe05a02083acfbc3bd34045ae3e7202d294ab8884216ce5"
+      }
+    }
+  },
+  "notes": "Original sheets, not normalized atlases. Death sheets: 4 rows x 6 poses, candidate directions south/north/side/side; verify direction per character. Background and furniture must be isolated before promotion."
+}

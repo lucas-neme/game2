@@ -1,0 +1,1 @@
+Frequência Zero V6 — REVIEW. Preserve as folhas originais. Não substitua atlas de produção por folhas compostas. Separe frames, remova fundos e bancos incorporados, valide identidade, direção e âncora. Morte: executar uma vez, manter último frame, persistir estado e atualizar rotinas/quests; protagonista com game over e recarga. Não promova sprites incompletos.
