@@ -44,7 +44,7 @@ function valleyMusicUpdate(c,loc){
 function valleyAudioStop(){
  valleyMusicStop();
  if(valleyAudioTimer!=null){clearInterval(valleyAudioTimer);valleyAudioTimer=null}
- if(valleyAudioGraph){for(const o of valleyAudioGraph.nodes){try{o.stop()}catch{}}try{valleyAudioGraph.bus.disconnect()}catch{}valleyAudioGraph=null}
+ if(valleyAudioGraph){for(const o of valleyAudioGraph.nodes){try{o.stop()}catch{}}try{valleyAudioGraph.bus.disconnect();valleyAudioGraph.filter?.disconnect()}catch{}valleyAudioGraph=null}
  valleyAudioEventKey=null;
 }
 function valleyAudioLocation(){
@@ -63,8 +63,15 @@ function valleyAudioUpdate(){
  }
  const g=valleyAudioGraph,now=audio.currentTime,c=valleyState(),loc=valleyAudioLocation(),p=VALLEY.audioDirection(c,s.t,loc,!!valleyCinemaReplay);
  const musicPlaying=valleyMusicUpdate(c,loc);
+ // Dramatic silence is tied to gameplay state, never random jump-scare spam.
+ const pressure=VALLEY.signalStrength(c,s.t,loc);
+ const silenceTarget=valleyCinemaReplay?0.25:pressure>=80?0.18:pressure>=60?0.48:1;
+ const inside=!!s.room;
+ const atmosphereTarget=silenceTarget*(inside?.66:1);
+ if(!g.filter){const filter=audio.createBiquadFilter();filter.type='lowpass';filter.frequency.value=1200;g.bus.disconnect();g.bus.connect(filter);filter.connect(audio.destination);g.filter=filter}
+ g.filter.frequency.setTargetAtTime(inside?360:pressure>=80?650:1500,now,.55);
  const hidden=typeof document!=='undefined'&&document.hidden;
- const volume=hidden?0:valleyMix.atmosphere*(musicPlaying?.12:1);
+ const volume=hidden?0:valleyMix.atmosphere*atmosphereTarget*(musicPlaying?.12:1);
  g.bus.gain.setTargetAtTime(.65*volume,now,.2);
  g.nodes.forEach((o,i)=>{o.frequency.setTargetAtTime(p.root*[1,1.5,2.01][i],now,.65);g.gains[i].gain.setTargetAtTime(p.bed*[1,.42,p.anomaly?.6:.17][i],now,.7)});
  if(g.lastMood!==p.mood){g.lastMood=p.mood;g.step=0;g.next=now+.1}
