@@ -1,0 +1,1415 @@
+{
+  "version": 1,
+  "scope": "expansion-secrets-of-the-valley",
+  "sprites": [
+    {
+      "id": "sawmill",
+      "category": "buildings",
+      "file": "sprites/buildings/sawmill.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "width": 314,
+      "height": 213,
+      "anchor": [
+        157,
+        208
+      ],
+      "anchor_status": "provisional",
+      "sha256": "efb479f6fd1d210e17fcf172d3bf7b94c47e4d227287e82ad1201b1ef20fe629",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "timber-shed",
+      "category": "buildings",
+      "file": "sprites/buildings/timber-shed.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "width": 321,
+      "height": 200,
+      "anchor": [
+        160,
+        195
+      ],
+      "anchor_status": "provisional",
+      "sha256": "26ea20fd21ac5bb56a745e43dd092ba100824852cadad9322f5d3532f72e6298",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "railway-house-blue",
+      "category": "buildings",
+      "file": "sprites/buildings/railway-house-blue.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "width": 288,
+      "height": 214,
+      "anchor": [
+        144,
+        209
+      ],
+      "anchor_status": "provisional",
+      "sha256": "09b1ce9005b84706116ac417fd1d6f132551112e5b742605b155f6525a4a9b06",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "railway-house-white",
+      "category": "buildings",
+      "file": "sprites/buildings/railway-house-white.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "width": 313,
+      "height": 225,
+      "anchor": [
+        156,
+        220
+      ],
+      "anchor_status": "provisional",
+      "sha256": "c808c67a21f7f1a6abe3feb7697cdef332b5967fda1b61f3614408d65e4715e6",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "barn",
+      "category": "buildings",
+      "file": "sprites/buildings/barn.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "width": 315,
+      "height": 220,
+      "anchor": [
+        157,
+        215
+      ],
+      "anchor_status": "provisional",
+      "sha256": "3d36837fcbcc8e4242526477d09135eb1327fa5f94b02c9a8f70613edd90835f",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "farmhouse",
+      "category": "buildings",
+      "file": "sprites/buildings/farmhouse.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "width": 317,
+      "height": 215,
+      "anchor": [
+        158,
+        210
+      ],
+      "anchor_status": "provisional",
+      "sha256": "ecc7011d33d513887253728a68473f8bc130c40e6f472e5b0191d4f17fa35c93",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "observatory",
+      "category": "buildings",
+      "file": "sprites/buildings/observatory.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "width": 295,
+      "height": 216,
+      "anchor": [
+        147,
+        211
+      ],
+      "anchor_status": "provisional",
+      "sha256": "dad5d1b453ff7b6d7ab9761b89f4eff5b37d1e0b3f40b30211963a1f1464f80c",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "substation",
+      "category": "buildings",
+      "file": "sprites/buildings/substation.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "width": 307,
+      "height": 222,
+      "anchor": [
+        153,
+        217
+      ],
+      "anchor_status": "provisional",
+      "sha256": "549eee723a3a0e111033288ffea3e38172a25ee6f8d35b7621b0b7c5b2f2af44",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "horizonte-radome",
+      "category": "buildings",
+      "file": "sprites/buildings/horizonte-radome.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "width": 318,
+      "height": 218,
+      "anchor": [
+        159,
+        213
+      ],
+      "anchor_status": "provisional",
+      "sha256": "edf261610d1c0ee28aa0ebca0c5bf0c93abf9b66640aaa5734bcb10e56884b2b",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "horizonte-research",
+      "category": "buildings",
+      "file": "sprites/buildings/horizonte-research.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "width": 313,
+      "height": 232,
+      "anchor": [
+        156,
+        227
+      ],
+      "anchor_status": "provisional",
+      "sha256": "7442af8ae0c22581159c810c4d3a9d82a39411880ef773f4156983595d769277",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "bunker-entrance",
+      "category": "buildings",
+      "file": "sprites/buildings/bunker-entrance.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "width": 310,
+      "height": 195,
+      "anchor": [
+        155,
+        190
+      ],
+      "anchor_status": "provisional",
+      "sha256": "0607b826d71cd675a5bdda2758f88dcb0242f45f271b5fb4fb05a4fe98cf7ec1",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "chapel",
+      "category": "buildings",
+      "file": "sprites/buildings/chapel.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "width": 297,
+      "height": 237,
+      "anchor": [
+        148,
+        232
+      ],
+      "anchor_status": "provisional",
+      "sha256": "7f0a0726b52953a9f126b5f65b7f102776553e74396f53c271088d70177243e4",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "fishing-hut",
+      "category": "buildings",
+      "file": "sprites/buildings/fishing-hut.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "width": 303,
+      "height": 211,
+      "anchor": [
+        151,
+        206
+      ],
+      "anchor_status": "provisional",
+      "sha256": "b5d1acb781dea6ba80ebab6813171e8e9bb68e8c084a929e8b75721c363b4f48",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "cemetery-mausoleum",
+      "category": "buildings",
+      "file": "sprites/buildings/cemetery-mausoleum.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "width": 303,
+      "height": 222,
+      "anchor": [
+        151,
+        217
+      ],
+      "anchor_status": "provisional",
+      "sha256": "e0453cb800d9713d7d8073715d65cc22347adb5241aa4715281e19d3f5fbf436",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "rail-engine-shed",
+      "category": "buildings",
+      "file": "sprites/buildings/rail-engine-shed.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "width": 313,
+      "height": 214,
+      "anchor": [
+        156,
+        209
+      ],
+      "anchor_status": "provisional",
+      "sha256": "ca755f5b96d761745609e3b5f238be53fcd8fe17b8f6e7f6c83537b5ba88bdaa",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "boathouse",
+      "category": "buildings",
+      "file": "sprites/buildings/boathouse.png",
+      "source": "source/vila_industrial_em_frequência_zero.png",
+      "source_rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "width": 317,
+      "height": 219,
+      "anchor": [
+        158,
+        214
+      ],
+      "anchor_status": "provisional",
+      "sha256": "12009b73dcac18a4ee4938673c0a5478358bef1bb3e58f2d467c7d95f963a757",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "pine-grove",
+      "category": "environment",
+      "file": "sprites/environment/pine-grove.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "width": 294,
+      "height": 239,
+      "anchor": [
+        147,
+        234
+      ],
+      "anchor_status": "provisional",
+      "sha256": "050660eb82f03cc1d8ac64f6c2626e370f6fc8aebdd38e8f0d9bf206db8f429e",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "ancient-tree",
+      "category": "environment",
+      "file": "sprites/environment/ancient-tree.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "width": 297,
+      "height": 236,
+      "anchor": [
+        148,
+        231
+      ],
+      "anchor_status": "provisional",
+      "sha256": "582fa44e25dc15b966e33e53f895c35c560310d96e4ffe953225faf9e05f92fd",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "fallen-log",
+      "category": "environment",
+      "file": "sprites/environment/fallen-log.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "width": 312,
+      "height": 169,
+      "anchor": [
+        156,
+        164
+      ],
+      "anchor_status": "provisional",
+      "sha256": "fb8f7db676289230e925e6cb486007102c200c2fdc089bcf2e33dfefff9fe041",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "reeds",
+      "category": "environment",
+      "file": "sprites/environment/reeds.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "width": 282,
+      "height": 206,
+      "anchor": [
+        141,
+        201
+      ],
+      "anchor_status": "provisional",
+      "sha256": "1254aebd0e75174c48098d3e9650b06947dff8b2133f752a55e3e773fb47b743",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "moss-boulder",
+      "category": "environment",
+      "file": "sprites/environment/moss-boulder.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "width": 301,
+      "height": 187,
+      "anchor": [
+        150,
+        182
+      ],
+      "anchor_status": "provisional",
+      "sha256": "03b2b30bb5c796b2e8ad0b0e9dad3e39aed6e66fdb4921953497a917564a12ef",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "gravestones",
+      "category": "environment",
+      "file": "sprites/environment/gravestones.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "width": 270,
+      "height": 181,
+      "anchor": [
+        135,
+        176
+      ],
+      "anchor_status": "provisional",
+      "sha256": "8a41554a9a4fa02ff88863d5d0640f65ed962ddb012bf08814c1bef45cd527b0",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "cemetery-gate",
+      "category": "environment",
+      "file": "sprites/environment/cemetery-gate.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "width": 316,
+      "height": 200,
+      "anchor": [
+        158,
+        195
+      ],
+      "anchor_status": "provisional",
+      "sha256": "189f8d4f3e36262f3705ea9b59da55f1954bb8f27571d54d3c37f87d509a1a3d",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "utility-pole",
+      "category": "environment",
+      "file": "sprites/environment/utility-pole.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "width": 211,
+      "height": 232,
+      "anchor": [
+        105,
+        227
+      ],
+      "anchor_status": "provisional",
+      "sha256": "affc5d05415b94f277b182b0c8f6a1f9e280345950ec2443ce1e13b6a99ecbba",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "rail-switch",
+      "category": "environment",
+      "file": "sprites/environment/rail-switch.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "width": 307,
+      "height": 175,
+      "anchor": [
+        153,
+        170
+      ],
+      "anchor_status": "provisional",
+      "sha256": "0d05eb684b356e19beb1fffcd7d1f932c225cf43461a42931e9fb13abe1050cf",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "rail-crossing",
+      "category": "environment",
+      "file": "sprites/environment/rail-crossing.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "width": 286,
+      "height": 196,
+      "anchor": [
+        143,
+        191
+      ],
+      "anchor_status": "provisional",
+      "sha256": "3ca74cfa12779adbfc2e7f6b8d4170c76890b4411d87106c2006533fb8156489",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "freight-wagon",
+      "category": "environment",
+      "file": "sprites/environment/freight-wagon.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "width": 299,
+      "height": 184,
+      "anchor": [
+        149,
+        179
+      ],
+      "anchor_status": "provisional",
+      "sha256": "14dea48db7649213174a85530cbe1fcdbbb571dccd59fab7e27fa3cad6a1b5d9",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "diesel-locomotive",
+      "category": "environment",
+      "file": "sprites/environment/diesel-locomotive.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "width": 315,
+      "height": 208,
+      "anchor": [
+        157,
+        203
+      ],
+      "anchor_status": "provisional",
+      "sha256": "9802955e18b16416a2d4974c5c6be086f85fb4e3778e83ae20e20c6da2769b57",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "timber-stack",
+      "category": "environment",
+      "file": "sprites/environment/timber-stack.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "width": 308,
+      "height": 162,
+      "anchor": [
+        154,
+        157
+      ],
+      "anchor_status": "provisional",
+      "sha256": "6464fe9a8b1d805066e765cd65a8532b3ee36e26ed61b0d0eb2ee76732caab8c",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "cable-reel",
+      "category": "environment",
+      "file": "sprites/environment/cable-reel.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "width": 269,
+      "height": 195,
+      "anchor": [
+        134,
+        190
+      ],
+      "anchor_status": "provisional",
+      "sha256": "a55fa17cd68f318c3485f2027e9b33b1cbcb177a76a146f280d8e67c766cb5d6",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "dish-array",
+      "category": "environment",
+      "file": "sprites/environment/dish-array.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "width": 293,
+      "height": 216,
+      "anchor": [
+        146,
+        211
+      ],
+      "anchor_status": "provisional",
+      "sha256": "c3ee156e6456f3e6025bc736bf17e4c30f6cfa4a85923c1b27c7ef425f70e0d4",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "dock",
+      "category": "environment",
+      "file": "sprites/environment/dock.png",
+      "source": "source/sprite_sheet_de_trilhos_e_natureza_gráfica.png",
+      "source_rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "width": 302,
+      "height": 222,
+      "anchor": [
+        151,
+        217
+      ],
+      "anchor_status": "provisional",
+      "sha256": "2424000ac154ac45e7408f0bbb8fbcd20de9bf98f71fcc80158ccf55a71244cf",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "telescope-console",
+      "category": "props",
+      "file": "sprites/props/telescope-console.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "width": 289,
+      "height": 281,
+      "anchor": [
+        144,
+        276
+      ],
+      "anchor_status": "provisional",
+      "sha256": "a5f66978d5ab265c538d21e4f435bbd98c6200f61d4d966ae7d5a2fb9e258456",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "breaker-cabinet",
+      "category": "props",
+      "file": "sprites/props/breaker-cabinet.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "width": 256,
+      "height": 286,
+      "anchor": [
+        128,
+        281
+      ],
+      "anchor_status": "provisional",
+      "sha256": "804a54591467347a5deb10b04c07bfe7a7073ac58aa4dd5360e3173f00e307e9",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "battery-case",
+      "category": "props",
+      "file": "sprites/props/battery-case.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "width": 219,
+      "height": 271,
+      "anchor": [
+        109,
+        266
+      ],
+      "anchor_status": "provisional",
+      "sha256": "5cee9490be7c48da2447630ef3ea2d72f1a618aab7b8332ed04f50b3c42ea65f",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "examination-bed",
+      "category": "props",
+      "file": "sprites/props/examination-bed.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "width": 299,
+      "height": 249,
+      "anchor": [
+        149,
+        244
+      ],
+      "anchor_status": "provisional",
+      "sha256": "48df9bfd2dace6bf6e18af46f455d888a78989d9d4f8743b259aa1b5a2ccbfba",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "medical-cabinet",
+      "category": "props",
+      "file": "sprites/props/medical-cabinet.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "width": 243,
+      "height": 281,
+      "anchor": [
+        121,
+        276
+      ],
+      "anchor_status": "provisional",
+      "sha256": "b8f94715f2670af553bbf3779466fb8d0dd366942f8b3e2bb0f841b436d5c507",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "archive-shelf",
+      "category": "props",
+      "file": "sprites/props/archive-shelf.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "width": 293,
+      "height": 258,
+      "anchor": [
+        146,
+        253
+      ],
+      "anchor_status": "provisional",
+      "sha256": "753734f7fe4b41a96cef62bb8f74bd03a3db50b20e524d66703264cd3056313e",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "evidence-board",
+      "category": "props",
+      "file": "sprites/props/evidence-board.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "width": 300,
+      "height": 274,
+      "anchor": [
+        150,
+        269
+      ],
+      "anchor_status": "provisional",
+      "sha256": "8b0195b3fdc492041823aa5ef4020f19d91c66e488287051783e79ec5105e852",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "radio-desk",
+      "category": "props",
+      "file": "sprites/props/radio-desk.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "width": 307,
+      "height": 241,
+      "anchor": [
+        153,
+        236
+      ],
+      "anchor_status": "provisional",
+      "sha256": "7cb8e0525ee88174abc0e88f819b2c32afe22d6b0577b914b8db4c37af097a23",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "tape-recorder",
+      "category": "props",
+      "file": "sprites/props/tape-recorder.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "width": 284,
+      "height": 263,
+      "anchor": [
+        142,
+        258
+      ],
+      "anchor_status": "provisional",
+      "sha256": "6b5165496bb9e5a37ac1baa3a39813e36db5038f3b9034c60291961231972c9f",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "resonance-console",
+      "category": "props",
+      "file": "sprites/props/resonance-console.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "width": 298,
+      "height": 286,
+      "anchor": [
+        149,
+        281
+      ],
+      "anchor_status": "provisional",
+      "sha256": "1e6c6fa405f6a4d6bc9a1aa569fd11ab8b82e031497c6a5ccd94987eb4047d09",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "containment-tank",
+      "category": "props",
+      "file": "sprites/props/containment-tank.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "width": 310,
+      "height": 280,
+      "anchor": [
+        155,
+        275
+      ],
+      "anchor_status": "provisional",
+      "sha256": "048ff64ffdbf12d1a50ca7b3b23ad997462ee270bb27227b7d1a834b0dbbbf7b",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "generator",
+      "category": "props",
+      "file": "sprites/props/generator.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "width": 308,
+      "height": 271,
+      "anchor": [
+        154,
+        266
+      ],
+      "anchor_status": "provisional",
+      "sha256": "f49baea80c4874892dcb81c08ef8372213f796dbc8a96cc980828a2dc9dd3976",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "vault-door",
+      "category": "props",
+      "file": "sprites/props/vault-door.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "width": 275,
+      "height": 259,
+      "anchor": [
+        137,
+        254
+      ],
+      "anchor_status": "provisional",
+      "sha256": "897b047e8dfd20b7425fa89dafa2e595cc4d3156b48f567e5374e6ee01555223",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "gear-mechanism",
+      "category": "props",
+      "file": "sprites/props/gear-mechanism.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "width": 245,
+      "height": 277,
+      "anchor": [
+        122,
+        272
+      ],
+      "anchor_status": "provisional",
+      "sha256": "4f1a9883f42f4ecdcf5419cfc9882a845af52797ac3b8c8964e5845c027fd19c",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "signal-panel",
+      "category": "props",
+      "file": "sprites/props/signal-panel.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "width": 319,
+      "height": 274,
+      "anchor": [
+        159,
+        269
+      ],
+      "anchor_status": "provisional",
+      "sha256": "c9448b90c7f599a3d441303d92021882a513c014e792254045c7c743ee943f6c",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "bunker-door",
+      "category": "props",
+      "file": "sprites/props/bunker-door.png",
+      "source": "source/conjunto_de_props_isométricos_industriais.png",
+      "source_rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "width": 313,
+      "height": 261,
+      "anchor": [
+        156,
+        256
+      ],
+      "anchor_status": "provisional",
+      "sha256": "17072b9489d488b63a3d0e75cb64d2214905ebae58a1eda846cf39a471228ac3",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "rail-worker",
+      "category": "characters",
+      "file": "sprites/characters/rail-worker.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "width": 159,
+      "height": 288,
+      "anchor": [
+        79,
+        283
+      ],
+      "anchor_status": "provisional",
+      "sha256": "9cbc47b9e7129e95bbc54dd413c2b7d6332b830e02d81b4e6fbb29980ba69f33",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "radio-technician",
+      "category": "characters",
+      "file": "sprites/characters/radio-technician.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "width": 140,
+      "height": 279,
+      "anchor": [
+        70,
+        274
+      ],
+      "anchor_status": "provisional",
+      "sha256": "70e3bf770000091dba614fecc695db21740adf02af4d45069d20022f1108d4f1",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "nurse",
+      "category": "characters",
+      "file": "sprites/characters/nurse.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "width": 132,
+      "height": 284,
+      "anchor": [
+        66,
+        279
+      ],
+      "anchor_status": "provisional",
+      "sha256": "1eac0661e0dbb60963135a5e1b72519b459f87f6c16c0bbff6a1cfb1f5539193",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "scientist",
+      "category": "characters",
+      "file": "sprites/characters/scientist.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "width": 156,
+      "height": 284,
+      "anchor": [
+        78,
+        279
+      ],
+      "anchor_status": "provisional",
+      "sha256": "b541b6acc2af7d5be11f2fe2ce44edaa4cb4e1461f3e7dfaa11ed91bb26c5c68",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "elder",
+      "category": "characters",
+      "file": "sprites/characters/elder.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "width": 154,
+      "height": 288,
+      "anchor": [
+        77,
+        283
+      ],
+      "anchor_status": "provisional",
+      "sha256": "590b2690ca1751888bdc5542934babdd7537dc8d8ebe04269d0345c89ca17d37",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "priest",
+      "category": "characters",
+      "file": "sprites/characters/priest.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "width": 159,
+      "height": 300,
+      "anchor": [
+        79,
+        295
+      ],
+      "anchor_status": "provisional",
+      "sha256": "936a3257500f5f9fdc64da6f14e97d04a62e3813c5b6d0039680297eaf3aaafa",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "guard",
+      "category": "characters",
+      "file": "sprites/characters/guard.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "width": 161,
+      "height": 292,
+      "anchor": [
+        80,
+        287
+      ],
+      "anchor_status": "provisional",
+      "sha256": "d876c8e9c6ab953ce7754fbfd44d6d7cab774ece6f250b09193c8958483de65a",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "woodcutter",
+      "category": "characters",
+      "file": "sprites/characters/woodcutter.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "width": 202,
+      "height": 293,
+      "anchor": [
+        101,
+        288
+      ],
+      "anchor_status": "provisional",
+      "sha256": "6d1b2f522d578ee5fcef6cb7e5a5493d8d6d65553746d9f671173551b89243d1",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "electrician",
+      "category": "characters",
+      "file": "sprites/characters/electrician.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "width": 146,
+      "height": 285,
+      "anchor": [
+        73,
+        280
+      ],
+      "anchor_status": "provisional",
+      "sha256": "ac4b6db65ca7aa4ef59d89c3d78f91475f2db36e2c3609842755590e3cc63642",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "young-explorer",
+      "category": "characters",
+      "file": "sprites/characters/young-explorer.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "width": 145,
+      "height": 284,
+      "anchor": [
+        72,
+        279
+      ],
+      "anchor_status": "provisional",
+      "sha256": "6634d863159ee204b601c7a841b87cc7ecd7b56fc545c560972d2d9ad7e54ead",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "echo-hound",
+      "category": "creatures",
+      "file": "sprites/creatures/echo-hound.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "width": 274,
+      "height": 220,
+      "anchor": [
+        137,
+        215
+      ],
+      "anchor_status": "provisional",
+      "sha256": "2ae2fb46fd58481580297bf7d3f1879708d208f0b569251144d5e18b46c2a815",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "resonant-colossus",
+      "category": "creatures",
+      "file": "sprites/creatures/resonant-colossus.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "width": 278,
+      "height": 272,
+      "anchor": [
+        139,
+        267
+      ],
+      "anchor_status": "provisional",
+      "sha256": "b08bdcc37496ad93fd5e743bddb748826835a85fc58eb74d49633e7ce3f89d95",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "blue-echo",
+      "category": "creatures",
+      "file": "sprites/creatures/blue-echo.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "width": 212,
+      "height": 258,
+      "anchor": [
+        106,
+        253
+      ],
+      "anchor_status": "provisional",
+      "sha256": "e8413baa4549781c8b3387b44cf12b02968ac5739eca467bdeae695b4f470268",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "cave-mutant",
+      "category": "creatures",
+      "file": "sprites/creatures/cave-mutant.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "width": 288,
+      "height": 231,
+      "anchor": [
+        144,
+        226
+      ],
+      "anchor_status": "provisional",
+      "sha256": "95bcc054d8ed3c71e647f7a8b7addce0b3d93b71d4e055e7adf063432cf116ba",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "sentinel-drone",
+      "category": "creatures",
+      "file": "sprites/creatures/sentinel-drone.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "width": 215,
+      "height": 270,
+      "anchor": [
+        107,
+        265
+      ],
+      "anchor_status": "provisional",
+      "sha256": "efcd0bd70e8c125629ae4fd25b044158506cb77ad9014b486601360948a454cb",
+      "status": "review",
+      "approved_design": true
+    },
+    {
+      "id": "spore-creature",
+      "category": "creatures",
+      "file": "sprites/creatures/spore-creature.png",
+      "source": "source/sprite_sheet_de_frequência_zero.png",
+      "source_rect": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "width": 177,
+      "height": 293,
+      "anchor": [
+        88,
+        288
+      ],
+      "anchor_status": "provisional",
+      "sha256": "6c49b7def514b0d03053de0a5642c9f53ff312ba10241a5c0f46d0ebd7678afe",
+      "status": "review",
+      "approved_design": true
+    }
+  ],
+  "note": "Design approved by user; crops need inspection at native scale and calibrated pivots before production. Originals preserved."
+}
