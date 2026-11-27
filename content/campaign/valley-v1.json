@@ -18354,6 +18354,110 @@
    "activity": "Prepara o desligamento físico",
    "from": 480,
    "to": 1200
+  },
+  {
+   "choice": "protect-patient",
+   "npc": "celina",
+   "loc": "shelter",
+   "activity": "Ajuda Lia e procura o filho em segurança",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "public-patient",
+   "npc": "helena",
+   "loc": "archive",
+   "activity": "Protocola os documentos da clínica",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "public-patient",
+   "npc": "future",
+   "loc": "future",
+   "activity": "Verifica a denúncia antes de transmiti-la",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "mark-trails",
+   "npc": "elder",
+   "loc": "farm",
+   "activity": "Orienta visitantes pelos caminhos conhecidos",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "seal-trails",
+   "npc": "priest",
+   "loc": "shelter",
+   "activity": "Acolhe famílias impedidas de voltar à floresta",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "secure-evidence",
+   "npc": "helena",
+   "loc": "archive",
+   "activity": "Prepara cópias para fora do Vale",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "secure-evidence",
+   "npc": "future",
+   "loc": "future",
+   "activity": "Grava os relatos e prepara a divulgação",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "evacuate",
+   "npc": "elder",
+   "loc": "rail",
+   "activity": "Aguarda o trem com as famílias",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "evacuate",
+   "npc": "priest",
+   "loc": "rail",
+   "activity": "Organiza o embarque dos moradores",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "evacuate",
+   "npc": "celina",
+   "loc": "rail",
+   "activity": "Distribui roupas e procura o filho",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "shelter-in-place",
+   "npc": "woodcutter",
+   "loc": "shelter",
+   "activity": "Reforça portas e leva madeira",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "shelter-in-place",
+   "npc": "priest",
+   "loc": "shelter",
+   "activity": "Coordena o acolhimento",
+   "from": 480,
+   "to": 1200
+  },
+  {
+   "choice": "test-counterwave",
+   "npc": "future",
+   "loc": "observatory",
+   "activity": "Grava a resposta da Frequência Zero",
+   "from": 480,
+   "to": 1200
   }
  ],
  "chapters": [
