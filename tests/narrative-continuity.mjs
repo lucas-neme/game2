@@ -297,3 +297,23 @@ loyaltyCase.choices.cargo.id='observe-workers';loyaltyCase.socialHistory.rail.de
 assert.equal(campaign.loyaltyFor('guard',loyaltyTime,loyaltyCase)[0].mode,'conflict');
 assert.equal(campaign.loyaltyDuty('guard',loyaltyTime-120,loyaltyCase),null);
 console.log('Loyalty: authored alliances, conflicts, schedule windows and mortality passed.');
+
+const optional=campaign.fresh();optional.train=true;optional.choices.cargo={id:'warn-workers',at:100};
+optional.socialHistory.rail={end:1000,status:'concluído',actors:['guard','rail-worker'],delta:20};
+assert.equal(campaign.sideCaseOffers('guard',999,optional).length,0);
+assert.equal(campaign.sideCaseOffers('guard',1000,optional)[0].id,'rail-protection');
+assert.equal(campaign.acceptSideCase(optional,1000,'guard','rail-protection'),true);
+assert.equal(campaign.acceptSideCase(optional,1000,'guard','rail-protection'),false);
+assert.equal(campaign.advanceSideCase(optional,1001,'guard','rail-protection'),null);
+assert.ok(campaign.advanceSideCase(optional,1002,'rail-worker','rail-protection'));
+const optionalReload=campaign.normalize(JSON.parse(JSON.stringify(optional)));
+assert.ok(campaign.advanceSideCase(optionalReload,1003,'guard','rail-protection'));
+assert.equal(campaign.sideCasesFor(optionalReload,1003)[0].status,'completed');
+assert.equal(campaign.advanceSideCase(optionalReload,1004,'guard','rail-protection'),null);
+assert.equal(campaign.sideCasesFor(optional,3880)[0].status,'expired');
+assert.equal(campaign.sideCasesFor(optional,1003,id=>id==='guard'?1002:null)[0].status,'cancelled');
+assert.equal(Object.keys(optionalReload.evidence).length,0);
+assert.equal(Object.keys(optionalReload.solved).length,0);
+optionalReload.outcome={id:'zero',at:2000};
+assert.ok(campaign.residentEpilogues(optionalReload).find(q=>q.id==='guard').text.includes(optionalReload.sideCases['rail-protection'].result));
+console.log('Optional cases: prerequisites, two-step progression, deadlines, mortality, save reload and epilogues passed.');
