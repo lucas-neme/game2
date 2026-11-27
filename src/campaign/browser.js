@@ -5,7 +5,27 @@ var valleyBaseResidents=residents,valleyBaseWalk=walkable,valleyBaseRender=rende
 var valleyActorsCache={key:null,rows:null};
 var valleyBaseNight=drawNight,valleyBaseRoomDraw=fzDrawRoom;
 var valleyAudioBase=soundscape,valleyAudioGraph=null,valleyAudioTimer=null,valleyAudioEventKey=null;
+var valleyMusic={current:null,previous:null,failed:new Set(),volume:.38,fadeAt:0,desired:null,since:0};
+function valleyMusicStop(){for(const a of [valleyMusic.current,valleyMusic.previous])if(a){a.pause();a.removeAttribute('src');a.load()}valleyMusic.current=null;valleyMusic.previous=null;valleyMusic.desired=null;valleyMusic.failed.clear()}
+function valleyMusicUpdate(c,loc){
+ if(typeof Audio!=='function')return false;
+ const cue=VALLEY.soundtrackCue(c,s.t,loc,{danger:dangerActive(),scene:valleyCinemaReplay?.scene.id,investigation:false});
+ if(!cue)return false;const m=valleyMusic,now=audio.currentTime;
+ if(m.desired!==cue.id){m.desired=cue.id;m.since=now}
+ if(m.current?.dataset.track!==cue.id&&!m.failed.has(cue.id)&&(!m.current||dangerActive()||c.outcome||now-m.since>=3)){
+  if(m.previous){m.previous.pause();m.previous.removeAttribute('src');m.previous.load()}
+  m.previous=m.current;
+  const a=new Audio(cue.file);a.dataset.track=cue.id;a.loop=!c.outcome;a.preload='auto';a.volume=0;m.current=a;m.fadeAt=now;
+  const failed=()=>{if(m.current!==a)return;m.failed.add(cue.id);a.pause();m.current=m.previous;m.previous=null};
+  a.addEventListener('error',failed,{once:true});a.play().catch(failed);
+ }
+ const hidden=typeof document!=='undefined'&&document.hidden,vol=hidden?0:m.volume,fade=Math.min(1,Math.max(0,(now-m.fadeAt)/3));
+ if(m.current)m.current.volume=vol*fade;
+ if(m.previous){m.previous.volume=vol*(1-fade);if(fade>=1){m.previous.pause();m.previous.removeAttribute('src');m.previous.load();m.previous=null}}
+ return !!m.current&&!m.current.paused&&m.current.readyState>=2;
+}
 function valleyAudioStop(){
+ valleyMusicStop();
  if(valleyAudioTimer!=null){clearInterval(valleyAudioTimer);valleyAudioTimer=null}
  if(valleyAudioGraph){for(const o of valleyAudioGraph.nodes){try{o.stop()}catch{}}try{valleyAudioGraph.bus.disconnect()}catch{}valleyAudioGraph=null}
  valleyAudioEventKey=null;
@@ -25,12 +45,13 @@ function valleyAudioUpdate(){
   valleyAudioGraph={context:audio,bus,nodes,gains,next:audio.currentTime,step:0,lastMood:null};
  }
  const g=valleyAudioGraph,now=audio.currentTime,c=valleyState(),loc=valleyAudioLocation(),p=VALLEY.audioDirection(c,s.t,loc,!!valleyCinemaReplay);
+ const musicPlaying=valleyMusicUpdate(c,loc);
  const hidden=typeof document!=='undefined'&&document.hidden;
- const volume=hidden?0:1;
+ const volume=hidden?0:musicPlaying?.12:1;
  g.bus.gain.setTargetAtTime(.65*volume,now,.2);
  g.nodes.forEach((o,i)=>{o.frequency.setTargetAtTime(p.root*[1,1.5,2.01][i],now,.65);g.gains[i].gain.setTargetAtTime(p.bed*[1,.42,p.anomaly?.6:.17][i],now,.7)});
  if(g.lastMood!==p.mood){g.lastMood=p.mood;g.step=0;g.next=now+.1}
- if(now>=g.next&&!hidden){
+ if(now>=g.next&&!hidden&&!musicPlaying){
   const o=audio.createOscillator(),v=audio.createGain(),f=p.root*2*Math.pow(2,p.intervals[g.step++%p.intervals.length]/12),beat=60/p.tempo;
   o.type='sine';o.frequency.value=f;v.gain.setValueAtTime(.0001,now);v.gain.linearRampToValueAtTime(p.lead,now+.1);v.gain.exponentialRampToValueAtTime(.0001,now+beat*.85);o.connect(v);v.connect(g.bus);o.start(now);o.stop(now+beat);g.next=now+beat;
  }
@@ -293,6 +314,9 @@ function campaignDrawTerrain(ctx){if(!valleyInstalled||!HAS_DOM||!ctx?.drawImage
  const z=valleyGround;if(ctx===g){const x=Math.max(z.x,Math.floor(cam.x-c.width/(2*cam.z))-4),y=Math.max(z.y,Math.floor(cam.y-c.height/(2*cam.z))-4),X=Math.min(z.x+z.w,Math.ceil(cam.x+c.width/(2*cam.z))+4),Y=Math.min(z.y+z.h,Math.ceil(cam.y+c.height/(2*cam.z))+4);if(X>x&&Y>y)ctx.drawImage(z.cv,x-z.x,y-z.y,X-x,Y-y,x,y,X-x,Y-y)};valleyDrawBarriers(ctx);valleyDrawManifestations(ctx)
 }
 if(HAS_DOM){
+ const musicSettings=document.createElement('details');const ms=document.createElement('summary');ms.textContent='Trilha sonora e créditos';musicSettings.append(ms);
+ const ml=document.createElement('label');ml.textContent='Volume da música ';const range=document.createElement('input');range.type='range';range.min='0';range.max='1';range.step='.05';range.value=String(valleyMusic.volume);range.oninput=()=>{valleyMusic.volume=Number(range.value)};ml.append(range);musicSettings.append(ml);
+ for(const q of VALLEY.data.soundtrack){const p=document.createElement('p');const a=document.createElement('a');a.href=q.page;a.target='_blank';a.rel='noopener noreferrer';a.textContent=q.title+' — '+q.artist+' (CC BY 4.0)';p.append(a);musicSettings.append(p)}const license=document.createElement('a');license.href='https://creativecommons.org/licenses/by/4.0/';license.textContent='Licença CC BY 4.0';musicSettings.append(license);$('combatSettings').after(musicSettings);
  const originalAudioToggle=$('audio').onclick;$('audio').onclick=async()=>{if(audio)valleyAudioStop();await originalAudioToggle();if(audio)soundscape()};
  const panel=document.createElement('section');panel.id='valleyCampaign';panel.className='valley-campaign';$('journal').prepend(panel);
  const start=document.createElement('button');start.id='valleyStart';start.textContent='Nova campanha completa (30 dias)';start.onclick=()=>{if(!confirm('Iniciar uma nova campanha? O progresso atual será substituído.'))return;uiStart(true);valleyActivate();render();valleySave()};$('startGame').parentElement.append(start);

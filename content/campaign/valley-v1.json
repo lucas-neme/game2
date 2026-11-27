@@ -20840,5 +20840,88 @@
       "bed": 0.008,
       "lead": 0.01
     }
-  }
+  },
+  "soundtrack": [
+    {
+      "id": "long-dark",
+      "title": "The Long Dark",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/the-long-dark/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2023/01/TheLongDark.mp3",
+      "file": "assets/music/long-dark.mp3"
+    },
+    {
+      "id": "intervention",
+      "title": "Intervention",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/intervention/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/01/sb_intervention.mp3",
+      "file": "assets/music/intervention.mp3"
+    },
+    {
+      "id": "shadows",
+      "title": "Shadows and Dust",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/shadows-and-dust/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2023/11/ShadowsAndDust.mp3",
+      "file": "assets/music/shadows.mp3"
+    },
+    {
+      "id": "meanwhile",
+      "title": "Meanwhile",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/meanwhile/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2025/01/Meanwhile.mp3",
+      "file": "assets/music/meanwhile.mp3"
+    },
+    {
+      "id": "incantation",
+      "title": "Incantation",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/incantation/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2024/09/Incantation.mp3",
+      "file": "assets/music/incantation.mp3"
+    },
+    {
+      "id": "void",
+      "title": "Eyes In The Void",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/eyes-in-the-void/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2025/06/EyesInTheVoid.mp3",
+      "file": "assets/music/void.mp3"
+    },
+    {
+      "id": "unraveling",
+      "title": "Unraveling",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/unraveling/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2026/05/Unraveling.mp3",
+      "file": "assets/music/unraveling.mp3"
+    },
+    {
+      "id": "moment",
+      "title": "In This Moment",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/in-this-moment/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2026/08/InThisMoment.mp3",
+      "file": "assets/music/moment.mp3"
+    },
+    {
+      "id": "echoes",
+      "title": "Echoes",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/echoes/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2024/05/Echoes.mp3",
+      "file": "assets/music/echoes.mp3"
+    }
+  ]
 }

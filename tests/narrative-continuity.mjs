@@ -248,10 +248,18 @@ console.log('Cinema archive: choice branches, ending frames, cutoff, replay pers
 const audioCase=campaign.fresh();audioCase.train=true;
 assert.equal(campaign.audioDirection(audioCase,0,'rail').mood,'quiet');
 assert.equal(campaign.audioDirection(audioCase,6*1440+720,'rail').mood,'investigation');
-assert.equal(campaign.audioDirection(audioCase,17*1440+1200,'observatory').mood,'unease');
+assert.equal(campaign.audioDirection(audioCase,17*1440+1200,'observatory').mood,'collapse');
 assert.equal(campaign.audioDirection(audioCase,29*1440+720,'horizon').mood,'critical');
 assert.equal(campaign.audioDirection(audioCase,29*1440+720,'horizon',true).mood,'cinema');
 audioCase.outcome={id:'zero',at:29*1440+720};
 assert.equal(campaign.audioDirection(audioCase,29*1440+720,'horizon').mood,'ending');
 for(const p of Object.values(data.audioProfiles)){assert.ok(p.bed<=.03&&p.lead<=.02&&p.tempo>0&&p.intervals.length===4)}
 console.log('Audio director: chapter, regional tension, cinema, ending and profile bounds passed.');
+
+const score=campaign.fresh();score.train=true;
+assert.equal(campaign.soundtrackCue(score,720,'forest').id,'incantation');
+assert.equal(campaign.soundtrackCue(score,720,'archive').id,'intervention');
+assert.equal(campaign.soundtrackCue(score,720,'rail',{danger:true}).id,'void');
+assert.equal(campaign.soundtrackCue(score,720,'rail',{scene:'departure:elder'}).id,'moment');
+score.outcome={id:'zero',at:43200};assert.equal(campaign.soundtrackCue(score,43200,'rail').id,'echoes');
+assert.equal(data.soundtrack.length,9);
