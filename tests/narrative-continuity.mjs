@@ -265,3 +265,23 @@ score.outcome={id:'zero',at:43200};assert.equal(campaign.soundtrackCue(score,432
 assert.equal(data.soundtrack.length,11);
 assert.equal(campaign.soundtrackCue(campaign.fresh(),720,'rail',{danger:true,stealth:true}).id,'nightfall');
 score.outcome.id='truth';assert.equal(campaign.soundtrackCue(score,43200,'rail').id,'reawakening');
+
+const gossip=campaign.fresh();gossip.train=true;gossip.choices.cargo={id:'warn-workers',at:100};
+gossip.socialHistory.first={status:'concluído',end:200,actors:['guard','watchman'],delta:0};
+gossip.socialHistory.second={status:'concluído',end:300,actors:['watchman','elder'],delta:0};
+assert.equal(campaign.informationFor('watchman',199,gossip).length,0);
+assert.equal(campaign.informationFor('watchman',200,gossip)[0].depth,1);
+assert.equal(campaign.informationFor('elder',300,gossip)[0].depth,2);
+assert.equal(campaign.rumorsFor('elder',300,gossip).length,1);
+const rumor=campaign.rumorsFor('elder',300,gossip)[0];
+assert.equal(campaign.recordRumor(gossip,300,'elder',rumor.id),true);
+assert.equal(campaign.recordRumor(gossip,300,'elder',rumor.id),false);
+assert.equal(campaign.clarifyRumor(gossip,301,'elder',rumor.id),true);
+assert.equal(campaign.clarifyRumor(gossip,301,'elder',rumor.id),false);
+assert.equal(Object.keys(gossip.evidence).length,0);
+assert.equal(campaign.informationFor('elder',300,gossip,id=>id==='watchman'?250:null).length,0);
+const reloadedGossip=campaign.normalize(JSON.parse(JSON.stringify(gossip)));
+assert.equal(campaign.rumorsFor('elder',301,reloadedGossip)[0].verifiedAt,301);
+const privacy=campaign.fresh();privacy.choices.missing={id:'protect-patient',at:100};privacy.socialHistory.first={status:'concluído',end:200,actors:['clinic','elder'],delta:0};
+assert.equal(campaign.informationFor('elder',300,privacy).length,0);
+console.log('NPC network: temporal propagation, protected patient information, death, rumor correction and save persistence passed.');
