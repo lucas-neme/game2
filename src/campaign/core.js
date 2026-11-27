@@ -5,7 +5,7 @@ function createValleyCampaign(data){
  const phase=d=>data.chapters.find(c=>d>=c.days[0]&&d<=c.days[1])?.id||5;
  const day=t=>Math.max(1,Math.min(30,1+Math.floor(t/1440)));
  const minute=t=>((Math.floor(t)%1440)+1440)%1440;
- const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},rumorJournal:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},mechanisms:{},cinemaArchive:{},outcome:null,uncle:null,evacuation:null});
+ const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},rumorJournal:{},sideCases:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},mechanisms:{},cinemaArchive:{},outcome:null,uncle:null,evacuation:null});
  const normalize=c=>Object.assign(fresh(),c||{});
  function chapter(c,t){if(!c.train)return 1;const cap=phase(day(t));for(let ch=2;ch<=5;ch++){if(ch>cap)return cap;if(data.missions.some(m=>m.chapter===ch&&!c.solved[m.id]))return ch}return 5}
  function available(c,t){return c.train&&!c.outcome?data.missions.filter(m=>m.chapter<=chapter(c,t)&&m.chapter<=phase(day(t))&&!c.solved[m.id]):[]}
@@ -203,6 +203,40 @@ function createValleyCampaign(data){
   if(!loc||!data.locations[loc])return null;
   return {loc,activity:l.goal,reason:'loyalty:'+l.id,loyalty:l.id,dialogue:l.dialogue,changed:true};
  }
+ // Optional cases require an actual conversation with each participant.
+ const sideCaseRules=[
+ {id:'rail-protection',giver:'guard',target:'rail-worker',title:'Antes do próximo turno',request:'Peça a Anselmo que confirme o aviso aos ferroviários.',reply:'Vou reunir os colegas antes de começarmos o turno.',result:'Raul e Anselmo combinaram transmitir pessoalmente os avisos de segurança.'},
+ {id:'rail-silence',giver:'rail-worker',target:'guard',title:'O preço do silêncio',request:'Converse com Raul sobre a falta de avisos.',reply:'Reconheço que o silêncio prejudicou a confiança entre nós.',result:'Anselmo recebeu o reconhecimento de Raul; a divergência foi registrada.'},
+ {id:'patient-archive',giver:'clinic',target:'helena',title:'Nomes sob proteção',request:'Confirme com Helena que os registros serão mantidos sob acesso restrito.',reply:'Guardarei os registros sem publicar os nomes.',result:'Lia e Helena confirmaram o compromisso de proteger a identidade dos pacientes.'},
+ {id:'patient-dispute',giver:'helena',target:'clinic',title:'Verdade sem exposição',request:'Ouça a posição de Lia sobre a divulgação.',reply:'Aceito discutir os fatos, mas não a exposição de pacientes.',result:'Helena ouviu a posição de Lia; o desacordo sobre a divulgação ficou documentado.'}
+ ];
+ function sideCaseAlive(id,t,c,deadAt){return (deadAt(id)==null||deadAt(id)>t)&&!departed(c,id,t)&&(departureAt(c,id)==null||departureAt(c,id)>t)}
+ function sideCaseOffers(id,t,c,deadAt=()=>null){
+  if(c.outcome||t>=43200||!sideCaseAlive(id,t,c,deadAt))return [];
+  return sideCaseRules.filter(r=>r.giver===id&&!c.sideCases?.[r.id]&&loyaltyFor(id,t,c,deadAt).some(l=>l.id===r.id)&&sideCaseAlive(r.target,t,c,deadAt));
+ }
+ function acceptSideCase(c,t,id,key,deadAt=()=>null){
+  const r=sideCaseOffers(id,t,c,deadAt).find(q=>q.id===key);if(!r)return false;
+  c.sideCases??={};c.sideCases[key]={id:key,acceptedAt:t,deadline:Math.min(t+2880,43200),status:'active',stage:'visit'};return true;
+ }
+ function sideCaseStatus(c,t,row,deadAt=()=>null){
+  if(row.status!=='active')return row.status;
+  const r=sideCaseRules.find(q=>q.id===row.id);if(!r)return 'cancelled';
+  const cutoff=Math.min(t,c.outcome?.at??43200);
+  if(cutoff>=row.deadline)return 'expired';
+  if(!sideCaseAlive(r.giver,cutoff,c,deadAt)||!sideCaseAlive(r.target,cutoff,c,deadAt)||c.outcome)return 'cancelled';
+  return 'active';
+ }
+ function advanceSideCase(c,t,id,key,deadAt=()=>null){
+  const row=c.sideCases?.[key],r=sideCaseRules.find(q=>q.id===key);
+  if(!row||!r||c.outcome||t<row.acceptedAt||sideCaseStatus(c,t,row,deadAt)!=='active')return null;
+  if(row.stage==='visit'&&id===r.target){row.stage='report';row.visitedAt=t;return r.reply}
+  if(row.stage==='report'&&id===r.giver&&t>=row.visitedAt){row.status='completed';row.completedAt=t;row.result=r.result;return r.result}
+  return null;
+ }
+ function sideCasesFor(c,t,deadAt=()=>null){return Object.values(c.sideCases||{}).flatMap(row=>{
+  const r=sideCaseRules.find(q=>q.id===row.id);return r?[{...r,...row,status:sideCaseStatus(c,t,row,deadAt)}]:[];
+ })}
  function witnessSocial(c,t,id,actor,near,deadAt=()=>null){
   const e=activeSocial(actor,t,c,deadAt);if(!near||!e||e.id!==id)return false;c.socialSeen??={};if(c.socialSeen[id])return false;c.socialSeen[id]={at:t,actor};return true;
  }
@@ -344,6 +378,7 @@ function createValleyCampaign(data){
    const partners=[...new Set(scenes.flatMap(([id,r])=>r.actors.filter(id=>id!==n.id)))];
    for(const other of partners){const rel=relationship(n.id,other,t,c,deadAt);lines.push('Vínculo com '+byId[other].name+': '+rel.status+'.')}
    for(const l of loyaltyFor(n.id,t,c,deadAt))lines.push((l.mode==='alliance'?'Manteve a cooperação com ':'Rompeu a cooperação com ')+byId[l.other].name+' em torno do objetivo: '+l.goal.toLowerCase()+'.');
+   for(const q of sideCasesFor(c,t,deadAt))if(q.status==='completed'&&q.completedAt<=t&&[q.giver,q.target].includes(n.id))lines.push(q.result);
    if(n.id==='electrician'&&c.infrastructure?.switchgear?.at<=t)lines.push(c.infrastructure.switchgear.mode==='repair'?'O protagonista acionou a alimentação de emergência.':'O protagonista isolou os circuitos do Horizonte.');
    if(n.id==='watchman'&&c.outcome.uncle==='resgatado')lines.push('O tio do protagonista foi retirado do confinamento.');
    if(n.id==='bento'||n.id==='scientist'||n.id==='radio-technician'){if(mechanismEffects(c,t).includes('counterwave-reference'))lines.push('A contrafase foi calibrada antes do desfecho.')}
@@ -396,5 +431,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,informationNetwork,informationFor,loyaltyFor,loyaltyDuty,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,informationNetwork,informationFor,loyaltyFor,loyaltyDuty,sideCaseOffers,acceptSideCase,advanceSideCase,sideCasesFor,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }
