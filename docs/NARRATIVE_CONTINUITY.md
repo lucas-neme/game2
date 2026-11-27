@@ -9,3 +9,7 @@ Design gate for future content: identify purpose, setup, payoff, prerequisite, a
 ## V3 — One-shot causal events
 
 Reactions now start no earlier than chapter IV (day 21), take place once at the first eligible full window after the one-hour delay, and skip overlapping authored meetings. The scheduler persists completed/cancelled outcomes even when the player is elsewhere or skips time; death before completion cancels the task. The journal displays individual event outcomes at the ending, including whether preparation was witnessed. Completed outcomes describe narrative activity, not proof of a physical rescue or power-grid change. The dedicated continuity suite is now a required CI step. No retroactive events are added after the ending timestamp.
+
+## V4 — Causal NPC chains
+
+Eleven downstream activities depend on one or more completed prior reactions, with a one-hour minimum handoff delay. Data is topologically ordered; missing or cancelled parents block descendants. Earlier same-actor narrative appointments and fixed meetings reserve their windows. The journal shows the causal chronicle; outcomes are persisted, including after time jumps. This is narrative propagation, not simulated message delivery or physical map unlocking. Existing player-driven rescue/evacuation and endings remain unchanged.

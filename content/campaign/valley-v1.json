@@ -19078,6 +19078,173 @@
       "activity": "Cruza os nomes com as provas do protocolo",
       "dialogue": "Helena: Os nomes e as provas precisam sobreviver juntos. Sem os nomes, o Horizonte vira apenas uma história técnica.",
       "result": "Nomes das vítimas cruzados com as provas."
+    },
+    {
+      "id": "guard-corridor",
+      "requires": [
+        "workers-rescue"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 540,
+      "to": 660,
+      "npc": "guard",
+      "loc": "tunnel",
+      "activity": "Verifica a passagem indicada por Anselmo",
+      "dialogue": "Raul: Anselmo deixou a passagem pronta. Vou conferir se a rota é segura antes de chamar Sérgio.",
+      "result": "Raul conferiu a rota de manutenção."
+    },
+    {
+      "id": "watchman-corridor",
+      "requires": [
+        "guard-corridor"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 720,
+      "to": 840,
+      "npc": "watchman",
+      "loc": "bunker",
+      "activity": "Confere o acesso de serviço com a informação de Raul",
+      "dialogue": "Sérgio: Raul me avisou. Agora sabemos qual acesso precisa ser vigiado.",
+      "result": "Sérgio registrou o acesso de serviço para o resgate."
+    },
+    {
+      "id": "celina-patient-list",
+      "requires": [
+        "protected-evacuation"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 540,
+      "to": 660,
+      "npc": "celina",
+      "loc": "shelter",
+      "activity": "Procura o filho na lista conferida por Marta",
+      "dialogue": "Celina: Marta guardou os nomes. Finalmente posso procurar sem depender de números.",
+      "result": "Celina examinou a lista protegida; a busca pelo filho continua."
+    },
+    {
+      "id": "priest-shelter",
+      "requires": [
+        "public-shelter"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 660,
+      "to": 780,
+      "npc": "priest",
+      "loc": "shelter",
+      "activity": "Organiza provisões conforme a lista de leitos",
+      "dialogue": "Padre Miguel: Lia informou quantas pessoas podemos acolher. Vou separar as provisões.",
+      "result": "Provisões organizadas conforme os registros do abrigo."
+    },
+    {
+      "id": "guard-trail",
+      "requires": [
+        "marked-evacuation"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 780,
+      "to": 900,
+      "npc": "guard",
+      "loc": "forest",
+      "activity": "Confere as marcas deixadas por Tomás",
+      "dialogue": "Raul: Tomás marcou um caminho. Vou verificar as condições antes de orientar as famílias.",
+      "result": "Patrulha de reconhecimento da rota registrada."
+    },
+    {
+      "id": "elder-shelter",
+      "requires": [
+        "sealed-shelter"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 600,
+      "to": 720,
+      "npc": "elder",
+      "loc": "shelter",
+      "activity": "Reúne relatos antigos sobre trilhas perigosas",
+      "dialogue": "Alzira: Ernesto fechou o caminho. Há razões antigas para não atravessar aquela mata.",
+      "result": "Relatos de Alzira foram reunidos para orientar os moradores."
+    },
+    {
+      "id": "bento-calibration",
+      "requires": [
+        "grid-counterwave",
+        "scientist-counterwave"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 660,
+      "to": 780,
+      "npc": "bento",
+      "loc": "observatory",
+      "activity": "Compara os relógios com as medições revisadas",
+      "dialogue": "Bento: Vicente e Augusto fizeram a parte deles. Vou comparar os registros antes que a janela se feche.",
+      "result": "Bento reuniu referências temporais para a contramedida."
+    },
+    {
+      "id": "radio-calibration",
+      "requires": [
+        "bento-calibration"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 840,
+      "to": 960,
+      "npc": "radio-technician",
+      "loc": "future",
+      "activity": "Registra a comparação de Bento nas fitas",
+      "dialogue": "Davi: Os relógios de Bento nos deram uma referência. Esta fita preserva a comparação.",
+      "result": "Davi registrou a referência temporal nas fitas."
+    },
+    {
+      "id": "radio-isolation",
+      "requires": [
+        "isolated-shutdown"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 600,
+      "to": 720,
+      "npc": "radio-technician",
+      "loc": "radio",
+      "activity": "Registra o plano de comunicação durante o desligamento",
+      "dialogue": "Davi: Vicente verificou os circuitos. Precisamos saber o que fazer se o rádio também parar.",
+      "result": "Plano de comunicação de emergência registrado."
+    },
+    {
+      "id": "archive-evidence",
+      "requires": [
+        "discreet-evidence",
+        "exposure-evidence"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 660,
+      "to": 780,
+      "npc": "future",
+      "loc": "archive",
+      "activity": "Organiza cópias das provas reunidas por Anselmo e Helena",
+      "dialogue": "Nora: As guias e os nomes contam a mesma história. Vou guardar cópias separadas.",
+      "result": "Nora organizou cópias das provas para preservação."
+    },
+    {
+      "id": "radio-evidence",
+      "requires": [
+        "archive-evidence"
+      ],
+      "choices": [],
+      "day": 22,
+      "from": 960,
+      "to": 1080,
+      "npc": "radio-technician",
+      "loc": "radio",
+      "activity": "Prepara um registro de transmissão das provas",
+      "dialogue": "Davi: Nora trouxe as cópias. Vou preparar o registro para que não dependam de uma única fita.",
+      "result": "Registro de transmissão das provas preparado, sem confirmar envio externo."
     }
   ]
 }

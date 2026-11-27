@@ -5,7 +5,7 @@ const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const data=JSON.parse(read('content/campaign/valley-v1.json'));
 const campaign=vm.runInNewContext(read('src/campaign/core.js')+'\ncreateValleyCampaign(data)',{data});
 for(const p of Object.values(data.locations))assert.ok(p.purpose);
-for(const r of data.storyReactions){
+for(const r of data.storyReactions.filter(r=>!(r.requires||[]).length)){
  const t=(r.day-1)*1440+r.from,c=campaign.fresh();
  for(const [i,id] of r.choices.entries())c.choices['test'+i]={id,at:t-61};
  const w=campaign.reactionWindow(r,c);assert.ok(w);
@@ -20,13 +20,13 @@ for(const r of data.storyReactions){
  c.choices.test0.at=t-61;
  assert.equal(campaign.settleStory(c,w.end-1).length,0);
  c.storySeen[r.id]={at:w.at,npc:r.npc};
- assert.equal(campaign.settleStory(c,w.end+1440).length,1);
+ assert.equal(campaign.settleStory(c,w.end).length,1);
  assert.equal(c.storyHistory[r.id].status,'concluído');
  assert.equal(c.storyHistory[r.id].witnessed,true);
- assert.equal(campaign.settleStory(c,w.end+1440).length,0);
+ assert.equal(campaign.settleStory(c,w.end).length,0);
  assert.equal(campaign.storyEpilogue(c)[0].result,r.result);
  const restored=campaign.normalize(JSON.parse(JSON.stringify(c)));
- assert.equal(campaign.settleStory(restored,43200).length,0);
+ assert.equal(campaign.settleStory(restored,w.end).length,0);
  const dead=campaign.fresh();dead.choices=c.choices;
  campaign.settleStory(dead,w.end,()=>w.end-1);
  assert.equal(dead.storyHistory[r.id].status,'cancelado');
@@ -34,3 +34,26 @@ for(const r of data.storyReactions){
  assert.equal(campaign.settleStory(ended,43200).length,0);
 }
 console.log('Narrative continuity: one-shot appointments, death, save/reload, time jumps and epilogues passed.');
+
+const root=data.storyReactions.find(r=>r.id==='workers-rescue');
+const guard=data.storyReactions.find(r=>r.id==='guard-corridor');
+const watch=data.storyReactions.find(r=>r.id==='watchman-corridor');
+function scenario(){const c=campaign.fresh();for(const [i,id] of root.choices.entries())c.choices[i]={id,at:20*1440};return c}
+const cascade=scenario();assert.equal(campaign.reactionWindow(guard,cascade),null);
+const first=campaign.reactionWindow(root,cascade);
+campaign.settleStory(cascade,first.end);
+const second=campaign.reactionWindow(guard,cascade);assert.ok(second.at>=first.end+60);
+assert.equal(campaign.schedule('guard',second.at,cascade).storyReaction,guard.id);
+campaign.settleStory(cascade,second.end);
+const third=campaign.reactionWindow(watch,cascade);assert.ok(third.at>=second.end+60);
+campaign.settleStory(cascade,third.end);
+assert.equal(cascade.storyHistory[watch.id].status,'concluído');
+const skipped=scenario();campaign.settleStory(skipped,43200);
+assert.equal(JSON.stringify(skipped.storyHistory),JSON.stringify(cascade.storyHistory));
+const broken=scenario();campaign.settleStory(broken,43200,id=>id==='guard'?second.at:null);
+assert.equal(broken.storyHistory[guard.id].status,'cancelado');
+assert.equal(broken.storyHistory[watch.id],undefined);
+const both=campaign.fresh();for(const [i,id] of ['repair-grid','test-counterwave','recruit-scientist'].entries())both.choices[i]={id,at:20*1440};
+campaign.settleStory(both,43200);assert.equal(both.storyHistory['bento-calibration'].status,'concluído');assert.equal(both.storyHistory['radio-calibration'].status,'concluído');
+delete both.choices[2];both.storyHistory={};campaign.settleStory(both,43200);assert.equal(both.storyHistory['bento-calibration'],undefined);
+console.log('Causal propagation: multi-hop, multi-parent, time jump and mortality checks passed.');

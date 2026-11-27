@@ -14,12 +14,17 @@ function createValleyCampaign(data){
  function reactionWindow(r,c){
   const choices=Object.values(c.choices||{}), selected=r.choices.map(key=>choices.find(q=>q.id===key));
   if(selected.some(q=>!q))return null;
-  const ready=Math.max(...selected.map(q=>q.at+60),(r.day-1)*1440);
+  const prior=(r.requires||[]).map(id=>c.storyHistory?.[id]);
+  if(prior.some(q=>q?.status!=='concluído'))return null;
+  const ready=Math.max(...selected.map(q=>q.at+60),...prior.map(q=>q.end+60),(r.day-1)*1440);
   const duration=r.to-r.from;
   for(let d=Math.max(r.day,1+Math.floor(ready/1440));d<=30;d++){
    const at=(d-1)*1440+r.from,end=at+duration;
    if(at<ready||end>43200)continue;
    if((data.appointments||[]).some(e=>e.day===d&&e.actors.includes(r.npc)&&e.minute<r.to&&e.until>r.from))continue;
+   // Earlier authored reactions reserve their own slots; dependencies are topologically ordered.
+   const earlier=(data.storyReactions||[]).slice(0,(data.storyReactions||[]).indexOf(r));
+   if(earlier.some(other=>{if(other.npc!==r.npc)return false;const w=c.storyHistory?.[other.id]||reactionWindow(other,c);return w&&w.at<end&&w.end>at}))continue;
    return {at,end};
   }
   return null;
@@ -34,13 +39,13 @@ function createValleyCampaign(data){
   for(const r of data.storyReactions||[]){
    const w=reactionWindow(r,c);if(!w||w.end>cutoff||c.storyHistory[r.id])continue;
    const death=deadAt(r.npc),status=death!=null&&death<w.end?'cancelado':'concluído';
-   const row={...w,npc:r.npc,loc:r.loc,status,result:status==='concluído'?r.result:'O responsável não sobreviveu para concluir a tarefa.',witnessed:!!c.storySeen?.[r.id]};
+   const row={...w,npc:r.npc,loc:r.loc,causes:[...(r.requires||[])],status,result:status==='concluído'?r.result:'O responsável não sobreviveu para concluir a tarefa.',witnessed:!!c.storySeen?.[r.id]};
    c.storyHistory[r.id]=row;added.push({id:r.id,...row});
   }
-  return added;
+  return added.sort((a,b)=>a.end-b.end||a.id.localeCompare(b.id));
  }
  function storyEpilogue(c){
-  return Object.entries(c.storyHistory||{}).sort((a,b)=>a[1].end-b[1].end||a[0].localeCompare(b[0])).map(([id,r])=>({id,npc:r.npc,name:byId[r.npc]?.name||r.npc,status:r.status,result:r.result,witnessed:r.witnessed}));
+  return Object.entries(c.storyHistory||{}).sort((a,b)=>a[1].end-b[1].end||a[0].localeCompare(b[0])).map(([id,r])=>({id,npc:r.npc,name:byId[r.npc]?.name||r.npc,status:r.status,result:r.result,causes:r.causes||[],witnessed:r.witnessed}));
  }
  function schedule(id,t,c,dead=false){if(dead||!byId[id])return null;const n=byId[id],d=day(t),m=minute(t),row=n.days[d-1],base=row.slots.findLast(x=>x.minute<=m)||row.slots[0];let result={...base,day:d,id,name:n.name,sprite:n.sprite,changed:false};
   const meeting=(data.appointments||[]).find(e=>e.day===d&&m>=e.minute&&m<e.until&&e.actors.includes(id));if(meeting){const a=meetingVariant(meeting,c,(d-1)*1440+meeting.minute);return {...result,loc:a.loc,activity:a.activity,changed:!!a.redirected,reason:a.id,meeting:a.id}}
