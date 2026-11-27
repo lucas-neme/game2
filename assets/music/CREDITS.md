@@ -11,3 +11,6 @@ All listed tracks by Scott Buckley, licensed under [CC BY 4.0](https://creativec
 - [Unraveling](https://www.scottbuckley.com.au/library/unraveling/) — Scott Buckley, CC BY 4.0. Local file: `assets/music/unraveling.mp3`.
 - [In This Moment](https://www.scottbuckley.com.au/library/in-this-moment/) — Scott Buckley, CC BY 4.0. Local file: `assets/music/moment.mp3`.
 - [Echoes](https://www.scottbuckley.com.au/library/echoes/) — Scott Buckley, CC BY 4.0. Local file: `assets/music/echoes.mp3`.
+
+- [Nightfall](https://www.scottbuckley.com.au/library/nightfall/) — Scott Buckley, CC BY 4.0. Local file: `assets/music/nightfall.mp3`.
+- [Reawakening](https://www.scottbuckley.com.au/library/reawakening/) — Scott Buckley, CC BY 4.0. Local file: `assets/music/reawakening.mp3`.

@@ -9,14 +9,14 @@ var valleyMusic={current:null,previous:null,failed:new Set(),volume:.38,fadeAt:0
 function valleyMusicStop(){for(const a of [valleyMusic.current,valleyMusic.previous])if(a){a.pause();a.removeAttribute('src');a.load()}valleyMusic.current=null;valleyMusic.previous=null;valleyMusic.desired=null;valleyMusic.failed.clear()}
 function valleyMusicUpdate(c,loc){
  if(typeof Audio!=='function')return false;
- const cue=VALLEY.soundtrackCue(c,s.t,loc,{danger:dangerActive(),scene:valleyCinemaReplay?.scene.id,investigation:false});
+ const cue=VALLEY.soundtrackCue(c,s.t,loc,{danger:dangerActive(),stealth:!!s.stealthRun,scene:valleyCinemaReplay?.scene.id,investigation:false});
  if(!cue)return false;const m=valleyMusic,now=audio.currentTime;
  if(m.desired!==cue.id){m.desired=cue.id;m.since=now}
  if(m.current?.dataset.track!==cue.id&&!m.failed.has(cue.id)&&(!m.current||dangerActive()||c.outcome||now-m.since>=3)){
   if(m.previous){m.previous.pause();m.previous.removeAttribute('src');m.previous.load()}
   m.previous=m.current;
   const a=new Audio(cue.file);a.dataset.track=cue.id;a.loop=!c.outcome;a.preload='auto';a.volume=0;m.current=a;m.fadeAt=now;
-  const failed=()=>{if(m.current!==a)return;m.failed.add(cue.id);a.pause();m.current=m.previous;m.previous=null};
+  const failed=()=>{if(m.current!==a)return;m.failed.add(cue.id);a.pause();m.current=m.previous;m.previous=null;if(m.current)m.current.volume=m.volume;m.fadeAt=now-3};
   a.addEventListener('error',failed,{once:true});a.play().catch(failed);
  }
  const hidden=typeof document!=='undefined'&&document.hidden,vol=hidden?0:m.volume,fade=Math.min(1,Math.max(0,(now-m.fadeAt)/3));

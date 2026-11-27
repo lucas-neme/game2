@@ -278,9 +278,9 @@ function createValleyCampaign(data){
  function cinemaArchive(c){return Object.values(c.cinemaArchive||{}).sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id))}
  // Pure audio director: no playback or wall-clock state in saves.
  function soundtrackCue(c,t,loc,context={}){
- const ending={shutdown:'meanwhile',horizon:'void',zero:'echoes',contact:'shadows',truth:'echoes',sacrifice:'unraveling',silence:'incantation'};
+ const ending={shutdown:'meanwhile',horizon:'void',zero:'echoes',contact:'shadows',truth:'reawakening',sacrifice:'unraveling',silence:'incantation'};
  const scene=context.scene||'';let id='long-dark';
- if(c.outcome)id=ending[c.outcome.id]||'long-dark';else if(context.danger)id='void';else if(scene.startsWith('departure:')||scene==='evacuate'||loc==='shelter')id='moment';else if(scene==='chapter-4'||scene==='shelter')id='unraveling';else if(scene==='chapter-5'||loc==='horizon'||loc==='bunker')id='void';else if(loc==='forest'||loc==='cemetery'||activeManifestations(c,t).some(e=>e.loc===loc))id='incantation';else if(loc==='clinic'||loc==='celina')id='unraveling';else if(loc==='radio'||loc==='observatory')id='meanwhile';else if(['archive','substation','tunnel'].includes(loc)||context.investigation)id='intervention';else if(minute(t)>=1080||minute(t)<360)id='shadows';
+ if(c.outcome)id=ending[c.outcome.id]||'long-dark';else if(context.danger)id=context.stealth?'nightfall':'void';else if(scene.startsWith('departure:')||scene==='evacuate'||loc==='shelter')id='moment';else if(scene==='chapter-4')id='nightfall';else if(scene==='chapter-5'||loc==='horizon'||loc==='bunker')id='void';else if(loc==='forest'||loc==='cemetery'||activeManifestations(c,t).some(e=>e.loc===loc))id='incantation';else if(loc==='clinic'||loc==='celina')id='unraveling';else if(loc==='radio'||loc==='observatory')id='meanwhile';else if(['archive','substation','tunnel'].includes(loc)||context.investigation)id='intervention';else if(signalStrength(c,t,loc)>=60)id='nightfall';else if(minute(t)>=1080||minute(t)<360)id='shadows';
  return data.soundtrack.find(q=>q.id===id);
  }
  function audioDirection(c,t,loc,cinema=false){

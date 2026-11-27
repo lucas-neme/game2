@@ -4,8 +4,11 @@ import {spawnSync} from 'node:child_process';
 const {soundtrack}=JSON.parse(await fs.readFile('content/campaign/valley-v1.json','utf8'));
 await fs.mkdir('assets/music',{recursive:true});
 const manifest=[];
+let prior=[];try{prior=JSON.parse(await fs.readFile('assets/music/manifest.json','utf8'))}catch{}
 for(const q of soundtrack){
  if(!q.download.startsWith('https://www.scottbuckley.com.au/library/wp-content/uploads/')||!/^assets\/music\/[a-z-]+\.mp3$/.test(q.file))throw Error('Invalid source');
+ const prev=prior.find(r=>r.id===q.id&&r.source===q.download&&r.file===q.file);
+ if(prev){try{const bytes=await fs.readFile(q.file);if(createHash('sha256').update(bytes).digest('hex')===prev.sha256){manifest.push(prev);continue}}catch{}}
  const tmp=q.file+'.tmp';
  const result=spawnSync('curl',['--fail','--location','--retry','3','--max-time','180','--proto','=https','--output',tmp,q.download],{stdio:'inherit'});
  if(result.status!==0)throw Error('Download failed: '+q.id);

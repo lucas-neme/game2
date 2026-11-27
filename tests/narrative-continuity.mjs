@@ -262,4 +262,6 @@ assert.equal(campaign.soundtrackCue(score,720,'archive').id,'intervention');
 assert.equal(campaign.soundtrackCue(score,720,'rail',{danger:true}).id,'void');
 assert.equal(campaign.soundtrackCue(score,720,'rail',{scene:'departure:elder'}).id,'moment');
 score.outcome={id:'zero',at:43200};assert.equal(campaign.soundtrackCue(score,43200,'rail').id,'echoes');
-assert.equal(data.soundtrack.length,9);
+assert.equal(data.soundtrack.length,11);
+assert.equal(campaign.soundtrackCue(campaign.fresh(),720,'rail',{danger:true,stealth:true}).id,'nightfall');
+score.outcome.id='truth';assert.equal(campaign.soundtrackCue(score,43200,'rail').id,'reawakening');

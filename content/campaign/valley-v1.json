@@ -20922,6 +20922,24 @@
       "page": "https://www.scottbuckley.com.au/library/echoes/",
       "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2024/05/Echoes.mp3",
       "file": "assets/music/echoes.mp3"
+    },
+    {
+      "id": "nightfall",
+      "title": "Nightfall",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/nightfall/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/05/sb_nightfall.mp3",
+      "file": "assets/music/nightfall.mp3"
+    },
+    {
+      "id": "reawakening",
+      "title": "Reawakening",
+      "artist": "Scott Buckley",
+      "license": "CC BY 4.0",
+      "page": "https://www.scottbuckley.com.au/library/reawakening/",
+      "download": "https://www.scottbuckley.com.au/library/wp-content/uploads/2023/05/Reawakening.mp3",
+      "file": "assets/music/reawakening.mp3"
     }
   ]
 }
