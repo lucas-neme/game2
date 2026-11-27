@@ -47,6 +47,41 @@ function createValleyCampaign(data){
  function storyEpilogue(c){
   return Object.entries(c.storyHistory||{}).sort((a,b)=>a[1].end-b[1].end||a[0].localeCompare(b[0])).map(([id,r])=>({id,npc:r.npc,name:byId[r.npc]?.name||r.npc,status:r.status,result:r.result,causes:r.causes||[],witnessed:r.witnessed}));
  }
+ // Information travels through completed meetings and social encounters, not through global broadcasts.
+ function informationNetwork(c,t,deadAt=()=>null){
+  const cutoff=Math.min(t,c.outcome?.at??43200),known=new Map();
+  const alive=(id,at)=>byId[id]&&(deadAt(id)==null||deadAt(id)>at)&&!departed(c,id,at)&&(departureAt(c,id)==null||departureAt(c,id)>at);
+  const events=[];
+  for(const q of Object.values(c.choices||{})){
+   const affected=Object.keys(data.psychologyEffects?.[q.id]||{});
+   if(q.at+60<=cutoff)events.push({at:q.at+60,key:q.id,actors:affected,seed:true});
+  }
+  for(const e of data.appointments||[]){
+   const row=c.meetings?.[e.id];
+   if(row?.status==='concluído'){const at=(e.day-1)*1440+e.until;if(at<=cutoff)events.push({at,key:e.id,actors:e.actors,seed:false})}
+  }
+  for(const [key,e] of Object.entries(c.socialHistory||{}))if(e.status==='concluído'&&e.end<=cutoff)events.push({at:e.end,key,actors:e.actors,seed:false});
+  events.sort((a,b)=>a.at-b.at||Number(b.seed)-Number(a.seed)||a.key.localeCompare(b.key));
+  for(const e of events){
+   const actors=e.actors.filter(id=>alive(id,e.at)).sort();
+   if(e.seed){for(const id of actors){if(!known.has(id))known.set(id,new Map());known.get(id).set(e.key,{choice:e.key,at:e.at,origin:id,via:null,depth:0})}continue}
+   // Snapshot before this encounter, preventing order-dependent multi-hop dissemination.
+   const snapshot=actors.map(id=>[id,[...(known.get(id)?.values()||[])]]);
+   for(const [sender,facts] of snapshot)for(const receiver of actors){
+    if(receiver===sender)continue;
+    const r=relationship(sender,receiver,e.at,c,deadAt);
+    if(!r||r.score<50)continue;
+    for(const fact of facts){if(fact.depth>=2||known.get(receiver)?.has(fact.choice))continue;
+     // Sensitive medical information is not transmitted outside the original recipients.
+     if(fact.choice==='protect-patient')continue;
+     if(!known.has(receiver))known.set(receiver,new Map());
+     known.get(receiver).set(fact.choice,{choice:fact.choice,at:e.at,origin:fact.origin,via:sender,meeting:e.key,depth:fact.depth+1});
+    }
+   }
+  }
+  return Object.fromEntries([...known].map(([id,facts])=>[id,[...facts.values()].sort((a,b)=>a.at-b.at||a.choice.localeCompare(b.choice))]));
+ }
+ function informationFor(id,t,c,deadAt=()=>null){return informationNetwork(c,t,deadAt)[id]||[]}
  // State is derived from timestamped facts; no accumulated per-frame side effects.
  function psychology(id,t,c,deadAt=()=>null){
   const p=byId[id]?.psychology;if(!p)return null;
@@ -54,6 +89,11 @@ function createValleyCampaign(data){
   const memories=[];
   for(const q of Object.values(c.choices||{})){if(q.at+60>t)continue;const e=data.psychologyEffects?.[q.id]?.[id];if(!e)continue;trust+=e[0];fear+=e[1];resolve+=e[2];memories.push(q.id)}
   for(const [key,r] of Object.entries(c.storyHistory||{})){if(r.end>t||![id,p.ally].includes(r.npc))continue;if(r.status==='concluído'){fear-=4;resolve+=5}else{fear+=10;resolve-=4}memories.push(key)}
+  for(const fact of informationFor(id,t,c,deadAt)){
+   if(fact.depth===0||memories.includes(fact.choice))continue;
+   const effect=data.psychologyEffects?.[fact.choice]?.[fact.origin];if(!effect)continue;
+   trust+=Math.round(effect[0]*.25);fear+=Math.round(effect[1]*.35);resolve+=Math.round(effect[2]*.25);memories.push(fact.choice);
+  }
   const loss=deadAt(p.ally);if(loss!=null&&loss<=t){fear+=22;resolve-=12;memories.push('loss:'+p.ally)}
   fear+=day(t)>=21?15:day(t)>=13?7:0;
   const clamp=x=>Math.max(0,Math.min(100,x));
@@ -302,5 +342,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,informationNetwork,informationFor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }
