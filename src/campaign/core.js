@@ -5,7 +5,7 @@ function createValleyCampaign(data){
  const phase=d=>data.chapters.find(c=>d>=c.days[0]&&d<=c.days[1])?.id||5;
  const day=t=>Math.max(1,Math.min(30,1+Math.floor(t/1440)));
  const minute=t=>((Math.floor(t)%1440)+1440)%1440;
- const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},outcome:null,uncle:null,evacuation:null});
+ const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},outcome:null,uncle:null,evacuation:null});
  const normalize=c=>Object.assign(fresh(),c||{});
  function chapter(c,t){if(!c.train)return 1;const cap=phase(day(t));for(let ch=2;ch<=5;ch++){if(ch>cap)return cap;if(data.missions.some(m=>m.chapter===ch&&!c.solved[m.id]))return ch}return 5}
  function available(c,t){return c.train&&!c.outcome?data.missions.filter(m=>m.chapter<=chapter(c,t)&&m.chapter<=phase(day(t))&&!c.solved[m.id]):[]}
@@ -38,8 +38,8 @@ function createValleyCampaign(data){
   const cutoff=Math.min(t,c.outcome?.at??43200);
   for(const r of data.storyReactions||[]){
    const w=reactionWindow(r,c);if(!w||w.end>cutoff||c.storyHistory[r.id])continue;
-   const death=deadAt(r.npc),status=death!=null&&death<w.end?'cancelado':'concluído';
-   const row={...w,npc:r.npc,loc:r.loc,causes:[...(r.requires||[])],status,result:status==='concluído'?r.result:'O responsável não sobreviveu para concluir a tarefa.',witnessed:!!c.storySeen?.[r.id]};
+   const death=deadAt(r.npc),left=departureAt(c,r.npc),status=(death!=null&&death<w.end)||(left!=null&&left<w.end)?'cancelado':'concluído';
+   const row={...w,npc:r.npc,loc:r.loc,causes:[...(r.requires||[])],status,result:status==='concluído'?r.result:'O responsável morreu ou deixou o Vale antes de concluir a tarefa.',witnessed:!!c.storySeen?.[r.id]};
    c.storyHistory[r.id]=row;added.push({id:r.id,...row});
   }
   return added.sort((a,b)=>a.end-b.end||a.id.localeCompare(b.id));
@@ -99,7 +99,7 @@ function createValleyCampaign(data){
  function settleSocial(c,t,deadAt=()=>null){
   c.socialHistory??={};const added=[];if(!c.train)return added;
   for(const e of data.socialScenes||[]){if(c.socialHistory[e.id])continue;const w=socialWindow(e,c);if(!w||w.end>Math.min(t,c.outcome?.at??43200))continue;
-   const cancelled=e.actors.some(id=>deadAt(id)!=null&&deadAt(id)<w.end);
+   const cancelled=e.actors.some(id=>(deadAt(id)!=null&&deadAt(id)<w.end)||(departureAt(c,id)!=null&&departureAt(c,id)<w.end));
    const row={...w,actors:e.actors.slice(),loc:e.loc,status:cancelled?'cancelado':'concluído',delta:cancelled?0:e.delta,result:cancelled?'O encontro não pôde ser concluído devido à perda de um participante.':e.result,witnessed:!!c.socialSeen?.[e.id]};c.socialHistory[e.id]=row;added.push({id:e.id,...row});
   }return added.sort((a,b)=>a.end-b.end||a.id.localeCompare(b.id));
  }
@@ -138,7 +138,28 @@ function createValleyCampaign(data){
   if(!chosen||!c.train||c.outcome||!c.solved.power||c.choices.power?.id!==chosen||c.choices.power.at+60>t||c.infrastructure?.switchgear)return false;
   c.infrastructure??={};c.infrastructure.switchgear={mode,at:t};return true;
  }
- function schedule(id,t,c,dead=false,deadAt=()=>null){if(dead||!byId[id])return null;const n=byId[id],d=day(t),m=minute(t),row=n.days[d-1],base=row.slots.findLast(x=>x.minute<=m)||row.slots[0];let result={...base,day:d,id,name:n.name,sprite:n.sprite,changed:false};
+ // Civilian departures happen only after the player confirms the withdrawal plan.
+ function departureAt(c,id){
+  if(!c.train||c.evacuation!=='retirada organizada'||!Number.isFinite(c.evacuationAt))return null;
+  const cfg=data.civilDefense?.departures||[],slot=cfg.find(e=>e.actors.includes(id));if(!slot)return null;
+  // A late confirmation rolls the group forward to the next evening.
+  const ready=c.evacuationAt+120,base=(slot.day-1)*1440+slot.minute;
+  const at=base>=ready?base:base+Math.ceil((ready-base)/1440)*1440;
+  return at<43200?at:null;
+ }
+ function departed(c,id,t){const row=c.departures?.[id];return !!row&&row.status==='evacuado'&&row.at<=t}
+ function settleDepartures(c,t,deadAt=()=>null){
+  c.departures??={};const added=[],cutoff=Math.min(t,c.outcome?.at??43200);
+  for(const n of data.npcs){const at=departureAt(c,n.id);if(at==null||at>cutoff||c.departures[n.id])continue;const death=deadAt(n.id);const row={at,status:death!=null&&death<=at?'não embarcou':'evacuado'};c.departures[n.id]=row;added.push({id:n.id,...row})}
+  return added.sort((a,b)=>a.at-b.at||a.id.localeCompare(b.id));
+ }
+ function serviceStatus(c,t,id){
+  const cfg=data.civilDefense?.services?.[id];if(!cfg||!c.train)return {open:true,label:'Acesso normal'};
+  const m=minute(t),crisis=day(t)>=21,close=crisis?cfg.crisisTo:cfg.to;
+  const open=m>=cfg.from&&m<close;return {open,label:open?'Atendimento em funcionamento':crisis?'Atendimento suspenso pela crise':'Fora do horário de atendimento',close};
+ }
+ function schedule(id,t,c,dead=false,deadAt=()=>null){if(dead||!byId[id]||departed(c,id,t))return null;const n=byId[id],d=day(t),m=minute(t),row=n.days[d-1],base=row.slots.findLast(x=>x.minute<=m)||row.slots[0];let result={...base,day:d,id,name:n.name,sprite:n.sprite,changed:false};
+  const departure=departureAt(c,id);if(departure!=null&&t>=departure-60&&t<departure)return {...result,loc:'rail',activity:'Aguarda o embarque para sair do Vale',changed:true,reason:'evacuation-boarding'};
   const meeting=(data.appointments||[]).find(e=>e.day===d&&m>=e.minute&&m<e.until&&e.actors.includes(id));if(meeting){const a=meetingVariant(meeting,c,(d-1)*1440+meeting.minute);return {...result,loc:a.loc,activity:a.activity,changed:!!a.redirected,reason:a.id,meeting:a.id}}
   const reaction=storyReaction(id,t,c);if(reaction)return {...result,loc:reaction.loc,activity:reaction.activity,changed:true,reason:reaction.id,storyReaction:reaction.id,dialogue:reaction.dialogue};
   const social=activeSocial(id,t,c,deadAt);if(social)return {...result,loc:social.loc,activity:social.activity,changed:true,reason:social.id,socialScene:social.id,dialogue:social.dialogue};
@@ -151,7 +172,7 @@ function createValleyCampaign(data){
  function solve(c,t,id,answer){const m=missions[id];if(!m||!available(c,t).includes(m)||!m.sources.every((_,i)=>c.evidence[id+':'+i])||answer!==m.answer)return false;c.solved[id]={at:t};return true}
  function choose(c,t,id,choice){const m=missions[id];if(c.outcome||!m||!c.solved[id]||c.choices[id]||!m.choices.some(q=>q[0]===choice))return false;c.choices[id]={id:choice,at:t};return true}
  function tick(c,t){const added=[];for(const e of data.events){const at=(e.day-1)*1440+e.minute;if(at<=t&&!c.events[e.day]){c.events[e.day]=at;added.push(e)}}return added}
- function settleMeetings(c,t,deadAt=()=>null){c.meetings??={};const added=[];for(const e of data.appointments||[]){const at=(e.day-1)*1440+e.minute,end=(e.day-1)*1440+e.until;if(end>t||c.meetings[e.id])continue;const a=meetingVariant(e,c,at),actors=e.actors.filter(id=>{const dead=deadAt(id);return dead==null||dead>at});const row={at,end,loc:a.loc,activity:a.activity,actors,redirected:!!a.redirected,status:actors.length>=2?'realizado':'cancelado',witnessed:!!c.seenMeetings?.[e.id]};c.meetings[e.id]=row;added.push({id:e.id,...row})}return added}
+ function settleMeetings(c,t,deadAt=()=>null){c.meetings??={};const added=[];for(const e of data.appointments||[]){const at=(e.day-1)*1440+e.minute,end=(e.day-1)*1440+e.until;if(end>t||c.meetings[e.id])continue;const a=meetingVariant(e,c,at),actors=e.actors.filter(id=>{const dead=deadAt(id);return (dead==null||dead>at)&&(departureAt(c,id)==null||departureAt(c,id)>at)});const row={at,end,loc:a.loc,activity:a.activity,actors,redirected:!!a.redirected,status:actors.length>=2?'realizado':'cancelado',witnessed:!!c.seenMeetings?.[e.id]};c.meetings[e.id]=row;added.push({id:e.id,...row})}return added}
  function witness(c,t,id,near){const e=(data.appointments||[]).find(e=>e.id===id);if(!e||!near)return false;const at=(e.day-1)*1440+e.minute,end=(e.day-1)*1440+e.until;if(t<at||t>=end)return false;c.seenMeetings??={};if(c.seenMeetings[id])return false;c.seenMeetings[id]={at:t,loc:meetingVariant(e,c,at).loc};return true}
  function endings(c,t){if(!c.train||!c.solved.last||day(t)<28||t>=43200||c.outcome)return [];const selected=id=>Object.values(c.choices).some(x=>x.id===id);
   const out=[["shutdown","Desligar fisicamente o emissor"],["horizon","Autorizar a amplificação"]];
@@ -162,7 +183,7 @@ function createValleyCampaign(data){
   return out;
  }
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
- function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&!c.evacuation&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";return true}return false}
+ function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&!c.evacuation&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }

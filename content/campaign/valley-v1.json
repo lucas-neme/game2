@@ -19937,5 +19937,55 @@
         "level": 4
       }
     ]
+  },
+  "civilDefense": {
+    "departures": [
+      {
+        "day": 24,
+        "minute": 1080,
+        "actors": [
+          "elder",
+          "celina"
+        ]
+      },
+      {
+        "day": 26,
+        "minute": 1080,
+        "actors": [
+          "woodcutter",
+          "young-explorer"
+        ]
+      },
+      {
+        "day": 29,
+        "minute": 1080,
+        "actors": [
+          "priest",
+          "helena"
+        ]
+      }
+    ],
+    "services": {
+      "market": {
+        "from": 480,
+        "to": 1080,
+        "crisisTo": 720
+      },
+      "clinic": {
+        "from": 480,
+        "to": 1080,
+        "crisisTo": 1080
+      },
+      "sawmill": {
+        "from": 420,
+        "to": 1020,
+        "crisisTo": 720
+      },
+      "archive": {
+        "from": 480,
+        "to": 1020,
+        "crisisTo": 840
+      }
+    }
   }
 }
