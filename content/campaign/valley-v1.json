@@ -19987,5 +19987,104 @@
         "crisisTo": 840
       }
     }
-  }
+  },
+  "routeBarriers": [
+    {
+      "id": "forest-track",
+      "cells": [
+        [
+          21,
+          2
+        ]
+      ],
+      "day": 18,
+      "choice": "seal-trails",
+      "loc": "forest",
+      "label": "Trilha ocidental interditada por Ernesto",
+      "alternative": "Aproxime-se da floresta pelo sul ou pelo leste."
+    },
+    {
+      "id": "fallen-timber",
+      "cells": [
+        [
+          19,
+          3
+        ]
+      ],
+      "day": 21,
+      "loc": "sawmill",
+      "label": "Madeira caída durante os apagões",
+      "alternative": "Contorne a serraria pelo norte ou pelo sul.",
+      "clear": true
+    },
+    {
+      "id": "project-road",
+      "cells": [
+        [
+          25,
+          7
+        ]
+      ],
+      "day": 25,
+      "loc": "horizon",
+      "label": "Acesso ocidental do Horizonte interditado",
+      "alternative": "Use o acesso pelo norte ou pelo sul."
+    }
+  ],
+  "continuityRoles": [
+    {
+      "id": "clinical",
+      "primary": "clinic",
+      "alternates": [
+        "nurse"
+      ],
+      "loc": "clinic",
+      "activity": "Assume o atendimento de Lia",
+      "label": "Atendimento clínico"
+    },
+    {
+      "id": "records",
+      "primary": "helena",
+      "alternates": [
+        "elder",
+        "future"
+      ],
+      "loc": "archive",
+      "activity": "Preserva os registros deixados por Helena",
+      "label": "Preservação dos registros"
+    },
+    {
+      "id": "trails",
+      "primary": "woodcutter",
+      "alternates": [
+        "young-explorer",
+        "guard"
+      ],
+      "loc": "forest",
+      "activity": "Confere as rotas deixadas por Ernesto",
+      "label": "Orientação das trilhas"
+    },
+    {
+      "id": "rail",
+      "primary": "rail-worker",
+      "alternates": [
+        "guard",
+        "watchman"
+      ],
+      "loc": "rail",
+      "activity": "Assume a organização ferroviária de emergência",
+      "label": "Organização ferroviária"
+    },
+    {
+      "id": "radio",
+      "primary": "future",
+      "alternates": [
+        "radio-technician",
+        "bento"
+      ],
+      "loc": "future",
+      "activity": "Mantém os registros da rádio comunitária",
+      "label": "Comunicação de emergência"
+    }
+  ]
 }

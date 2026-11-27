@@ -153,3 +153,23 @@ campaign.settleDepartures(late,43200,id=>id==='elder'?25*1440:null);assert.equal
 const shelter=campaign.fresh();shelter.train=true;shelter.solved.evacuation={at:20*1440};shelter.choices.evacuation={id:'shelter-in-place',at:20*1440};campaign.resolveAction(shelter,20*1440+600,'evacuation');assert.equal(campaign.settleDepartures(shelter,43200).length,0);
 const civilSave=campaign.normalize(JSON.parse(JSON.stringify(civil)));assert.equal(campaign.schedule('elder',board,civilSave),null);
 console.log('Civil defense: service hours, boarding, departure, mortality, late confirmation and persistence passed.');
+
+const road=campaign.fresh();road.train=true;
+assert.equal(campaign.activeBarriers(road,19*1440).length,0);
+road.choices.forest={id:'seal-trails',at:17*1440};
+assert.equal(campaign.activeBarriers(road,17*1440+59).length,0);
+assert.equal(campaign.activeBarriers(road,17*1440+60)[0].id,'forest-track');
+assert.equal(campaign.activeBarriers(road,24*1440).length,3);
+assert.equal(campaign.clearBarrier(road,24*1440,'project-road'),false);
+assert.equal(campaign.clearBarrier(road,24*1440,'fallen-timber'),true);
+assert.equal(campaign.clearBarrier(road,24*1440,'fallen-timber'),false);
+assert.equal(campaign.activeBarriers(road,24*1440).length,2);
+const roles=campaign.fresh();roles.train=true;
+const death=id=>id==='clinic'?20*1440:null;
+assert.equal(campaign.roleAssignments(roles,20*1440+680,death).find(r=>r.id==='clinical').actor,'nurse');
+assert.equal(campaign.roleAssignments(roles,19*1440+680,death).length,0);
+assert.equal(campaign.schedule('nurse',20*1440+680,roles,false,death).reason,'succession:clinical');
+assert.equal(campaign.roleAssignments(roles,20*1440+680,id=>['clinic','nurse'].includes(id)?20*1440:null).find(r=>r.id==='clinical').actor,null);
+const legacy=campaign.fresh();legacy.train=true;legacy.evacuation='retirada organizada';legacy.solved.evacuation={at:20*1440};legacy.choices.evacuation={id:'evacuate',at:20*1440};
+assert.equal(campaign.resolveAction(legacy,21*1440,'evacuation'),true);assert.equal(legacy.evacuationAt,21*1440);
+console.log('Routes, clearance, role substitution and legacy evacuation recovery passed.');

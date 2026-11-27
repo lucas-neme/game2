@@ -25,7 +25,7 @@ function valleyHash(x,y,z=0){let n=Math.imul(x+71,374761393)^Math.imul(y+39,6682
 function valleyRoad(x,y){return y===4||y===7||y===10||[17,21,25].includes(x)}
 function valleyRail(x,y){return y===0||y===1&&x>=23}
 function valleyRehash(){SHASH.clear();for(const c of STATIC){const ex=c.t?c.r:c.hx,ey=c.t?c.r:c.hy;for(let i=Math.floor(c.x-ex);i<=Math.floor(c.x+ex);i++)for(let j=Math.floor(c.y-ey);j<=Math.floor(c.y+ey);j++){const key=(i+64)*256+j+64;if(!SHASH.has(key))SHASH.set(key,[]);SHASH.get(key).push(c)}}}
-function valleyRestoreWorld(){if(!valleyInstalled)return;sites.splice(0,sites.length,...valleyBase.sites);ART.place.splice(0,ART.place.length,...valleyBase.places);ART.lights.splice(0,ART.lights.length,...valleyBase.lights);STATIC.splice(0,STATIC.length,...valleyBase.colliders);FZ_ROOMS.buildings.splice(0,FZ_ROOMS.buildings.length,...valleyBase.buildings);for(const id of Object.keys(FZ_ROOMS.layouts))if(!valleyBase.roomKeys.has(id))delete FZ_ROOMS.layouts[id];ART.world.cam=valleyBase.cam.slice();PHYS.maxX=13.45;valleyRehash();valleyInstalled=false;valleyActorsCache.key=null;valleyGround=null;valleyIndoorCache.clear();valleyDestinations()}
+function valleyRestoreWorld(){if(!valleyInstalled)return;valleyBarrierKey=null;sites.splice(0,sites.length,...valleyBase.sites);ART.place.splice(0,ART.place.length,...valleyBase.places);ART.lights.splice(0,ART.lights.length,...valleyBase.lights);STATIC.splice(0,STATIC.length,...valleyBase.colliders);FZ_ROOMS.buildings.splice(0,FZ_ROOMS.buildings.length,...valleyBase.buildings);for(const id of Object.keys(FZ_ROOMS.layouts))if(!valleyBase.roomKeys.has(id))delete FZ_ROOMS.layouts[id];ART.world.cam=valleyBase.cam.slice();PHYS.maxX=13.45;valleyRehash();valleyInstalled=false;valleyActorsCache.key=null;valleyGround=null;valleyIndoorCache.clear();valleyDestinations()}
 function valleyDestinations(){const el=$('destination');if(!el)return;el.replaceChildren();for(const a of sites){const opt=document.createElement('option');opt.value=a.id;opt.textContent=a.name;el.append(opt)}}
 function valleyRoom(id,p){const obj={
  village:[["bed",2,1.5],["wardrobe",6.8,1],["table",3,4],["chair",3,5.2],["desk",7,3,"Caderno dos ferroviários"]],
@@ -43,6 +43,31 @@ function valleyInstallWorld(){if(valleyInstalled||!valleyActive())return;valleyI
   const bld=!!p.room;ART.place.push([p.art,p.x,p.y,0,id,bld?1:0]);if(bld){STATIC.push({t:0,x:p.x,y:p.y,hx:.48,hy:.48});FZ_ROOMS.buildings.push([id,p.x,p.y]);FZ_ROOMS.layouts[id]=valleyRoom(id,p);ART.lights.push([p.x,p.y,0,75,'lamp'])}}
  for(let x=14;x<28;x++)for(let y=0;y<14;y++){if(valleyRoad(x,y)||valleyRail(x,y)||Object.values(VALLEY.data.locations).some(p=>Math.hypot(x-p.x,y-p.y)<1.4))continue;const n=valleyHash(x,y)%100;if(n<25){ART.place.push([n<12?29:27,x,y,0,0,0]);STATIC.push({t:1,x,y,r:.19})}else if(n<45)ART.place.push([n<34?43:55,x+.1,y+.12,0,0,0])}
  valleyRehash();valleyDestinations();valleyActorsCache.key=null;
+}
+var valleyBarrierKey=null;
+function valleySyncBarriers(){
+ if(!valleyInstalled||!valleyActive())return;
+ const barriers=VALLEY.activeBarriers(valleyState(),s.t),key=barriers.map(r=>r.id).join('|');
+ if(key===valleyBarrierKey)return;
+ valleyBarrierKey=key;
+ for(let i=STATIC.length-1;i>=0;i--)if(STATIC[i].valleyBarrier)STATIC.splice(i,1);
+ const px=Number.isFinite(s.px)?s.px:s.x,py=Number.isFinite(s.py)?s.py:s.y;
+ for(const r of barriers)for(const [x,y] of r.cells){
+  // Do not spawn an obstruction on top of a player; retry after leaving the cell.
+  if(!s.room&&Math.hypot(px-x,py-y)<.9){valleyBarrierKey=null;continue}
+  STATIC.push({t:0,x,y,hx:.43,hy:.43,valleyBarrier:r.id});
+ }
+ valleyRehash();valleyActorsCache.key=null;
+}
+function valleyDrawBarriers(ctx){
+ if(!valleyActive())return;
+ for(const ob of STATIC.filter(q=>q.valleyBarrier)){
+  const [x,y]=iso(ob.x,ob.y);ctx.save();ctx.translate(x,y);
+  ctx.fillStyle='#241f18';ctx.beginPath();ctx.ellipse(0,3,31,10,0,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle='#30271f';ctx.lineWidth=8;ctx.beginPath();ctx.moveTo(-24,-4);ctx.lineTo(24,6);ctx.stroke();
+  ctx.strokeStyle='#af9461';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(-24,-13);ctx.lineTo(24,-3);ctx.stroke();
+  ctx.strokeStyle='#795c3c';ctx.lineWidth=4;for(const k of [-20,20]){ctx.beginPath();ctx.moveTo(k,-18);ctx.lineTo(k,8);ctx.stroke()}ctx.restore();
+ }
 }
 function valleyActivate(){if(!s.campaign)s.campaign=VALLEY.fresh();else s.campaign=VALLEY.normalize(s.campaign);valleyInstallWorld();valleyTick();return s.campaign}
 walkable=function(x,y){if(!valleyActive()||x<14)return valleyBaseWalk(x,y);return Number.isInteger(x)&&Number.isInteger(y)&&x>=14&&x<28&&y>=0&&y<14&&!solidAt(x,y,PHYS.heroR)};
@@ -103,10 +128,11 @@ function valleyCollect(m,i,via,loc){if(!valleyActive()||s.end||dangerActive())re
  if(!VALLEY.collect(valleyState(),s.t,m.id,i,via))return false;record(valleySourceKey(m,i));advance(12);say(e.truth+(via==='archive'?' (Cópia preservada no registro local.)':''));render();valleySave();return true}
 function valleyButton(el,label,fn){const b=document.createElement('button');b.textContent=label;b.onclick=fn;el.append(b);return b}
 function valleySitePanel(id,inside=false){if(!valleyActive()||s.end||dangerActive())return false;const c=valleyState(),p=valleyLocation(id);if(!p)return false;const el=$('dialog');const entries=[];
+ for(const r of VALLEY.activeBarriers(c,s.t)){if(r.loc!==id)continue;if(r.clear)entries.push(['Remover madeira caída',()=>{if(!(s.room===id||valleyNear(id))||!VALLEY.clearBarrier(c,s.t,r.id))return;advance(30);say('A madeira foi removida. O caminho está novamente disponível.');render();valleySave()}]);else entries.push(['Examinar interdição',()=>{if(s.room===id||valleyNear(id))say(r.label+'. '+r.alternative)}])}
  if(id==='substation'&&inside&&c.solved.power&&!c.infrastructure?.switchgear&&c.choices.power&&c.choices.power.at+60<=s.t){const mode=c.choices.power.id==='repair-grid'?'repair':'isolate';entries.push([mode==='repair'?'Acionar alimentação de emergência':'Isolar circuitos do Horizonte',()=>{if(s.room!==id||s.end||dangerActive())return;if(!VALLEY.operateGrid(c,s.t,mode))return;advance(30);say(mode==='repair'?'Circuito de emergência acionado. Apenas pontos essenciais recebem energia durante a crise.':'Circuitos do Horizonte isolados. A distribuição civil permanece limitada.');render();valleySave()}])}
  for(const m of VALLEY.available(c,s.t))for(let i=0;i<m.sources.length;i++){const e=m.sources[i];if(c.evidence[m.id+':'+i]||e.place!==id)continue;if(!e.actor&&(!valleyIsNew(p)||!FZ_ROOMS.layouts[id]||inside))entries.push([e.label,()=>valleyCollect(m,i,'site',id)]);else if(e.actor&&valleyArchiveAllowed(e,m))entries.push(['Consultar cópia: '+e.label,()=>valleyCollect(m,i,'archive',id)])}
  if(c.solved.rescue&&id==='bunker'&&inside&&!c.uncle&&c.choices.rescue?.id==='rescue-uncle')entries.push(['Retirar o tio pela saída de serviço',()=>{if(s.room!==id)return;if(VALLEY.resolveAction(c,s.t,'rescue')){advance(90);say('Seu tio está vivo. Sérgio deixou o caminho de manutenção livre.');render();valleySave()}}]);
- if(c.solved.evacuation&&['shelter','village','rail'].includes(id)&&!c.evacuation&&c.choices.evacuation)entries.push(['Confirmar a organização dos moradores',()=>{if(!(s.room===id||valleyNear(id)))return;if(VALLEY.resolveAction(c,s.t,'evacuation')){advance(90);say('A lista de famílias foi conferida. '+c.evacuation+'.');render();valleySave()}}]);
+ if(c.solved.evacuation&&['shelter','village','rail'].includes(id)&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&c.choices.evacuation)entries.push(['Confirmar a organização dos moradores',()=>{if(!(s.room===id||valleyNear(id)))return;if(VALLEY.resolveAction(c,s.t,'evacuation')){advance(90);say('A lista de famílias foi conferida. '+c.evacuation+'.');render();valleySave()}}]);
  if(id==='horizon'&&inside&&VALLEY.endings(c,s.t).length)entries.push(['Operar o emissor',()=>valleyFinalPanel()]);
  if(!entries.length&&!valleyIsNew(p))return false;
  if(!inside)el.replaceChildren();if(!inside&&FZ_ROOMS.layouts[id])valleyButton(el,'Entrar — '+p.name,()=>{if(valleyNear(id))fzEnterRoom(id)});
@@ -122,7 +148,7 @@ interact=function(){if(!valleyActive()||s.room||s.end||dangerActive())return val
  const loc=Object.entries(VALLEY.data.locations).filter(([id])=>valleyNear(id)).sort((a,b)=>Math.hypot(a[1].x-s.x,a[1].y-s.y)-Math.hypot(b[1].x-s.x,b[1].y-s.y))[0];
  if(loc&&(valleyIsNew(loc[1])||valleyState().train)&&valleySitePanel(loc[0]))return;return valleyBaseInteract()};
 fzRoomAction=function(){const id=s.room,R=FZ_ROOMS.layouts[id],t=R&&fzRoomTarget(R,FZ_R);if(valleyActive()&&t?.kind==='npc'&&!s.end&&!dangerActive()&&$('pzModal').hidden&&$('invModal').hidden){talkToResident(t.id);return true}const result=valleyBaseRoomAction();if(valleyActive()&&id===s.room&&t?.kind==='obj'&&(!$('puzzle').children.length)&&$('pzModal').hidden)valleySitePanel(id,true);return result};
-function valleyTick(){if(!valleyActive())return;const c=valleyState();for(const e of VALLEY.settleDepartures(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(VALLEY.byId[e.id].name+(e.status==='evacuado'?' deixou o Vale pelo trem de retirada.':' não conseguiu embarcar.'));for(const e of VALLEY.tick(c,s.t))s.events.push('Dia '+e.day+' — '+e.text);for(const e of VALLEY.settleMeetings(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push('Encontro '+e.status+' em '+valleyLocation(e.loc).name+': '+e.activity+(e.redirected?' (local alterado)':'')+'.');for(const e of VALLEY.settleStory(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(VALLEY.byId[e.npc].name+' — '+e.status+': '+e.result);for(const e of VALLEY.settleSocial(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(e.result);if(VALLEY.deadline(c,s.t))s.end='Silêncio absoluto — o prazo se encerrou. O Vale perdeu contato com o mundo.'}
+function valleyTick(){if(!valleyActive())return;const c=valleyState();valleySyncBarriers();for(const e of VALLEY.settleDepartures(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(VALLEY.byId[e.id].name+(e.status==='evacuado'?' deixou o Vale pelo trem de retirada.':' não conseguiu embarcar.'));for(const e of VALLEY.tick(c,s.t))s.events.push('Dia '+e.day+' — '+e.text);for(const e of VALLEY.settleMeetings(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push('Encontro '+e.status+' em '+valleyLocation(e.loc).name+': '+e.activity+(e.redirected?' (local alterado)':'')+'.');for(const e of VALLEY.settleStory(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(VALLEY.byId[e.npc].name+' — '+e.status+': '+e.result);for(const e of VALLEY.settleSocial(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(e.result);if(VALLEY.deadline(c,s.t))s.end='Silêncio absoluto — o prazo se encerrou. O Vale perdeu contato com o mundo.'}
 var valleySavedAt=-1;advance=function(n){valleyBaseAdvance(n);valleyTick();if(valleyActive()&&(s.end||s.t-valleySavedAt>=30||s.t<valleySavedAt))valleySave()};
 function valleySave(){if(!valleyActive())return;try{localStorage.setItem('fz-demo-v2',JSON.stringify(s));valleySavedAt=s.t}catch{}}
 function valleyContinue(){if(!s.end?.includes('FIM DO CAPÍTULO I'))return false;valleyActivate();s.campaign.train=true;s.end=null;s.cinemaDismissed=true;$('cinema').hidden=true;$('world').hidden=false;stopRoute();say('O trem desapareceu, mas a investigação continua. Consulte o diário e siga a remessa H-17.');render();valleySave();return true}
@@ -146,6 +172,10 @@ var valleyJournalKey=null;function valleyJournal(){if(!HAS_DOM)return;const el=$
  const civil=document.createElement('details'),civilTitle=document.createElement('summary');civilTitle.textContent='Defesa civil e retirada';civil.append(civilTitle);
  for(const id of Object.keys(VALLEY.data.civilDefense.services)){const p=document.createElement('p');p.textContent=valleyLocation(id).name+' — '+VALLEY.serviceStatus(c,s.t,id).label;civil.append(p)}
  for(const n of VALLEY.data.npcs){const at=VALLEY.departureAt(c,n.id),row=c.departures?.[n.id];if(at==null)continue;const p=document.createElement('p');p.textContent=n.name+' — '+(row?row.status:'Embarque previsto no dia '+VALLEY.day(at)+' às '+String(Math.floor(VALLEY.minute(at)/60)).padStart(2,'0')+'h');civil.append(p)}el.append(civil);
+ const routes=document.createElement('details'),routeTitle=document.createElement('summary');routeTitle.textContent='Rotas e responsabilidades de emergência';routes.append(routeTitle);
+ for(const r of VALLEY.activeBarriers(c,s.t)){const p=document.createElement('p');p.textContent=r.label+' — '+r.alternative;routes.append(p)}
+ for(const r of VALLEY.roleAssignments(c,s.t,key=>mortState().npcs[key]?.t??null)){const p=document.createElement('p');p.textContent=r.label+' — '+(r.actor?VALLEY.byId[r.actor].name+' assumiu a responsabilidade':'Sem substituto disponível');routes.append(p)}
+ if(routes.children.length>1)el.append(routes);
  const available=VALLEY.available(c,s.t);
  for(const m of available){const card=document.createElement('section'),t=document.createElement('strong');t.textContent=m.title;card.append(t);const p=document.createElement('p');p.textContent=m.summary;card.append(p);m.sources.forEach((e,i)=>{const v=c.evidence[m.id+':'+i],row=document.createElement('p');row.textContent=(v?'✓ ':'○ ')+e.label+' — '+(e.actor&&!v?VALLEY.byId[e.actor].name+(valleyArchiveAllowed(e,m)?' ou registro em '+valleyLocation(e.place).name:''):valleyLocation(e.place).name)+(v?' · '+v.via:'');card.append(row)});if(m.sources.every((_,i)=>c.evidence[m.id+':'+i])){const q=document.createElement('p');q.textContent=m.question;card.append(q);m.options.forEach((o,i)=>valleyButton(card,o,()=>{if(s.end||dangerActive()||!VALLEY.solve(c,s.t,m.id,i)){say('A conclusão não corresponde às evidências.');return}say('Caso concluído: '+m.title);render();valleySave()}))}el.append(card)}
  for(const m of VALLEY.data.missions){if(!c.solved[m.id]||c.choices[m.id]||!m.choices.length)continue;const card=document.createElement('section'),p=document.createElement('p');p.textContent='Decisão: '+m.title+' (altera rotinas futuras)';card.append(p);for(const [id,label] of m.choices)valleyButton(card,label,()=>{if(s.end||dangerActive()||!VALLEY.choose(c,s.t,m.id,id))return;valleyActorsCache.key=null;advance(15);say('Decisão registrada. Os moradores reagirão a partir da próxima hora.');render();valleySave()});el.append(card)}
@@ -161,7 +191,7 @@ function campaignDrawTerrain(ctx){if(!valleyInstalled||!HAS_DOM||!ctx?.drawImage
  for(let i=0;i<85;i++){const r=valleyHash(x,y,i),px=X-64+r%128,py=Y-32+(r>>>8)%64;k.fillStyle=rail?'#777161':road?['#ac967b','#7c6b59','#bdab8c'][r%3]:['#526832','#879443','#667936','#a0a45b'][r%4];k.globalAlpha=.35+(r%3)*.12;k.fillRect(px,py,2+(r>>>16)%7,2+(r>>>22)%4)}k.restore();
  if(rail){k.save();k.strokeStyle='#403a31';k.lineWidth=5;for(let i=-2;i<=2;i++){k.beginPath();k.moveTo(X+i*20-13,Y+i*10+7);k.lineTo(X+i*20+13,Y+i*10-7);k.stroke()}for(const o of [-7,7]){k.strokeStyle='#a2a09a';k.lineWidth=2;k.beginPath();k.moveTo(X-64,Y-32+o);k.lineTo(X+64,Y+32+o);k.stroke()}k.restore()}}
  valleyGround={cv,x:x0,y:y0,w,h}}
- const z=valleyGround;if(ctx===g){const x=Math.max(z.x,Math.floor(cam.x-c.width/(2*cam.z))-4),y=Math.max(z.y,Math.floor(cam.y-c.height/(2*cam.z))-4),X=Math.min(z.x+z.w,Math.ceil(cam.x+c.width/(2*cam.z))+4),Y=Math.min(z.y+z.h,Math.ceil(cam.y+c.height/(2*cam.z))+4);if(X>x&&Y>y)ctx.drawImage(z.cv,x-z.x,y-z.y,X-x,Y-y,x,y,X-x,Y-y)}
+ const z=valleyGround;if(ctx===g){const x=Math.max(z.x,Math.floor(cam.x-c.width/(2*cam.z))-4),y=Math.max(z.y,Math.floor(cam.y-c.height/(2*cam.z))-4),X=Math.min(z.x+z.w,Math.ceil(cam.x+c.width/(2*cam.z))+4),Y=Math.min(z.y+z.h,Math.ceil(cam.y+c.height/(2*cam.z))+4);if(X>x&&Y>y)ctx.drawImage(z.cv,x-z.x,y-z.y,X-x,Y-y,x,y,X-x,Y-y)};valleyDrawBarriers(ctx)
 }
 if(HAS_DOM){
  const panel=document.createElement('section');panel.id='valleyCampaign';panel.className='valley-campaign';$('journal').prepend(panel);
