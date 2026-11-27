@@ -285,3 +285,15 @@ assert.equal(campaign.rumorsFor('elder',301,reloadedGossip)[0].verifiedAt,301);
 const privacy=campaign.fresh();privacy.choices.missing={id:'protect-patient',at:100};privacy.socialHistory.first={status:'concluído',end:200,actors:['clinic','elder'],delta:0};
 assert.equal(campaign.informationFor('elder',300,privacy).length,0);
 console.log('NPC network: temporal propagation, protected patient information, death, rumor correction and save persistence passed.');
+
+const loyaltyCase=campaign.fresh();loyaltyCase.train=true;loyaltyCase.choices.cargo={id:'warn-workers',at:100};
+const loyaltyTime=15*1440+1150;
+assert.equal(campaign.loyaltyFor('guard',loyaltyTime,loyaltyCase).length,0);
+loyaltyCase.socialHistory.rail={end:loyaltyTime-60,status:'concluído',actors:['guard','rail-worker'],delta:20};
+assert.equal(campaign.loyaltyFor('guard',loyaltyTime,loyaltyCase)[0].mode,'alliance');
+assert.equal(campaign.loyaltyDuty('guard',loyaltyTime,loyaltyCase).loc,'village');
+assert.equal(campaign.loyaltyFor('guard',loyaltyTime,loyaltyCase,id=>id==='rail-worker'?loyaltyTime-1:null).length,0);
+loyaltyCase.choices.cargo.id='observe-workers';loyaltyCase.socialHistory.rail.delta=-25;
+assert.equal(campaign.loyaltyFor('guard',loyaltyTime,loyaltyCase)[0].mode,'conflict');
+assert.equal(campaign.loyaltyDuty('guard',loyaltyTime-120,loyaltyCase),null);
+console.log('Loyalty: authored alliances, conflicts, schedule windows and mortality passed.');
