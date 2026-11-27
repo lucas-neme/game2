@@ -16,6 +16,7 @@ jobs:
       - run: node scripts/sync-campaign.mjs --check
       - run: node tests/demo-smoke.mjs
       - run: node tests/campaign-smoke.mjs
+      - run: node tests/narrative-continuity.mjs
       - run: npm install --no-save --package-lock=false playwright
       - run: npx playwright install --with-deps chromium
       - run: node tests/browser-smoke.mjs

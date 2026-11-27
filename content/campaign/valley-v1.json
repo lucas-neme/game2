@@ -18935,13 +18935,14 @@
         "protect-patient",
         "evacuate"
       ],
-      "day": 18,
+      "day": 21,
       "from": 540,
       "to": 720,
       "npc": "nurse",
       "loc": "shelter",
       "activity": "Confere pacientes protegidos na lista de retirada",
-      "dialogue": "Marta: Os nomes que você ajudou a preservar agora nos permitem encontrar as famílias certas. Não podemos deixar ninguém para trás."
+      "dialogue": "Marta: Os nomes que você ajudou a preservar agora nos permitem encontrar as famílias certas. Não podemos deixar ninguém para trás.",
+      "result": "Lista nominal de pacientes conferida."
     },
     {
       "id": "public-shelter",
@@ -18949,13 +18950,14 @@
         "public-patient",
         "shelter-in-place"
       ],
-      "day": 18,
+      "day": 21,
       "from": 540,
       "to": 720,
       "npc": "clinic",
       "loc": "shelter",
       "activity": "Confronta a lista pública com os leitos disponíveis",
-      "dialogue": "Lia: A revisão trouxe famílias até nós. Agora precisamos transformar esses nomes em lugares seguros."
+      "dialogue": "Lia: A revisão trouxe famílias até nós. Agora precisamos transformar esses nomes em lugares seguros.",
+      "result": "Leitos e registros públicos conciliados."
     },
     {
       "id": "workers-rescue",
@@ -18963,13 +18965,14 @@
         "warn-workers",
         "rescue-uncle"
       ],
-      "day": 18,
+      "day": 21,
       "from": 600,
       "to": 840,
       "npc": "rail-worker",
       "loc": "tunnel",
       "activity": "Prepara a passagem de manutenção para o resgate",
-      "dialogue": "Anselmo: Depois do seu aviso, conseguimos identificar uma passagem que não consta nas ordens de serviço."
+      "dialogue": "Anselmo: Depois do seu aviso, conseguimos identificar uma passagem que não consta nas ordens de serviço.",
+      "result": "Passagem de manutenção preparada."
     },
     {
       "id": "discreet-evidence",
@@ -18977,13 +18980,14 @@
         "observe-workers",
         "secure-evidence"
       ],
-      "day": 18,
+      "day": 21,
       "from": 600,
       "to": 840,
       "npc": "rail-worker",
       "loc": "sawmill",
       "activity": "Organiza cópias das guias H-17",
-      "dialogue": "Anselmo: Mantive o turno como você pediu. As guias agora mostram uma sequência que não conseguirão explicar facilmente."
+      "dialogue": "Anselmo: Mantive o turno como você pediu. As guias agora mostram uma sequência que não conseguirão explicar facilmente.",
+      "result": "Cópias das guias H-17 organizadas."
     },
     {
       "id": "marked-evacuation",
@@ -18991,13 +18995,14 @@
         "mark-trails",
         "evacuate"
       ],
-      "day": 18,
+      "day": 21,
       "from": 780,
       "to": 960,
       "npc": "young-explorer",
       "loc": "forest",
       "activity": "Revê as marcas para guiar a retirada",
-      "dialogue": "Tomás: As marcas que fizemos deixaram de ser só uma investigação. Podem levar gente para fora do Vale."
+      "dialogue": "Tomás: As marcas que fizemos deixaram de ser só uma investigação. Podem levar gente para fora do Vale.",
+      "result": "Rota marcada para orientar a retirada."
     },
     {
       "id": "sealed-shelter",
@@ -19005,13 +19010,14 @@
         "seal-trails",
         "shelter-in-place"
       ],
-      "day": 18,
+      "day": 21,
       "from": 780,
       "to": 960,
       "npc": "woodcutter",
       "loc": "shelter",
       "activity": "Orienta famílias sobre os caminhos interditados",
-      "dialogue": "Ernesto: Fechamos a trilha. Agora é preciso garantir que ninguém tente atravessá-la por desespero."
+      "dialogue": "Ernesto: Fechamos a trilha. Agora é preciso garantir que ninguém tente atravessá-la por desespero.",
+      "result": "Famílias orientadas sobre trilhas interditadas."
     },
     {
       "id": "grid-counterwave",
@@ -19019,13 +19025,14 @@
         "repair-grid",
         "test-counterwave"
       ],
-      "day": 18,
+      "day": 21,
       "from": 840,
       "to": 1020,
       "npc": "electrician",
       "loc": "substation",
       "activity": "Revê a alimentação de emergência da contramedida",
-      "dialogue": "Vicente: A energia que preparamos pode sustentar o teste. Não significa que o sinal vai nos obedecer."
+      "dialogue": "Vicente: A energia que preparamos pode sustentar o teste. Não significa que o sinal vai nos obedecer.",
+      "result": "Alimentação de emergência revisada."
     },
     {
       "id": "isolated-shutdown",
@@ -19033,13 +19040,14 @@
         "isolate-grid",
         "prepare-shutdown"
       ],
-      "day": 18,
+      "day": 21,
       "from": 840,
       "to": 1020,
       "npc": "electrician",
       "loc": "substation",
       "activity": "Verifica os circuitos isolados antes do desligamento",
-      "dialogue": "Vicente: O isolamento nos deu uma chance de interromper a alimentação sem confiar no próprio Horizonte."
+      "dialogue": "Vicente: O isolamento nos deu uma chance de interromper a alimentação sem confiar no próprio Horizonte.",
+      "result": "Circuitos isolados verificados."
     },
     {
       "id": "scientist-counterwave",
@@ -19047,13 +19055,14 @@
         "recruit-scientist",
         "test-counterwave"
       ],
-      "day": 18,
+      "day": 21,
       "from": 960,
       "to": 1140,
       "npc": "scientist",
       "loc": "observatory",
       "activity": "Reexamina a medição da onda de oposição",
-      "dialogue": "Augusto: Aceitei ajudá-lo porque precisamos de uma alternativa. Ainda não sabemos quem responde do outro lado."
+      "dialogue": "Augusto: Aceitei ajudá-lo porque precisamos de uma alternativa. Ainda não sabemos quem responde do outro lado.",
+      "result": "Medições da onda de oposição reexaminadas."
     },
     {
       "id": "exposure-evidence",
@@ -19061,13 +19070,14 @@
         "expose-scientist",
         "secure-evidence"
       ],
-      "day": 18,
+      "day": 21,
       "from": 960,
       "to": 1140,
       "npc": "helena",
       "loc": "archive",
       "activity": "Cruza os nomes com as provas do protocolo",
-      "dialogue": "Helena: Os nomes e as provas precisam sobreviver juntos. Sem os nomes, o Horizonte vira apenas uma história técnica."
+      "dialogue": "Helena: Os nomes e as provas precisam sobreviver juntos. Sem os nomes, o Horizonte vira apenas uma história técnica.",
+      "result": "Nomes das vítimas cruzados com as provas."
     }
   ]
 }
