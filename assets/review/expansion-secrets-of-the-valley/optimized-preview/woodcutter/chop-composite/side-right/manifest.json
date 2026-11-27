@@ -1,0 +1,50 @@
+{
+  "status": "REVIEW",
+  "quality": "optimized preview, 32 colors; native source 98x178 preserved in separate candidate pack",
+  "id": "woodcutter",
+  "animation": "chop-composite",
+  "width": 31,
+  "height": 56,
+  "anchor": [
+    15,
+    55
+  ],
+  "fps": 8,
+  "loop": true,
+  "frameCount": 8,
+  "frames": [
+    {
+      "file": "00.png",
+      "gitBlobSha": "2094b73688fb10b72ef179a92d07a8f688ff7fb7"
+    },
+    {
+      "file": "01.png",
+      "gitBlobSha": "43b5bcfafd32798df5e3b83f502445b4f1906915"
+    },
+    {
+      "file": "02.png",
+      "gitBlobSha": "1c931daaee77d62b79280ef8d46f7dea09daf454"
+    },
+    {
+      "file": "03.png",
+      "gitBlobSha": "b89ca04cd7e1cbdccf2b7eb6144ce319ad5016de"
+    },
+    {
+      "file": "04.png",
+      "gitBlobSha": "bac3ddcfcfaa1b88ccc2bf0724deb54728cd2720"
+    },
+    {
+      "file": "05.png",
+      "gitBlobSha": "4904f5bfec6dd599c28a1b08039872af48165801"
+    },
+    {
+      "file": "06.png",
+      "gitBlobSha": "df5bb5cfe0b2f586e5521679e3e6e1c4a2850102"
+    },
+    {
+      "file": "07.png",
+      "gitBlobSha": "05f21acbc8b6ebb3712abb0a1c3c90c001d57e27"
+    }
+  ],
+  "notes": "Stump is baked into the candidate poses; not production. Additional independent chip effects and full-resolution frames require review."
+}
