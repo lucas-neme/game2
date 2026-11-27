@@ -1259,7 +1259,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 55,
+        "fear": 35,
+        "resolve": 80,
+        "goal": "Salvar os pacientes sem sacrificar sua identidade",
+        "ally": "nurse",
+        "calm": "Não posso tratar pessoas como números.",
+        "afraid": "Se eu errar, alguém ficará sem cuidado."
+      }
     },
     {
       "id": "guard",
@@ -2350,7 +2359,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 40,
+        "fear": 45,
+        "resolve": 85,
+        "goal": "Proteger a filha e os moradores sem obedecer cegamente",
+        "ally": "rail-worker",
+        "calm": "Preciso saber se posso confiar em você.",
+        "afraid": "As ordens já não fazem sentido."
+      }
     },
     {
       "id": "future",
@@ -3441,7 +3459,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 50,
+        "fear": 55,
+        "resolve": 65,
+        "goal": "Preservar as gravações e entender suas previsões",
+        "ally": "radio-technician",
+        "calm": "Uma gravação pode mudar o que esperamos do amanhã.",
+        "afraid": "Tenho medo de ouvir uma voz que ainda não falou."
+      }
     },
     {
       "id": "helena",
@@ -4532,7 +4559,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 50,
+        "fear": 30,
+        "resolve": 75,
+        "goal": "Devolver identidade às vítimas",
+        "ally": "elder",
+        "calm": "Cada nome merece permanecer escrito.",
+        "afraid": "Temo que destruam o que ainda resta."
+      }
     },
     {
       "id": "bento",
@@ -5623,7 +5659,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 45,
+        "fear": 55,
+        "resolve": 65,
+        "goal": "Compreender a anomalia temporal e a perda da filha",
+        "ally": "future",
+        "calm": "O tempo não explica tudo que perdemos.",
+        "afraid": "Não quero reviver aquele dia."
+      }
     },
     {
       "id": "celina",
@@ -6714,7 +6759,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 45,
+        "fear": 70,
+        "resolve": 60,
+        "goal": "Encontrar o filho desaparecido",
+        "ally": "clinic",
+        "calm": "Só quero saber onde ele está.",
+        "afraid": "Não sei quanto mais consigo esperar."
+      }
     },
     {
       "id": "rail-worker",
@@ -7805,7 +7859,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 45,
+        "fear": 45,
+        "resolve": 70,
+        "goal": "Proteger os colegas e compreender a remessa H-17",
+        "ally": "guard",
+        "calm": "Conheço esta ferrovia melhor que os papéis.",
+        "afraid": "Não quero colocar os colegas em perigo."
+      }
     },
     {
       "id": "radio-technician",
@@ -8896,7 +8959,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 55,
+        "fear": 35,
+        "resolve": 70,
+        "goal": "Demonstrar a origem do sinal",
+        "ally": "future",
+        "calm": "Uma boa medição vale mais que um rumor.",
+        "afraid": "O rádio está se tornando imprevisível."
+      }
     },
     {
       "id": "nurse",
@@ -9987,7 +10059,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 60,
+        "fear": 40,
+        "resolve": 80,
+        "goal": "Manter os pacientes vivos e protegidos",
+        "ally": "clinic",
+        "calm": "O que importa é quem precisa de ajuda.",
+        "afraid": "Não temos recursos para todos."
+      }
     },
     {
       "id": "scientist",
@@ -11078,7 +11159,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 30,
+        "fear": 60,
+        "resolve": 65,
+        "goal": "Corrigir o erro do Horizonte",
+        "ally": "electrician",
+        "calm": "Não posso prometer que compreendo o sinal.",
+        "afraid": "Se falharmos novamente, não haverá desculpa."
+      }
     },
     {
       "id": "elder",
@@ -12169,7 +12259,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 50,
+        "fear": 40,
+        "resolve": 70,
+        "goal": "Impedir que os acontecimentos de 1958 sejam esquecidos",
+        "ally": "helena",
+        "calm": "Já vi esta cidade esquecer coisas importantes.",
+        "afraid": "Há lembranças que eu preferia não recuperar."
+      }
     },
     {
       "id": "priest",
@@ -13260,7 +13359,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 60,
+        "fear": 30,
+        "resolve": 75,
+        "goal": "Preservar a comunidade e a dignidade dos mortos",
+        "ally": "elder",
+        "calm": "As pessoas precisam de alguém que as escute.",
+        "afraid": "Não posso oferecer certezas que não tenho."
+      }
     },
     {
       "id": "watchman",
@@ -14351,7 +14459,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 25,
+        "fear": 65,
+        "resolve": 50,
+        "goal": "Sobreviver sem abandonar a responsabilidade",
+        "ally": "guard",
+        "calm": "Não sei mais a quem devo obedecer.",
+        "afraid": "Se descobrirem o que eu sei, estarei em perigo."
+      }
     },
     {
       "id": "woodcutter",
@@ -15442,7 +15559,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 45,
+        "fear": 40,
+        "resolve": 65,
+        "goal": "Proteger a família e os caminhos da floresta",
+        "ally": "young-explorer",
+        "calm": "A mata tem regras que não aparecem nos mapas.",
+        "afraid": "Não quero que ninguém se perca lá."
+      }
     },
     {
       "id": "electrician",
@@ -16533,7 +16659,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 55,
+        "fear": 35,
+        "resolve": 75,
+        "goal": "Restabelecer uma rede segura",
+        "ally": "scientist",
+        "calm": "A rede não deveria se comportar assim.",
+        "afraid": "Não posso garantir que o próximo apagão seja reversível."
+      }
     },
     {
       "id": "young-explorer",
@@ -17624,7 +17759,16 @@
             }
           ]
         }
-      ]
+      ],
+      "psychology": {
+        "trust": 65,
+        "fear": 25,
+        "resolve": 60,
+        "goal": "Encontrar o amigo e mapear passagens",
+        "ally": "woodcutter",
+        "calm": "Ainda há caminhos que ninguém investigou.",
+        "afraid": "Talvez eu tenha ido longe demais."
+      }
     }
   ],
   "missions": [
@@ -19246,5 +19390,229 @@
       "dialogue": "Davi: Nora trouxe as cópias. Vou preparar o registro para que não dependam de uma única fita.",
       "result": "Registro de transmissão das provas preparado, sem confirmar envio externo."
     }
-  ]
+  ],
+  "psychologyEffects": {
+    "protect-patient": {
+      "clinic": [
+        18,
+        -8,
+        5
+      ],
+      "nurse": [
+        15,
+        -8,
+        5
+      ],
+      "celina": [
+        12,
+        -10,
+        5
+      ]
+    },
+    "public-patient": {
+      "clinic": [
+        -10,
+        12,
+        0
+      ],
+      "helena": [
+        18,
+        -4,
+        5
+      ],
+      "celina": [
+        8,
+        5,
+        0
+      ]
+    },
+    "warn-workers": {
+      "rail-worker": [
+        20,
+        -8,
+        8
+      ],
+      "guard": [
+        12,
+        -5,
+        5
+      ]
+    },
+    "observe-workers": {
+      "rail-worker": [
+        -12,
+        10,
+        0
+      ],
+      "guard": [
+        -8,
+        5,
+        0
+      ]
+    },
+    "mark-trails": {
+      "young-explorer": [
+        18,
+        -8,
+        8
+      ],
+      "woodcutter": [
+        8,
+        4,
+        0
+      ]
+    },
+    "seal-trails": {
+      "young-explorer": [
+        -15,
+        8,
+        0
+      ],
+      "woodcutter": [
+        15,
+        -10,
+        5
+      ]
+    },
+    "repair-grid": {
+      "electrician": [
+        18,
+        -10,
+        8
+      ],
+      "scientist": [
+        8,
+        -4,
+        5
+      ]
+    },
+    "isolate-grid": {
+      "electrician": [
+        10,
+        -4,
+        5
+      ],
+      "scientist": [
+        -8,
+        10,
+        0
+      ]
+    },
+    "recruit-scientist": {
+      "scientist": [
+        25,
+        -12,
+        10
+      ],
+      "watchman": [
+        6,
+        -4,
+        0
+      ]
+    },
+    "expose-scientist": {
+      "scientist": [
+        -25,
+        20,
+        -5
+      ],
+      "helena": [
+        15,
+        -5,
+        5
+      ],
+      "watchman": [
+        -12,
+        12,
+        0
+      ]
+    },
+    "rescue-uncle": {
+      "guard": [
+        15,
+        -5,
+        8
+      ],
+      "watchman": [
+        20,
+        -8,
+        8
+      ]
+    },
+    "secure-evidence": {
+      "helena": [
+        15,
+        -5,
+        5
+      ],
+      "future": [
+        15,
+        -5,
+        5
+      ],
+      "watchman": [
+        -8,
+        5,
+        0
+      ]
+    },
+    "evacuate": {
+      "nurse": [
+        12,
+        -8,
+        8
+      ],
+      "priest": [
+        8,
+        -5,
+        5
+      ],
+      "celina": [
+        8,
+        -5,
+        0
+      ]
+    },
+    "shelter-in-place": {
+      "clinic": [
+        12,
+        -5,
+        5
+      ],
+      "priest": [
+        15,
+        -8,
+        8
+      ],
+      "celina": [
+        -5,
+        8,
+        0
+      ]
+    },
+    "test-counterwave": {
+      "bento": [
+        12,
+        8,
+        8
+      ],
+      "radio-technician": [
+        15,
+        5,
+        8
+      ]
+    },
+    "prepare-shutdown": {
+      "electrician": [
+        10,
+        -5,
+        5
+      ],
+      "scientist": [
+        -8,
+        8,
+        0
+      ]
+    }
+  }
 }

@@ -57,3 +57,20 @@ const both=campaign.fresh();for(const [i,id] of ['repair-grid','test-counterwave
 campaign.settleStory(both,43200);assert.equal(both.storyHistory['bento-calibration'].status,'concluído');assert.equal(both.storyHistory['radio-calibration'].status,'concluído');
 delete both.choices[2];both.storyHistory={};campaign.settleStory(both,43200);assert.equal(both.storyHistory['bento-calibration'],undefined);
 console.log('Causal propagation: multi-hop, multi-parent, time jump and mortality checks passed.');
+
+for(const n of data.npcs){assert.ok(n.psychology);assert.ok(data.npcs.some(q=>q.id===n.psychology.ally));const p=campaign.psychology(n.id,0,campaign.fresh());assert.ok(p.goal&&p.dialogue);for(const k of ['trust','fear','resolve'])assert.ok(p[k]>=0&&p[k]<=100)}
+const psyche=campaign.fresh(),pt=20*1440;
+const before=campaign.psychology('scientist',pt,psyche);
+psyche.choices.horizon={id:'expose-scientist',at:pt};
+assert.equal(campaign.psychology('scientist',pt+59,psyche).trust,before.trust);
+assert.equal(campaign.psychology('scientist',pt+60,psyche).trust,5);
+assert.equal(campaign.psychology('scientist',pt+60,psyche).mood,'assustado');
+const grief=campaign.psychology('guard',pt,psyche,id=>id==='rail-worker'?pt:null);
+assert.ok(grief.memories.includes('loss:rail-worker'));
+assert.ok(grief.fear>campaign.psychology('guard',pt,psyche).fear);
+assert.equal(campaign.personalTalk(psyche,pt,'guard').recorded,true);
+assert.equal(campaign.personalTalk(psyche,pt+1,'guard').recorded,false);
+assert.equal(campaign.personalTalk(psyche,pt,'guard',()=>pt),null);
+const save=campaign.normalize(JSON.parse(JSON.stringify(psyche)));
+assert.equal(campaign.personalTalk(save,pt+2,'guard').recorded,false);
+console.log('NPC psychology: 16 profiles, delayed choice effects, grief, dialogue and save checks passed.');

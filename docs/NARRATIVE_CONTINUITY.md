@@ -13,3 +13,7 @@ Reactions now start no earlier than chapter IV (day 21), take place once at the 
 ## V4 — Causal NPC chains
 
 Eleven downstream activities depend on one or more completed prior reactions, with a one-hour minimum handoff delay. Data is topologically ordered; missing or cancelled parents block descendants. Earlier same-actor narrative appointments and fixed meetings reserve their windows. The journal shows the causal chronicle; outcomes are persisted, including after time jumps. This is narrative propagation, not simulated message delivery or physical map unlocking. Existing player-driven rescue/evacuation and endings remain unchanged.
+
+## V5 — NPC psychology
+
+All sixteen residents have authored goals, baseline trust/fear/resolve, an important social bond and contextual personal dialogue. Sixteen existing choices produce timestamped psychological effects; completed/cancelled tasks and death of an important ally influence mood. Values are derived from saved facts, clamped and independent of frame count. Proximity dialogue records at most one observation per NPC/day, and the journal exposes last observed mood rather than hidden numeric scores. This increment changes dialogue and personal memory, not autonomous schedule decisions or physical behavior. Existing mission evidence remains obtainable.
