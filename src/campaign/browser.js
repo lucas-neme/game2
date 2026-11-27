@@ -102,7 +102,7 @@ function valleyState(){return s.campaign}
 function valleyLocation(id){return VALLEY.data.locations[id]}
 function valleyIsNew(p){return p.x>=14}
 function valleyHash(x,y,z=0){let n=Math.imul(x+71,374761393)^Math.imul(y+39,668265263)^Math.imul(z+11,1274126177);n=Math.imul(n^(n>>>13),1274126177);return (n^(n>>>16))>>>0}
-function valleyRoad(x,y){return y===4||y===7||y===10||[17,21,25].includes(x)}
+function valleyRoad(x,y){return y===4||y===6||y===7||y===10||[17,21,25].includes(x)}
 function valleyRail(x,y){return y===0||y===1&&x>=23}
 function valleyRehash(){SHASH.clear();for(const c of STATIC){const ex=c.t?c.r:c.hx,ey=c.t?c.r:c.hy;for(let i=Math.floor(c.x-ex);i<=Math.floor(c.x+ex);i++)for(let j=Math.floor(c.y-ey);j<=Math.floor(c.y+ey);j++){const key=(i+64)*256+j+64;if(!SHASH.has(key))SHASH.set(key,[]);SHASH.get(key).push(c)}}}
 function valleyRestoreWorld(){if(!valleyInstalled)return;valleyAudioStop();valleyBarrierKey=null;sites.splice(0,sites.length,...valleyBase.sites);ART.place.splice(0,ART.place.length,...valleyBase.places);ART.lights.splice(0,ART.lights.length,...valleyBase.lights);STATIC.splice(0,STATIC.length,...valleyBase.colliders);FZ_ROOMS.buildings.splice(0,FZ_ROOMS.buildings.length,...valleyBase.buildings);for(const id of Object.keys(FZ_ROOMS.layouts))if(!valleyBase.roomKeys.has(id))delete FZ_ROOMS.layouts[id];ART.world.cam=valleyBase.cam.slice();PHYS.maxX=13.45;valleyRehash();valleyInstalled=false;valleyActorsCache.key=null;valleyGround=null;valleyIndoorCache.clear();valleyDestinations()}
@@ -124,6 +124,8 @@ function valleyInstallWorld(){if(valleyInstalled||!valleyActive())return;valleyI
  for(const [id,p] of Object.entries(VALLEY.data.locations)){if(!sites.some(a=>a.id===id))sites.push({id,name:p.name,x:p.x,y:p.y,type:p.room?'house':'tower',text:p.name+' — consulte as evidências disponíveis.'});if(!valleyIsNew(p))continue;
   const bld=!!p.room;ART.place.push([p.art,p.x,p.y,0,id,bld?1:0]);if(bld){STATIC.push({t:0,x:p.x,y:p.y,hx:.48,hy:.48});FZ_ROOMS.buildings.push([id,p.x,p.y]);FZ_ROOMS.layouts[id]=valleyRoom(id,p);ART.lights.push([p.x,p.y,0,75,'lamp'])}}
  for(let x=14;x<28;x++)for(let y=0;y<14;y++){if(valleyRoad(x,y)||valleyRail(x,y)||Object.values(VALLEY.data.locations).some(p=>Math.hypot(x-p.x,y-p.y)<1.4))continue;const n=valleyHash(x,y)%100;if(n<25){ART.place.push([n<12?29:27,x,y,0,0,0]);STATIC.push({t:1,x,y,r:.19})}else if(n<45)ART.place.push([n<34?43:55,x+.1,y+.12,0,0,0])}
+ // Keep the station-to-east crossing at y=6 open. The legacy market approach also needs a passable tile.
+ for(let i=STATIC.length-1;i>=0;i--)if(STATIC[i].t===0&&STATIC[i].x===8&&STATIC[i].y===12)STATIC.splice(i,1);
  valleyRehash();valleyDestinations();valleyActorsCache.key=null;
 }
 var valleyBarrierKey=null;
