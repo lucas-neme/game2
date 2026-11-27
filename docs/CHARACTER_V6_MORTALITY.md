@@ -1,6 +1,21 @@
 # Frequência Zero — V6: personagens e mortalidade
 
-Status: REVIEW. Os PNGs V6 foram gerados e reunidos no pacote fz-personagens-v6-morte-review.zip, mas ainda não foram transferidos ao GitHub. Não ativar referências inexistentes nem substituir atlas de produção por folhas compostas.
+Status (27/11/2026): **INTEGRADO**. Folhas importadas (`assets/review/chatgpt-import/fz-personagens-v6-morte-review/`),
+frames individuais em `assets/source/v6/<personagem>/<animação>/<direção>/NN.png`, atlas em
+`assets/production/characters/v6/`, manifesto `assets/manifests/v6.json`, pipeline `tools/asset-pipeline/v6_build.py`.
+Mortalidade no motor (bloco `/*MORTALITY*/` do `index.html`); homologação em `tests/mortality-chromium.mjs`.
+
+Decisões e limites:
+- Laterais guardadas olhando à direita (o motor espelha). Escala de cada sequência normalizada pela altura em pé do
+  idle sul; as folhas de morte vêm ~2,3× maiores e são normalizadas pela 1ª pose.
+- Sentar: o banco/cadeira desenhado nas folhas não se separa automaticamente com qualidade (mesma paleta das roupas e
+  redesenhado a cada quadro); as poses sentadas mantêm o próprio assento e o banco do mapa é ocultado enquanto ocupado.
+  Retirada limpa exige quadros sentados sem móvel (pedido de arte) ou máscaras manuais.
+- Raul, Helena e Celina têm identidade redesenhada no V6 (consistente entre ações e morte); adotada por ordem do titular.
+- Bento não tem animação de trabalho no V6 (usa idle). Moradores secundários continuam sem folhas de morte próprias.
+- Mortes de moradores só por regra narrativa (`mortKill(id, causa)`); nenhum evento atual do capítulo I mata morador.
+
+Texto original (26/11) abaixo, mantido como especificação.
 
 ## Identidade artística
 Meio-termo entre a anatomia do protagonista antigo e a expressividade V5. Preservar identidade, roupas, proporções, paleta e orientação. Idle deve ser um ciclo sutil de respiração/piscar do mesmo modelo, sem trocar rosto. Caminhada em quatro direções. Interações, sentar e levantar com mobiliário separado. Corrigir resíduos e opacidade, especialmente Helena; verificar continuidade do Raul.

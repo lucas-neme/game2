@@ -12,8 +12,12 @@
 
 Regenerar: `python tools/assets/asset_tools.py registry && python tools/assets/asset_tools.py audit`.
 
-## Pendente de arquivo do titular
+## Situação (27/11/2026)
 
-`fz-personagens-v6-morte-review.zip` (folhas V6 de ações e as 168 poses de morte dos sete personagens principais) **não
-existe** em `D:\FrequencyAssets\assets-import` nem em nenhum outro lugar do PC (busca em 26/11/2026). Sem ele, as
-animações de morte e as folhas V6 não podem ser importadas; `docs/CHARACTER_V6_MORTALITY.md` continua como especificação.
+- V6 dos 7 personagens integrado (`docs/CHARACTER_V6_MORTALITY.md`), 660 quadros individuais em `assets/source/v6/`.
+- Criaturas V5 harmonizadas: 10 espécies em `assets/source/v5-creatures/` e no atlas `assets/production/creatures/v5/`
+  (`assets/manifests/v5-creatures.json`). Pendentes: `mutante_floresta` (sequências sem separação nítida) e as 7 folhas
+  opacas com grade (anomalia_temporal, cepa_esporal, colosso_ressonancia, entidade_luz, enxame, espectro_infantil,
+  guardiao_bunker, mutacao_aquatica) — precisam de recorte manual do fundo.
+- Criaturas da folha V6 (`creatures/actions.png`) e cenários V3 (cidade expandida, interiores em corte, natureza/bunker,
+  objetos) seguem em REVIEW: ainda não há regiões do mapa para eles.
