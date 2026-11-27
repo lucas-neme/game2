@@ -210,6 +210,41 @@ function createValleyCampaign(data){
  {id:'patient-archive',giver:'clinic',target:'helena',title:'Nomes sob proteção',request:'Confirme com Helena que os registros serão mantidos sob acesso restrito.',reply:'Guardarei os registros sem publicar os nomes.',result:'Lia e Helena confirmaram o compromisso de proteger a identidade dos pacientes.'},
  {id:'patient-dispute',giver:'helena',target:'clinic',title:'Verdade sem exposição',request:'Ouça a posição de Lia sobre a divulgação.',reply:'Aceito discutir os fatos, mas não a exposição de pacientes.',result:'Helena ouviu a posição de Lia; o desacordo sobre a divulgação ficou documentado.'}
  ];
+ const sideCaseDocuments={
+  "rail-protection": {
+    "loc": "rail",
+    "title": "Circular de segurança ferroviária",
+    "text": "Circular de turno — 1998. Conferir a equipe antes da partida; registrar interrupções de rádio e comunicar qualquer ausência ao responsável da estação. A circulação deste aviso ainda não foi confirmada.",
+    "hint": "Examine os avisos na estação ferroviária."
+  },
+  "rail-silence": {
+    "loc": "guard",
+    "title": "Cópia do livro de ocorrências",
+    "text": "Ocorrência: interferência no rádio e divergência entre o horário anotado e o relógio da estação. O campo de comunicação à equipe está em branco. A ausência de registro não prova quem decidiu manter silêncio.",
+    "hint": "Procure a cópia do livro de ocorrências no posto de vigilância."
+  },
+  "patient-archive": {
+    "loc": "archive",
+    "title": "Termo de custódia restrita",
+    "text": "Termo de custódia: manter a identificação dos pacientes em envelope lacrado. A cópia de consulta deve conter apenas datas e referências anonimizadas. A assinatura de recebimento permanece em branco.",
+    "hint": "Localize o termo de custódia no arquivo municipal."
+  },
+  "patient-dispute": {
+    "loc": "clinic",
+    "title": "Parecer sobre divulgação",
+    "text": "Parecer clínico: os dados de horário e sintomas podem ser discutidos sem revelar nomes ou endereços. A divulgação integral do prontuário não é necessária para investigar a anomalia.",
+    "hint": "Examine o parecer na clínica."
+  }
+};
+ function sideCaseDocumentOffers(c,t,loc,deadAt=()=>null){
+  if(c.outcome)return [];
+  return sideCasesFor(c,t,deadAt).filter(q=>q.status==='active'&&q.stage==='search'&&q.document?.loc===loc).map(q=>({id:q.id,...q.document}));
+ }
+ function collectSideCaseDocument(c,t,key,loc,deadAt=()=>null){
+  const q=sideCaseDocumentOffers(c,t,loc,deadAt).find(x=>x.id===key),row=c.sideCases?.[key];
+  if(!q||!row||t<row.acceptedAt)return null;
+  row.documentAt=t;row.stage='visit';return q;
+ }
  function sideCaseAlive(id,t,c,deadAt){return (deadAt(id)==null||deadAt(id)>t)&&!departed(c,id,t)&&(departureAt(c,id)==null||departureAt(c,id)>t)}
  function sideCaseOffers(id,t,c,deadAt=()=>null){
   if(c.outcome||t>=43200||!sideCaseAlive(id,t,c,deadAt))return [];
@@ -217,7 +252,7 @@ function createValleyCampaign(data){
  }
  function acceptSideCase(c,t,id,key,deadAt=()=>null){
   const r=sideCaseOffers(id,t,c,deadAt).find(q=>q.id===key);if(!r)return false;
-  c.sideCases??={};c.sideCases[key]={id:key,acceptedAt:t,deadline:Math.min(t+2880,43200),status:'active',stage:'visit'};return true;
+  c.sideCases??={};c.sideCases[key]={id:key,acceptedAt:t,deadline:Math.min(t+2880,43200),status:'active',stage:'search',documentRequired:true};return true;
  }
  function sideCaseStatus(c,t,row,deadAt=()=>null){
   if(row.status!=='active')return row.status;
@@ -230,12 +265,12 @@ function createValleyCampaign(data){
  function advanceSideCase(c,t,id,key,deadAt=()=>null){
   const row=c.sideCases?.[key],r=sideCaseRules.find(q=>q.id===key);
   if(!row||!r||c.outcome||t<row.acceptedAt||sideCaseStatus(c,t,row,deadAt)!=='active')return null;
-  if(row.stage==='visit'&&id===r.target){row.stage='report';row.visitedAt=t;return r.reply}
-  if(row.stage==='report'&&id===r.giver&&t>=row.visitedAt){row.status='completed';row.completedAt=t;row.result=r.result;return r.result}
+  if(row.stage==='visit'&&id===r.target&&(!row.documentRequired||Number.isFinite(row.documentAt)&&row.documentAt<=t)){row.stage='report';row.visitedAt=t;return r.reply}
+  if(row.stage==='report'&&id===r.giver&&t>=row.visitedAt&&(!row.documentRequired||Number.isFinite(row.documentAt)&&row.documentAt<=row.visitedAt)){row.status='completed';row.completedAt=t;row.result=r.result;return r.result}
   return null;
  }
  function sideCasesFor(c,t,deadAt=()=>null){return Object.values(c.sideCases||{}).flatMap(row=>{
-  const r=sideCaseRules.find(q=>q.id===row.id);return r?[{...r,...row,status:sideCaseStatus(c,t,row,deadAt)}]:[];
+  const r=sideCaseRules.find(q=>q.id===row.id);return r&&row.acceptedAt<=t?[{...r,...row,document:sideCaseDocuments[r.id],status:sideCaseStatus(c,t,row,deadAt)}]:[];
  })}
  function witnessSocial(c,t,id,actor,near,deadAt=()=>null){
   const e=activeSocial(actor,t,c,deadAt);if(!near||!e||e.id!==id)return false;c.socialSeen??={};if(c.socialSeen[id])return false;c.socialSeen[id]={at:t,actor};return true;
@@ -431,5 +466,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,informationNetwork,informationFor,loyaltyFor,loyaltyDuty,sideCaseOffers,acceptSideCase,advanceSideCase,sideCasesFor,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,informationNetwork,informationFor,loyaltyFor,loyaltyDuty,sideCaseOffers,acceptSideCase,advanceSideCase,sideCasesFor,sideCaseDocumentOffers,collectSideCaseDocument,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }
