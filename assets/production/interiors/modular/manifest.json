@@ -1,0 +1,1277 @@
+{
+  "version": 1,
+  "assets": {
+    "bed": {
+      "file": "assets/production/interiors/modular/bed.svg",
+      "w": 2.05,
+      "d": 1.05
+    },
+    "desk": {
+      "file": "assets/production/interiors/modular/desk.svg",
+      "w": 1.7,
+      "d": 0.85
+    },
+    "bookcase": {
+      "file": "assets/production/interiors/modular/bookcase.svg",
+      "w": 1.55,
+      "d": 0.58
+    },
+    "safe": {
+      "file": "assets/production/interiors/modular/safe.svg",
+      "w": 0.8,
+      "d": 0.75
+    },
+    "table": {
+      "file": "assets/production/interiors/modular/table.svg",
+      "w": 1.4,
+      "d": 1.1
+    },
+    "chair": {
+      "file": "assets/production/interiors/modular/chair.svg",
+      "w": 0.55,
+      "d": 0.55
+    },
+    "sofa": {
+      "file": "assets/production/interiors/modular/sofa.svg",
+      "w": 1.75,
+      "d": 0.85
+    },
+    "kitchen": {
+      "file": "assets/production/interiors/modular/kitchen.svg",
+      "w": 1.8,
+      "d": 0.68
+    },
+    "wardrobe": {
+      "file": "assets/production/interiors/modular/wardrobe.svg",
+      "w": 1.2,
+      "d": 0.65
+    },
+    "radio": {
+      "file": "assets/production/interiors/modular/radio.svg",
+      "w": 1.6,
+      "d": 0.75
+    },
+    "rack": {
+      "file": "assets/production/interiors/modular/rack.svg",
+      "w": 1.4,
+      "d": 0.65
+    },
+    "counter": {
+      "file": "assets/production/interiors/modular/counter.svg",
+      "w": 1.9,
+      "d": 0.75
+    },
+    "exam": {
+      "file": "assets/production/interiors/modular/exam.svg",
+      "w": 1.95,
+      "d": 0.83
+    },
+    "medicine": {
+      "file": "assets/production/interiors/modular/medicine.svg",
+      "w": 1.2,
+      "d": 0.62
+    },
+    "ticket": {
+      "file": "assets/production/interiors/modular/ticket.svg",
+      "w": 1.8,
+      "d": 0.88
+    },
+    "signal": {
+      "file": "assets/production/interiors/modular/signal.svg",
+      "w": 0.9,
+      "d": 0.7
+    },
+    "crate": {
+      "file": "assets/production/interiors/modular/crate.svg",
+      "w": 0.8,
+      "d": 0.8
+    },
+    "bench": {
+      "file": "assets/production/interiors/modular/bench.svg",
+      "w": 1.55,
+      "d": 0.6
+    },
+    "clock": {
+      "file": "assets/production/interiors/modular/clock.svg",
+      "w": 0.6,
+      "d": 0.45
+    },
+    "workbench": {
+      "file": "assets/production/interiors/modular/workbench.svg",
+      "w": 1.9,
+      "d": 0.85
+    },
+    "sewing": {
+      "file": "assets/production/interiors/modular/sewing.svg",
+      "w": 1.3,
+      "d": 0.7
+    },
+    "locomotive": {
+      "file": "assets/production/interiors/modular/locomotive.svg",
+      "w": 4.2,
+      "d": 1.35
+    },
+    "wagon": {
+      "file": "assets/production/interiors/modular/wagon.svg",
+      "w": 3.8,
+      "d": 1.35
+    },
+    "rail": {
+      "file": "assets/production/interiors/modular/rail.svg",
+      "w": 3.5,
+      "d": 1.25
+    },
+    "platform": {
+      "file": "assets/production/interiors/modular/platform.svg",
+      "w": 3.5,
+      "d": 1.2
+    },
+    "sink": {
+      "file": "assets/production/interiors/modular/sink.svg",
+      "w": 0.9,
+      "d": 0.65
+    }
+  },
+  "floors": {
+    "wood": "assets/production/interiors/modular/floor-wood.svg",
+    "tile": "assets/production/interiors/modular/floor-tile.svg",
+    "stone": "assets/production/interiors/modular/floor-stone.svg",
+    "yard": "assets/production/interiors/modular/floor-yard.svg"
+  },
+  "buildings": [
+    [
+      "radio",
+      3,
+      3
+    ],
+    [
+      "clinic",
+      8,
+      3
+    ],
+    [
+      "rail",
+      1,
+      6
+    ],
+    [
+      "guard",
+      11,
+      4
+    ],
+    [
+      "future",
+      7,
+      11
+    ],
+    [
+      "archive",
+      2,
+      8
+    ],
+    [
+      "bento",
+      2,
+      1
+    ],
+    [
+      "helena",
+      4,
+      11
+    ],
+    [
+      "celina",
+      10,
+      8
+    ],
+    [
+      "red-home",
+      9,
+      1
+    ],
+    [
+      "teal-home",
+      12,
+      1
+    ],
+    [
+      "market",
+      8,
+      13
+    ],
+    [
+      "brown-home",
+      2,
+      13
+    ],
+    [
+      "ruin",
+      2,
+      11
+    ]
+  ],
+  "layouts": {
+    "radio": {
+      "title": "Casa do tio — escritório e quarto",
+      "size": [
+        9,
+        8
+      ],
+      "floor": "wood",
+      "wall": "#8c795f",
+      "start": [
+        4.5,
+        7.3
+      ],
+      "exit": [
+        4.5,
+        7.5
+      ],
+      "obj": [
+        [
+          "desk",
+          2.1,
+          1.4,
+          "Fita cassete",
+          "radio",
+          "A fita tem o horário 03h17 e a frequência 103,7 MHz."
+        ],
+        [
+          "bookcase",
+          4.2,
+          0.8,
+          "Fotografia",
+          "portrait",
+          "Seu tio ao lado de um ferroviário. No verso: “Não deixe que apaguem o nome dele.”",
+          "memory"
+        ],
+        [
+          "safe",
+          7.6,
+          1.1,
+          "Cofre de aço",
+          null,
+          "Quatro discos numéricos. Uma etiqueta foi colada sobre a fechadura.",
+          "safe"
+        ],
+        [
+          "table",
+          4.3,
+          3.2,
+          "Agenda",
+          "calendar",
+          "As consultas de uma data foram riscadas."
+        ],
+        [
+          "bed",
+          2,
+          6
+        ],
+        [
+          "wardrobe",
+          0.9,
+          3.1
+        ],
+        [
+          "radio",
+          7.1,
+          3.5
+        ],
+        [
+          "chair",
+          3.8,
+          4.5
+        ]
+      ]
+    },
+    "rail": {
+      "title": "Estação — saguão e bilheteria",
+      "size": [
+        11,
+        8
+      ],
+      "floor": "stone",
+      "wall": "#8b806b",
+      "start": [
+        5.5,
+        7.2
+      ],
+      "exit": [
+        5.5,
+        7.5
+      ],
+      "obj": [
+        [
+          "ticket",
+          2,
+          1.4,
+          "Bilheteria",
+          "ticket",
+          "Um bilhete sem data de emissão. Destino: Vale do Cedro."
+        ],
+        [
+          "clock",
+          5.5,
+          0.8,
+          "Relógio parado",
+          "stationclock",
+          "O relógio da estação parou às 03h17."
+        ],
+        [
+          "signal",
+          8.9,
+          1.2,
+          "Armário de sinalização",
+          null,
+          "O manual indica círculo para via livre, triângulo para atenção, quadrado para parada. A ordem é parada, atenção, via livre.",
+          "cabinet"
+        ],
+        [
+          "crate",
+          9.5,
+          3.1,
+          "Manifesto rasgado",
+          "cargo",
+          "Remessa H-17, destino desconhecido. A caixa de manutenção também guarda uma engrenagem."
+        ],
+        [
+          "bench",
+          2,
+          4.1
+        ],
+        [
+          "bench",
+          2,
+          5.5
+        ],
+        [
+          "desk",
+          8.4,
+          5.3
+        ],
+        [
+          "crate",
+          9.7,
+          5.4
+        ]
+      ],
+      "portals": [
+        [
+          5.5,
+          0.45,
+          "Pátio ferroviário",
+          "rail-yard"
+        ]
+      ]
+    },
+    "rail-yard": {
+      "title": "Ferrovia — plataformas, linhas e pátio de carga",
+      "size": [
+        22,
+        12
+      ],
+      "floor": "yard",
+      "wall": null,
+      "start": [
+        10,
+        10.9
+      ],
+      "exit": [
+        10,
+        11.5
+      ],
+      "returnTo": "rail",
+      "obj": [
+        [
+          "rail",
+          2,
+          2
+        ],
+        [
+          "rail",
+          5.5,
+          2
+        ],
+        [
+          "rail",
+          9,
+          2
+        ],
+        [
+          "rail",
+          12.5,
+          2
+        ],
+        [
+          "rail",
+          16,
+          2
+        ],
+        [
+          "rail",
+          19.5,
+          2
+        ],
+        [
+          "rail",
+          2,
+          5.2
+        ],
+        [
+          "rail",
+          5.5,
+          5.2
+        ],
+        [
+          "rail",
+          9,
+          5.2
+        ],
+        [
+          "rail",
+          12.5,
+          5.2
+        ],
+        [
+          "rail",
+          16,
+          5.2
+        ],
+        [
+          "rail",
+          19.5,
+          5.2
+        ],
+        [
+          "locomotive",
+          4.8,
+          2,
+          "Locomotiva de manobra",
+          null,
+          "A locomotiva está fria, mas há marcas recentes de manutenção."
+        ],
+        [
+          "wagon",
+          9,
+          2,
+          "Vagão de carga",
+          null,
+          "A numeração foi raspada da lateral."
+        ],
+        [
+          "wagon",
+          13,
+          2
+        ],
+        [
+          "wagon",
+          17,
+          2
+        ],
+        [
+          "platform",
+          2,
+          7.4
+        ],
+        [
+          "platform",
+          5.5,
+          7.4
+        ],
+        [
+          "platform",
+          9,
+          7.4
+        ],
+        [
+          "platform",
+          12.5,
+          7.4
+        ],
+        [
+          "platform",
+          16,
+          7.4
+        ],
+        [
+          "platform",
+          19.5,
+          7.4
+        ],
+        [
+          "signal",
+          20.5,
+          5.2,
+          "Trilhos",
+          "rail",
+          "Metal polido e riscos recentes, apesar da placa de interdição de 1978."
+        ],
+        [
+          "crate",
+          2,
+          9
+        ],
+        [
+          "crate",
+          3,
+          9
+        ],
+        [
+          "crate",
+          4,
+          9
+        ],
+        [
+          "bench",
+          14,
+          9
+        ],
+        [
+          "signal",
+          19,
+          9,
+          "Caixa de sinalização",
+          null,
+          "Cabos de comando recentes chegam à estação."
+        ]
+      ],
+      "portals": [
+        [
+          20.8,
+          10.8,
+          "Depósito de carga",
+          "rail-depot"
+        ]
+      ]
+    },
+    "rail-depot": {
+      "title": "Ferrovia — depósito de carga",
+      "size": [
+        11,
+        8
+      ],
+      "floor": "stone",
+      "wall": "#68645b",
+      "start": [
+        5.5,
+        7.3
+      ],
+      "exit": [
+        5.5,
+        7.5
+      ],
+      "returnTo": "rail-yard",
+      "obj": [
+        [
+          "rack",
+          2,
+          1.1
+        ],
+        [
+          "rack",
+          4.2,
+          1.1
+        ],
+        [
+          "crate",
+          7.7,
+          1.5
+        ],
+        [
+          "crate",
+          9,
+          1.5
+        ],
+        [
+          "crate",
+          9,
+          2.6
+        ],
+        [
+          "workbench",
+          2.4,
+          4.1,
+          "Bancada de manutenção",
+          null,
+          "Marcas de peças retiradas recentemente."
+        ],
+        [
+          "desk",
+          8.7,
+          5.5,
+          "Livro de remessas",
+          null,
+          "O último registro público é de 1978. Folhas foram arrancadas depois dele."
+        ]
+      ]
+    },
+    "clinic": {
+      "title": "Clínica — recepção, consulta e enfermaria",
+      "size": [
+        12,
+        9
+      ],
+      "floor": "tile",
+      "wall": "#a7b4a8",
+      "start": [
+        6,
+        8.2
+      ],
+      "exit": [
+        6,
+        8.5
+      ],
+      "obj": [
+        [
+          "counter",
+          2.5,
+          6,
+          "Recepção",
+          null,
+          "Há fichas de atendimento separadas por data."
+        ],
+        [
+          "bench",
+          3,
+          7.6
+        ],
+        [
+          "desk",
+          2,
+          1.5,
+          "Consultório",
+          null,
+          "Os prontuários confidenciais estão guardados; Lia pode explicar o paciente 47."
+        ],
+        [
+          "exam",
+          5,
+          1.5
+        ],
+        [
+          "exam",
+          9.2,
+          1.5
+        ],
+        [
+          "medicine",
+          10.5,
+          4.3,
+          "Armário de medicamentos",
+          null,
+          "Material de primeiros socorros. Peça autorização a Lia."
+        ],
+        [
+          "sink",
+          7.5,
+          0.8
+        ],
+        [
+          "chair",
+          3.1,
+          3.1
+        ],
+        [
+          "bed",
+          9,
+          6.5
+        ],
+        [
+          "wardrobe",
+          0.9,
+          4.3
+        ]
+      ]
+    },
+    "guard": {
+      "title": "Posto de vigilância — sala de operações",
+      "size": [
+        8,
+        7
+      ],
+      "floor": "stone",
+      "wall": "#777e78",
+      "start": [
+        4,
+        6.3
+      ],
+      "exit": [
+        4,
+        6.6
+      ],
+      "obj": [
+        [
+          "desk",
+          2,
+          1.4,
+          "Livro de rondas",
+          null,
+          "Os turnos estão assinados. Alguns registros noturnos não informam destino."
+        ],
+        [
+          "radio",
+          5.8,
+          1.3
+        ],
+        [
+          "rack",
+          0.8,
+          3
+        ],
+        [
+          "safe",
+          6.9,
+          3.1
+        ],
+        [
+          "bench",
+          2,
+          5
+        ],
+        [
+          "signal",
+          5.9,
+          4.7
+        ]
+      ]
+    },
+    "future": {
+      "title": "Rádio comunitária — estúdio e arquivo sonoro",
+      "size": [
+        10,
+        8
+      ],
+      "floor": "wood",
+      "wall": "#8b735d",
+      "start": [
+        5,
+        7.3
+      ],
+      "exit": [
+        5,
+        7.5
+      ],
+      "obj": [
+        [
+          "radio",
+          2.4,
+          1.3,
+          "Mesa de transmissão",
+          null,
+          "Nora transmite notícias locais e guarda gravações de interferência."
+        ],
+        [
+          "radio",
+          5.3,
+          1.3
+        ],
+        [
+          "rack",
+          8.4,
+          1.1,
+          "Arquivo de fitas",
+          null,
+          "Fitas etiquetadas com datas e horários. Peça a Nora para comparar as gravações."
+        ],
+        [
+          "desk",
+          2.3,
+          4.1
+        ],
+        [
+          "chair",
+          3.9,
+          3.3
+        ],
+        [
+          "sofa",
+          7.4,
+          5.7
+        ]
+      ]
+    },
+    "archive": {
+      "title": "Arquivo municipal — sala de consulta",
+      "size": [
+        10,
+        8
+      ],
+      "floor": "stone",
+      "wall": "#958a72",
+      "start": [
+        5,
+        7.3
+      ],
+      "exit": [
+        5,
+        7.5
+      ],
+      "obj": [
+        [
+          "bookcase",
+          2,
+          1
+        ],
+        [
+          "bookcase",
+          4.2,
+          1
+        ],
+        [
+          "rack",
+          7.7,
+          1
+        ],
+        [
+          "desk",
+          2,
+          4.1,
+          "Catálogo municipal",
+          null,
+          "Mapas antigos e registros de obras públicas."
+        ],
+        [
+          "table",
+          7.5,
+          4.7
+        ],
+        [
+          "chair",
+          7.5,
+          6
+        ],
+        [
+          "safe",
+          8.8,
+          2.7
+        ]
+      ]
+    },
+    "bento": {
+      "title": "Casa e oficina de Bento",
+      "size": [
+        9,
+        8
+      ],
+      "floor": "wood",
+      "wall": "#8a7056",
+      "start": [
+        4.5,
+        7.3
+      ],
+      "exit": [
+        4.5,
+        7.5
+      ],
+      "obj": [
+        [
+          "workbench",
+          2.3,
+          1.4,
+          "Bancada de relojoeiro",
+          null,
+          "Bento mantém as ferramentas organizadas. Mostre a carta e o manifesto para obter a chave.",
+          "gears"
+        ],
+        [
+          "clock",
+          4.4,
+          0.9
+        ],
+        [
+          "rack",
+          7.2,
+          1.3
+        ],
+        [
+          "bed",
+          7.1,
+          5.6
+        ],
+        [
+          "table",
+          2.3,
+          4.5
+        ],
+        [
+          "chair",
+          2.3,
+          5.7
+        ],
+        [
+          "wardrobe",
+          0.8,
+          2.9
+        ]
+      ]
+    },
+    "helena": {
+      "title": "Casa de Helena — escritório e biblioteca",
+      "size": [
+        9,
+        8
+      ],
+      "floor": "wood",
+      "wall": "#82775e",
+      "start": [
+        4.5,
+        7.3
+      ],
+      "exit": [
+        4.5,
+        7.5
+      ],
+      "obj": [
+        [
+          "bookcase",
+          1.8,
+          0.9
+        ],
+        [
+          "bookcase",
+          4,
+          0.9
+        ],
+        [
+          "desk",
+          7,
+          1.4,
+          "Documentos de Helena",
+          null,
+          "Recortes e anotações sobre a história de Vale do Cedro."
+        ],
+        [
+          "bed",
+          7.1,
+          5.6
+        ],
+        [
+          "table",
+          2.3,
+          4.3
+        ],
+        [
+          "chair",
+          2.3,
+          5.5
+        ]
+      ]
+    },
+    "celina": {
+      "title": "Casa de Celina — ateliê de costura",
+      "size": [
+        9,
+        8
+      ],
+      "floor": "wood",
+      "wall": "#aa8571",
+      "start": [
+        4.5,
+        7.3
+      ],
+      "exit": [
+        4.5,
+        7.5
+      ],
+      "obj": [
+        [
+          "sewing",
+          2.1,
+          1.4,
+          "Máquina de costura",
+          null,
+          "Uma camisa infantil tem um nome bordado na bainha."
+        ],
+        [
+          "rack",
+          4.2,
+          1
+        ],
+        [
+          "wardrobe",
+          7.4,
+          1
+        ],
+        [
+          "bed",
+          7.1,
+          5.6
+        ],
+        [
+          "table",
+          2.2,
+          4.1
+        ],
+        [
+          "chair",
+          2.2,
+          5.3
+        ],
+        [
+          "sofa",
+          1.9,
+          6.6
+        ]
+      ]
+    },
+    "red-home": {
+      "title": "Residência da rua norte",
+      "size": [
+        8,
+        7
+      ],
+      "floor": "wood",
+      "wall": "#997455",
+      "start": [
+        4,
+        6.3
+      ],
+      "exit": [
+        4,
+        6.5
+      ],
+      "obj": [
+        [
+          "kitchen",
+          2,
+          1.1
+        ],
+        [
+          "sink",
+          4.2,
+          1
+        ],
+        [
+          "table",
+          2.7,
+          3.5
+        ],
+        [
+          "chair",
+          2.7,
+          4.6
+        ],
+        [
+          "bed",
+          6,
+          5.1
+        ],
+        [
+          "wardrobe",
+          6.8,
+          1.1
+        ]
+      ]
+    },
+    "teal-home": {
+      "title": "Casa do lago",
+      "size": [
+        8,
+        7
+      ],
+      "floor": "wood",
+      "wall": "#6f8980",
+      "start": [
+        4,
+        6.3
+      ],
+      "exit": [
+        4,
+        6.5
+      ],
+      "obj": [
+        [
+          "table",
+          2,
+          1.8,
+          "Caderno de pesca",
+          null,
+          "O lago é calmo ao amanhecer. As luzes noturnas não têm explicação."
+        ],
+        [
+          "chair",
+          2,
+          3
+        ],
+        [
+          "bed",
+          5.9,
+          1.5
+        ],
+        [
+          "rack",
+          6.9,
+          3.5
+        ],
+        [
+          "sofa",
+          2.4,
+          5.3
+        ],
+        [
+          "kitchen",
+          6.3,
+          5.3
+        ]
+      ]
+    },
+    "market": {
+      "title": "Mercado do Cedro — loja e estoque",
+      "size": [
+        11,
+        8
+      ],
+      "floor": "tile",
+      "wall": "#9e906d",
+      "start": [
+        5.5,
+        7.3
+      ],
+      "exit": [
+        5.5,
+        7.5
+      ],
+      "obj": [
+        [
+          "counter",
+          2,
+          6,
+          "Caixa do mercado",
+          null,
+          "O comércio funciona com pagamentos em dinheiro; compras ainda não estão disponíveis."
+        ],
+        [
+          "rack",
+          2,
+          1.2
+        ],
+        [
+          "rack",
+          5,
+          1.2
+        ],
+        [
+          "rack",
+          8,
+          1.2
+        ],
+        [
+          "rack",
+          2,
+          3.4
+        ],
+        [
+          "rack",
+          8,
+          3.4
+        ],
+        [
+          "crate",
+          9.5,
+          5
+        ],
+        [
+          "crate",
+          9.5,
+          6
+        ]
+      ]
+    },
+    "brown-home": {
+      "title": "Residência da estrada da estação",
+      "size": [
+        8,
+        7
+      ],
+      "floor": "wood",
+      "wall": "#9b8063",
+      "start": [
+        4,
+        6.3
+      ],
+      "exit": [
+        4,
+        6.5
+      ],
+      "obj": [
+        [
+          "sofa",
+          2.1,
+          1.4
+        ],
+        [
+          "table",
+          4.6,
+          2.3
+        ],
+        [
+          "chair",
+          4.6,
+          3.4
+        ],
+        [
+          "bed",
+          6.2,
+          5.1
+        ],
+        [
+          "kitchen",
+          1.8,
+          5.2
+        ],
+        [
+          "wardrobe",
+          6.8,
+          1.1
+        ]
+      ]
+    },
+    "ruin": {
+      "title": "Casa abandonada — cômodos interditados",
+      "size": [
+        8,
+        7
+      ],
+      "floor": "stone",
+      "wall": "#66665b",
+      "start": [
+        4,
+        6.3
+      ],
+      "exit": [
+        4,
+        6.5
+      ],
+      "obj": [
+        [
+          "crate",
+          1.4,
+          1.3
+        ],
+        [
+          "wardrobe",
+          6.5,
+          1.2
+        ],
+        [
+          "desk",
+          2,
+          3.6,
+          "Papel deteriorado",
+          null,
+          "A umidade tornou o texto ilegível. Não há uma evidência conclusiva aqui."
+        ],
+        [
+          "bed",
+          6,
+          5
+        ],
+        [
+          "crate",
+          1.5,
+          5.5
+        ]
+      ]
+    }
+  }
+}
