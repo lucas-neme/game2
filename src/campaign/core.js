@@ -5,7 +5,7 @@ function createValleyCampaign(data){
  const phase=d=>data.chapters.find(c=>d>=c.days[0]&&d<=c.days[1])?.id||5;
  const day=t=>Math.max(1,Math.min(30,1+Math.floor(t/1440)));
  const minute=t=>((Math.floor(t)%1440)+1440)%1440;
- const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},mechanisms:{},cinemaArchive:{},outcome:null,uncle:null,evacuation:null});
+ const fresh=()=>({version:1,train:false,solved:{},evidence:{},choices:{},events:{},meetings:{},storyHistory:{},storySeen:{},personalTalks:{},rumorJournal:{},socialHistory:{},socialSeen:{},infrastructure:{},departures:{},clearedRoutes:{},manifestHistory:{},mechanisms:{},cinemaArchive:{},outcome:null,uncle:null,evacuation:null});
  const normalize=c=>Object.assign(fresh(),c||{});
  function chapter(c,t){if(!c.train)return 1;const cap=phase(day(t));for(let ch=2;ch<=5;ch++){if(ch>cap)return cap;if(data.missions.some(m=>m.chapter===ch&&!c.solved[m.id]))return ch}return 5}
  function available(c,t){return c.train&&!c.outcome?data.missions.filter(m=>m.chapter<=chapter(c,t)&&m.chapter<=phase(day(t))&&!c.solved[m.id]):[]}
@@ -58,7 +58,7 @@ function createValleyCampaign(data){
   }
   for(const e of data.appointments||[]){
    const row=c.meetings?.[e.id];
-   if(row?.status==='concluído'){const at=(e.day-1)*1440+e.until;if(at<=cutoff)events.push({at,key:e.id,actors:e.actors,seed:false})}
+   if(row?.status==='realizado'){const at=row.end;if(at<=cutoff)events.push({at,key:e.id,actors:row.actors,seed:false})}
   }
   for(const [key,e] of Object.entries(c.socialHistory||{}))if(e.status==='concluído'&&e.end<=cutoff)events.push({at:e.end,key,actors:e.actors,seed:false});
   events.sort((a,b)=>a.at-b.at||Number(b.seed)-Number(a.seed)||a.key.localeCompare(b.key));
@@ -82,6 +82,30 @@ function createValleyCampaign(data){
   return Object.fromEntries([...known].map(([id,facts])=>[id,[...facts.values()].sort((a,b)=>a.at-b.at||a.choice.localeCompare(b.choice))]));
  }
  function informationFor(id,t,c,deadAt=()=>null){return informationNetwork(c,t,deadAt)[id]||[]}
+ // These are authored misunderstandings, not mission evidence or randomly generated facts.
+ const rumorRules={
+  'warn-workers':{claim:'Todos os turnos da ferrovia foram suspensos.',truth:'O aviso aos ferroviários não equivale à suspensão dos turnos.'},
+  'isolate-grid':{claim:'Todo o Vale ficará sem eletricidade permanentemente.',truth:'A decisão visa isolar a rede do projeto; a situação dos distritos depende da infraestrutura.'},
+  'expose-scientist':{claim:'O cientista já foi preso por causa da denúncia.',truth:'Preservar provas para denunciar não comprova uma prisão.'},
+  'seal-trails':{claim:'Todas as saídas da floresta foram fechadas.',truth:'O pedido de fechar a trilha não demonstra que todas as saídas estão bloqueadas.'}
+ };
+ function rumorsFor(id,t,c,deadAt=()=>null){
+  return informationFor(id,t,c,deadAt).filter(f=>f.depth===2&&rumorRules[f.choice]).map(f=>({id:id+':'+f.choice,choice:f.choice,at:f.at,via:f.via,claim:rumorRules[f.choice].claim,truth:rumorRules[f.choice].truth,verifiedAt:c.rumorJournal?.[id+':'+f.choice]?.verifiedAt??null}));
+ }
+ function recordRumor(c,t,id,key,deadAt=()=>null){
+  if(c.outcome||deadAt(id)!=null&&deadAt(id)<=t||departed(c,id,t))return false;
+  const r=rumorsFor(id,t,c,deadAt).find(x=>x.id===key);if(!r)return false;
+  c.rumorJournal??={};if(c.rumorJournal[key])return false;
+  c.rumorJournal[key]={id:key,npc:id,choice:r.choice,claim:r.claim,heardAt:t,via:r.via};return true;
+ }
+ function clarifyRumor(c,t,id,key,deadAt=()=>null){
+  if(c.outcome||deadAt(id)!=null&&deadAt(id)<=t||departed(c,id,t))return false;
+  const heard=c.rumorJournal?.[key],r=rumorsFor(id,t,c,deadAt).find(x=>x.id===key);
+  if(!heard||heard.npc!==id||!r||heard.heardAt>t||heard.verifiedAt!=null)return false;
+  const decision=Object.values(c.choices||{}).find(q=>q.id===r.choice&&q.at<=t);
+  if(!decision)return false;
+  heard.verifiedAt=t;heard.correction=r.truth;return true;
+ }
  // State is derived from timestamped facts; no accumulated per-frame side effects.
  function psychology(id,t,c,deadAt=()=>null){
   const p=byId[id]?.psychology;if(!p)return null;
@@ -94,6 +118,7 @@ function createValleyCampaign(data){
    const effect=data.psychologyEffects?.[fact.choice]?.[fact.origin];if(!effect)continue;
    trust+=Math.round(effect[0]*.25);fear+=Math.round(effect[1]*.35);resolve+=Math.round(effect[2]*.25);memories.push(fact.choice);
   }
+  for(const r of rumorsFor(id,t,c,deadAt)){if(r.verifiedAt==null||r.verifiedAt>t){fear+=6;trust-=3}else{fear-=3;trust+=3}}
   const loss=deadAt(p.ally);if(loss!=null&&loss<=t){fear+=22;resolve-=12;memories.push('loss:'+p.ally)}
   fear+=day(t)>=21?15:day(t)>=13?7:0;
   const clamp=x=>Math.max(0,Math.min(100,x));
@@ -342,5 +367,5 @@ function createValleyCampaign(data){
  function finish(c,t,id){if(!endings(c,t).some(e=>e[0]===id))return false;const selected=x=>Object.values(c.choices).some(q=>q.id===x);c.outcome={id,at:t,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada",prepared:{calibrations:mechanismEffects(c,t),grid:selected("repair-grid"),counterwave:selected("test-counterwave"),evacuation:selected("evacuate"),rescue:selected("rescue-uncle")}};return true}
  function resolveAction(c,t,id){if(c.outcome)return false;const chosen=x=>Object.values(c.choices).some(q=>q.id===x&&q.at<=t);if(id==="rescue"&&c.solved.rescue&&chosen("rescue-uncle")&&!c.uncle){c.uncle="resgatado";return true}if(id==="evacuation"&&c.solved.evacuation&&(!c.evacuation||(c.evacuation==='retirada organizada'&&!Number.isFinite(c.evacuationAt)))&&(chosen("evacuate")||chosen("shelter-in-place"))){c.evacuation=chosen("evacuate")?"retirada organizada":"abrigo reforçado";c.evacuationAt=t;return true}return false}
  function deadline(c,t){if(t>=43200&&!c.outcome){c.outcome={id:"silence",at:43200,uncle:c.uncle||"destino desconhecido",evacuation:c.evacuation||"não confirmada"};return true}return false}
- return {data,byId,missions,informationNetwork,informationFor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
+ return {data,byId,missions,informationNetwork,informationFor,rumorsFor,recordRumor,clarifyRumor,soundtrackCue,audioDirection,collectCinema,cinemaArchive,residentEpilogues,freezeEpilogues,mechanismReady,mechanismAttempt,mechanismEffects,signalStrength,activeManifestations,manifestAction,manifestationAvoidance,activeBarriers,clearBarrier,roleAssignments,departureAt,departed,settleDepartures,serviceStatus,infrastructure,powerAt,districtAt,operateGrid,psychology,personalTalk,autonomousBehavior,socialWindow,activeSocial,settleSocial,relationship,witnessSocial,storyReaction,reactionWindow,settleStory,storyEpilogue,phase,day,minute,fresh,normalize,chapter,available,schedule,collect,solve,choose,tick,settleMeetings,witness,meetingVariant,endings,finish,deadline,resolveAction};
 }
