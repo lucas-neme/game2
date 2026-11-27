@@ -79,5 +79,23 @@
     "duration": 363.84068,
     "license": "CC BY 4.0",
     "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2024/05/Echoes.mp3"
+  },
+  {
+    "id": "nightfall",
+    "file": "assets/music/nightfall.mp3",
+    "bytes": 10540076,
+    "sha256": "831a6baeb1d01fbecb89a0473b141625dd1136809f059ddaba6e106fd01db8e5",
+    "duration": 263.398435,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/05/sb_nightfall.mp3"
+  },
+  {
+    "id": "reawakening",
+    "file": "assets/music/reawakening.mp3",
+    "bytes": 10192132,
+    "sha256": "59923ffab0832c3ab240cfa5465f9f6eb2cf3e8c6c3912e0eac554bd3e027393",
+    "duration": 254.702721,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2023/05/Reawakening.mp3"
   }
 ]
