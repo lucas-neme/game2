@@ -73,13 +73,24 @@ async function talkTo(page,id,name,maxHours=30){
 }
 const clickDialog=(page,label)=>page.locator('#dialog').getByRole('button',{name:label,exact:true}).click();
 
+// Navigate the actual collision model in small swept steps, then activate the visible contextual action.
+const roomGo=async(page,label)=>{
+ await page.evaluate(label=>{const R=FZ_ROOMS.layouts[s.room];if(!R)throw Error('not in modular room');const step=.25,start=[FZ_R.x,FZ_R.y],q=[{p:start,prev:-1}],seen=new Set(['0,0']);let end=-1;
+ for(let i=0;i<q.length;i++){const {p:[x,y]}=q[i];if(fzRoomTarget(R,{x,y})?.label===label){end=i;break}
+ for(const [dx,dy] of [[step,0],[-step,0],[0,step],[0,-step]]){const nx=x+dx,ny=y+dy,k=Math.round((nx-start[0])/step)+','+Math.round((ny-start[1])/step);if(!seen.has(k)&&!fzRoomSolid(R,nx,ny)){seen.add(k);q.push({p:[nx,ny],prev:i})}}}
+ if(end<0)throw Error('unreachable '+label);const path=[];for(let i=end;i>0;i=q[i].prev)path.unshift(q[i].p);for(const [x,y] of path)fzRoomMove(R,FZ_R,x-FZ_R.x,y-FZ_R.y);
+ if(fzRoomTarget(R,FZ_R)?.label!==label)throw Error('collision prevented approach '+label);
+ },label);
+ await page.locator('#fzRoomAction').filter({hasText:'E · '+label}).click();
+};
+
 async function core(page){
   // Uncle's study: tape + safe keypad (wrong code first, then 0317).
   await page.evaluate(()=>{move(-1,0);move(-1,0);move(0,-1);interact()});
   assert.equal((await st(page)).room,'radio');
-  assert.match(await page.locator('#roomart').evaluate(e=>getComputedStyle(e).backgroundImage),/interiors\/study\.png/);
-  await page.getByRole('button',{name:'Fita cassete',exact:true}).click();
-  await page.getByRole('button',{name:'Cofre de aço',exact:true}).click();
+  assert(await page.locator('#roomart').evaluate(e=>e.classList.contains('modular-room')),'modular study');
+  await roomGo(page,'Fita cassete');
+  await roomGo(page,'Cofre de aço');
   for(const n of ['1','2','3','4','Abrir'])await page.locator('#puzzle').getByRole('button',{name:n,exact:true}).click();
   assert(!(await st(page)).clues.includes('safe'),'wrong code must not open the safe');
   for(const n of ['0','3','1','7','Abrir'])await page.locator('#puzzle').getByRole('button',{name:n,exact:true}).click();
@@ -88,9 +99,10 @@ async function core(page){
   // Station: rails, clock, manifest, signal cabinet dial puzzle.
   await page.evaluate(()=>{move(-1,0);move(0,1);move(0,1);interact()});
   assert.equal((await st(page)).room,'rail');
-  assert.match(await page.locator('#roomart').evaluate(e=>getComputedStyle(e).backgroundImage),/interiors\/station\.png/);
-  for(const n of ['Trilhos','Relógio parado','Manifesto rasgado'])await page.getByRole('button',{name:n,exact:true}).click();
-  await page.getByRole('button',{name:'Armário de sinalização',exact:true}).click();
+  assert(await page.locator('#roomart').evaluate(e=>e.classList.contains('modular-room')),'modular station');
+  await roomGo(page,'Relógio parado');await roomGo(page,'Manifesto rasgado');
+  await roomGo(page,'Pátio ferroviário');await roomGo(page,'Trilhos');await roomGo(page,'Voltar');
+  await roomGo(page,'Armário de sinalização');
   const d=page.locator('.dialrow button');await d.nth(0).click();await d.nth(0).click();await d.nth(1).click();
   await page.getByRole('button',{name:'Testar mecanismo'}).click();
   assert((await st(page)).clues.includes('switchlog'),'cabinet opened');
@@ -168,7 +180,7 @@ async function finale(page,tag){
   await page.screenshot({path:`${OUT}/A-consequences.png`});
   await J(page,false);
   await finale(page,'A');
-  for(const f of ['ground.webp','atlas-0.png','ch-hero.png','ch-lia.png','ch-raul.png','ch-nora.png','portraits.png','icons.png','logo.png','study.png','station.png','night-train.svg']){assert.equal(assets[f]?.status,200,f);assert.match(assets[f].type,/^image\//,f)}
+  for(const f of ['ground.webp','atlas-0.png','ch-hero.png','ch-lia.png','ch-raul.png','ch-nora.png','portraits.png','icons.png','logo.png','floor-wood.svg','floor-stone.svg','floor-yard.svg','desk.svg','signal.svg','rail.svg','night-train.svg']){assert.equal(assets[f]?.status,200,f);assert.match(assets[f].type,/^image\//,f)}
   assert.equal(problems.length,0,problems.join('\n'));
   log('A PASS fates',JSON.stringify(A.fates),'| events:',evA.slice(0,160));
   await ctx.close();
