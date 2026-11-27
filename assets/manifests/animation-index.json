@@ -373,6 +373,9 @@
   },
   "bento": {
    "available": {
+    "death": {
+     "any": 2
+    },
     "idle": {
      "south": 4,
      "side": 4,
@@ -437,8 +440,7 @@
     }
    },
    "missing": [
-    "downed",
-    "death"
+    "downed"
    ],
    "frames": {
     "idle": {
@@ -727,12 +729,29 @@
        "state": "REVIEW"
       }
      ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/bento/actions.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/bento/death.png",
+       "state": "REVIEW"
+      }
+     ]
     }
    },
    "atlas": null
   },
   "celina": {
    "available": {
+    "death": {
+     "any": 2
+    },
     "idle": {
      "south": 4,
      "side": 4,
@@ -797,8 +816,7 @@
     }
    },
    "missing": [
-    "downed",
-    "death"
+    "downed"
    ],
    "frames": {
     "idle": {
@@ -1119,6 +1137,20 @@
       {
        "frame": 3,
        "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/celina/frames/r10_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/celina/actions.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/celina/death.png",
        "state": "REVIEW"
       }
      ]
@@ -1817,6 +1849,9 @@
   },
   "helena": {
    "available": {
+    "death": {
+     "any": 2
+    },
     "idle": {
      "south": 4,
      "north": 4,
@@ -1880,8 +1915,7 @@
    },
    "missing": [
     "work",
-    "downed",
-    "death"
+    "downed"
    ],
    "frames": {
     "idle": {
@@ -2148,25 +2182,57 @@
        "state": "REVIEW"
       }
      ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/helena/actions.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/helena/death.png",
+       "state": "REVIEW"
+      }
+     ]
     }
    },
    "atlas": null
   },
   "hero": {
    "available": {
+    "death": {
+     "any": 2,
+     "east": 12,
+     "north": 6,
+     "south": 6
+    },
     "idle": {
      "any": 1,
+     "east": 8,
+     "north": 4,
+     "south": 4,
      "any (atlas)": 4
     },
     "sit": {
      "any": 1,
+     "east": 4,
      "any (atlas)": 3
+    },
+    "stand": {
+     "east": 4
+    },
+    "talk": {
+     "east": 8,
+     "south": 4,
+     "any (atlas)": 4
     },
     "walk": {
      "any": 1,
-     "east": 16,
-     "north": 16,
-     "south": 16,
+     "east": 32,
+     "north": 24,
+     "south": 24,
      "west": 16,
      "any (atlas)": 8
     },
@@ -2177,9 +2243,6 @@
      "any (atlas)": 8
     },
     "interact": {
-     "any (atlas)": 4
-    },
-    "talk": {
      "any (atlas)": 4
     },
     "defend": {
@@ -2202,10 +2265,8 @@
     }
    },
    "missing": [
-    "stand",
     "work",
-    "downed",
-    "death"
+    "downed"
    ],
    "frames": {
     "sit": {
@@ -2214,6 +2275,28 @@
        "frame": null,
        "path": "assets/production/characters/ch-hero-sit.png",
        "state": "PRODUCTION"
+      }
+     ],
+     "east": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/sit/east/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/sit/east/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/sit/east/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/sit/east/04.png",
+       "state": "SOURCE"
       }
      ]
     },
@@ -2237,6 +2320,16 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v6/hero/walk/east-alt1/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/walk/east/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/protagonista-walk-v2/game/east/walk_02.png",
        "state": "SOURCE"
@@ -2244,6 +2337,16 @@
       {
        "frame": 2,
        "path": "assets/source/protagonista-walk-v2/source/east/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/walk/east-alt1/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/walk/east/02.png",
        "state": "SOURCE"
       },
       {
@@ -2257,6 +2360,16 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v6/hero/walk/east-alt1/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/walk/east/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/protagonista-walk-v2/game/east/walk_04.png",
        "state": "SOURCE"
@@ -2264,6 +2377,16 @@
       {
        "frame": 4,
        "path": "assets/source/protagonista-walk-v2/source/east/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/walk/east-alt1/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/walk/east/04.png",
        "state": "SOURCE"
       },
       {
@@ -2277,6 +2400,16 @@
        "state": "SOURCE"
       },
       {
+       "frame": 5,
+       "path": "assets/source/v6/hero/walk/east-alt1/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v6/hero/walk/east/05.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 6,
        "path": "assets/source/protagonista-walk-v2/game/east/walk_06.png",
        "state": "SOURCE"
@@ -2284,6 +2417,16 @@
       {
        "frame": 6,
        "path": "assets/source/protagonista-walk-v2/source/east/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v6/hero/walk/east-alt1/06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v6/hero/walk/east/06.png",
        "state": "SOURCE"
       },
       {
@@ -2297,6 +2440,16 @@
        "state": "SOURCE"
       },
       {
+       "frame": 7,
+       "path": "assets/source/v6/hero/walk/east-alt1/07.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 7,
+       "path": "assets/source/v6/hero/walk/east/07.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 8,
        "path": "assets/source/protagonista-walk-v2/game/east/walk_08.png",
        "state": "SOURCE"
@@ -2304,6 +2457,16 @@
       {
        "frame": 8,
        "path": "assets/source/protagonista-walk-v2/source/east/walk_08.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/v6/hero/walk/east-alt1/08.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/v6/hero/walk/east/08.png",
        "state": "SOURCE"
       }
      ],
@@ -2319,6 +2482,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v6/hero/walk/north/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/protagonista-walk-v2/game/north/walk_02.png",
        "state": "SOURCE"
@@ -2326,6 +2494,11 @@
       {
        "frame": 2,
        "path": "assets/source/protagonista-walk-v2/source/north/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/walk/north/02.png",
        "state": "SOURCE"
       },
       {
@@ -2339,6 +2512,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v6/hero/walk/north/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/protagonista-walk-v2/game/north/walk_04.png",
        "state": "SOURCE"
@@ -2346,6 +2524,11 @@
       {
        "frame": 4,
        "path": "assets/source/protagonista-walk-v2/source/north/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/walk/north/04.png",
        "state": "SOURCE"
       },
       {
@@ -2359,6 +2542,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 5,
+       "path": "assets/source/v6/hero/walk/north/05.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 6,
        "path": "assets/source/protagonista-walk-v2/game/north/walk_06.png",
        "state": "SOURCE"
@@ -2366,6 +2554,11 @@
       {
        "frame": 6,
        "path": "assets/source/protagonista-walk-v2/source/north/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v6/hero/walk/north/06.png",
        "state": "SOURCE"
       },
       {
@@ -2379,6 +2572,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 7,
+       "path": "assets/source/v6/hero/walk/north/07.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 8,
        "path": "assets/source/protagonista-walk-v2/game/north/walk_08.png",
        "state": "SOURCE"
@@ -2386,6 +2584,11 @@
       {
        "frame": 8,
        "path": "assets/source/protagonista-walk-v2/source/north/walk_08.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/v6/hero/walk/north/08.png",
        "state": "SOURCE"
       }
      ],
@@ -2401,6 +2604,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 1,
+       "path": "assets/source/v6/hero/walk/south/01.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 2,
        "path": "assets/source/protagonista-walk-v2/game/south/walk_02.png",
        "state": "SOURCE"
@@ -2408,6 +2616,11 @@
       {
        "frame": 2,
        "path": "assets/source/protagonista-walk-v2/source/south/walk_02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/walk/south/02.png",
        "state": "SOURCE"
       },
       {
@@ -2421,6 +2634,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 3,
+       "path": "assets/source/v6/hero/walk/south/03.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 4,
        "path": "assets/source/protagonista-walk-v2/game/south/walk_04.png",
        "state": "SOURCE"
@@ -2428,6 +2646,11 @@
       {
        "frame": 4,
        "path": "assets/source/protagonista-walk-v2/source/south/walk_04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/walk/south/04.png",
        "state": "SOURCE"
       },
       {
@@ -2441,6 +2664,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 5,
+       "path": "assets/source/v6/hero/walk/south/05.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 6,
        "path": "assets/source/protagonista-walk-v2/game/south/walk_06.png",
        "state": "SOURCE"
@@ -2448,6 +2676,11 @@
       {
        "frame": 6,
        "path": "assets/source/protagonista-walk-v2/source/south/walk_06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v6/hero/walk/south/06.png",
        "state": "SOURCE"
       },
       {
@@ -2461,6 +2694,11 @@
        "state": "SOURCE"
       },
       {
+       "frame": 7,
+       "path": "assets/source/v6/hero/walk/south/07.png",
+       "state": "SOURCE"
+      },
+      {
        "frame": 8,
        "path": "assets/source/protagonista-walk-v2/game/south/walk_08.png",
        "state": "SOURCE"
@@ -2468,6 +2706,11 @@
       {
        "frame": 8,
        "path": "assets/source/protagonista-walk-v2/source/south/walk_08.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 8,
+       "path": "assets/source/v6/hero/walk/south/08.png",
        "state": "SOURCE"
       }
      ],
@@ -2561,6 +2804,322 @@
        "path": "assets/review/chatgpt-import/fz-expansao-protagonista-v3-review/recortes/idle.png",
        "state": "REVIEW"
       }
+     ],
+     "east": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/idle/east-alt1/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/idle/east/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/idle/east-alt1/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/idle/east/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/idle/east-alt1/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/idle/east/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/idle/east-alt1/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/idle/east/04.png",
+       "state": "SOURCE"
+      }
+     ],
+     "north": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/idle/north/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/idle/north/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/idle/north/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/idle/north/04.png",
+       "state": "SOURCE"
+      }
+     ],
+     "south": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/idle/south/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/idle/south/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/idle/south/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/idle/south/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/hero/actions.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/hero/death.png",
+       "state": "REVIEW"
+      }
+     ],
+     "east": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/death/east-alt1/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/death/east/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/death/east-alt1/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/death/east/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/death/east-alt1/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/death/east/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/death/east-alt1/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/death/east/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v6/hero/death/east-alt1/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v6/hero/death/east/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v6/hero/death/east-alt1/06.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v6/hero/death/east/06.png",
+       "state": "SOURCE"
+      }
+     ],
+     "north": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/death/north/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/death/north/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/death/north/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/death/north/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v6/hero/death/north/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v6/hero/death/north/06.png",
+       "state": "SOURCE"
+      }
+     ],
+     "south": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/death/south/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/death/south/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/death/south/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/death/south/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 5,
+       "path": "assets/source/v6/hero/death/south/05.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 6,
+       "path": "assets/source/v6/hero/death/south/06.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "stand": {
+     "east": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/stand/east/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/stand/east/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/stand/east/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/stand/east/04.png",
+       "state": "SOURCE"
+      }
+     ]
+    },
+    "talk": {
+     "east": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/talk/east-alt1/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/talk/east/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/talk/east-alt1/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/talk/east/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/talk/east-alt1/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/talk/east/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/talk/east-alt1/04.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/talk/east/04.png",
+       "state": "SOURCE"
+      }
+     ],
+     "south": [
+      {
+       "frame": 1,
+       "path": "assets/source/v6/hero/talk/south/01.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 2,
+       "path": "assets/source/v6/hero/talk/south/02.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 3,
+       "path": "assets/source/v6/hero/talk/south/03.png",
+       "state": "SOURCE"
+      },
+      {
+       "frame": 4,
+       "path": "assets/source/v6/hero/talk/south/04.png",
+       "state": "SOURCE"
+      }
      ]
     }
    },
@@ -2568,6 +3127,9 @@
   },
   "lia": {
    "available": {
+    "death": {
+     "any": 2
+    },
     "idle": {
      "south": 4,
      "side": 4,
@@ -2629,8 +3191,7 @@
    },
    "missing": [
     "work",
-    "downed",
-    "death"
+    "downed"
    ],
    "frames": {
     "idle": {
@@ -2852,6 +3413,20 @@
       {
        "frame": 3,
        "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/lia/frames/r09_12.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/lia/actions.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/lia/death.png",
        "state": "REVIEW"
       }
      ]
@@ -3229,6 +3804,9 @@
   },
   "nora": {
    "available": {
+    "death": {
+     "any": 2
+    },
     "idle": {
      "south": 4,
      "side": 4,
@@ -3292,8 +3870,7 @@
    },
    "missing": [
     "work",
-    "downed",
-    "death"
+    "downed"
    ],
    "frames": {
     "idle": {
@@ -3580,12 +4157,29 @@
        "state": "REVIEW"
       }
      ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/nora/actions.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/nora/death.png",
+       "state": "REVIEW"
+      }
+     ]
     }
    },
    "atlas": null
   },
   "raul": {
    "available": {
+    "death": {
+     "any": 2
+    },
     "idle": {
      "south": 4,
      "north": 2,
@@ -3649,8 +4243,7 @@
    },
    "missing": [
     "work",
-    "downed",
-    "death"
+    "downed"
    ],
    "frames": {
     "idle": {
@@ -3919,6 +4512,20 @@
       {
        "frame": 2,
        "path": "assets/review/chatgpt-import/fz-harmonizado-v5-completo/npcs/raul/frames/r07_11.png",
+       "state": "REVIEW"
+      }
+     ]
+    },
+    "death": {
+     "any": [
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/raul/actions.png",
+       "state": "REVIEW"
+      },
+      {
+       "frame": null,
+       "path": "assets/review/chatgpt-import/fz-personagens-v6-morte-review/characters/raul/death.png",
        "state": "REVIEW"
       }
      ]

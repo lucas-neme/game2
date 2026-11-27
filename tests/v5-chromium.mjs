@@ -32,7 +32,8 @@ await page.evaluate(()=>{s.npcTalk='future';const v=npcVis.future;if(v){v.path=[
 // 5. work pose follows the real activity (Bento repairing clocks in the morning)
 await page.evaluate(()=>{s.npcTalk=null;s.t=600;s.worldClock=Math.max(s.worldClock,600);render()});await page.waitForTimeout(500);
 const w=await page.evaluate(()=>{const p=residents().find(p=>p.id==='bento');const v=npcVis.bento;return [p?.activity,v?.v5anim]});
-if(w[0]&&/rel[oó]g|consert/i.test(w[0])){await page.waitForFunction(()=>npcVis.bento&&!npcVis.bento.path?.length,null,{timeout:15000}).catch(()=>{});await page.waitForTimeout(300);const a=await page.evaluate(()=>npcVis.bento.v5anim);assert.equal(a,'work:side','bento '+a);
+if(w[0]&&/rel[oó]g|consert/i.test(w[0])){await page.waitForFunction(()=>npcVis.bento&&!npcVis.bento.path?.length,null,{timeout:15000}).catch(()=>{});await page.waitForTimeout(300);const [a,hasWork]=await page.evaluate(()=>[npcVis.bento.v5anim,!!V5.bento.anims['work:side']]);if(hasWork)assert.equal(a,'work:side','bento '+a);else assert(a.startsWith('idle'),'bento without work art idles: '+a);
  const pos=await page.evaluate(()=>{const v=npcVis.bento;s.px=v.x+.6;s.py=v.y+.6;heroVis.x=s.px;heroVis.y=s.py;const [x,y]=iso(v.x,v.y);return worldToScreen(x,y)});await page.screenshot({path:`${OUT}/bento-work.png`,clip:await clipAt(page,()=>{const v=npcVis.bento;const [x,y]=iso(v.x,v.y);return worldToScreen(x,y)})});ok('work pose from activity','Bento: '+w[0])}
 else console.log('SKIP work: Bento activity',w[0]);
+const files=await page.evaluate(()=>Object.fromEntries(Object.entries(FZ_RENDER).map(([k,r])=>[k,r.file])));for(const [k,f] of Object.entries(files))assert(/characters\/v6\//.test(f),k+' not V6: '+f);ok('V6 atlases rendered',JSON.stringify(files));
 assert.equal(errs.length,0,errs.join('\n'));await browser.close();console.log('ALL V5 CHECKS PASSED');

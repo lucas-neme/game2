@@ -1,0 +1,434 @@
+{
+ "source": "fz-personagens-v6-morte-review.zip",
+ "hero_v2_height_px": 84,
+ "npcs": {
+  "hero": {
+   "file": "assets/production/characters/v6/hero.png",
+   "sha256": "a69acffda2180d7981897fbc6f6b036614470a1565f2af7f6e85755bd636273d",
+   "frame": [
+    118,
+    104
+   ],
+   "anchor": [
+    59,
+    101
+   ],
+   "draw_scale": 0.4468,
+   "relative_height": 1.0,
+   "drawn_side": "right",
+   "frames_dir": "assets/source/v6/hero/",
+   "state": "PRODUCTION",
+   "animations": {
+    "idle:south": {
+     "frames": 4
+    },
+    "idle:north": {
+     "frames": 4
+    },
+    "idle:side": {
+     "frames": 4
+    },
+    "walk:south": {
+     "frames": 8
+    },
+    "walk:north": {
+     "frames": 8
+    },
+    "walk:side": {
+     "frames": 8
+    },
+    "talk:south": {
+     "frames": 4
+    },
+    "talk:side": {
+     "frames": 4
+    },
+    "sit": {
+     "frames": 4
+    },
+    "seated": {
+     "frames": 4
+    },
+    "stand": {
+     "frames": 4
+    },
+    "death:south": {
+     "frames": 6
+    },
+    "death:north": {
+     "frames": 6
+    },
+    "death:side": {
+     "frames": 6
+    }
+   }
+  },
+  "lia": {
+   "file": "assets/production/characters/v6/lia.png",
+   "sha256": "bc0df0080da0a55c102a6d36c05862745458709d8b1b53e88761dc50e24de79b",
+   "frame": [
+    169,
+    151
+   ],
+   "anchor": [
+    84,
+    148
+   ],
+   "draw_scale": 0.2849,
+   "relative_height": 0.97,
+   "drawn_side": "right",
+   "frames_dir": "assets/source/v6/lia/",
+   "state": "PRODUCTION",
+   "animations": {
+    "idle:south": {
+     "frames": 4
+    },
+    "idle:north": {
+     "frames": 4
+    },
+    "idle:side": {
+     "frames": 4
+    },
+    "walk:south": {
+     "frames": 6
+    },
+    "walk:north": {
+     "frames": 6
+    },
+    "walk:side": {
+     "frames": 6
+    },
+    "talk:south": {
+     "frames": 4
+    },
+    "talk:side": {
+     "frames": 4
+    },
+    "sit": {
+     "frames": 4
+    },
+    "seated": {
+     "frames": 4
+    },
+    "stand": {
+     "frames": 4
+    },
+    "death:south": {
+     "frames": 6
+    },
+    "death:north": {
+     "frames": 6
+    },
+    "death:side": {
+     "frames": 6
+    }
+   }
+  },
+  "raul": {
+   "file": "assets/production/characters/v6/raul.png",
+   "sha256": "b20c6190b0ef57064e79d3ec8ef4a1b1efa8c7e83a5f11742b7cfef91ece0f9f",
+   "frame": [
+    145,
+    125
+   ],
+   "anchor": [
+    72,
+    122
+   ],
+   "draw_scale": 0.3848,
+   "relative_height": 1.04,
+   "drawn_side": "right",
+   "frames_dir": "assets/source/v6/raul/",
+   "state": "PRODUCTION",
+   "animations": {
+    "idle:south": {
+     "frames": 4
+    },
+    "idle:north": {
+     "frames": 4
+    },
+    "idle:side": {
+     "frames": 4
+    },
+    "walk:south": {
+     "frames": 7
+    },
+    "walk:north": {
+     "frames": 8
+    },
+    "walk:side": {
+     "frames": 7
+    },
+    "talk:south": {
+     "frames": 4
+    },
+    "talk:side": {
+     "frames": 4
+    },
+    "sit": {
+     "frames": 4
+    },
+    "seated": {
+     "frames": 4
+    },
+    "stand": {
+     "frames": 4
+    },
+    "death:south": {
+     "frames": 6
+    },
+    "death:north": {
+     "frames": 6
+    },
+    "death:side": {
+     "frames": 6
+    }
+   }
+  },
+  "nora": {
+   "file": "assets/production/characters/v6/nora.png",
+   "sha256": "f4e4299bec5ec86119d692398b693d3e8d6771cec0d3af07ea27e9067350bc12",
+   "frame": [
+    138,
+    117
+   ],
+   "anchor": [
+    69,
+    114
+   ],
+   "draw_scale": 0.3694,
+   "relative_height": 0.95,
+   "drawn_side": "right",
+   "frames_dir": "assets/source/v6/nora/",
+   "state": "PRODUCTION",
+   "animations": {
+    "idle:south": {
+     "frames": 4
+    },
+    "idle:north": {
+     "frames": 4
+    },
+    "idle:side": {
+     "frames": 4
+    },
+    "walk:south": {
+     "frames": 8
+    },
+    "walk:north": {
+     "frames": 8
+    },
+    "walk:side": {
+     "frames": 8
+    },
+    "talk:south": {
+     "frames": 4
+    },
+    "talk:side": {
+     "frames": 4
+    },
+    "sit": {
+     "frames": 4
+    },
+    "seated": {
+     "frames": 4
+    },
+    "stand": {
+     "frames": 4
+    },
+    "death:south": {
+     "frames": 6
+    },
+    "death:north": {
+     "frames": 6
+    },
+    "death:side": {
+     "frames": 6
+    }
+   }
+  },
+  "helena": {
+   "file": "assets/production/characters/v6/helena.png",
+   "sha256": "8cdb5e696a36a72ff149ae6cb349f2d26488bb096a417882b69a42659d0481a9",
+   "frame": [
+    190,
+    156
+   ],
+   "anchor": [
+    95,
+    153
+   ],
+   "draw_scale": 0.2724,
+   "relative_height": 0.96,
+   "drawn_side": "right",
+   "frames_dir": "assets/source/v6/helena/",
+   "state": "PRODUCTION",
+   "animations": {
+    "idle:south": {
+     "frames": 4
+    },
+    "idle:north": {
+     "frames": 4
+    },
+    "idle:side": {
+     "frames": 4
+    },
+    "walk:south": {
+     "frames": 8
+    },
+    "walk:north": {
+     "frames": 8
+    },
+    "walk:side": {
+     "frames": 8
+    },
+    "talk:south": {
+     "frames": 4
+    },
+    "talk:side": {
+     "frames": 4
+    },
+    "sit": {
+     "frames": 4
+    },
+    "seated": {
+     "frames": 4
+    },
+    "stand": {
+     "frames": 4
+    },
+    "death:south": {
+     "frames": 6
+    },
+    "death:north": {
+     "frames": 6
+    },
+    "death:side": {
+     "frames": 6
+    }
+   }
+  },
+  "bento": {
+   "file": "assets/production/characters/v6/bento.png",
+   "sha256": "2f3fb84f26c8a819e3e2000810055b04181c74c5f021922c762d53065a6cc6c5",
+   "frame": [
+    158,
+    130
+   ],
+   "anchor": [
+    79,
+    127
+   ],
+   "draw_scale": 0.3263,
+   "relative_height": 0.94,
+   "drawn_side": "right",
+   "frames_dir": "assets/source/v6/bento/",
+   "state": "PRODUCTION",
+   "animations": {
+    "idle:south": {
+     "frames": 4
+    },
+    "idle:north": {
+     "frames": 3
+    },
+    "idle:side": {
+     "frames": 4
+    },
+    "walk:south": {
+     "frames": 8
+    },
+    "walk:north": {
+     "frames": 8
+    },
+    "walk:side": {
+     "frames": 8
+    },
+    "talk:south": {
+     "frames": 4
+    },
+    "talk:side": {
+     "frames": 4
+    },
+    "sit": {
+     "frames": 4
+    },
+    "seated": {
+     "frames": 4
+    },
+    "stand": {
+     "frames": 4
+    },
+    "death:south": {
+     "frames": 6
+    },
+    "death:north": {
+     "frames": 6
+    },
+    "death:side": {
+     "frames": 6
+    }
+   }
+  },
+  "celina": {
+   "file": "assets/production/characters/v6/celina.png",
+   "sha256": "28f3e3c2845b5150962941d91bc7432665b11890c8a21f4ed725979236f52131",
+   "frame": [
+    152,
+    136
+   ],
+   "anchor": [
+    76,
+    133
+   ],
+   "draw_scale": 0.3192,
+   "relative_height": 0.95,
+   "drawn_side": "right",
+   "frames_dir": "assets/source/v6/celina/",
+   "state": "PRODUCTION",
+   "animations": {
+    "idle:south": {
+     "frames": 4
+    },
+    "idle:north": {
+     "frames": 4
+    },
+    "idle:side": {
+     "frames": 4
+    },
+    "walk:south": {
+     "frames": 8
+    },
+    "walk:north": {
+     "frames": 8
+    },
+    "walk:side": {
+     "frames": 8
+    },
+    "talk:south": {
+     "frames": 4
+    },
+    "talk:side": {
+     "frames": 4
+    },
+    "sit": {
+     "frames": 4
+    },
+    "seated": {
+     "frames": 4
+    },
+    "stand": {
+     "frames": 4
+    },
+    "death:south": {
+     "frames": 6
+    },
+    "death:north": {
+     "frames": 6
+    },
+    "death:side": {
+     "frames": 6
+    }
+   }
+  }
+ },
+ "note": "Side sequences stored looking right (the engine mirrors). Death: 6 poses, play once, hold the last."
+}
