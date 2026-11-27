@@ -305,6 +305,11 @@ assert.equal(campaign.sideCaseOffers('guard',1000,optional)[0].id,'rail-protecti
 assert.equal(campaign.acceptSideCase(optional,1000,'guard','rail-protection'),true);
 assert.equal(campaign.acceptSideCase(optional,1000,'guard','rail-protection'),false);
 assert.equal(campaign.advanceSideCase(optional,1001,'guard','rail-protection'),null);
+assert.equal(campaign.advanceSideCase(optional,1002,'rail-worker','rail-protection'),null);
+assert.equal(campaign.collectSideCaseDocument(optional,1002,'rail-protection','clinic'),null);
+assert.equal(campaign.sideCaseDocumentOffers(optional,1002,'rail').length,1);
+assert.ok(campaign.collectSideCaseDocument(optional,1002,'rail-protection','rail'));
+assert.equal(campaign.collectSideCaseDocument(optional,1002,'rail-protection','rail'),null);
 assert.ok(campaign.advanceSideCase(optional,1002,'rail-worker','rail-protection'));
 const optionalReload=campaign.normalize(JSON.parse(JSON.stringify(optional)));
 assert.ok(campaign.advanceSideCase(optionalReload,1003,'guard','rail-protection'));
@@ -317,3 +322,8 @@ assert.equal(Object.keys(optionalReload.solved).length,0);
 optionalReload.outcome={id:'zero',at:2000};
 assert.ok(campaign.residentEpilogues(optionalReload).find(q=>q.id==='guard').text.includes(optionalReload.sideCases['rail-protection'].result));
 console.log('Optional cases: prerequisites, two-step progression, deadlines, mortality, save reload and epilogues passed.');
+
+const legacyOptional=campaign.fresh();legacyOptional.train=true;legacyOptional.sideCases['rail-protection']={id:'rail-protection',acceptedAt:1000,deadline:3880,status:'active',stage:'visit'};
+assert.ok(campaign.advanceSideCase(legacyOptional,1002,'rail-worker','rail-protection'));
+assert.ok(campaign.advanceSideCase(legacyOptional,1003,'guard','rail-protection'));
+console.log('V20 document investigations: correct location, order, duplicate protection and legacy saves passed.');
