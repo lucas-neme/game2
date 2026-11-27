@@ -1,0 +1,83 @@
+[
+  {
+    "id": "long-dark",
+    "file": "assets/music/long-dark.mp3",
+    "bytes": 17595203,
+    "sha256": "fa5bfe904dd4902b9eb66d8df518a91adde41fb6d1687aefb5af1a2de7da28da",
+    "duration": 439.792585,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2023/01/TheLongDark.mp3"
+  },
+  {
+    "id": "intervention",
+    "file": "assets/music/intervention.mp3",
+    "bytes": 10335282,
+    "sha256": "cc94e41771807cb354347c8a8859d5c3c49dfce44192d16702a13d989425ddf1",
+    "duration": 258.276508,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2019/01/sb_intervention.mp3"
+  },
+  {
+    "id": "shadows",
+    "file": "assets/music/shadows.mp3",
+    "bytes": 16339308,
+    "sha256": "5ea11efb8df8df8c97f944973dee2203a7b44fa1dbc21026a80035d4619a4ae5",
+    "duration": 408.38,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2023/11/ShadowsAndDust.mp3"
+  },
+  {
+    "id": "meanwhile",
+    "file": "assets/music/meanwhile.mp3",
+    "bytes": 13036146,
+    "sha256": "39fd49bfb138bcee806fb99d8f2c9b7bf89fc72bb7b730125ef20f0c6b2635b7",
+    "duration": 325.829932,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2025/01/Meanwhile.mp3"
+  },
+  {
+    "id": "incantation",
+    "file": "assets/music/incantation.mp3",
+    "bytes": 17325682,
+    "sha256": "e50eb62e720fc21b8a31133bff8ad397beb3a137b5b979b90130c6e74316b289",
+    "duration": 433.033469,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2024/09/Incantation.mp3"
+  },
+  {
+    "id": "void",
+    "file": "assets/music/void.mp3",
+    "bytes": 10566237,
+    "sha256": "285e9aea3e24698fda179eba56d2f6c7d6ecd92f0ddc78932633e0641f769335",
+    "duration": 264.065896,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2025/06/EyesInTheVoid.mp3"
+  },
+  {
+    "id": "unraveling",
+    "file": "assets/music/unraveling.mp3",
+    "bytes": 17764541,
+    "sha256": "82ed105724e6ee31d2007615472cb4e3621000edbff9a4aaf6a64789c32bece5",
+    "duration": 444.023878,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2026/05/Unraveling.mp3"
+  },
+  {
+    "id": "moment",
+    "file": "assets/music/moment.mp3",
+    "bytes": 7984316,
+    "sha256": "83cbc46b22660533d814a6dba29d50bc02e0ccb102561017e6533fb2db917b9a",
+    "duration": 199.509887,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2026/08/InThisMoment.mp3"
+  },
+  {
+    "id": "echoes",
+    "file": "assets/music/echoes.mp3",
+    "bytes": 14557747,
+    "sha256": "d82b855a4a606f597820c8d7ff9719173189b8862f440480cb4cbd85b41a91d2",
+    "duration": 363.84068,
+    "license": "CC BY 4.0",
+    "source": "https://www.scottbuckley.com.au/library/wp-content/uploads/2024/05/Echoes.mp3"
+  }
+]
