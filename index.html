@@ -1063,17 +1063,17 @@ function fzRoomTarget(R,p){let best=null,d0=1.05;
  return best;
 }
 function fzRoomDoor(){if(s.room||s.end||dangerActive())return null;const x=Number.isFinite(s.px)?s.px:s.x,y=Number.isFinite(s.py)?s.py:s.y;let best=null,bd=1.18;for(const b of FZ_ROOMS.buildings){const d=Math.hypot(b[1]-x,b[2]-y);if(d<bd){const tx=Math.max(b[1]-.52,Math.min(x,b[1]+.52)),ty=Math.max(b[2]-.52,Math.min(y,b[2]+.52));let blocked=false;for(let k=1;k<6;k++){for(const ob of nearStatic(x+(tx-x)*k/6,y+(ty-y)*k/6,.04)){if(ob.t===0&&ob.x===b[1]&&ob.y===b[2])continue;if(penetration(x+(tx-x)*k/6,y+(ty-y)*k/6,.04,ob))blocked=true}}if(!blocked){best=b;bd=d}}}return best}
-function fzEnterRoom(id){const R=FZ_ROOMS.layouts[id];if(!R||s.end||dangerActive())return false;
+function fzEnterRoom(id,from=null){const R=FZ_ROOMS.layouts[id];if(!R||s.end||dangerActive())return false;
  if(id==='clinic'&&(hour()<8||hour()>=18)){say('A clínica atende das 08h às 18h.');return false}
- stopRoute();s.room=id;FZ_R.id=id;[FZ_R.x,FZ_R.y]=R.start;FZ_R.dir='north';FZ_R.phase=0;FZ_R.near=null;FZ_R.anim='idle';
+ stopRoute();s.room=id;FZ_R.id=id;[FZ_R.x,FZ_R.y]=R.start;const returning=(R.portals||[]).find(p=>p[3]===from);if(returning){for(const p of [[returning[0],returning[1]+.85],[returning[0]-.85,returning[1]],[returning[0]+.85,returning[1]]])if(!fzRoomSolid(R,p[0],p[1])){[FZ_R.x,FZ_R.y]=p;break}}FZ_R.dist=0;FZ_R.dir='north';FZ_R.phase=0;FZ_R.near=null;FZ_R.anim='idle';
  $('world').hidden=true;$('interior').hidden=false;$('roomtitle').textContent=R.title;$('dialog').replaceChildren();$('puzzle').replaceChildren();
  const art=$('roomart');art.replaceChildren();art.style.backgroundImage='none';art.style.aspectRatio='16/9';art.classList.add('modular-room');
  roomCanvas();const button=document.createElement('button');button.id='fzRoomAction';button.hidden=true;button.onclick=()=>fzRoomAction();art.append(button);
  say('Explore com WASD ou as setas. Aproxime-se de objetos e pressione E.');render();return true;
 }
-function fzRoomAction(){const R=FZ_ROOMS.layouts[s.room];if(!R||s.end||dangerActive())return false;const t=fzRoomTarget(R,FZ_R);if(!t){say('Aproxime-se de um objeto ou da porta.');return true}
- if(t.kind==='exit'){if(R.returnTo)fzEnterRoom(R.returnTo);else leaveRoom();return true}
- if(t.kind==='portal'){fzEnterRoom(t.to);return true}
+function fzRoomAction(){const R=FZ_ROOMS.layouts[s.room];if(!R||s.end||dangerActive())return false;if(!$('pzModal').hidden||!$('invModal').hidden||$('puzzle').children.length)return true;const t=fzRoomTarget(R,FZ_R);if(!t){say('Aproxime-se de um objeto ou da porta.');return true}
+ if(t.kind==='exit'){if(R.returnTo)fzEnterRoom(R.returnTo,s.room);else leaveRoom();return true}
+ if(t.kind==='portal'){fzEnterRoom(t.to,s.room);return true}
  const o=t.o,key=s.room+':'+o[3];if(!s.inspected.includes(key))s.inspected.push(key);
  if(o[4]&&!hasClue(o[4])){record(o[4]);advance(5)}say(o[5]||'Você examina '+o[3]+'.');
  if(o[6]==='safe')puzzle(sites.find(q=>q.id==='radio'));else if(o[6]==='memory')memoryPanel();else if(o[6]==='cabinet')signalCabinet();else if(o[6]==='gears'){if(hasItem('chave_oficina')){s.inv.doors.oficina='aberta';if(!hasClue('gearlog'))record('gearlog');openPuzzle('gears')}else say('Bento precisa autorizar o uso da bancada. Mostre a carta e o manifesto.')}
@@ -1081,10 +1081,10 @@ function fzRoomAction(){const R=FZ_ROOMS.layouts[s.room];if(!R||s.end||dangerAct
 }
 function fzDrawRoom(dt){const R=FZ_ROOMS.layouts[s.room],art=$('roomart');if(!R||!art.clientWidth||!art.clientHeight)return;
  if(FZ_R.id!==s.room){FZ_R.id=s.room;[FZ_R.x,FZ_R.y]=R.start}
- const [ix,iy]=uiOpenModal()||$('puzzle').children.length>0?[0,0]:screenInput();
+ const [ix,iy]=uiOpenModal()||!$('invModal').hidden||!$('pzModal').hidden||$('puzzle').children.length>0?[0,0]:screenInput();
  const mode=moveMode(),speed={walk:2.6,run:4.2,sneak:1.25}[mode]||2.6;
  let dx=ix+2*iy,dy=-ix+2*iy,n=Math.hypot(dx,dy)||1;dx=dx/n*speed*dt;dy=dy/n*speed*dt;const x0=FZ_R.x,y0=FZ_R.y;fzRoomMove(R,FZ_R,dx,dy);
- const moved=Math.hypot(FZ_R.x-x0,FZ_R.y-y0);FZ_R.t+=dt;FZ_R.phase+=moved/1.05;FZ_R.anim=moved>.0001?mode:'idle';if(moved>.0001)FZ_R.dir=view4(ix,iy,FZ_R.dir);
+ const moved=Math.hypot(FZ_R.x-x0,FZ_R.y-y0);FZ_R.t+=dt;FZ_R.phase+=moved/1.05;FZ_R.dist=(FZ_R.dist||0)+moved;while(FZ_R.dist>=1.5&&!s.end){FZ_R.dist-=1.5;advance(2)}FZ_R.anim=moved>.0001?mode:'idle';if(moved>.0001)FZ_R.dir=view4(ix,iy,FZ_R.dir);
  const cv=roomCanvas(),dpr=Math.min(2,window.devicePixelRatio||1),W=Math.round(art.clientWidth*dpr),H=Math.round(art.clientHeight*dpr);if(cv.width!==W||cv.height!==H){cv.width=W;cv.height=H}
  const k=cv.getContext('2d');k.setTransform(1,0,0,1,0,0);k.clearRect(0,0,W,H);k.imageSmoothingEnabled=false;
  const [rw,rh]=R.size,sc=Math.min((W-16*dpr)/((rw+rh)*30+32),(H-16*dpr)/((rw+rh)*15+110)),ox=(W+(rh-rw)*30*sc)/2,oy=(H-(rw+rh)*15*sc)/2+38*sc;
@@ -1114,7 +1114,7 @@ if(HAS_DOM){
  roomStep=function(dt){if(FZ_ROOMS.layouts[s.room])fzDrawRoom(dt);else _legacyRoomStep(dt)};
  roomInteract=function(){return FZ_ROOMS.layouts[s.room]?fzRoomAction():_legacyRoomInteract()};
  leaveRoom=function(){FZ_R.id=null;FZ_R.near=null;$('roomart').classList.remove('modular-room');return _legacyLeave()};
- $('leave').onclick=()=>{if(s.room&&FZ_ROOMS.layouts[s.room]?.returnTo)fzEnterRoom(FZ_ROOMS.layouts[s.room].returnTo);else leaveRoom()};
+ $('leave').onclick=()=>{if(s.room&&FZ_ROOMS.layouts[s.room]?.returnTo)fzEnterRoom(FZ_ROOMS.layouts[s.room].returnTo,s.room);else leaveRoom()};
  const doorButton=document.createElement('button');doorButton.id='fzEnter';doorButton.hidden=true;doorButton.onclick=()=>{const b=fzRoomDoor();if(b)fzEnterRoom(b[0])};$('controls').append(doorButton);
  interact=function(){if(s.room&&FZ_ROOMS.layouts[s.room])return fzRoomAction();const b=fzRoomDoor();if(b&&!nearbyNpc()&&!ambNear())return fzEnterRoom(b[0]);return _legacyOutside()};
  $('act').onclick=()=>interact();
