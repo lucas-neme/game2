@@ -118,7 +118,9 @@ function valleyRoom(id,p){const obj={
  shelter:[["bed",2,1],["bed",5,1],["medicine",7,1],["table",2,4,"Lista de famílias"],["bench",7,4]],
  tunnel:[["rail",2,2],["rail",5.5,2],["signal",7,3.8],["crate",1.5,4],["desk",7,5.5,"Mapa de manutenção"]]
  }[id];return {title:p.name,size:[9,8],floor:p.room,wall:p.room==='wood'?'#8d7862':'#767d74',start:[4.5,7.2],exit:[4.5,7.6],obj:obj||[["desk",2,1.5,"Registro local"],["rack",6.5,1]]}}
-function valleyInstallWorld(){if(valleyInstalled||!valleyActive())return;valleyInstalled=true;PHYS.maxX=27.45;ART.world.cam=[valleyBase.cam[0],valleyBase.cam[1],3500,1940];
+function valleyInstallWorld(){if(valleyInstalled||!valleyActive())return;valleyInstalled=true;PHYS.maxX=27.45;
+ const corners=[[0,0],[0,13],[27,0],[27,13]].map(([x,y])=>iso(x,y));
+ ART.world.cam=[Math.min(valleyBase.cam[0],...corners.map(p=>p[0]-64)),Math.min(valleyBase.cam[1],...corners.map(p=>p[1]-128)),Math.max(valleyBase.cam[2],...corners.map(p=>p[0]+64)),Math.max(valleyBase.cam[3],...corners.map(p=>p[1]+64))];
  for(const [id,p] of Object.entries(VALLEY.data.locations)){if(!sites.some(a=>a.id===id))sites.push({id,name:p.name,x:p.x,y:p.y,type:p.room?'house':'tower',text:p.name+' — consulte as evidências disponíveis.'});if(!valleyIsNew(p))continue;
   const bld=!!p.room;ART.place.push([p.art,p.x,p.y,0,id,bld?1:0]);if(bld){STATIC.push({t:0,x:p.x,y:p.y,hx:.48,hy:.48});FZ_ROOMS.buildings.push([id,p.x,p.y]);FZ_ROOMS.layouts[id]=valleyRoom(id,p);ART.lights.push([p.x,p.y,0,75,'lamp'])}}
  for(let x=14;x<28;x++)for(let y=0;y<14;y++){if(valleyRoad(x,y)||valleyRail(x,y)||Object.values(VALLEY.data.locations).some(p=>Math.hypot(x-p.x,y-p.y)<1.4))continue;const n=valleyHash(x,y)%100;if(n<25){ART.place.push([n<12?29:27,x,y,0,0,0]);STATIC.push({t:1,x,y,r:.19})}else if(n<45)ART.place.push([n<34?43:55,x+.1,y+.12,0,0,0])}
@@ -157,7 +159,9 @@ function valleyDrawManifestations(ctx){
  }
 }
 function valleyActivate(){if(!s.campaign)s.campaign=VALLEY.fresh();else s.campaign=VALLEY.normalize(s.campaign);valleyInstallWorld();valleyTick();return s.campaign}
-walkable=function(x,y){if(!valleyActive()||x<14)return valleyBaseWalk(x,y);return Number.isInteger(x)&&Number.isInteger(y)&&x>=14&&x<28&&y>=0&&y<14&&!solidAt(x,y,PHYS.heroR)};
+walkable=function(x,y){if(!valleyActive())return valleyBaseWalk(x,y);return Number.isInteger(x)&&Number.isInteger(y)&&x>=0&&x<28&&y>=0&&y<14&&!solidAt(x,y,PHYS.heroR)};
+ // A route must use the same swept collision geometry as manual movement.
+ planRoute=function(x,y,tx,ty){const q=[{x:Math.round(x),y:Math.round(y),path:[]}],seen=new Set([q[0].x+','+q[0].y]);for(let i=0;i<q.length;i++){const a=q[i];if(Math.abs(a.x-tx)+Math.abs(a.y-ty)<=1)return a.path;for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){const nx=a.x+dx,ny=a.y+dy,key=nx+','+ny;if(seen.has(key)||!walkable(nx,ny)||!clearLine(a,[nx,ny],PHYS.heroR))continue;seen.add(key);q.push({x:nx,y:ny,path:[...a.path,[dx,dy]]})}}return null};
 function valleyNearbyCell(loc,n,used=new Set()){const p=valleyLocation(loc);if(!p)return [5,5];const dirs=[[0,1],[1,0],[-1,0],[0,-1],[1,1],[-1,1],[1,-1],[-1,-1],[0,2],[2,0],[-2,0],[0,-2]],offset=n%dirs.length;
  for(let i=0;i<dirs.length;i++){const d=dirs[(i+offset)%dirs.length],x=p.x+d[0],y=p.y+d[1];if(!used.has(x+','+y)&&walkable(x,y)&&!solidAt(x,y,PHYS.npcR))return [x,y]}
  for(let radius=1;radius<5;radius++)for(let x=Math.max(0,p.x-radius);x<=Math.min(27,p.x+radius);x++)for(let y=Math.max(0,p.y-radius);y<=Math.min(13,p.y+radius);y++)if(!used.has(x+','+y)&&walkable(x,y)&&!solidAt(x,y,PHYS.npcR))return [x,y];return [5,5]}
@@ -352,11 +356,13 @@ if(HAS_DOM){
  const originalAudioToggle=$('audio').onclick;$('audio').onclick=async()=>{if(audio)valleyAudioStop();await originalAudioToggle();if(audio)soundscape()};
  const panel=document.createElement('section');panel.id='valleyCampaign';panel.className='valley-campaign';$('journal').prepend(panel);
  const start=document.createElement('button');start.id='valleyStart';start.textContent='Nova campanha completa (30 dias)';start.onclick=()=>{if(!confirm('Iniciar uma nova campanha? O progresso atual será substituído.'))return;uiStart(true);valleyActivate();s.valleyPreview=false;render();valleySave()};$('startGame').parentElement.append(start);
- const valleyBaseStart=$('startGame').onclick;$('startGame').onclick=(...args)=>{const result=valleyBaseStart?.(...args);valleyActivate();s.valleyPreview=true;render();valleySave();return result};
- $('cinemaNext').onclick=()=>{const done=s.endingScene>=3&&s.end?.includes('FIM DO CAPÍTULO I');valleyBaseCinema();if(done&&valleyActive()&&!s.valleyPreview)valleyContinue();else if(done){const b=document.createElement('button');b.textContent='Continuar campanha de 30 dias';b.onclick=valleyContinue;$('dialog').append(b)}};
+ const valleyBaseUiStart=uiStart;uiStart=function(fresh){valleyBaseUiStart(fresh);valleyActivate();s.valleyPreview=!s.campaign.train;render();valleySave()};
+ // Mouse, keyboard Enter/Space, new game and reset all use the same expanded world.
+ $('startGame').onclick=()=>uiStart(false);$('newGame').onclick=()=>uiStart(true);
+ $('cinemaNext').onclick=()=>{const done=s.endingScene>=3&&s.end?.includes('FIM DO CAPÍTULO I');valleyBaseCinema();if(done&&valleyActive())valleyContinue();else if(done){const b=document.createElement('button');b.textContent='Continuar campanha de 30 dias';b.onclick=valleyContinue;$('dialog').append(b)}};
  $('act').onclick=()=>interact();$('final').onclick=()=>finish();
- const oldReset=$('reset').onclick;$('reset').onclick=()=>{oldReset();if(!valleyActive())valleyRestoreWorld()};
- if(valleyActive()){valleyActivate();if(s.end?.includes('FIM DO CAPÍTULO I')&&s.cinemaDismissed)valleyContinue();else render()}
- window.FZ_CAMPAIGN=()=>({active:valleyActive(),chapter:valleyActive()?VALLEY.chapter(valleyState(),s.t):1,day:day(),world:valleyActive()?[28,14]:[14,14],residents:residents().map(p=>({id:p.id,name:p.name,x:p.x,y:p.y,activity:p.activity,location:p.loc,changed:p.changed,inside:p.inside})),state:valleyActive()?JSON.parse(JSON.stringify(valleyState())):null});window.FZ_AGENDA=(id,d)=>{const n=VALLEY.byId[id];if(!n||d<1||d>30)return null;return {name:n.name,day:d,slots:n.days[d-1].slots.map(q=>({...q,location:valleyLocation(q.loc).name})),meetings:VALLEY.data.appointments.filter(e=>e.day===d&&e.actors.includes(id))}};
+ const oldReset=$('reset').onclick;$('reset').onclick=()=>{oldReset();if(!valleyActive()){valleyActivate();s.valleyPreview=true;render();valleySave()}};
+ valleyActivate();s.valleyPreview=!s.campaign.train;if(s.end?.includes('FIM DO CAPÍTULO I')&&s.cinemaDismissed)valleyContinue();else render();
+ window.FZ_CAMPAIGN=()=>({bounds:{minX:PHYS.minX,maxX:PHYS.maxX,minY:PHYS.minY,maxY:PHYS.maxY},active:valleyActive(),chapter:valleyActive()?VALLEY.chapter(valleyState(),s.t):1,day:day(),world:valleyActive()?[28,14]:[14,14],residents:residents().map(p=>({id:p.id,name:p.name,x:p.x,y:p.y,activity:p.activity,location:p.loc,changed:p.changed,inside:p.inside})),state:valleyActive()?JSON.parse(JSON.stringify(valleyState())):null});window.FZ_AGENDA=(id,d)=>{const n=VALLEY.byId[id];if(!n||d<1||d>30)return null;return {name:n.name,day:d,slots:n.days[d-1].slots.map(q=>({...q,location:valleyLocation(q.loc).name})),meetings:VALLEY.data.appointments.filter(e=>e.day===d&&e.actors.includes(id))}};
 }
 /* CAMPAIGN_RUNTIME:END */
