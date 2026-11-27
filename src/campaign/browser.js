@@ -352,6 +352,7 @@ if(HAS_DOM){
  const originalAudioToggle=$('audio').onclick;$('audio').onclick=async()=>{if(audio)valleyAudioStop();await originalAudioToggle();if(audio)soundscape()};
  const panel=document.createElement('section');panel.id='valleyCampaign';panel.className='valley-campaign';$('journal').prepend(panel);
  const start=document.createElement('button');start.id='valleyStart';start.textContent='Nova campanha completa (30 dias)';start.onclick=()=>{if(!confirm('Iniciar uma nova campanha? O progresso atual será substituído.'))return;uiStart(true);valleyActivate();render();valleySave()};$('startGame').parentElement.append(start);
+ const valleyBaseStart=$('startGame').onclick;$('startGame').onclick=(...args)=>{const result=valleyBaseStart?.(...args);valleyActivate();render();valleySave();return result};
  $('cinemaNext').onclick=()=>{const done=s.endingScene>=3&&s.end?.includes('FIM DO CAPÍTULO I');valleyBaseCinema();if(done&&valleyActive())valleyContinue();else if(done){const b=document.createElement('button');b.textContent='Continuar campanha de 30 dias';b.onclick=valleyContinue;$('dialog').append(b)}};
  $('act').onclick=()=>interact();$('final').onclick=()=>finish();
  const oldReset=$('reset').onclick;$('reset').onclick=()=>{oldReset();if(!valleyActive())valleyRestoreWorld()};

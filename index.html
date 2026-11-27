@@ -330,6 +330,22 @@ const IMG={};let imgWanted=0,imgDone=0;
 function loadImg(src){if(!HAS_DOM)return null;if(IMG[src])return IMG[src];const im=new Image();imgWanted++;im.onload=im.onerror=()=>{imgDone++;loadingProgress()};im.src=src;IMG[src]=im;return im}
 function ready(im){return !!(im&&im.complete&&im.naturalWidth)}
 const GROUND=loadImg(ART.ground),ATLAS=ART.atlases.map(loadImg),FOG=loadImg(ART.fog);
+const VALLEY_BASE='assets/production/world-valley/';
+const VALLEY_REGIONS=[
+ {id:'forest',name:'Floresta dos Ecos',x:22,y:2,file:'environment/ancient-tree.png',scale:.7},
+ {id:'sawmill',name:'Serraria abandonada',x:18,y:2,file:'buildings/sawmill.png',scale:.68},
+ {id:'village',name:'Vila dos ferroviários',x:16,y:4,file:'buildings/railway-house-blue.png',scale:.68},
+ {id:'farm',name:'Fazenda isolada',x:17,y:11,file:'buildings/farmhouse.png',scale:.68},
+ {id:'observatory',name:'Observatório astronômico',x:25,y:3,file:'buildings/observatory.png',scale:.68},
+ {id:'substation',name:'Subestação elétrica',x:24,y:8,file:'buildings/substation.png',scale:.68},
+ {id:'cemetery',name:'Cemitério antigo',x:21,y:11,file:'buildings/cemetery-mausoleum.png',scale:.68},
+ {id:'shore',name:'Margem oposta do lago',x:15,y:8,file:'buildings/boathouse.png',scale:.68},
+ {id:'horizon',name:'Complexo Horizonte',x:26,y:7,file:'buildings/horizonte-research.png',scale:.68},
+ {id:'bunker',name:'Bunker subterrâneo',x:26,y:11,file:'buildings/bunker-entrance.png',scale:.72},
+ {id:'shelter',name:'Abrigo dos moradores',x:19,y:6,file:'buildings/railway-house-white.png',scale:.68},
+ {id:'tunnel',name:'Túneis ferroviários',x:25,y:0,file:'environment/rail-switch.png',scale:.9}
+];
+const VALLEY_IMAGES={};for(const r of VALLEY_REGIONS)VALLEY_IMAGES[r.id]=loadImg(VALLEY_BASE+r.file);
 /* WATER V2: full texture frames generated off-thread and cached. */
 const WATER_ART={count:48,fps:24,scale:.5,pad:100,worker:'assets/production/environment/water/surface-worker.js'};
 let waterSurface=null,waterFailed=false;
@@ -398,13 +414,15 @@ function drawWorld(){if(!g||!g.setTransform)return;sizeCanvas();const now=typeof
  mapLabels=[];
  const items=[];
  for(const p of ART.place){const [i,gx,gy,bias,kind,bld]=p;items.push({d:gx+gy+bias,gx,gy,i,kind,bld})}
+ for(const r of VALLEY_REGIONS)if(valleyActive()&&ready(VALLEY_IMAGES[r.id])&&inView(r.x,r.y)){const [x,y]=iso(r.x,r.y),im=VALLEY_IMAGES[r.id],w=Math.round(im.naturalWidth*r.scale),h=Math.round(im.naturalHeight*r.scale),ground=y+28;items.push({d:r.x+r.y+.1,valley:r,x:Math.round(x-w/2),y:Math.round(ground-h),w,h})}
  for(const a of (AMB?.list||[])){items.push({d:a.x+a.y+.02,amb:a})}
  for(const p of people){const v=npcVis[p.id];items.push({d:v.x+v.y+.02,npc:p,v})}
  items.push({d:heroVis.x+heroVis.y+.03,hero:true});
  items.sort((a,b)=>a.d-b.d);
  const heroBox=(()=>{const [x,y]=iso(heroVis.x,heroVis.y);return [x-12,y-38,24,38]})();const hd=heroVis.x+heroVis.y;
  const night=1-daylight().day;
- for(const it of items){if(it.hero){const [hx,hy]=iso(heroVis.x,heroVis.y);if(!(typeof drawHero4==='function'&&drawHero4(hx,hy)))drawChar('hero',hx,hy,heroVis.anim,heroVis.dir,heroVis.t);if(typeof SEAT!=='undefined'&&SEAT.hero&&!V6H)benchFront(SEAT.hero.seat);continue}
+ for(const it of items){if(it.valley){g.drawImage(VALLEY_IMAGES[it.valley.id],it.x,it.y,it.w,it.h);mapLabels.push({text:it.valley.name,x:it.x+it.w/2,y:it.y-8,kind:'site'});continue}
+ if(it.hero){const [hx,hy]=iso(heroVis.x,heroVis.y);if(!(typeof drawHero4==='function'&&drawHero4(hx,hy)))drawChar('hero',hx,hy,heroVis.anim,heroVis.dir,heroVis.t);if(typeof SEAT!=='undefined'&&SEAT.hero&&!V6H)benchFront(SEAT.hero.seat);continue}
   if(it.npc){if(it.npc.inside||!it.v||!inView(it.v.x,it.v.y))continue;const key=NPC_SHEET[it.npc.id]||'hero';const [x,y]=iso(it.v.x,it.v.y);if(!(typeof drawNpcV5==='function'&&drawNpcV5(key,it.v,x,y,it.npc.activity)))drawChar(key,x,y,it.v.anim,it.v.dir,it.v.t);if(Math.hypot(it.v.x-heroVis.x,it.v.y-heroVis.y)<2.2)mapLabels.push({text:it.npc.name,x,y:y-SCALE.human-6,kind:'npc'});continue}
   if(it.amb){const a=it.amb;if(!inView(a.x,a.y))continue;const [x,y]=iso(a.x,a.y);drawChar(a.key,x,y-(a.seat?a.seat.lift*Math.min(1,(a.sitF||0)/2):0),a.anim,a.dir,a.t);if(a.seat)benchFront(a.seat);continue}
   const [x,y0]=iso(it.gx,it.gy);const y=y0+(it.bld?32:0);const bounds=sprBox(it.i,x,y),pad=48;if(bounds[0]+bounds[2]<cam.x-c.width/(2*cam.z)-pad||bounds[0]>cam.x+c.width/(2*cam.z)+pad||bounds[1]+bounds[3]<cam.y-c.height/(2*cam.z)-pad||bounds[1]>cam.y+c.height/(2*cam.z)+pad)continue;
@@ -1962,6 +1980,7 @@ if(HAS_DOM){
  const originalAudioToggle=$('audio').onclick;$('audio').onclick=async()=>{if(audio)valleyAudioStop();await originalAudioToggle();if(audio)soundscape()};
  const panel=document.createElement('section');panel.id='valleyCampaign';panel.className='valley-campaign';$('journal').prepend(panel);
  const start=document.createElement('button');start.id='valleyStart';start.textContent='Nova campanha completa (30 dias)';start.onclick=()=>{if(!confirm('Iniciar uma nova campanha? O progresso atual será substituído.'))return;uiStart(true);valleyActivate();render();valleySave()};$('startGame').parentElement.append(start);
+ const valleyBaseStart=$('startGame').onclick;$('startGame').onclick=(...args)=>{const result=valleyBaseStart?.(...args);valleyActivate();render();valleySave();return result};
  $('cinemaNext').onclick=()=>{const done=s.endingScene>=3&&s.end?.includes('FIM DO CAPÍTULO I');valleyBaseCinema();if(done&&valleyActive())valleyContinue();else if(done){const b=document.createElement('button');b.textContent='Continuar campanha de 30 dias';b.onclick=valleyContinue;$('dialog').append(b)}};
  $('act').onclick=()=>interact();$('final').onclick=()=>finish();
  const oldReset=$('reset').onclick;$('reset').onclick=()=>{oldReset();if(!valleyActive())valleyRestoreWorld()};
