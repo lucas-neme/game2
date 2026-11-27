@@ -326,6 +326,11 @@ const IMG={};let imgWanted=0,imgDone=0;
 function loadImg(src){if(!HAS_DOM)return null;if(IMG[src])return IMG[src];const im=new Image();imgWanted++;im.onload=im.onerror=()=>{imgDone++;loadingProgress()};im.src=src;IMG[src]=im;return im}
 function ready(im){return !!(im&&im.complete&&im.naturalWidth)}
 const GROUND=loadImg(ART.ground),ATLAS=ART.atlases.map(loadImg),FOG=loadImg(ART.fog);
+/* WATER: animated pixel-art overlays, shoreline preserved. */
+const WATER_ART={frames:Array.from({length:12},(_,i)=>'assets/production/environment/water/ripples-'+String(i).padStart(2,'0')+'.svg'),fps:10,width:192,height:128};
+const WATER_IMG=WATER_ART.frames.map(loadImg);
+let waterSurface=null;
+
 const CHAR_IMG={};for(const [k,v] of Object.entries(ART.chars))CHAR_IMG[k]=loadImg(v.file);
 const NPC_SHEET={clinic:'lia',guard:'raul',future:'nora',helena:'helena',bento:'bento',celina:'celina'};
 function loadingProgress(){if(!HAS_DOM)return;const el=document.getElementById('loading');if(!el)return;const p=imgWanted?imgDone/imgWanted:1;const bar=el.querySelector('i');if(bar)bar.style.width=Math.round(p*100)+'%';if(p>=1){el.classList.add('done');setTimeout(()=>el.remove(),600)}}
@@ -398,7 +403,36 @@ function drawWorld(){if(!g||!g.setTransform)return;sizeCanvas();const now=typeof
   if(typeof it.kind==='string'&&it.kind!=='sign'){const site=sites.find(a=>a.id===it.kind);const near=!s.room&&!s.end&&Math.abs(site?.x-s.x)+Math.abs(site?.y-s.y)<=1&&!(nearbyNpc()&&s.clues.includes(site?.id));if(site&&!near)mapLabels.push({text:site.name,x,y:y-ART.sprites[it.i][6]+12,kind:'site'})}}
  drawNight(night,tm);drawWeather(tm);
  drawLabels();drawPrompt();g.setTransform(1,0,0,1,0,0)}
-function drawWater(tm){const L=ART.lake;g.save();g.beginPath();L.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.clip();g.strokeStyle='#cfe3dc';g.lineWidth=1.2;for(let k=0;k<70;k++){const x0=L[0][0]+((k*173.3+tm*12)%(L[1][0]-L[3][0]+300))-200+(L[3][0]-L[0][0]),y0=L[0][1]+((k*97.1)%(L[2][1]-L[0][1]));const ph=Math.sin(tm*1.6+k);g.globalAlpha=.08+.1*Math.max(0,ph);g.beginPath();g.moveTo(x0,y0);g.lineTo(x0+14+6*ph,y0+.5);g.stroke()}g.restore();g.globalAlpha=1}
+function waterFrameAt(tm,offset=0){return ((Math.floor(tm*WATER_ART.fps)+offset)%WATER_ART.frames.length+WATER_ART.frames.length)%WATER_ART.frames.length}
+function makeWaterSurface(){
+ if(!HAS_DOM||!ready(GROUND))return null;
+ const L=ART.lake,x=Math.max(0,Math.floor(Math.min(...L.map(p=>p[0])))),y=Math.max(0,Math.floor(Math.min(...L.map(p=>p[1]))));
+ const w=Math.min(GROUND.naturalWidth-x,Math.ceil(Math.max(...L.map(p=>p[0])))-x),h=Math.min(GROUND.naturalHeight-y,Math.ceil(Math.max(...L.map(p=>p[1])))-y);
+ if(w<1||h<1)return null;
+ const mask=document.createElement('canvas'),surface=document.createElement('canvas');mask.width=surface.width=w;mask.height=surface.height=h;
+ const m=mask.getContext('2d',{willReadFrequently:true}),ctx=surface.getContext('2d');if(!m||!ctx)return null;
+ m.beginPath();L.forEach(([px,py],i)=>i?m.lineTo(px-x,py-y):m.moveTo(px-x,py-y));m.closePath();m.clip();
+ m.drawImage(GROUND,-x,-y);
+ const pixels=m.getImageData(0,0,w,h),a=pixels.data;let count=0;
+ for(let i=0;i<a.length;i+=4){const red=a[i],green=a[i+1],blue=a[i+2];const water=a[i+3]>0&&blue>red*1.17&&blue>=green*1.04&&blue-red>16;a[i+3]=water?255:0;if(water)count++;a[i]=a[i+1]=a[i+2]=255}
+ if(!count)return null;
+ m.putImageData(pixels,0,0);return {x,y,w,h,mask,surface,ctx,frame:-1};
+}
+function drawWater(tm){
+ if(!HAS_DOM||!WATER_IMG.every(ready)){drawWaterFallback(tm);return}
+ if(!waterSurface){try{waterSurface=makeWaterSurface()}catch(e){drawWaterFallback(tm);return}}
+ const z=waterSurface;if(!z){drawWaterFallback(tm);return}
+ const frame=waterFrameAt(tm);
+ if(z.frame!==frame){
+  const ctx=z.ctx;ctx.clearRect(0,0,z.w,z.h);ctx.imageSmoothingEnabled=false;ctx.globalCompositeOperation='source-over';
+  for(let j=0;j<Math.ceil(z.h/WATER_ART.height);j++)for(let i=0;i<Math.ceil(z.w/WATER_ART.width);i++){
+   const phase=(i*5+j*7)%12;ctx.drawImage(WATER_IMG[(frame+phase)%12],i*WATER_ART.width,j*WATER_ART.height);
+  }
+  ctx.globalCompositeOperation='destination-in';ctx.drawImage(z.mask,0,0);ctx.globalCompositeOperation='source-over';z.frame=frame;
+ }
+ g.save();g.imageSmoothingEnabled=false;g.drawImage(z.surface,z.x,z.y);g.restore();
+}
+function drawWaterFallback(tm){const L=ART.lake;g.save();g.beginPath();L.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.clip();g.strokeStyle='#cfe3dc';g.lineWidth=1.2;for(let k=0;k<70;k++){const x0=L[0][0]+((k*173.3+tm*12)%(L[1][0]-L[3][0]+300))-200+(L[3][0]-L[0][0]),y0=L[0][1]+((k*97.1)%(L[2][1]-L[0][1]));const ph=Math.sin(tm*1.6+k);g.globalAlpha=.08+.1*Math.max(0,ph);g.beginPath();g.moveTo(x0,y0);g.lineTo(x0+14+6*ph,y0+.5);g.stroke()}g.restore();g.globalAlpha=1}
 function drawNight(night,tm){if(night<=.02&&!daylight().warm)return;const {warm}=daylight();g.save();g.setTransform(1,0,0,1,0,0);
  if(warm>0){g.globalCompositeOperation='soft-light';g.fillStyle='rgba(240,140,70,'+(.45*warm)+')';g.fillRect(0,0,c.width,c.height)}
  g.globalCompositeOperation='multiply';g.fillStyle='rgba('+Math.round(255-night*200)+','+Math.round(255-night*185)+','+Math.round(255-night*120)+',1)';g.fillRect(0,0,c.width,c.height);g.restore();
