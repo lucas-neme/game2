@@ -1,9 +1,10 @@
 #!/bin/sh
 # Manual / emergency deploy of game2 on the Wampa VPS. Normally the Wampa Auto Deploy service
 # (https://wampa.com.br/deploy/) does this by itself after CI passes; both use the same lock, so they never overlap.
-# Usage (on the server): sh /srv/game2/deploy/update-wampa.sh [ref]   (default origin/main; deploys the resolved SHA)
+# Usage (on the server): sh /srv/game2/deploy/update-wampa.sh [--forcar] [ref]   (default origin/main; deploys the resolved SHA)
 # If the new build is not healthy, it goes back to the previous image and commit.
 set -eu
+FORCE=0; [ "${1:-}" = "--forcar" ] && { FORCE=1; shift; }
 REF=${1:-origin/main}
 cd /srv/game2
 mkdir -p /run/lock/wampa-deploy
@@ -12,6 +13,13 @@ flock -n 9 || { echo "another game2 deploy is running (lock busy); try again in 
 C="docker compose -p game2 -f compose.yaml -f deploy/compose.wampa.yaml"
 git fetch -q origin
 SHA=$(git rev-parse --verify "$REF^{commit}")
+# The Wampa Auto Deploy blocks commits that failed CI, the candidate playtest or the health check.
+# Publishing one of them by hand needs an explicit --forcar (and a reason): see https://wampa.com.br/deploy/
+BLOCK=$(docker exec wampa-deploy python3 -c "import sqlite3,sys;r=sqlite3.connect('/data/estado.db').execute('select motivo from bloqueados where projeto=? and sha=?',('game2',sys.argv[1])).fetchone();print(r[0] if r else '')" "$SHA" 2>/dev/null || true)
+if [ -n "$BLOCK" ] && [ "$FORCE" != 1 ]; then
+  echo "REFUSED: $(printf %.7s "$SHA") was rejected by the Wampa Auto Deploy: $BLOCK"
+  echo "Fix the commit (the service publishes the next good one by itself) or use: update-wampa.sh --forcar <ref>"; exit 3
+fi
 PREV=$(git rev-parse HEAD)
 PREV_IMG=$(docker inspect -f '{{.Image}}' game2-web 2>/dev/null || true)
 [ -z "$PREV_IMG" ] || docker tag "$PREV_IMG" "game2-web:sha-$(printf %.12s "$PREV")"
