@@ -244,3 +244,14 @@ assert.equal(campaign.collectCinema(film,43200).length,0);
 const filmSave=campaign.normalize(JSON.parse(JSON.stringify(film)));
 assert.equal(JSON.stringify(campaign.cinemaArchive(filmSave)),JSON.stringify(campaign.cinemaArchive(film)));
 console.log('Cinema archive: choice branches, ending frames, cutoff, replay persistence and idempotence passed.');
+
+const audioCase=campaign.fresh();audioCase.train=true;
+assert.equal(campaign.audioDirection(audioCase,0,'rail').mood,'quiet');
+assert.equal(campaign.audioDirection(audioCase,6*1440+720,'rail').mood,'investigation');
+assert.equal(campaign.audioDirection(audioCase,17*1440+1200,'observatory').mood,'unease');
+assert.equal(campaign.audioDirection(audioCase,29*1440+720,'horizon').mood,'critical');
+assert.equal(campaign.audioDirection(audioCase,29*1440+720,'horizon',true).mood,'cinema');
+audioCase.outcome={id:'zero',at:29*1440+720};
+assert.equal(campaign.audioDirection(audioCase,29*1440+720,'horizon').mood,'ending');
+for(const p of Object.values(data.audioProfiles)){assert.ok(p.bed<=.03&&p.lead<=.02&&p.tempo>0&&p.intervals.length===4)}
+console.log('Audio director: chapter, regional tension, cinema, ending and profile bounds passed.');

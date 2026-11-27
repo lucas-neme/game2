@@ -53,3 +53,7 @@ Sixteen individually authored outcome profiles, seven ending contexts, completed
 ## V14 — Cinematic archive
 
 Four chapter interludes, six choice branches, six possible evacuation records and seven final sequences with resident epilogues. Manual replay from journal, next/skip, procedural backdrop. No bespoke animation or adaptive music. Fixed V13 cross-realm save comparison using serialized content.
+
+## V15 — Adaptive original soundscape
+
+Seven procedural musical profiles with original interval patterns, regional signal and anomaly awareness, smooth drone transitions and a bounded melodic scheduler. Existing sound toggle controls all playback. Audio graph and timer are released on disable/reset; hidden-tab bus is muted. Departure cue plays near station, not globally. No external music assets. Actual audio quality and browser playback remain to be manually auditioned.

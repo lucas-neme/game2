@@ -4,6 +4,41 @@ var valleyInstalled=false,valleyGround=null,valleyBase={sites:sites.slice(),plac
 var valleyBaseResidents=residents,valleyBaseWalk=walkable,valleyBaseRender=render,valleyBaseAdvance=advance,valleyBaseInteract=interact,valleyBaseTalk=talkToResident,valleyBaseFinish=finish,valleyBaseRoomAction=fzRoomAction,valleyBaseCinema=$('cinemaNext').onclick;
 var valleyActorsCache={key:null,rows:null};
 var valleyBaseNight=drawNight,valleyBaseRoomDraw=fzDrawRoom;
+var valleyAudioBase=soundscape,valleyAudioGraph=null,valleyAudioTimer=null,valleyAudioEventKey=null;
+function valleyAudioStop(){
+ if(valleyAudioTimer!=null){clearInterval(valleyAudioTimer);valleyAudioTimer=null}
+ if(valleyAudioGraph){for(const o of valleyAudioGraph.nodes){try{o.stop()}catch{}}try{valleyAudioGraph.bus.disconnect()}catch{}valleyAudioGraph=null}
+ valleyAudioEventKey=null;
+}
+function valleyAudioLocation(){
+ if(s.room&&valleyLocation(s.room))return s.room;
+ const x=Number.isFinite(s.px)?s.px:s.x,y=Number.isFinite(s.py)?s.py:s.y;
+ return Object.entries(VALLEY.data.locations).sort((a,b)=>Math.hypot(x-a[1].x,y-a[1].y)-Math.hypot(x-b[1].x,y-b[1].y))[0]?.[0]||'rail';
+}
+function valleyAudioUpdate(){
+ if(!audio||audio.state==='closed'||!valleyActive()||!valleyState().train){valleyAudioStop();return}
+ if(audio.state!=='running')return;
+ if(!valleyAudioGraph||valleyAudioGraph.context!==audio){
+  valleyAudioStop();const bus=audio.createGain();bus.gain.value=.65;bus.connect(audio.destination);
+  const nodes=[],gains=[];
+  for(let i=0;i<3;i++){const o=audio.createOscillator(),v=audio.createGain();o.type=i===1?'triangle':'sine';o.frequency.value=55*(i+1);v.gain.value=.0001;o.connect(v);v.connect(bus);o.start();nodes.push(o);gains.push(v)}
+  valleyAudioGraph={context:audio,bus,nodes,gains,next:audio.currentTime,step:0,lastMood:null};
+ }
+ const g=valleyAudioGraph,now=audio.currentTime,c=valleyState(),loc=valleyAudioLocation(),p=VALLEY.audioDirection(c,s.t,loc,!!valleyCinemaReplay);
+ const hidden=typeof document!=='undefined'&&document.hidden;
+ const volume=hidden?0:1;
+ g.bus.gain.setTargetAtTime(.65*volume,now,.2);
+ g.nodes.forEach((o,i)=>{o.frequency.setTargetAtTime(p.root*[1,1.5,2.01][i],now,.65);g.gains[i].gain.setTargetAtTime(p.bed*[1,.42,p.anomaly?.6:.17][i],now,.7)});
+ if(g.lastMood!==p.mood){g.lastMood=p.mood;g.step=0;g.next=now+.1}
+ if(now>=g.next&&!hidden){
+  const o=audio.createOscillator(),v=audio.createGain(),f=p.root*2*Math.pow(2,p.intervals[g.step++%p.intervals.length]/12),beat=60/p.tempo;
+  o.type='sine';o.frequency.value=f;v.gain.setValueAtTime(.0001,now);v.gain.linearRampToValueAtTime(p.lead,now+.1);v.gain.exponentialRampToValueAtTime(.0001,now+beat*.85);o.connect(v);v.connect(g.bus);o.start(now);o.stop(now+beat);g.next=now+beat;
+ }
+ const eventKey=loc+':'+p.power+':'+p.anomaly;
+ if(valleyAudioEventKey!==null&&eventKey!==valleyAudioEventKey&&!hidden){if(p.anomaly)tone(117,.35);else if(p.power==='off')tone(47,.22)}
+ valleyAudioEventKey=eventKey;
+}
+soundscape=function(){valleyAudioBase();if(!audio||!valleyActive()||!valleyState().train){valleyAudioStop();return}valleyAudioUpdate();if(valleyAudioTimer==null&&typeof setInterval==='function')valleyAudioTimer=setInterval(valleyAudioUpdate,180)};
 function valleyPowerAt(x,y){return valleyActive()?VALLEY.powerAt(valleyState(),s.t,x,y):'normal'}
 drawNight=function(night,tm){
  if(!valleyActive()||!valleyState().train)return valleyBaseNight(night,tm);
@@ -25,7 +60,7 @@ function valleyHash(x,y,z=0){let n=Math.imul(x+71,374761393)^Math.imul(y+39,6682
 function valleyRoad(x,y){return y===4||y===7||y===10||[17,21,25].includes(x)}
 function valleyRail(x,y){return y===0||y===1&&x>=23}
 function valleyRehash(){SHASH.clear();for(const c of STATIC){const ex=c.t?c.r:c.hx,ey=c.t?c.r:c.hy;for(let i=Math.floor(c.x-ex);i<=Math.floor(c.x+ex);i++)for(let j=Math.floor(c.y-ey);j<=Math.floor(c.y+ey);j++){const key=(i+64)*256+j+64;if(!SHASH.has(key))SHASH.set(key,[]);SHASH.get(key).push(c)}}}
-function valleyRestoreWorld(){if(!valleyInstalled)return;valleyBarrierKey=null;sites.splice(0,sites.length,...valleyBase.sites);ART.place.splice(0,ART.place.length,...valleyBase.places);ART.lights.splice(0,ART.lights.length,...valleyBase.lights);STATIC.splice(0,STATIC.length,...valleyBase.colliders);FZ_ROOMS.buildings.splice(0,FZ_ROOMS.buildings.length,...valleyBase.buildings);for(const id of Object.keys(FZ_ROOMS.layouts))if(!valleyBase.roomKeys.has(id))delete FZ_ROOMS.layouts[id];ART.world.cam=valleyBase.cam.slice();PHYS.maxX=13.45;valleyRehash();valleyInstalled=false;valleyActorsCache.key=null;valleyGround=null;valleyIndoorCache.clear();valleyDestinations()}
+function valleyRestoreWorld(){if(!valleyInstalled)return;valleyAudioStop();valleyBarrierKey=null;sites.splice(0,sites.length,...valleyBase.sites);ART.place.splice(0,ART.place.length,...valleyBase.places);ART.lights.splice(0,ART.lights.length,...valleyBase.lights);STATIC.splice(0,STATIC.length,...valleyBase.colliders);FZ_ROOMS.buildings.splice(0,FZ_ROOMS.buildings.length,...valleyBase.buildings);for(const id of Object.keys(FZ_ROOMS.layouts))if(!valleyBase.roomKeys.has(id))delete FZ_ROOMS.layouts[id];ART.world.cam=valleyBase.cam.slice();PHYS.maxX=13.45;valleyRehash();valleyInstalled=false;valleyActorsCache.key=null;valleyGround=null;valleyIndoorCache.clear();valleyDestinations()}
 function valleyDestinations(){const el=$('destination');if(!el)return;el.replaceChildren();for(const a of sites){const opt=document.createElement('option');opt.value=a.id;opt.textContent=a.name;el.append(opt)}}
 function valleyRoom(id,p){const obj={
  village:[["bed",2,1.5],["wardrobe",6.8,1],["table",3,4],["chair",3,5.2],["desk",7,3,"Caderno dos ferroviários"]],
@@ -172,7 +207,7 @@ interact=function(){if(!valleyActive()||s.room||s.end||dangerActive())return val
  const loc=Object.entries(VALLEY.data.locations).filter(([id])=>valleyNear(id)).sort((a,b)=>Math.hypot(a[1].x-s.x,a[1].y-s.y)-Math.hypot(b[1].x-s.x,b[1].y-s.y))[0];
  if(loc&&(valleyIsNew(loc[1])||valleyState().train)&&valleySitePanel(loc[0]))return;return valleyBaseInteract()};
 fzRoomAction=function(){const id=s.room,R=FZ_ROOMS.layouts[id],t=R&&fzRoomTarget(R,FZ_R);if(valleyActive()&&t?.kind==='npc'&&!s.end&&!dangerActive()&&$('pzModal').hidden&&$('invModal').hidden){talkToResident(t.id);return true}const result=valleyBaseRoomAction();if(valleyActive()&&id===s.room&&t?.kind==='obj'&&(!$('puzzle').children.length)&&$('pzModal').hidden)valleySitePanel(id,true);return result};
-function valleyTick(){if(!valleyActive())return;const c=valleyState();valleySyncBarriers();for(const e of VALLEY.settleDepartures(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(VALLEY.byId[e.id].name+(e.status==='evacuado'?' deixou o Vale pelo trem de retirada.':' não conseguiu embarcar.'));for(const e of VALLEY.tick(c,s.t))s.events.push('Dia '+e.day+' — '+e.text);for(const e of VALLEY.settleMeetings(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push('Encontro '+e.status+' em '+valleyLocation(e.loc).name+': '+e.activity+(e.redirected?' (local alterado)':'')+'.');for(const e of VALLEY.settleStory(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(VALLEY.byId[e.npc].name+' — '+e.status+': '+e.result);for(const e of VALLEY.settleSocial(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(e.result);if(VALLEY.deadline(c,s.t))s.end='Silêncio absoluto — o prazo se encerrou. O Vale perdeu contato com o mundo.';if(c.outcome)VALLEY.freezeEpilogues(c,id=>mortState().npcs[id]?.t??null);VALLEY.collectCinema(c,s.t)}
+function valleyTick(){if(!valleyActive())return;const c=valleyState();valleySyncBarriers();for(const e of VALLEY.settleDepartures(c,s.t,id=>mortState().npcs[id]?.t??null)){s.events.push(VALLEY.byId[e.id].name+(e.status==='evacuado'?' deixou o Vale pelo trem de retirada.':' não conseguiu embarcar.'));if(e.status==='evacuado'&&s.t-e.at<60&&valleyAudioLocation()==='rail')tone(98,.6)}for(const e of VALLEY.tick(c,s.t))s.events.push('Dia '+e.day+' — '+e.text);for(const e of VALLEY.settleMeetings(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push('Encontro '+e.status+' em '+valleyLocation(e.loc).name+': '+e.activity+(e.redirected?' (local alterado)':'')+'.');for(const e of VALLEY.settleStory(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(VALLEY.byId[e.npc].name+' — '+e.status+': '+e.result);for(const e of VALLEY.settleSocial(c,s.t,id=>mortState().npcs[id]?.t??null))s.events.push(e.result);if(VALLEY.deadline(c,s.t))s.end='Silêncio absoluto — o prazo se encerrou. O Vale perdeu contato com o mundo.';if(c.outcome)VALLEY.freezeEpilogues(c,id=>mortState().npcs[id]?.t??null);VALLEY.collectCinema(c,s.t)}
 var valleySavedAt=-1;advance=function(n){valleyBaseAdvance(n);valleyTick();if(valleyActive()&&(s.end||s.t-valleySavedAt>=30||s.t<valleySavedAt))valleySave()};
 function valleySave(){if(!valleyActive())return;try{localStorage.setItem('fz-demo-v2',JSON.stringify(s));valleySavedAt=s.t}catch{}}
 function valleyContinue(){if(!s.end?.includes('FIM DO CAPÍTULO I'))return false;valleyActivate();s.campaign.train=true;s.end=null;s.cinemaDismissed=true;$('cinema').hidden=true;$('world').hidden=false;stopRoute();say('O trem desapareceu, mas a investigação continua. Consulte o diário e siga a remessa H-17.');render();valleySave();return true}
@@ -248,7 +283,7 @@ var valleyJournalKey=null;function valleyJournal(){if(!HAS_DOM)return;const el=$
  const calendar=document.createElement('details'),sum=document.createElement('summary');sum.textContent='Agenda prevista dos moradores conhecidos';calendar.append(sum);
  for(const n of VALLEY.data.npcs){if(!s.npcKnown.includes(n.id)||isDead(n.id))continue;const p=document.createElement('p'),a=VALLEY.schedule(n.id,s.t,c,false,key=>mortState().npcs[key]?.t??null);if(!a){p.textContent=n.name+' · deixou o Vale';calendar.append(p);continue}p.textContent=n.name+' · '+valleyLocation(a.loc).name+' · '+a.activity+(a.changed?' (rota alterada)':'');calendar.append(p);const next=n.days[Math.min(29,day()-1)].slots.find(q=>q.minute>VALLEY.minute(s.t));if(next){const hint=document.createElement('small');hint.textContent='Próximo compromisso previsto: '+String(Math.floor(next.minute/60)).padStart(2,'0')+':'+String(next.minute%60).padStart(2,'0')+' — '+valleyLocation(next.loc).name;calendar.append(hint)}}el.append(calendar)
 }
-render=function(){if(valleyActive()){valleyInstallWorld();valleyTick()}else if(valleyInstalled)valleyRestoreWorld();valleyBaseRender();if(valleyActive()&&valleyState().train&&!s.end){const ch=VALLEY.chapter(valleyState(),s.t),m=VALLEY.available(valleyState(),s.t)[0];$('objective').textContent=s.room?'Explore o interior e examine os objetos.':m?m.title+' — consulte as evidências no diário (J).':valleyState().solved.last?'Vá ao Complexo Horizonte.':'Acompanhe o calendário e o diário.';$('theory').textContent='Capítulo '+ch+' • '+VALLEY.data.chapters[ch-1].title;const grid=VALLEY.infrastructure(valleyState(),s.t);if(grid.level>0||grid.mode!=='normal')$('weatherNotice').textContent+=' · Rede elétrica: '+({normal:'instável',repair:'alimentação de emergência',isolate:'circuitos isolados'}[grid.mode])}valleyJournal()};
+render=function(){if(valleyActive()){valleyInstallWorld();valleyTick()}else if(valleyInstalled)valleyRestoreWorld();valleyBaseRender();if(valleyActive()&&valleyState().train&&!s.end){const ch=VALLEY.chapter(valleyState(),s.t),m=VALLEY.available(valleyState(),s.t)[0];$('objective').textContent=s.room?'Explore o interior e examine os objetos.':m?m.title+' — consulte as evidências no diário (J).':valleyState().solved.last?'Vá ao Complexo Horizonte.':'Acompanhe o calendário e o diário.';$('theory').textContent='Capítulo '+ch+' • '+VALLEY.data.chapters[ch-1].title;const grid=VALLEY.infrastructure(valleyState(),s.t);if(grid.level>0||grid.mode!=='normal')$('weatherNotice').textContent+=' · Rede elétrica: '+({normal:'instável',repair:'alimentação de emergência',isolate:'circuitos isolados'}[grid.mode])}valleyJournal();if(audio)soundscape()};
 function campaignDrawTerrain(ctx){if(!valleyInstalled||!HAS_DOM||!ctx?.drawImage)return;if(!valleyGround){const min=iso(14,13),max=iso(27,0),top=iso(14,0),bottom=iso(27,13),x0=min[0]-64,y0=top[1]-32,w=max[0]-min[0]+128,h=bottom[1]-top[1]+64,cv=document.createElement('canvas');cv.width=w;cv.height=h;const k=cv.getContext('2d');k.imageSmoothingEnabled=false;
  const P=(x,y)=>{const a=iso(x,y);return[a[0]-x0,a[1]-y0]};
  for(let x=14;x<28;x++)for(let y=0;y<14;y++){const [X,Y]=P(x,y),road=valleyRoad(x,y),rail=valleyRail(x,y),n=valleyHash(x,y);k.save();k.beginPath();k.moveTo(X,Y-32);k.lineTo(X+64,Y);k.lineTo(X,Y+32);k.lineTo(X-64,Y);k.closePath();k.clip();k.fillStyle=rail?'#635f54':road?'#98816a':['#677a38','#71833d','#65753a','#778640'][n%4];k.fillRect(X-64,Y-32,128,64);
@@ -258,6 +293,7 @@ function campaignDrawTerrain(ctx){if(!valleyInstalled||!HAS_DOM||!ctx?.drawImage
  const z=valleyGround;if(ctx===g){const x=Math.max(z.x,Math.floor(cam.x-c.width/(2*cam.z))-4),y=Math.max(z.y,Math.floor(cam.y-c.height/(2*cam.z))-4),X=Math.min(z.x+z.w,Math.ceil(cam.x+c.width/(2*cam.z))+4),Y=Math.min(z.y+z.h,Math.ceil(cam.y+c.height/(2*cam.z))+4);if(X>x&&Y>y)ctx.drawImage(z.cv,x-z.x,y-z.y,X-x,Y-y,x,y,X-x,Y-y)};valleyDrawBarriers(ctx);valleyDrawManifestations(ctx)
 }
 if(HAS_DOM){
+ const originalAudioToggle=$('audio').onclick;$('audio').onclick=async()=>{if(audio)valleyAudioStop();await originalAudioToggle();if(audio)soundscape()};
  const panel=document.createElement('section');panel.id='valleyCampaign';panel.className='valley-campaign';$('journal').prepend(panel);
  const start=document.createElement('button');start.id='valleyStart';start.textContent='Nova campanha completa (30 dias)';start.onclick=()=>{if(!confirm('Iniciar uma nova campanha? O progresso atual será substituído.'))return;uiStart(true);valleyActivate();render();valleySave()};$('startGame').parentElement.append(start);
  $('cinemaNext').onclick=()=>{const done=s.endingScene>=3&&s.end?.includes('FIM DO CAPÍTULO I');valleyBaseCinema();if(done&&valleyActive())valleyContinue();else if(done){const b=document.createElement('button');b.textContent='Continuar campanha de 30 dias';b.onclick=valleyContinue;$('dialog').append(b)}};
