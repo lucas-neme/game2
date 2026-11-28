@@ -343,13 +343,45 @@ var valleyJournalKey=null;function valleyJournal(){if(!HAS_DOM)return;const el=$
  for(const n of VALLEY.data.npcs){if(!s.npcKnown.includes(n.id)||isDead(n.id))continue;const p=document.createElement('p'),a=VALLEY.schedule(n.id,s.t,c,false,key=>mortState().npcs[key]?.t??null);if(!a){p.textContent=n.name+' · deixou o Vale';calendar.append(p);continue}p.textContent=n.name+' · '+valleyLocation(a.loc).name+' · '+a.activity+(a.changed?' (rota alterada)':'');calendar.append(p);const next=n.days[Math.min(29,day()-1)].slots.find(q=>q.minute>VALLEY.minute(s.t));if(next){const hint=document.createElement('small');hint.textContent='Próximo compromisso previsto: '+String(Math.floor(next.minute/60)).padStart(2,'0')+':'+String(next.minute%60).padStart(2,'0')+' — '+valleyLocation(next.loc).name;calendar.append(hint)}}el.append(calendar)
 }
 render=function(){if(valleyActive()){valleyInstallWorld();valleyTick()}else if(valleyInstalled)valleyRestoreWorld();valleyBaseRender();if(valleyActive()&&valleyState().train&&!s.end){const ch=VALLEY.chapter(valleyState(),s.t),m=VALLEY.available(valleyState(),s.t)[0];$('objective').textContent=s.room?'Explore o interior e examine os objetos.':m?m.title+' — consulte as evidências no diário (J).':valleyState().solved.last?'Vá ao Complexo Horizonte.':'Acompanhe o calendário e o diário.';$('theory').textContent='Capítulo '+ch+' • '+VALLEY.data.chapters[ch-1].title;const grid=VALLEY.infrastructure(valleyState(),s.t);if(grid.level>0||grid.mode!=='normal')$('weatherNotice').textContent+=' · Rede elétrica: '+({normal:'instável',repair:'alimentação de emergência',isolate:'circuitos isolados'}[grid.mode])}valleyJournal();if(audio)soundscape()};
-function campaignDrawTerrain(ctx){if(!valleyInstalled||!HAS_DOM||!ctx?.drawImage)return;if(!valleyGround){const min=iso(14,13),max=iso(27,0),top=iso(14,0),bottom=iso(27,13),x0=min[0]-64,y0=top[1]-32,w=max[0]-min[0]+128,h=bottom[1]-top[1]+64,cv=document.createElement('canvas');cv.width=w;cv.height=h;const k=cv.getContext('2d');k.imageSmoothingEnabled=false;
- const P=(x,y)=>{const a=iso(x,y);return[a[0]-x0,a[1]-y0]};
- for(let x=14;x<28;x++)for(let y=0;y<14;y++){const [X,Y]=P(x,y),road=valleyRoad(x,y),rail=valleyRail(x,y),n=valleyHash(x,y);k.save();k.beginPath();k.moveTo(X,Y-32);k.lineTo(X+64,Y);k.lineTo(X,Y+32);k.lineTo(X-64,Y);k.closePath();k.clip();k.fillStyle=rail?'#635f54':road?'#98816a':['#677a38','#71833d','#65753a','#778640'][n%4];k.fillRect(X-64,Y-32,128,64);
- for(let i=0;i<85;i++){const r=valleyHash(x,y,i),px=X-64+r%128,py=Y-32+(r>>>8)%64;k.fillStyle=rail?'#777161':road?['#ac967b','#7c6b59','#bdab8c'][r%3]:['#526832','#879443','#667936','#a0a45b'][r%4];k.globalAlpha=.35+(r%3)*.12;k.fillRect(px,py,2+(r>>>16)%7,2+(r>>>22)%4)}k.restore();
- if(rail){k.save();k.strokeStyle='#403a31';k.lineWidth=5;for(let i=-2;i<=2;i++){k.beginPath();k.moveTo(X+i*20-13,Y+i*10+7);k.lineTo(X+i*20+13,Y+i*10-7);k.stroke()}for(const o of [-7,7]){k.strokeStyle='#a2a09a';k.lineWidth=2;k.beginPath();k.moveTo(X-64,Y-32+o);k.lineTo(X+64,Y+32+o);k.stroke()}k.restore()}}
- valleyGround={cv,x:x0,y:y0,w,h}}
- const z=valleyGround;if(ctx===g){const x=Math.max(z.x,Math.floor(cam.x-c.width/(2*cam.z))-4),y=Math.max(z.y,Math.floor(cam.y-c.height/(2*cam.z))-4),X=Math.min(z.x+z.w,Math.ceil(cam.x+c.width/(2*cam.z))+4),Y=Math.min(z.y+z.h,Math.ceil(cam.y+c.height/(2*cam.z))+4);if(X>x&&Y>y)ctx.drawImage(z.cv,x-z.x,y-z.y,X-x,Y-y,x,y,X-x,Y-y)};valleyDrawBarriers(ctx);valleyDrawManifestations(ctx)
+/* Draw the expanded valley in one continuous world-space surface. Roads share edges and
+   intersections; rails use continuous segments rather than independent diamond stamps. */
+function valleyTerrainEdges(x,y,predicate){
+ const edges=[];for(const [dx,dy] of [[1,0],[0,1],[-1,0],[0,-1]]){
+  const nx=x+dx,ny=y+dy;
+  if(nx>=14&&nx<28&&ny>=0&&ny<14&&predicate(nx,ny))edges.push([dx,dy]);
+ }
+ if(x===14&&(predicate===valleyRail&&y===0||predicate===valleyRoad&&y===6))edges.push([-1,0]);
+ return edges
+}
+function campaignDrawTerrain(ctx){
+ if(!valleyInstalled||!HAS_DOM||!ctx?.drawImage)return;
+ if(!valleyGround){
+  const min=iso(14,13),max=iso(27,0),top=iso(14,0),bottom=iso(27,13),x0=min[0]-64,y0=top[1]-32,w=max[0]-min[0]+128,h=bottom[1]-top[1]+64,cv=document.createElement('canvas');cv.width=w;cv.height=h;
+  const k=cv.getContext('2d'),origin=iso(0,0);k.imageSmoothingEnabled=false;
+  // One polygon avoids the antialiased transparent cracks between adjacent diamond tiles.
+  k.setTransform(64,32,-64,32,origin[0]-x0,origin[1]-y0);
+  k.beginPath();k.rect(13.5,-.5,14,14);k.clip();k.fillStyle='#707e43';k.fillRect(13.5,-.5,14,14);
+  // Stable fine-grain texture in world coordinates, without a different base tint per tile.
+  for(let x=14;x<28;x++)for(let y=0;y<14;y++)for(let i=0;i<55;i++){
+   const r=valleyHash(x,y,i);k.fillStyle=['#61723b','#87924d','#788747','#586b36'][r%4];k.globalAlpha=.32;
+   k.fillRect(x-.5+(r%256)/256,y-.5+((r>>>8)%256)/256,.025+((r>>>16)%5)*.008,.02+((r>>>21)%4)*.009)
+  }
+  k.globalAlpha=1;k.lineCap='round';k.lineJoin='round';
+  function network(predicate,width,color){
+   k.beginPath();for(let x=14;x<28;x++)for(let y=0;y<14;y++)if(predicate(x,y)){
+    for(const [dx,dy] of valleyTerrainEdges(x,y,predicate)){k.moveTo(x,y);k.lineTo(x+dx*.505,y+dy*.505)}
+   }k.strokeStyle=color;k.lineWidth=width;k.stroke()
+  }
+  network(valleyRoad,.94,'#82755a');network(valleyRoad,.76,'#a18b70');network(valleyRail,.88,'#514e45');network(valleyRail,.72,'#747063');
+  // Rail ties and paired metal lines meet exactly at each shared cell edge.
+  for(let x=14;x<28;x++)for(let y=0;y<14;y++)if(valleyRail(x,y)){
+   for(let i=0;i<4;i++){const px=x-.5+(i+.5)/4;k.fillStyle='#403b34';k.fillRect(px-.035,y-.32,.07,.64)}
+   for(const o of [-.19,.19]){k.strokeStyle='#b1aaa0';k.lineWidth=.038;k.lineCap='butt';k.beginPath();k.moveTo(x-.505,y+o);k.lineTo(x+.505,y+o);k.stroke()}
+  }
+  k.setTransform(1,0,0,1,0,0);valleyGround={cv,x:x0,y:y0,w,h}
+ }
+ const z=valleyGround;if(ctx===g){const x=Math.max(z.x,Math.floor(cam.x-c.width/(2*cam.z))-4),y=Math.max(z.y,Math.floor(cam.y-c.height/(2*cam.z))-4),X=Math.min(z.x+z.w,Math.ceil(cam.x+c.width/(2*cam.z))+4),Y=Math.min(z.y+z.h,Math.ceil(cam.y+c.height/(2*cam.z))+4);if(X>x&&Y>y)ctx.drawImage(z.cv,x-z.x,y-z.y,X-x,Y-y,x,y,X-x,Y-y)}
+ valleyDrawBarriers(ctx);valleyDrawManifestations(ctx)
 }
 if(HAS_DOM){
  const musicSettings=document.createElement('details');const ms=document.createElement('summary');ms.textContent='Trilha sonora e créditos';musicSettings.append(ms);
